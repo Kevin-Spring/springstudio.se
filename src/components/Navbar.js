@@ -1,0 +1,41 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { IoTriangleOutline } from "react-icons/io5";
+import { Logo } from "./Logo";
+
+export const Navbar = ({ navbarItems, navbarPaths, loading }) => {
+  const rightNavItem = navbarItems.rightItem;
+  const leftNavItem = navbarItems.leftItem;
+
+  return (
+    <div>
+      <NavLink to="/">
+        <Logo />
+      </NavLink>
+      <div className="primary-nav-container">
+        <nav className="primary-nav">
+          <ul
+            className={rightNavItem && !leftNavItem ? "only-left-nav-item" : ""}
+          >
+            {navbarItems.leftItem && (
+              <NavLink to={{ pathname: navbarPaths.leftArrow }}>
+                <li>
+                  <IoTriangleOutline className="angle angle-left" />
+                  <span>{navbarItems.leftItem}</span>
+                </li>
+              </NavLink>
+            )}
+            {navbarItems.rightItem && (
+              <NavLink to={{ pathname: navbarPaths.rightArrow }}>
+                <li>
+                  <span>{navbarItems.rightItem}</span>
+                  <IoTriangleOutline className="angle angle-right" />
+                </li>
+              </NavLink>
+            )}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  );
+};
