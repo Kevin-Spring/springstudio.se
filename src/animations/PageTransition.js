@@ -10,7 +10,7 @@ const blackBox = {
     height: 0,
     transition: {
       when: "afterChildren",
-      duration: 1.5,
+      duration: 0.8,
       ease: [0.87, 0, 0.13, 1],
     },
   },
@@ -36,7 +36,7 @@ const text = {
   animate: {
     y: 80,
     transition: {
-      duration: 1.5,
+      duration: 1,
       ease: [0.87, 0, 0.13, 1],
     },
   },
@@ -75,8 +75,8 @@ export const PageTransition = () => {
         <pattern
           id="pattern"
           patternUnits="userSpaceOnUse"
-          width={750}
-          height={800}
+          width="100%"
+          height="100%"
           style={{ color: "white" }}
         >
           <rect

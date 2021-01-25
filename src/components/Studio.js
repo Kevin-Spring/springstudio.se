@@ -106,6 +106,7 @@ export const Studio = () => {
       {
         opacity: 0,
         x: 40,
+        delay: 1,
         ease: Power3.easeOut,
       },
       0.2
@@ -143,39 +144,42 @@ export const Studio = () => {
         loading={loading}
       />
       <motion.section exit={{ opacity: 0 }}>
-        {posts.map((post, i) => {
-          const { id, title, content, acf } = post;
-          return (
-            <section
-              id={`section${i + 1} ${title.rendered}`}
-              ref={addToRefs}
-              className={`panel main-section section section${i + 1}`}
-              style={{
-                backgroundImage: `url(${acf.background.url})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
-              key={id}
-            >
-              <div className="content-container">
-                <div className="text-container">
-                  <header ref={addToRefTexts}>
-                    <h2>{title.rendered}</h2>
-                  </header>
-                  <article ref={addToRefTexts}>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: content.rendered }}
-                    />
-                  </article>
+        {posts
+          .slice(0)
+          .reverse()
+          .map((post, i) => {
+            const { id, title, content, acf } = post;
+            return (
+              <section
+                id={`section${i + 1} ${title.rendered}`}
+                ref={addToRefs}
+                className={`panel main-section section section${i + 1}`}
+                style={{
+                  backgroundImage: `url(${acf.background.url})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+                key={id}
+              >
+                <div className="content-container">
+                  <div className="text-container">
+                    <header ref={addToRefTexts}>
+                      <h2>{title.rendered}</h2>
+                    </header>
+                    <article ref={addToRefTexts}>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: content.rendered }}
+                      />
+                    </article>
+                  </div>
                 </div>
-              </div>
-              <div className="angle angle-down">
-                <IoTriangleOutline />
-              </div>
-            </section>
-          );
-        })}
+                <div className="angle angle-down">
+                  <IoTriangleOutline />
+                </div>
+              </section>
+            );
+          })}
         <aside className="dots-container">
           <nav>
             <ul>

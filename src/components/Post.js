@@ -63,14 +63,13 @@ export const Post = () => {
   };
 
   const fadeIn = (element) => {
-    console.log(element);
     gsap.to(element, {
       opacity: 1,
       y: -30,
-      duration: 1.3,
+      duration: 1.8,
       ease: "power4.out",
       stagger: {
-        amount: 0.2,
+        amount: 0.3,
       },
     });
   };
@@ -102,10 +101,11 @@ export const Post = () => {
     //For dot fade-in animation
     TweenLite.staggerFrom(
       refDots.current,
-      0.8,
+      1.2,
       {
         opacity: 0,
         x: 40,
+        delay: 1,
         ease: Power3.easeOut,
       },
       0.2
@@ -168,6 +168,13 @@ export const Post = () => {
                     <div
                       dangerouslySetInnerHTML={{ __html: content.rendered }}
                     />
+                    {!acf.cta_ ? (
+                      ""
+                    ) : (
+                      <div ref={addToRefTexts} className="cta-btn">
+                        {acf.cta_}
+                      </div>
+                    )}
                   </article>
                 </div>
               </div>

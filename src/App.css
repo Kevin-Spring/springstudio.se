@@ -36,17 +36,36 @@ h1, h2, h3, h4, h5, h6 {
 
 header h2 {
   font-size: var(--h2);
-  transition: all .2s ease-in-out;
+}
+
+.cta-btn {
+  position: relative;
+  border: 2px solid #fff;
+  font-size: var(--article);
+  padding: 10px;
+  max-width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  top: 50px;
+  transition: background .2s ease-in-out;
+}
+
+.cta-btn:hover {
+  background: rgba(0, 0, 0, .7);
 }
 
 article div {
   font-size: var(--article);
-  transition: all .2s ease-in-out;
 }
 
-.studio-page header, .studio-page article, .studio-page .dot {
-  color: var(--faded-black);
+article {
+  padding-bottom: 50px;
 }
+
+/* .studio-page header, .studio-page article, .studio-page .dot {
+  color: var(--faded-black);
+} */
 
 .logo {
   position: fixed;
@@ -101,7 +120,7 @@ article div {
 }
 
 .content-container {
-  /* background: rgba(000, 000, 000, 0.3); */
+  background: rgba(000, 000, 000, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,7 +137,7 @@ article div {
   opacity: 1;
 }
 
-.text-container header, .text-container header+article {
+.text-container header, .text-container header+article, .cta-btn {
   opacity: 0;
 }
 
@@ -173,6 +192,7 @@ article div {
   height: 100%;
   width: 100%;
   padding: 0 30px;
+  opacity: 0;
 }
 
 .primary-nav {

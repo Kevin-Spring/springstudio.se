@@ -13,6 +13,7 @@ export const Logo = () => {
     TweenLite.to(logo.current, 0.8, {
       opacity: 1,
       x: 10,
+      delay: 1.5,
       ease: Power3.easeOut,
     });
   }, [loading]);
