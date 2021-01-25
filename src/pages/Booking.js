@@ -6,7 +6,7 @@ import { PageTransition } from "../animations/PageTransition";
 export const Booking = () => {
   return (
     <>
-      <main className="studio-page">
+      <main className="booking-page">
         <main>
           <motion.section exit={{ opacity: 0 }}>
             <PageTransition />

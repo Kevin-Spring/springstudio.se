@@ -153,7 +153,9 @@ export const Studio = () => {
               <section
                 id={`section${i + 1} ${title.rendered}`}
                 ref={addToRefs}
-                className={`panel main-section section section${i + 1}`}
+                className={`panel main-section section section${i + 1} studio${
+                  i + 1
+                }`}
                 style={{
                   backgroundImage: `url(${acf.background.url})`,
                   backgroundPosition: "center",
@@ -168,7 +170,12 @@ export const Studio = () => {
                       <h2>{title.rendered}</h2>
                     </header>
                     <article ref={addToRefTexts}>
+                      <div className="btn-container">
+                        <div className="studio-btn">{acf.button}</div>
+                        <div className="studio-btn">{acf.button_3d}</div>
+                      </div>
                       <div
+                        className="studio-info"
                         dangerouslySetInnerHTML={{ __html: content.rendered }}
                       />
                     </article>
