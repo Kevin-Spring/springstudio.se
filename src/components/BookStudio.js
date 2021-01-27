@@ -1,12 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useFetch } from "./useFetch";
+import { Contact } from "./Contact";
 
 const url =
   "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/bookings";
 
+const motionContent = {
+  animate: {
+    transition: { staggerChildren: 0.1, delayChildren: 1.2 },
+  },
+};
+
+const motionTitle = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
+const motionParagraph = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
 export const BookStudio = () => {
-  const { loading, posts } = useFetch(url);
+  const { posts } = useFetch(url);
   return (
     <>
       <motion.section exit={{ opacity: 0 }}>
@@ -23,12 +54,21 @@ export const BookStudio = () => {
               }}
               key={id}
             >
-              <div className="content-container">
-                <div className="text-container">
-                  <h2>{title.rendered}</h2>
-                  <p dangerouslySetInnerHTML={{ __html: content.rendered }} />
-                </div>
-              </div>
+              <motion.div className="content-container">
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  variants={motionContent}
+                  className="text-container"
+                >
+                  <motion.h2 variants={motionTitle}>{title.rendered}</motion.h2>
+                  <motion.div
+                    variants={motionParagraph}
+                    dangerouslySetInnerHTML={{ __html: content.rendered }}
+                  />
+                  <Contact motionParagraph={motionParagraph} />
+                </motion.div>
+              </motion.div>
             </section>
           );
         })}
