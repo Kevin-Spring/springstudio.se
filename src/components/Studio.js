@@ -6,13 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import { motion } from "framer-motion";
 import { useFetch } from "./useFetch";
-import { useFetchNav } from "./useFetchNav";
-import { useNavbar } from "./useNavbar";
-import { useLocation } from "react-router-dom";
-import { Navbar } from "./Navbar";
-
-const urlMenu =
-  "http://localhost:8080/developement/wp_headless_react-test/wp-json/wp/v2/menu";
 
 const url =
   "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/studios";
@@ -20,14 +13,8 @@ const url =
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export const Studio = () => {
-  const location = useLocation();
   const { loading, posts } = useFetch(url);
-  const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu);
-  const { navbarItems, navbarPaths } = useNavbar(
-    fetchedNavbarItems,
-    loadingNav,
-    location
-  );
+
   const revealRefs = useRef([]);
   revealRefs.current = [];
   const refDots = useRef([]);
@@ -138,11 +125,6 @@ export const Studio = () => {
 
   return (
     <>
-      <Navbar
-        navbarItems={navbarItems}
-        navbarPaths={navbarPaths}
-        loading={loading}
-      />
       <motion.section exit={{ opacity: 0 }}>
         {posts
           .slice(0)

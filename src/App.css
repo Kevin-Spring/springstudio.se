@@ -15,7 +15,7 @@
 
 body {
   overflow-x: hidden;
-  background-color: var(--faded-black);
+  background-color: #000;
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
@@ -358,4 +358,13 @@ article {
   .angle {
     display: none
   }
+}
+
+.form-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 4;
 }

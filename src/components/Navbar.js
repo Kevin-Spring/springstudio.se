@@ -1,10 +1,22 @@
 import React, { useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { IoTriangleOutline } from "react-icons/io5";
 import { Logo } from "./Logo";
+import { useFetchNav } from "./useFetchNav";
+import { useNavbar } from "./useNavbar";
 import { Power3, TweenLite } from "gsap";
 
-export const Navbar = ({ navbarItems, navbarPaths, loading }) => {
+const urlMenu =
+  "http://localhost:8080/developement/wp_headless_react-test/wp-json/wp/v2/menu";
+
+export const Navbar = ({ loading }) => {
+  const location = useLocation();
+  const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu);
+  const { navbarItems, navbarPaths } = useNavbar(
+    fetchedNavbarItems,
+    loadingNav,
+    location
+  );
   const rightNavItem = navbarItems.rightItem;
   const leftNavItem = navbarItems.leftItem;
 
