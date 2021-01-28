@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import { motion } from "framer-motion";
 import { useFetch } from "./useFetch";
+import { Link } from "react-router-dom";
 
 const url =
   "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/studios";
@@ -154,7 +155,9 @@ export const Studio = () => {
                     <article ref={addToRefTexts}>
                       <div className="btn-container">
                         <div className="studio-btn">{acf.button}</div>
-                        <div className="studio-btn">{acf.button_3d}</div>
+                        <Link to="/three">
+                          <div className="studio-btn">{acf.button_3d}</div>
+                        </Link>
                       </div>
                       <div
                         className="studio-info"
