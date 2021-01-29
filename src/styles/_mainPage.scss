@@ -1,0 +1,114 @@
+@use './navDots';
+
+.main-page .section {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: white;
+
+  .content-container {
+    background: rgba(000, 000, 000, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+
+    .text-container {
+      position: relative;
+      top: 30px;
+      width: 60vw;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & header,
+      & header + article,
+      .cta-btn {
+        opacity: 0;
+      }
+
+      header h2 {
+        font-size: var(--h2);
+      }
+
+      article {
+        padding-bottom: 50px;
+
+        .text-container-paragraph {
+          font-size: var(--article);
+        }
+      }
+      .cta-btn {
+        border: 2px solid #fff;
+        font-size: var(--article);
+        padding: 10px 50px;
+        cursor: pointer;
+        top: 50px;
+        transition: background-color 0.2s ease-in-out;
+        letter-spacing: var(--medium-spacing);
+        text-transform: uppercase;
+        font-family: var(--alt-font);
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+}
+.main-page {
+  .section:last-of-type {
+    .content-container {
+      .text-container {
+        header {
+          padding-bottom: 20px;
+        }
+
+        article {
+          display: flex;
+          align-items: center;
+          text-align: left;
+          gap: 20px;
+          max-width: 50vw;
+          img {
+            max-width: 95%;
+            height: auto;
+          }
+
+          .text-container-paragraph p {
+            letter-spacing: var(--medium-spacing);
+            padding-bottom: 8px;
+          }
+
+          .cta-btn {
+            text-align: center;
+            letter-spacing: var(--medium-spacing);
+          }
+        }
+      }
+    }
+    .angle-down {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media only screen and (max-width: 980px) {
+    .section:last-of-type {
+      .content-container {
+        .text-container {
+          article {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

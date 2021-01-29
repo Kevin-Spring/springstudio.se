@@ -2,11 +2,12 @@ import React from "react";
 import { Post } from "../components/Post";
 import { PageTransition } from "../animations/PageTransition";
 import { motion } from "framer-motion";
+import "../styles/_mainPage.scss";
 
 export const Posts = () => {
   return (
     <>
-      <main>
+      <main className="main-page">
         <motion.section exit={{ opacity: 0 }}>
           <PageTransition />
           <Post />

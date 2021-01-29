@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import "../styles/_contact.scss";
+import { endpoints } from "../endpoints/endpoints";
 
-const url =
-  "http://localhost:8080/developement/wp_headless_react-test/wp-json/contact-form-7/v1/contact-forms/79/feedback";
+const url = endpoints[4].url;
 
 export const Contact = ({ motionParagraph }) => {
   const [contact, setContact] = useState({

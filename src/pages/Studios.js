@@ -2,6 +2,7 @@ import React from "react";
 import { Studio } from "../components/Studio";
 import { motion } from "framer-motion";
 import { PageTransition } from "../animations/PageTransition";
+import "../styles/_studios.scss";
 
 export const Studios = () => {
   return (

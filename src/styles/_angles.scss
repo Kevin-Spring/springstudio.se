@@ -1,0 +1,24 @@
+.angle {
+  color: white;
+  font-size: 20px;
+}
+
+.angle-down {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  width: 100%;
+  transform: rotate(180deg);
+  margin-bottom: 10px;
+}
+
+.angle-right {
+  transform: rotate(90deg);
+  margin-left: 10px;
+}
+
+.angle-left {
+  transform: rotate(-90deg);
+  margin-right: 10px;
+}

@@ -1,0 +1,38 @@
+@use './angles';
+
+.primary-nav-container {
+  position: fixed;
+  z-index: 1;
+  opacity: 0;
+  width: 100vw;
+
+  .primary-nav {
+    & ul {
+      list-style-type: none;
+
+      .navbar-item {
+        position: absolute;
+        top: 50vh;
+      }
+
+      .navbar-left-item {
+        left: 0;
+      }
+
+      .navbar-right-item {
+        right: 0;
+      }
+
+      li {
+        display: flex;
+      }
+
+      a {
+        color: white;
+        letter-spacing: var(--medium-spacing);
+        text-transform: uppercase;
+        font-family: var(--alt-font);
+      }
+    }
+  }
+}
