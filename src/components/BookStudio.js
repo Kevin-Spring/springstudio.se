@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useFetch } from "./useFetch";
 import { Contact } from "./Contact";
+import { endpoints } from "../endpoints/endpoints";
 
-const url =
-  "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/bookings";
+const url = endpoints[2].url;
 
 const motionContent = {
   animate: {

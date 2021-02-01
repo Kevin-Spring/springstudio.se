@@ -5,9 +5,10 @@ import { Logo } from "./Logo";
 import { useFetchNav } from "./useFetchNav";
 import { useNavbar } from "./useNavbar";
 import { Power3, TweenLite } from "gsap";
+import "../styles/_navbar.scss";
+import { endpoints } from "../endpoints/endpoints";
 
-const urlMenu =
-  "http://localhost:8080/developement/wp_headless_react-test/wp-json/wp/v2/menu";
+const urlMenu = endpoints[3].url;
 
 export const Navbar = ({ loading }) => {
   const location = useLocation();
@@ -17,8 +18,6 @@ export const Navbar = ({ loading }) => {
     loadingNav,
     location
   );
-  const rightNavItem = navbarItems.rightItem;
-  const leftNavItem = navbarItems.leftItem;
 
   const navbar = useRef(null);
 
@@ -31,17 +30,18 @@ export const Navbar = ({ loading }) => {
   }, [loading]);
 
   return (
-    <div>
+    <>
       <NavLink to="/">
         <Logo />
       </NavLink>
-      <div ref={navbar} className="primary-nav-container">
-        <nav className="primary-nav">
-          <ul
-            className={rightNavItem && !leftNavItem ? "only-left-nav-item" : ""}
-          >
+      <nav ref={navbar} className="primary-nav-container">
+        <div className="primary-nav">
+          <ul>
             {navbarItems.leftItem && (
-              <NavLink to={{ pathname: navbarPaths.leftArrow }}>
+              <NavLink
+                className="navbar-left-item navbar-item"
+                to={{ pathname: navbarPaths.leftArrow }}
+              >
                 <li>
                   <IoTriangleOutline className="angle angle-left" />
                   <span>{navbarItems.leftItem}</span>
@@ -49,7 +49,10 @@ export const Navbar = ({ loading }) => {
               </NavLink>
             )}
             {navbarItems.rightItem && (
-              <NavLink to={{ pathname: navbarPaths.rightArrow }}>
+              <NavLink
+                className="navbar-right-item navbar-item"
+                to={{ pathname: navbarPaths.rightArrow }}
+              >
                 <li>
                   <span>{navbarItems.rightItem}</span>
                   <IoTriangleOutline className="angle angle-right" />
@@ -57,8 +60,8 @@ export const Navbar = ({ loading }) => {
               </NavLink>
             )}
           </ul>
-        </nav>
-      </div>
-    </div>
+        </div>
+      </nav>
+    </>
   );
 };

@@ -1,0 +1,29 @@
+.three-container {
+  background: #696a6d;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+
+  .header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3vh;
+    font-size: calc(20px + (30 - 20) * (100vw - 320px) / 1120);
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+  }
+
+  .link {
+    color: white;
+    font-size: calc(14px + (20 - 14) * (100vw - 320px) / 1120);
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2rem;
+    letter-spacing: 0.04rem;
+  }
+}

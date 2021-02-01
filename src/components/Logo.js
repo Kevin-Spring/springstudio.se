@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useFetch } from "./useFetch";
 import { Power3, TweenLite } from "gsap";
+import "../styles/_logo.scss";
 
 const url =
   "http://localhost:8080/developement/wp_headless_react-test/wp-json/wp/v2/media/21";

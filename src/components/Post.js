@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from "react";
-import { Dots } from "./Dots";
-import { IoTriangleOutline } from "react-icons/io5";
-import { gsap, Power3, TweenLite } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import { motion } from "framer-motion";
 import { useFetch } from "./useFetch";
+import { AsideNav } from "./AsideNav";
+import { AngleDown } from "./AngleDown";
+import { endpoints } from "../endpoints/endpoints";
 
-const url =
-  "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/chapters";
+const url = endpoints[0].url;
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -17,8 +17,6 @@ export const Post = () => {
 
   const revealRefs = useRef([]);
   revealRefs.current = [];
-  const refDots = useRef([]);
-  refDots.current = [];
   const revealText = useRef([]);
   revealText.current = [];
 
@@ -27,13 +25,6 @@ export const Post = () => {
       revealRefs.current.push(el);
     }
   };
-
-  const addToRefDots = (el) => {
-    if (el && !refDots.current.includes(el)) {
-      refDots.current.push(el);
-    }
-  };
-
   const addToRefTexts = (el) => {
     if (el && !revealText.current.includes(el)) {
       revealText.current.push(el);
@@ -62,16 +53,6 @@ export const Post = () => {
   };
 
   useEffect(() => {
-    //For Dots scroll
-    refDots.current.forEach((dot, index) => {
-      dot.addEventListener("click", (e) => {
-        e.preventDefault();
-        gsap.to(window, {
-          duration: 0.8,
-          scrollTo: { y: ".section" + (index + 1), autoKill: false },
-        });
-      });
-    });
     //For section scroll
     revealRefs.current.forEach((panel, i) => {
       ScrollTrigger.create({
@@ -84,19 +65,6 @@ export const Post = () => {
         onEnterBack: () => goToSection(i),
       });
     });
-
-    //For dot fade-in animation
-    TweenLite.staggerFrom(
-      refDots.current,
-      1.2,
-      {
-        opacity: 0,
-        x: 40,
-        delay: 1,
-        ease: Power3.easeOut,
-      },
-      0.2
-    );
 
     const config = {
       root: null,
@@ -146,44 +114,33 @@ export const Post = () => {
                     <h2>{title.rendered}</h2>
                   </header>
                   <article ref={addToRefTexts}>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: content.rendered }}
-                    />
-                    {!acf.cta_ ? (
-                      ""
-                    ) : (
-                      <div ref={addToRefTexts} className="cta-btn">
-                        {acf.cta_}
+                    {acf.placeholder_google_map && (
+                      <div className="google-maps">
+                        <img
+                          src={acf.placeholder_google_map.url}
+                          alt={acf.placeholder_google_map.title}
+                        />
                       </div>
                     )}
+                    <div
+                      className="text-container-paragraph"
+                      dangerouslySetInnerHTML={{ __html: content.rendered }}
+                    />
                   </article>
+                  {!acf.cta_ ? (
+                    ""
+                  ) : (
+                    <div ref={addToRefTexts} className="cta-btn">
+                      {acf.cta_}
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="angle angle-down">
-                <IoTriangleOutline />
-              </div>
+              <AngleDown />
             </section>
           );
         })}
-        <aside className="dots-container">
-          <nav>
-            <ul>
-              {posts.map((post, i) => {
-                return (
-                  <li key={post.id} className="dot-li">
-                    <a ref={addToRefDots} href={`#section${i + 1}`}>
-                      <Dots
-                        key={post.id}
-                        id={post.id}
-                        title={post.title.rendered}
-                      />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </aside>
+        <AsideNav posts={posts} loading={loading} />
       </motion.section>
     </>
   );
