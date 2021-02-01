@@ -17,6 +17,7 @@
   --h3: calc(18px + (30 - 18) var(--calc-size));
   --article: calc(14px + (20 - 14) var(--calc-size));
   --fs-small: calc(16px + (18 - 16) var(--calc-size));
+  --row: calc((100vw - ((20px + (140 - 20) * (100vw - 320px) / 1120) * 2)));
 
   --medium-spacing: 0.08rem;
 
