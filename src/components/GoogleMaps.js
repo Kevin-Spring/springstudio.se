@@ -1,10 +1,15 @@
 import React from "react";
-import { GoogleMap, useLoadScript, Circle } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useLoadScript,
+  Circle,
+  Marker,
+} from "@react-google-maps/api";
 import mapStyles from "../styles/mapStyles";
 
 const containerStyle = {
-  width: "60vw",
-  height: "40vh",
+  width: "40vw",
+  height: "100vh",
 };
 
 const options = {
@@ -44,11 +49,12 @@ const GoogleMaps = ({ lat, lng }) => {
     <div>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        zoom={13}
+        zoom={14}
         center={center}
         options={options}
       >
         <Circle center={center} options={circleOptions} />
+        <Marker position={center} />
       </GoogleMap>
     </div>
   );

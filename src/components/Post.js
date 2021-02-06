@@ -116,14 +116,6 @@ export const Post = () => {
                     <h2>{title.rendered}</h2>
                   </header>
                   <article ref={addToRefTexts}>
-                    {acf.google_map && (
-                      <div className="google-maps">
-                        <GoogleMaps
-                          lat={acf.google_map.lat}
-                          lng={acf.google_map.lng}
-                        />
-                      </div>
-                    )}
                     <div
                       className="text-container-paragraph"
                       dangerouslySetInnerHTML={{ __html: content.rendered }}
@@ -137,6 +129,14 @@ export const Post = () => {
                     </div>
                   )}
                 </div>
+                {acf.google_map && (
+                  <div className="google-maps">
+                    <GoogleMaps
+                      lat={acf.google_map.lat}
+                      lng={acf.google_map.lng}
+                    />
+                  </div>
+                )}
               </div>
               <AngleDown />
             </section>

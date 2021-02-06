@@ -10,6 +10,11 @@
   --faded-black: #101010;
   --black: #000;
   --white: #fff;
+  --def-background: linear-gradient(
+    90deg,
+    rgb(29, 29, 29) 18%,
+    rgba(0, 0, 0, 1) 100%
+  ) !important;
 
   /* Font Sizes */
   --calc-size: * (100vw - 320px) / 1120;
@@ -29,7 +34,7 @@
 
 body {
   overflow-x: hidden;
-  background-color: #000;
+  background: var(--def-background);
   /* Hide scrollbar for IE and Edge */
   -ms-overflow-style: none;
   /* Hide scrollbar for Firefox */
