@@ -7,6 +7,7 @@ import { useFetch } from "./useFetch";
 import { AsideNav } from "./AsideNav";
 import { AngleDown } from "./AngleDown";
 import { endpoints } from "../endpoints/endpoints";
+import GoogleMaps from "./GoogleMaps";
 
 const url = endpoints[0].url;
 
@@ -95,6 +96,7 @@ export const Post = () => {
       <motion.section exit={{ opacity: 0 }}>
         {posts.map((post, i) => {
           const { id, title, content, acf } = post;
+          console.log(acf.google_map);
           return (
             <section
               id={`section${i + 1} ${title.rendered}`}
@@ -114,11 +116,11 @@ export const Post = () => {
                     <h2>{title.rendered}</h2>
                   </header>
                   <article ref={addToRefTexts}>
-                    {acf.placeholder_google_map && (
+                    {acf.google_map && (
                       <div className="google-maps">
-                        <img
-                          src={acf.placeholder_google_map.url}
-                          alt={acf.placeholder_google_map.title}
+                        <GoogleMaps
+                          lat={acf.google_map.lat}
+                          lng={acf.google_map.lng}
                         />
                       </div>
                     )}
