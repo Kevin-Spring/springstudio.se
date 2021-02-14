@@ -1,27 +1,27 @@
 export const endpoints = [
   {
-    type: "post type",
+    type: 'post type',
     url:
-      "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/chapters",
+      'http://localhost:8080/developement/springstudio.se/index.php/wp-json/wp/v2/main-pages',
   },
   {
-    type: "post type",
+    type: 'post type',
     url:
-      "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/studios",
+      'http://localhost:8080/developement/springstudio.se/index.php/wp-json/wp/v2/studios',
   },
   {
-    type: "post type",
+    type: 'post type',
     url:
-      "http://localhost:8080/developement/wp_headless_react-test/index.php/wp-json/wp/v2/bookings",
+      'http://localhost:8080/developement/springstudio.se/index.php/wp-json/wp/v2/contact',
   },
   {
-    type: "navigation menu",
+    type: 'navigation menu',
     url:
-      "http://localhost:8080/developement/wp_headless_react-test/wp-json/wp/v2/menu",
+      'http://localhost:8080/developement/springstudio.se/wp-json/wp/v2/menus/primary-menu',
   },
   {
-    type: "contact form",
+    type: 'contact form',
     url:
-      "http://localhost:8080/developement/wp_headless_react-test/wp-json/contact-form-7/v1/contact-forms/79/feedback",
+      'http://localhost:8080/developement/springstudio.se/wp-json/contact-form-7/v1/contact-forms/6/feedback',
   },
-];
+]

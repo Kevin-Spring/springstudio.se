@@ -1,90 +1,90 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 export const useNavbar = (posts, loading, location) => {
-  const menuItems = posts;
-  const [navbarItems, setNavbarItems] = useState({});
-  const [navbarPaths, setNavbarPaths] = useState({});
-  const [studio, setStudio] = useState("");
-  const [booking, setBooking] = useState("");
-  const [home, setHome] = useState("");
+  const menuItems = posts
+  const [navbarItems, setNavbarItems] = useState({})
+  const [navbarPaths, setNavbarPaths] = useState({})
+  const [studio, setStudio] = useState('')
+  const [contact, setContact] = useState('')
+  const [home, setHome] = useState('')
 
-  const storedMenuItems = [];
+  const storedMenuItems = []
 
   const mapMenuItems = (menuItems) => {
     menuItems.map((item) => {
-      return storedMenuItems.push(item.title);
-    });
-  };
+      return storedMenuItems.push(item.title)
+    })
+  }
 
   const findMenuItem = () => {
-    let studios = storedMenuItems.find((studios) => studios === "Studios");
-    let book = storedMenuItems.find((book) => book === "Book");
-    let home = storedMenuItems.find((home) => home === "Home");
-    setStudio(studios);
-    setBooking(book);
-    setHome(home);
-  };
+    let studios = storedMenuItems.find((studios) => studios === 'Studios')
+    let contact = storedMenuItems.find((contact) => contact === 'Contact')
+    let home = storedMenuItems.find((home) => home === 'Home')
+    setStudio(studios)
+    setContact(contact)
+    setHome(home)
+  }
 
   const renderNavbar = () => {
-    if (location.pathname === "/studios") {
+    if (location.pathname === '/studios') {
       if (home) {
         setNavbarItems({
-          leftItem: "",
+          leftItem: '',
           rightItem: home,
-        });
+        })
       } else {
         setNavbarItems({
-          leftItem: "",
-          rightItem: "Home",
-        });
+          leftItem: '',
+          rightItem: 'Home',
+        })
       }
 
       setNavbarPaths({
-        leftArrow: "",
-        rightArrow: "/",
-      });
-    } else if (location.pathname === "/book") {
+        leftArrow: '',
+        rightArrow: '/',
+      })
+    } else if (location.pathname === '/contact') {
       if (home) {
         setNavbarItems({
           leftItem: home,
-          rightItem: "",
-        });
+          rightItem: '',
+        })
       } else {
         setNavbarItems({
-          leftItem: "Home",
-          rightItem: "",
-        });
+          leftItem: 'Home',
+          rightItem: '',
+        })
       }
 
       setNavbarPaths({
-        leftArrow: "/",
-        rightArrow: "",
-      });
-    } else if (location.pathname === "/") {
-      if (studio && booking) {
+        leftArrow: '/',
+        rightArrow: '',
+      })
+    } else if (location.pathname === '/') {
+      if (studio && contact) {
         setNavbarItems({
           leftItem: studio,
-          rightItem: booking,
-        });
+          rightItem: contact,
+        })
       } else {
         setNavbarItems({
-          leftItem: "Studios",
-          rightItem: "Books",
-        });
+          leftItem: 'Studios',
+          rightItem: 'Contact',
+        })
       }
 
       setNavbarPaths({
-        leftArrow: "/studios",
-        rightArrow: "/book",
-      });
+        leftArrow: '/studios',
+        rightArrow: '/contact',
+      })
     }
-  };
+  }
 
   useEffect(() => {
-    renderNavbar();
-    mapMenuItems(menuItems);
-    findMenuItem();
-  }, [location, menuItems, studio, booking, home]);
+    renderNavbar()
+    mapMenuItems(menuItems)
+    findMenuItem()
+  }, [location, menuItems, studio, contact, home])
 
-  return { navbarItems, navbarPaths };
-};
+  return { navbarItems, navbarPaths }
+}
