@@ -1,157 +1,78 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { motion } from "framer-motion";
-import "../styles/_contact.scss";
-import { endpoints } from "../endpoints/endpoints";
+import React from 'react'
+import { motion } from 'framer-motion'
+import { useFetch } from './useFetch'
+import { ContactForm } from './ContactForm'
+import { endpoints } from '../endpoints/endpoints'
 
-const url = endpoints[4].url;
+const url = endpoints[2].url
 
-export const Contact = ({ motionParagraph }) => {
-  const [contact, setContact] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [validationMessage, setValidationMessage] = useState({
-    successMessage: "",
-    errorMessage: "",
-  });
+const motionContent = {
+  animate: {
+    transition: { staggerChildren: 0.1, delayChildren: 1.2 },
+  },
+}
 
-  const onChangeHandler = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setContact({ ...contact, [name]: value });
-  };
+const motionTitle = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setValidationMessage({
-      errorMessage: "",
-    });
-    let formData = new FormData();
+const motionParagraph = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
 
-    formData.set("your-name", contact.name);
-    formData.set("your-email", contact.email);
-    formData.set("your-subject", contact.subject);
-    formData.set("your-message", contact.message);
-
-    axios
-      .post(url, formData, {
-        headers: {
-          "content-type": "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        if (res.data.status === "mail_sent") {
-          setContact({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
-          setValidationMessage({
-            successMessage: res.data.message,
-          });
-        } else {
-          setValidationMessage({
-            errorMessage: res.data.message,
-          });
-        }
-      })
-      .catch((err) => console.log(err));
-  };
-
+export const Contact = () => {
+  const { posts } = useFetch(url)
   return (
     <>
-      <motion.div variants={motionParagraph}>
-        {validationMessage.successMessage && (
-          <p className="">{validationMessage.successMessage}</p>
-        )}
-        {validationMessage.errorMessage && (
-          <p className="error-message">{validationMessage.errorMessage}</p>
-        )}
-        <article>
-          <form
-            action="POST"
-            onSubmit={handleSubmit}
-            className="form-body"
-            autoComplete="new-password"
-          >
-            <div className="form__container">
-              <div className="form__group field">
-                <input
-                  className="form__field"
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={contact.name}
-                  onChange={onChangeHandler}
-                  placeholder="Name"
-                  autoComplete="new-password"
-                />
-                <label className="form__label" htmlFor="name">
-                  Name{" "}
-                </label>
-              </div>
-              <div className="form__group field">
-                <input
-                  className="form__field"
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={contact.email}
-                  onChange={onChangeHandler}
-                  placeholder="Email"
-                  autoComplete="new-password"
-                />
-                <label className="form__label" htmlFor="email">
-                  {" "}
-                  Email{" "}
-                </label>
-              </div>
-
-              <div className="form__group field">
-                <input
-                  className="form__field"
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={contact.subject}
-                  onChange={onChangeHandler}
-                  placeholder="Subject"
-                  autoComplete="new-password"
-                />
-                <label className="form__label" htmlFor="subject">
-                  {" "}
-                  Subject{" "}
-                </label>
-              </div>
-              <div className="form__group field">
-                <textarea
-                  className="form__field"
-                  name="message"
-                  id="message"
-                  value={contact.message}
-                  onChange={onChangeHandler}
-                  cols="30"
-                  rows="10"
-                  placeholder="Message"
-                ></textarea>
-                <label className="form__label" htmlFor="message">
-                  {" "}
-                  Message{" "}
-                </label>
-              </div>
-
-              <button type="submit" className="form-btn ">
-                Send
-              </button>
-            </div>
-          </form>
-        </article>
-      </motion.div>
+      <motion.section exit={{ opacity: 0 }}>
+        {posts.map((post) => {
+          const { id, title, content, acf } = post
+          return (
+            <section
+              className={'book-studio-section'}
+              style={{
+                backgroundImage: `url(${acf.background.url})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+              }}
+              key={id}
+            >
+              <motion.div className='content-container'>
+                <motion.div
+                  initial='initial'
+                  animate='animate'
+                  variants={motionContent}
+                  className='text-container'
+                >
+                  <motion.h2 variants={motionTitle}>{title.rendered}</motion.h2>
+                  <motion.div
+                    variants={motionParagraph}
+                    dangerouslySetInnerHTML={{ __html: content.rendered }}
+                  />
+                  <ContactForm motionParagraph={motionParagraph} />
+                </motion.div>
+              </motion.div>
+            </section>
+          )
+        })}
+      </motion.section>
     </>
-  );
-};
+  )
+}

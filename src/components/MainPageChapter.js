@@ -13,7 +13,7 @@ const url = endpoints[0].url
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
-export const Post = () => {
+export const MainPageChapter = () => {
   const { loading, posts } = useFetch(url)
 
   const revealRefs = useRef([])
