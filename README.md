@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#### Note to self
+
+Glöm inte att lägga in custom hook i temats functions.php för att kunna hämta navigeringsmenyn som json.
+Glöm inte att lägga in google maps inställningar i temats functions.php för att acf google maps ska lira.

@@ -1,35 +1,36 @@
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-import { motion } from "framer-motion";
-import { useFetch } from "./useFetch";
-import { AsideNav } from "./AsideNav";
-import { AngleDown } from "./AngleDown";
-import { endpoints } from "../endpoints/endpoints";
+import React, { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
+import { motion } from 'framer-motion'
+import { useFetch } from './useFetch'
+import { AsideNav } from './AsideNav'
+import { AngleDown } from './AngleDown'
+import { endpoints } from '../endpoints/endpoints'
+import GoogleMaps from './GoogleMaps'
 
-const url = endpoints[0].url;
+const url = endpoints[0].url
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 export const Post = () => {
-  const { loading, posts } = useFetch(url);
+  const { loading, posts } = useFetch(url)
 
-  const revealRefs = useRef([]);
-  revealRefs.current = [];
-  const revealText = useRef([]);
-  revealText.current = [];
+  const revealRefs = useRef([])
+  revealRefs.current = []
+  const revealText = useRef([])
+  revealText.current = []
 
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
+      revealRefs.current.push(el)
     }
-  };
+  }
   const addToRefTexts = (el) => {
     if (el && !revealText.current.includes(el)) {
-      revealText.current.push(el);
+      revealText.current.push(el)
     }
-  };
+  }
 
   const goToSection = (i, anim) => {
     gsap.to(window, {
@@ -37,20 +38,20 @@ export const Post = () => {
       //Scrollen blir dock extremt känslig för input.
       scrollTo: { y: i * window.innerHeight, autoKill: false },
       duration: 0.8,
-    });
-  };
+    })
+  }
 
   const fadeIn = (element) => {
     gsap.to(element, {
       opacity: 1,
       y: -30,
       duration: 1.8,
-      ease: "power4.out",
+      ease: 'power4.out',
       stagger: {
         amount: 0.3,
       },
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     //For section scroll
@@ -58,43 +59,43 @@ export const Post = () => {
       ScrollTrigger.create({
         trigger: panel,
         onEnter: () => goToSection(i),
-      });
+      })
       ScrollTrigger.create({
         trigger: panel,
-        start: "bottom bottom",
+        start: 'bottom bottom',
         onEnterBack: () => goToSection(i),
-      });
-    });
+      })
+    })
 
     const config = {
       root: null,
-      rootMargin: "10px",
+      rootMargin: '10px',
       threshold: 0.9,
-    };
+    }
 
     // Add observer old way couldn't make it work with array & react-use useIntersection
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((item) => {
         if (item.intersectionRatio > 0.9) {
-          item.target.classList.add("fadeIn");
-          fadeIn(".fadeIn");
+          item.target.classList.add('fadeIn')
+          fadeIn('.fadeIn')
         } else {
-          item.target.classList.remove("fadeIn");
+          item.target.classList.remove('fadeIn')
         }
-      });
-    }, config);
+      })
+    }, config)
 
     // For texts animation
     revealText.current.forEach((text) => {
-      observer.observe(text);
-    });
-  }, [loading]);
+      observer.observe(text)
+    })
+  }, [loading])
 
   return (
     <>
       <motion.section exit={{ opacity: 0 }}>
         {posts.map((post, i) => {
-          const { id, title, content, acf } = post;
+          const { id, title, content, acf } = post
           return (
             <section
               id={`section${i + 1} ${title.rendered}`}
@@ -102,46 +103,43 @@ export const Post = () => {
               className={`panel main-section section section${i + 1}`}
               style={{
                 backgroundImage: `url(${acf.background.url})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
               }}
               key={id}
             >
-              <div className="content-container">
-                <div className="text-container">
+              <div className='content-container'>
+                <div className='text-container'>
                   <header ref={addToRefTexts}>
                     <h2>{title.rendered}</h2>
                   </header>
                   <article ref={addToRefTexts}>
-                    {acf.placeholder_google_map && (
-                      <div className="google-maps">
-                        <img
-                          src={acf.placeholder_google_map.url}
-                          alt={acf.placeholder_google_map.title}
-                        />
-                      </div>
-                    )}
                     <div
-                      className="text-container-paragraph"
+                      className='text-container-paragraph'
                       dangerouslySetInnerHTML={{ __html: content.rendered }}
                     />
                   </article>
                   {!acf.cta_ ? (
-                    ""
+                    ''
                   ) : (
-                    <div ref={addToRefTexts} className="cta-btn">
+                    <div ref={addToRefTexts} className='cta-btn'>
                       {acf.cta_}
                     </div>
                   )}
                 </div>
+                {acf.maps && (
+                  <div className='google-maps'>
+                    <GoogleMaps lat={acf.maps.lat} lng={acf.maps.lng} />
+                  </div>
+                )}
               </div>
               <AngleDown />
             </section>
-          );
+          )
         })}
         <AsideNav posts={posts} loading={loading} />
       </motion.section>
     </>
-  );
-};
+  )
+}

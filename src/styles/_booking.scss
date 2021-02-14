@@ -7,11 +7,7 @@
   left: 0;
   bottom: 0;
   color: white;
-  background: linear-gradient(
-    90deg,
-    rgb(17, 17, 17) 18%,
-    rgba(0, 0, 0, 1) 100%
-  ) !important;
+  background: var(--def-background);
 
   .content-container {
     background: rgba(000, 000, 000, 0.3);
