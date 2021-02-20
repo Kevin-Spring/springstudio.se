@@ -1,28 +1,28 @@
 import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { AngleDown } from './AngleDown'
-import GoogleMaps from './GoogleMaps'
+import { Link } from 'react-router-dom'
 
-export const MainPageContent = ({ id, title, content, acf }) => {
+export const StudioPageContent = ({ id, title, content, acf }) => {
   const revealText = useRef([])
   revealText.current = []
-
-  const addToRefTexts = (el) => {
-    if (el && !revealText.current.includes(el)) {
-      revealText.current.push(el)
-    }
-  }
 
   const fadeIn = (element) => {
     gsap.to(element, {
       opacity: 1,
       y: -30,
-      duration: 1.8,
+      duration: 1.3,
       ease: 'power4.out',
       stagger: {
-        amount: 0.3,
+        amount: 0.2,
       },
     })
+  }
+
+  const addToRefTexts = (el) => {
+    if (el && !revealText.current.includes(el)) {
+      revealText.current.push(el)
+    }
   }
 
   useEffect(() => {
@@ -49,34 +49,27 @@ export const MainPageContent = ({ id, title, content, acf }) => {
       observer.observe(text)
     })
   }, [])
+
   return (
     <>
       <div className='content-container'>
         <div className='text-container'>
-          <div className='text-container-inner'>
-            <header ref={addToRefTexts}>
-              <h2>{title.rendered}</h2>
-            </header>
-            <article ref={addToRefTexts}>
-              <div
-                className='text-container-paragraph'
-                dangerouslySetInnerHTML={{ __html: content.rendered }}
-              />
-            </article>
-            {!acf.cta ? (
-              ''
-            ) : (
-              <div ref={addToRefTexts} className='cta-btn'>
-                {acf.cta}
-              </div>
-            )}
+          <header ref={addToRefTexts}>
+            <h3>{title.rendered}</h3>
+          </header>
+          <article ref={addToRefTexts}>
+            <div
+              className='studio-info'
+              dangerouslySetInnerHTML={{ __html: content.rendered }}
+            />
+          </article>
+          <div ref={addToRefTexts} className='btn-container'>
+            <div className='studio-btn'>{acf.button}</div>
+            <Link to='/three'>
+              <div className='studio-btn'>{acf.button_3d} (demo)</div>
+            </Link>
           </div>
         </div>
-        {acf.maps && (
-          <div className='google-maps'>
-            <GoogleMaps lat={acf.maps.lat} lng={acf.maps.lng} />
-          </div>
-        )}
       </div>
       <AngleDown />
     </>
