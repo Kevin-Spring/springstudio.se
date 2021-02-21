@@ -53,6 +53,21 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
   return (
     <>
       <div className='content-container'>
+        <picture>
+          <source
+            srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
+          />
+          <source
+            srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
+          />
+          <source
+            srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
+          />
+          <source
+            srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
+          />
+          <img src={acf.background.sizes.large} alt='background' />
+        </picture>
         <div className='text-container'>
           <header ref={addToRefTexts}>
             <h3>{title.rendered}</h3>

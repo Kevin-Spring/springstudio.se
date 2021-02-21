@@ -53,7 +53,7 @@ export const MainPageChapter = () => {
       <motion.section exit={{ opacity: 0 }}>
         {posts.map((post, i) => {
           const { id, title, content, acf } = post
-          console.log(acf.background.sizes)
+          console.log(acf.background)
           return (
             <section
               id={`section${i + 1} ${title.rendered}`}

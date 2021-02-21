@@ -44,17 +44,23 @@ export const Contact = () => {
         {posts.map((post) => {
           const { id, title, content, acf } = post
           return (
-            <section
-              className={'book-studio-section'}
-              style={{
-                backgroundImage: `url(${acf.background.url})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-              }}
-              key={id}
-            >
+            <section className={'book-studio-section'} key={id}>
               <motion.div className='content-container'>
+                <picture>
+                  <source
+                    srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
+                  />
+                  <source
+                    srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
+                  />
+                  <source
+                    srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
+                  />
+                  <source
+                    srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
+                  />
+                  <img src={acf.background.sizes.large} alt='background' />
+                </picture>
                 <motion.div
                   initial='initial'
                   animate='animate'

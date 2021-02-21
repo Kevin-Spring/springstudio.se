@@ -63,12 +63,6 @@ export const Studio = () => {
                 className={`main-section section section${i + 1} studio${
                   i + 1
                 }`}
-                style={{
-                  backgroundImage: `url(${acf.background.url})`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                }}
                 key={id}
               >
                 <StudioPageContent
