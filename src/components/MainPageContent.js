@@ -52,6 +52,11 @@ export const MainPageContent = ({ id, title, content, acf }) => {
   return (
     <>
       <div className='content-container'>
+        <picture>
+          <source srcSet={`${acf.background.sizes.medium_large} 786w`} />
+          <source srcSet={`${acf.background.sizes.large} 1024w`} />
+          <img src={acf.background.url} alt='background' />
+        </picture>
         <div className='text-container'>
           <div className='text-container-inner'>
             <header ref={addToRefTexts}>

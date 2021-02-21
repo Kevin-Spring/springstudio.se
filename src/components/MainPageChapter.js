@@ -53,17 +53,12 @@ export const MainPageChapter = () => {
       <motion.section exit={{ opacity: 0 }}>
         {posts.map((post, i) => {
           const { id, title, content, acf } = post
+          console.log(acf.background.sizes)
           return (
             <section
               id={`section${i + 1} ${title.rendered}`}
               ref={addToRefs}
               className={`panel main-section section section${i + 1}`}
-              style={{
-                backgroundImage: `url(${acf.background.url})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-              }}
               key={id}
             >
               <MainPageContent
