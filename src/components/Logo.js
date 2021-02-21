@@ -1,14 +1,14 @@
-import React, { useRef, useEffect } from "react";
-import { useFetch } from "./useFetch";
-import { Power3, TweenLite } from "gsap";
-import "../styles/_logo.scss";
+import React, { useRef, useEffect } from 'react'
+import { useFetch } from './useFetch'
+import { Power3, TweenLite } from 'gsap'
+import '../styles/_logo.scss'
+import { endpoints } from '../endpoints/endpoints'
 
-const url =
-  "http://localhost:8080/developement/wp_headless_react-test/wp-json/wp/v2/media/21";
+const url = endpoints[5].url
 
 export const Logo = () => {
-  const { loading, posts } = useFetch(url);
-  const logo = useRef(null);
+  const { loading, posts } = useFetch(url)
+  const logo = useRef(null)
 
   useEffect(() => {
     TweenLite.to(logo.current, 0.8, {
@@ -16,24 +16,24 @@ export const Logo = () => {
       x: 10,
       delay: 1.5,
       ease: Power3.easeOut,
-    });
-  }, [loading]);
+    })
+  }, [loading])
 
   return (
     <>
-      <div className="logo">
+      <div className='logo'>
         {loading ? (
-          ""
+          ''
         ) : (
           <img
             ref={logo}
             src={posts.guid.rendered}
-            alt="logo"
+            alt='logo'
             style={{ opacity: 0 }}
           />
         )}
         {/* <img src={posts.guid.rendered} alt="logo" /> */}
       </div>
     </>
-  );
-};
+  )
+}
