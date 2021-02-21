@@ -1,28 +1,28 @@
-import React, { useRef, useEffect } from "react";
-import { gsap, Power3, TweenLite } from "gsap";
-import { Dots } from "./Dots";
+import React, { useRef, useEffect } from 'react'
+import { gsap, Power3, TweenLite } from 'gsap'
+import { Dots } from './Dots'
 
-export const AsideNav = ({ posts, loading }) => {
-  const refDots = useRef([]);
-  refDots.current = [];
+export const AsideNav = ({ posts, loading, sections }) => {
+  const refDots = useRef([])
+  refDots.current = []
 
   const addToRefDots = (el) => {
     if (el && !refDots.current.includes(el)) {
-      refDots.current.push(el);
+      refDots.current.push(el)
     }
-  };
+  }
 
   useEffect(() => {
     //For Dots scroll
     refDots.current.forEach((dot, index) => {
-      dot.addEventListener("click", (e) => {
-        e.preventDefault();
+      dot.addEventListener('click', (e) => {
+        e.preventDefault()
         gsap.to(window, {
           duration: 0.8,
-          scrollTo: { y: ".section" + (index + 1), autoKill: false },
-        });
-      });
-    });
+          scrollTo: { y: '.section' + (index + 1), autoKill: false },
+        })
+      })
+    })
 
     //For dot fade-in animation
     TweenLite.staggerFrom(
@@ -35,12 +35,12 @@ export const AsideNav = ({ posts, loading }) => {
         ease: Power3.easeOut,
       },
       0.2
-    );
-  }, [loading]);
+    )
+  }, [loading])
 
   return (
     <>
-      <aside className="dots-container">
+      <aside className='dots-container'>
         <nav>
           <ul>
             {posts.map((post, i) => {
@@ -51,14 +51,15 @@ export const AsideNav = ({ posts, loading }) => {
                       key={post.id}
                       id={post.id}
                       title={post.title.rendered}
+                      sections={sections}
                     />
                   </a>
                 </li>
-              );
+              )
             })}
           </ul>
         </nav>
       </aside>
     </>
-  );
-};
+  )
+}
