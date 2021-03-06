@@ -36,7 +36,7 @@ const motionParagraph = {
   },
 }
 
-export const Contact = () => {
+export const Booking = () => {
   const { posts } = useFetch(url)
   return (
     <>

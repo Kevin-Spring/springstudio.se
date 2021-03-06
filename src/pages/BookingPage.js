@@ -1,17 +1,17 @@
 import React from 'react'
-import { Contact } from '../components/Contact'
+import { Booking } from '../components/Booking'
 import { motion } from 'framer-motion'
 import { PageTransition } from '../animations/PageTransition'
-import '../styles/_contactPage.scss'
+import '../styles/_bookingPage.scss'
 
-export const ContactPage = () => {
+export const BookingPage = () => {
   return (
     <>
       <main className='booking-page'>
         <main>
           <motion.section exit={{ opacity: 0 }}>
             <PageTransition />
-            <Contact />
+            <Booking />
           </motion.section>
         </main>
       </main>
