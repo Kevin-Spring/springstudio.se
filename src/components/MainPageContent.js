@@ -53,9 +53,19 @@ export const MainPageContent = ({ id, title, content, acf }) => {
     <>
       <div className='content-container'>
         <picture>
-          <source srcSet={`${acf.background.sizes.medium_large} 786w`} />
-          <source srcSet={`${acf.background.sizes.large} 1024w`} />
-          <img src={acf.background.url} alt='background' />
+          <source
+            srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
+          />
+          <source
+            srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
+          />
+          <source
+            srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
+          />
+          <source
+            srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
+          />
+          <img src={acf.background.sizes.large} alt='background' />
         </picture>
         <div className='text-container'>
           <div className='text-container-inner'>

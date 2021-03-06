@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +8,7 @@
 :root {
   /* Colors */
   --faded-black: #101010;
+  --grey: #c7c7c7;
   --black: #000;
   --white: #fff;
   --def-background: linear-gradient(
@@ -27,9 +28,9 @@
   --medium-spacing: 0.08rem;
 
   /* Font families */
-  --main-font: "Roboto", sans-serif;
-  --alt-font: "Montserrat", sans-serif;
-  --heading-font: "Raleway", sans-serif;
+  --main-font: 'Roboto', sans-serif;
+  --alt-font: 'Montserrat', sans-serif;
+  --heading-font: 'Raleway', sans-serif;
 }
 
 body {

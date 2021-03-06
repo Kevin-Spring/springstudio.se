@@ -5,7 +5,7 @@ export const useNavbar = (posts, loading, location) => {
   const [navbarItems, setNavbarItems] = useState({})
   const [navbarPaths, setNavbarPaths] = useState({})
   const [studio, setStudio] = useState('')
-  const [contact, setContact] = useState('')
+  const [bookStudio, setbookStudio] = useState('')
   const [home, setHome] = useState('')
 
   const storedMenuItems = []
@@ -18,10 +18,12 @@ export const useNavbar = (posts, loading, location) => {
 
   const findMenuItem = () => {
     let studios = storedMenuItems.find((studios) => studios === 'Studios')
-    let contact = storedMenuItems.find((contact) => contact === 'Contact')
+    let bookStudio = storedMenuItems.find(
+      (bookStudio) => bookStudio === 'Booking'
+    )
     let home = storedMenuItems.find((home) => home === 'Home')
     setStudio(studios)
-    setContact(contact)
+    setbookStudio(bookStudio)
     setHome(home)
   }
 
@@ -43,7 +45,7 @@ export const useNavbar = (posts, loading, location) => {
         leftArrow: '',
         rightArrow: '/',
       })
-    } else if (location.pathname === '/contact') {
+    } else if (location.pathname === '/booking') {
       if (home) {
         setNavbarItems({
           leftItem: home,
@@ -61,21 +63,21 @@ export const useNavbar = (posts, loading, location) => {
         rightArrow: '',
       })
     } else if (location.pathname === '/') {
-      if (studio && contact) {
+      if (studio && bookStudio) {
         setNavbarItems({
           leftItem: studio,
-          rightItem: contact,
+          rightItem: bookStudio,
         })
       } else {
         setNavbarItems({
           leftItem: 'Studios',
-          rightItem: 'Contact',
+          rightItem: 'Booking',
         })
       }
 
       setNavbarPaths({
         leftArrow: '/studios',
-        rightArrow: '/contact',
+        rightArrow: '/booking',
       })
     }
   }
@@ -84,7 +86,7 @@ export const useNavbar = (posts, loading, location) => {
     renderNavbar()
     mapMenuItems(menuItems)
     findMenuItem()
-  }, [location, menuItems, studio, contact, home])
+  }, [location, menuItems, studio, bookStudio, home])
 
   return { navbarItems, navbarPaths }
 }

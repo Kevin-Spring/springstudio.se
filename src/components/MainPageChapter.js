@@ -53,10 +53,9 @@ export const MainPageChapter = () => {
       <motion.section exit={{ opacity: 0 }}>
         {posts.map((post, i) => {
           const { id, title, content, acf } = post
-          console.log(acf.background.sizes)
           return (
             <section
-              id={`section${i + 1} ${title.rendered}`}
+              id={`${post.id}`}
               ref={addToRefs}
               className={`panel main-section section section${i + 1}`}
               key={id}
@@ -70,7 +69,11 @@ export const MainPageChapter = () => {
             </section>
           )
         })}
-        <AsideNav posts={posts} loading={loading} />
+        <AsideNav
+          posts={posts}
+          loading={loading}
+          sections={revealRefs.current}
+        />
       </motion.section>
     </>
   )

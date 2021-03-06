@@ -51,36 +51,29 @@ export const Studio = () => {
   return (
     <>
       <motion.section exit={{ opacity: 0 }}>
-        {posts
-          .slice(0)
-          .reverse()
-          .map((post, i) => {
-            const { id, title, content, acf } = post
-            return (
-              <section
-                id={`section${i + 1} ${title.rendered}`}
-                ref={addToRefs}
-                className={`main-section section section${i + 1} studio${
-                  i + 1
-                }`}
-                style={{
-                  backgroundImage: `url(${acf.background.url})`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                }}
-                key={id}
-              >
-                <StudioPageContent
-                  id={id}
-                  title={title}
-                  content={content}
-                  acf={acf}
-                />
-              </section>
-            )
-          })}
-        <AsideNav posts={posts} loading={loading} />
+        {posts.map((post, i) => {
+          const { id, title, content, acf } = post
+          return (
+            <section
+              id={`${post.id}`}
+              ref={addToRefs}
+              className={`main-section section section${i + 1} studio${i + 1}`}
+              key={id}
+            >
+              <StudioPageContent
+                id={id}
+                title={title}
+                content={content}
+                acf={acf}
+              />
+            </section>
+          )
+        })}
+        <AsideNav
+          posts={posts}
+          loading={loading}
+          sections={revealRefs.current}
+        />
       </motion.section>
     </>
   )

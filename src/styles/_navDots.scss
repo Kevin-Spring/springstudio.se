@@ -33,13 +33,19 @@
         text-transform: uppercase;
       }
 
-      & span:hover {
+      &:hover span {
         opacity: 1;
       }
 
-      .dot {
+      .dot-container {
         display: flex;
         align-items: center;
+
+        .dot-active {
+          transform: scale(1.2);
+          transition: all 0.2s ease-in-out;
+          color: var(--grey);
+        }
       }
     }
   }
