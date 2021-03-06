@@ -37,15 +37,27 @@ const motionParagraph = {
   },
 }
 
+const motionForm = {
+  initial: { y: 20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+}
+
 export const Booking = () => {
   const { posts } = useFetch(url)
   return (
     <>
-      <motion.section exit={{ opacity: 0 }}>
+      <motion.div exit={{ opacity: 0 }}>
         {posts.map((post) => {
           const { id, title, content, acf } = post
           return (
-            <section className={'book-studio-section'} key={id}>
+            <article className={'book-studio-section'} key={id}>
               <motion.div className='content-container'>
                 {acf.background && (
                   <picture>
@@ -75,13 +87,13 @@ export const Booking = () => {
                     variants={motionParagraph}
                     dangerouslySetInnerHTML={{ __html: content.rendered }}
                   />
-                  <BookingForm motionParagraph={motionParagraph} />
+                  <BookingForm motionForm={motionForm} />
                 </motion.div>
               </motion.div>
-            </section>
+            </article>
           )
         })}
-      </motion.section>
+      </motion.div>
     </>
   )
 }
