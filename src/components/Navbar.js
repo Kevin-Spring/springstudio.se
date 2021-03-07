@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { NavLink, useLocation, useHistory } from 'react-router-dom'
 import { IoTriangleOutline } from 'react-icons/io5'
 import { Logo } from './Logo'
