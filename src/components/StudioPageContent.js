@@ -79,7 +79,9 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
             />
           </article>
           <div ref={addToRefTexts} className='btn-container'>
-            <div className='studio-btn'>{acf.button}</div>
+            <Link to='/studio-3'>
+              <div className='studio-btn'>{acf.button}</div>
+            </Link>
             <Link to='/three'>
               <div className='studio-btn'>{acf.button_3d} (demo)</div>
             </Link>

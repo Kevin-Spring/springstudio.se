@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { AngleDown } from './AngleDown'
 import GoogleMaps from './GoogleMaps'
+import { Link } from 'react-router-dom'
 
 export const MainPageContent = ({ id, title, content, acf }) => {
   const revealText = useRef([])
@@ -81,9 +82,11 @@ export const MainPageContent = ({ id, title, content, acf }) => {
             {!acf.cta ? (
               ''
             ) : (
-              <div ref={addToRefTexts} className='cta-btn'>
-                {acf.cta}
-              </div>
+              <Link to={acf.cta.link}>
+                <div ref={addToRefTexts} className='cta-btn'>
+                  {acf.cta.title}
+                </div>
+              </Link>
             )}
           </div>
         </div>

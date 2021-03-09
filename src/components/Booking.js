@@ -53,12 +53,12 @@ export const Booking = () => {
   const { posts } = useFetch(url)
   return (
     <>
-      <motion.div exit={{ opacity: 0 }}>
+      <div>
         {posts.map((post) => {
           const { id, title, content, acf } = post
           return (
             <article className={'book-studio-section'} key={id}>
-              <motion.div className='content-container'>
+              <div className='content-container'>
                 {acf.background && (
                   <picture>
                     <source
@@ -89,11 +89,11 @@ export const Booking = () => {
                   />
                   <BookingForm motionForm={motionForm} />
                 </motion.div>
-              </motion.div>
+              </div>
             </article>
           )
         })}
-      </motion.div>
+      </div>
     </>
   )
 }

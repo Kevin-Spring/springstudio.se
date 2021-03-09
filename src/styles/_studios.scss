@@ -48,15 +48,16 @@
 
         .btn-container {
           opacity: 0;
-          position: absolute;
-          bottom: 0;
+          position: relative;
+          padding-top: calc(50px + (70 - 50) var(--calc-size));
+          max-width: calc(200px + (230 - 200) var(--calc-size));
 
           .studio-btn {
             position: relative;
             border: 2px solid var(--faded-black);
             font-size: var(--fs-small);
             padding: 10px;
-            max-width: 20vw;
+            max-width: 100%;
             cursor: pointer;
             transition: background 0.2s ease-in-out;
             display: flex;
@@ -69,6 +70,7 @@
               0 100px 80px rgb(0 0 0 / 12%);
             letter-spacing: var(--medium-spacing);
             font-family: var(--main-font);
+            background: rgba(255, 255, 255, 0.3);
           }
 
           .studio-btn:hover {
@@ -83,5 +85,12 @@
     .angle-down {
       transform: rotate(0deg);
     }
+  }
+
+  .dot-active {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8 !important;
+    color: var(--white);
   }
 }

@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
-import { motion } from 'framer-motion'
 import { useFetch } from './useFetch'
 import { AsideNav } from './AsideNav'
 import { endpoints } from '../endpoints/endpoints'
@@ -50,11 +49,12 @@ export const Studio = () => {
 
   return (
     <>
-      <motion.section exit={{ opacity: 0 }}>
+      <section>
         {posts.map((post, i) => {
           const { id, title, content, acf } = post
           return (
             <section
+              exit={{ opacity: 0 }}
               id={`${post.id}`}
               ref={addToRefs}
               className={`main-section section section${i + 1} studio${i + 1}`}
@@ -74,7 +74,7 @@ export const Studio = () => {
           loading={loading}
           sections={revealRefs.current}
         />
-      </motion.section>
+      </section>
     </>
   )
 }
