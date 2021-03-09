@@ -4,7 +4,6 @@ import { BookingPage } from '../pages/BookingPage'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { Studios3D } from '../pages/Studios3D'
-import { Studio3 } from '../pages/Studio3'
 
 const transtition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 

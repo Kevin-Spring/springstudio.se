@@ -8,12 +8,10 @@ export const BookingPage = ({ transition }) => {
   return (
     <>
       <main className='booking-page'>
-        <main>
-          <motion.section exit={{ opacity: 0 }} transition={transition}>
-            <PageTransition />
-            <Booking />
-          </motion.section>
-        </main>
+        <motion.section exit={{ opacity: 0 }} transition={transition}>
+          <PageTransition />
+          <Booking />
+        </motion.section>
       </main>
     </>
   )

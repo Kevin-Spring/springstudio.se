@@ -1,23 +1,9 @@
 .book-studio-section {
-  width: 100vw;
-  position: relative;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   color: white;
-  background: var(--def-background);
 
   .content-container {
+    background: var(--def-background);
     min-height: 100vh;
-    background: rgba(000, 000, 000, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
 
     picture img {
       position: absolute;
