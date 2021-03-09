@@ -39,12 +39,6 @@ export const Header = () => {
             component={Studios3D}
             transtition={transtition}
           />
-          <Route
-            exact
-            path='/studio-3'
-            component={Studio3}
-            transtition={transtition}
-          />
         </Switch>
       </AnimatePresence>
     </>
