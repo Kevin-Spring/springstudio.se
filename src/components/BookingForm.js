@@ -3,7 +3,6 @@ import axios from 'axios'
 import { motion } from 'framer-motion'
 import '../styles/_bookingForm.scss'
 import { endpoints } from '../endpoints/endpoints'
-import { Studios3D } from '../pages/Studios3D'
 
 const url = endpoints[6].url
 

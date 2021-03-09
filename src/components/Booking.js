@@ -25,7 +25,7 @@ const motionTitle = {
   },
 }
 
-const motionParagraph = {
+/* const motionParagraph = {
   initial: { y: -20, opacity: 0 },
   animate: {
     y: 0,
@@ -35,7 +35,7 @@ const motionParagraph = {
       ease: [0.6, -0.05, 0.01, 0.99],
     },
   },
-}
+} */
 
 const motionForm = {
   initial: { y: 20, opacity: 0 },
@@ -54,7 +54,7 @@ export const Booking = () => {
   return (
     <>
       {posts.map((post) => {
-        const { id, title, content, acf } = post
+        const { id, title, /* content */ acf } = post
         return (
           <article className={'book-studio-section'} key={id}>
             <div className='content-container'>
