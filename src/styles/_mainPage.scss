@@ -10,7 +10,7 @@
   bottom: 0;
   color: white;
 
-  .content-container {
+  .main-page-content-container {
     background: rgba(000, 000, 000, 0.3);
     display: flex;
     align-items: center;
@@ -31,14 +31,14 @@
       width: 100%;
     }
 
-    .text-container {
+    .main-page-text-container {
       position: relative;
       top: 30px;
       width: 60vw;
       display: flex;
       justify-content: center;
 
-      .text-container-inner {
+      .main-page-text-container-inner {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -46,7 +46,7 @@
 
         & header,
         & header + article,
-        .cta-btn {
+        .main-page-cta-btn {
           opacity: 0;
         }
 
@@ -57,11 +57,11 @@
         article {
           padding-bottom: 50px;
 
-          .text-container-paragraph {
+          .main-page-text-container-paragraph {
             font-size: var(--article);
           }
         }
-        .cta-btn {
+        .main-page-cta-btn {
           border: 2px solid #fff;
           font-size: var(--article);
           padding: 10px 50px;
@@ -81,9 +81,9 @@
   }
 }
 .main-page {
-  .section:last-of-type {
-    .content-container {
-      .text-container {
+  .main-page-section:last-of-type {
+    .main-page-content-container {
+      .main-page-text-container {
         header {
           padding-bottom: 20px;
         }
@@ -98,12 +98,12 @@
             height: auto;
           }
 
-          .text-container-paragraph p {
+          .main-page-text-container-paragraph p {
             letter-spacing: var(--medium-spacing);
             padding-bottom: 8px;
           }
 
-          .cta-btn {
+          .main-page-cta-btn {
             text-align: center;
             letter-spacing: var(--medium-spacing);
           }
@@ -116,9 +116,9 @@
   }
 
   @media only screen and (max-width: 980px) {
-    .section:last-of-type {
-      .content-container {
-        .text-container {
+    .main-page-section:last-of-type {
+      .main-page-content-container {
+        .main-page-text-container {
           article {
             flex-direction: column;
           }

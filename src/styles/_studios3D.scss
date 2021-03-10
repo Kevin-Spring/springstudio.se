@@ -1,11 +1,11 @@
-.three-container {
+.three__container {
   background: #696a6d;
   position: fixed;
   height: 100%;
   width: 100%;
   z-index: 2;
 
-  .header {
+  .three__container-header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -15,7 +15,7 @@
     letter-spacing: 0.04rem;
   }
 
-  .link {
+  .three__container-link {
     color: white;
     font-size: calc(14px + (20 - 14) * (100vw - 320px) / 1120);
     position: absolute;

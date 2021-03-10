@@ -57,7 +57,9 @@ export const Studio = () => {
               exit={{ opacity: 0 }}
               id={`${post.id}`}
               ref={addToRefs}
-              className={`main-section section section${i + 1} studio${i + 1}`}
+              className={`main-section studio-page-section section${
+                i + 1
+              } studio${i + 1}`}
               key={id}
             >
               <StudioPageContent

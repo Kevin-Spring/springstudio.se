@@ -52,7 +52,7 @@ export const MainPageContent = ({ id, title, content, acf }) => {
   }, [])
   return (
     <>
-      <div className='content-container'>
+      <div className='main-page-content-container'>
         <picture>
           <source
             srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
@@ -68,14 +68,14 @@ export const MainPageContent = ({ id, title, content, acf }) => {
           />
           <img src={acf.background.sizes.large} alt='background' />
         </picture>
-        <div className='text-container'>
-          <div className='text-container-inner'>
+        <div className='main-page-text-container'>
+          <div className='main-page-text-container-inner'>
             <header ref={addToRefTexts}>
               <h2>{title.rendered}</h2>
             </header>
             <article ref={addToRefTexts}>
               <div
-                className='text-container-paragraph'
+                className='main-page-text-container-paragraph'
                 dangerouslySetInnerHTML={{ __html: content.rendered }}
               />
             </article>
@@ -83,7 +83,7 @@ export const MainPageContent = ({ id, title, content, acf }) => {
               ''
             ) : (
               <Link to={acf.cta.link}>
-                <div ref={addToRefTexts} className='cta-btn'>
+                <div ref={addToRefTexts} className='main-page-cta-btn'>
                   {acf.cta.title}
                 </div>
               </Link>
@@ -91,7 +91,7 @@ export const MainPageContent = ({ id, title, content, acf }) => {
           </div>
         </div>
         {acf.maps && (
-          <div className='google-maps'>
+          <div className='main-page-google-maps'>
             <GoogleMaps lat={acf.maps.lat} lng={acf.maps.lng} />
           </div>
         )}

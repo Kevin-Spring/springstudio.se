@@ -56,7 +56,9 @@ export const MainPageChapter = () => {
             <section
               id={`${post.id}`}
               ref={addToRefs}
-              className={`panel main-section section section${i + 1}`}
+              className={`panel main-section main-page-section section section${
+                i + 1
+              }`}
               key={id}
             >
               <MainPageContent

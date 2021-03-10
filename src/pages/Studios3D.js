@@ -14,9 +14,9 @@ export const Studios3D = ({ transition }) => {
     <>
       <motion.section exit={{ opacity: 0 }} transition={transition}>
         <PageTransition />
-        <section className='three-container'>
-          <h2 className='header'>Work in progress</h2>
-          <Link className='link' to='/studios'>
+        <section className='three__container'>
+          <h2 className='three__container-header'>Work in progress</h2>
+          <Link className='three__container-link' to='/studios'>
             Back to studios
           </Link>
           <Canvas
