@@ -24,6 +24,7 @@ export const BookingForm = ({ motionForm }) => {
     audioRecording: '',
     workType: '',
     catering: '',
+    acceptance: '',
     message: '',
   })
   const [validationMessage, setValidationMessage] = useState({
@@ -60,6 +61,7 @@ export const BookingForm = ({ motionForm }) => {
     formData.set('audio-recording', booking.audioRecording)
     formData.set('your-work-type', booking.workType)
     formData.set('catering', booking.catering)
+    formData.set('acceptance', booking.acceptance)
     formData.set('your-message', booking.message)
 
     axios
@@ -88,6 +90,7 @@ export const BookingForm = ({ motionForm }) => {
             audioRecording: '',
             workType: '',
             catering: '',
+            acceptance: '',
             message: '',
           })
           setValidationMessage({
@@ -570,6 +573,29 @@ export const BookingForm = ({ motionForm }) => {
                 </div>
               </motion.div>
             )}
+
+            <div className='form__field-select acceptance'>
+              <input
+                className='form__field'
+                type='checkbox'
+                id='acceptance'
+                name='acceptance'
+                value='yes'
+                onChange={onChangeHandler}
+                placeholder='acceptance'
+                autoComplete='new-password'
+                checked={booking.acceptance === 'yes'}
+              />
+              <label
+                className='form__label-select acceptance'
+                htmlFor='workType'
+              >
+                If you submit a question via an enquiry form or contact form, we
+                need to process your data in order to respond. However, your
+                data will only be processed for this purpose, and will not be
+                used for anything else.
+              </label>
+            </div>
 
             <div className='form-inner'>
               <div className='form__group large field'>
