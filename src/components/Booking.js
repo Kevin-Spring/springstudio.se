@@ -9,12 +9,12 @@ const url = endpoints[2].url
 
 const motionContent = {
   animate: {
-    transition: { staggerChildren: 0.1, delayChildren: 1.2 },
+    transition: { staggerChildren: 0.1, delayChildren: 1.8 },
   },
 }
 
 const motionTitle = {
-  initial: { y: -20, opacity: 0 },
+  initial: { y: 20, opacity: 0 },
   animate: {
     y: 0,
     opacity: 1,
@@ -56,8 +56,8 @@ export const Booking = () => {
       {posts.map((post) => {
         const { id, title, /* content */ acf } = post
         return (
-          <article className={'book-studio-section'} key={id}>
-            <div className='content-container'>
+          <article className='book-studio-section' key={id}>
+            <div className='book-studio-content-container'>
               {acf.background && (
                 <picture>
                   <source
@@ -81,7 +81,12 @@ export const Booking = () => {
                 variants={motionContent}
                 className='form-container'
               >
-                <motion.h2 variants={motionTitle}>{title.rendered}</motion.h2>
+                <motion.h2
+                  variants={motionTitle}
+                  className='book-studio-section-header'
+                >
+                  {title.rendered}
+                </motion.h2>
                 <BookingForm motionForm={motionForm} />
               </motion.div>
             </div>

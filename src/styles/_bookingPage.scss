@@ -1,8 +1,14 @@
 .book-studio-section {
-  color: white;
+  color: var(--faded-black);
 
-  .content-container {
-    background: var(--def-background);
+  .book-studio-section-header {
+    font-size: var(--h3);
+    text-align: center;
+    padding-bottom: 100px;
+  }
+
+  .book-studio-content-container {
+    background: var(--off-white);
     min-height: 100vh;
 
     picture img {

@@ -121,7 +121,13 @@ export const BookingForm = ({ motionForm }) => {
           autoComplete='new-password'
         >
           <div className='form-inner'>
-            <div className='form__group field'>
+            <div
+              className={
+                booking.bookStudio === 'yes'
+                  ? 'done form__group field'
+                  : 'form__group field'
+              }
+            >
               <input
                 className='form__field'
                 type='text'
@@ -137,7 +143,13 @@ export const BookingForm = ({ motionForm }) => {
               </label>
             </div>
 
-            <div className='form__group field'>
+            <div
+              className={
+                booking.bookStudio === 'yes'
+                  ? 'done form__group field'
+                  : 'form__group field'
+              }
+            >
               <input
                 className='form__field'
                 type='email'
@@ -153,7 +165,13 @@ export const BookingForm = ({ motionForm }) => {
               </label>
             </div>
 
-            <div className='form__group field'>
+            <div
+              className={
+                booking.bookStudio === 'yes'
+                  ? 'done form__group field'
+                  : 'form__group field'
+              }
+            >
               <input
                 className='form__field'
                 type='tel'
@@ -171,34 +189,46 @@ export const BookingForm = ({ motionForm }) => {
 
             <div className='form__group field'>
               <h3 className='form__group__header'> Book Studio</h3>
-              <div className='form__field-select'>
+              <div
+                className={
+                  booking.studio
+                    ? 'done form__field-select'
+                    : 'form__field-select'
+                }
+              >
                 <input
                   className='form__field'
                   type='checkbox'
                   id='bookStudioYes'
                   name='bookStudio'
-                  value='Yes'
+                  value='yes'
                   onChange={onChangeHandler}
                   placeholder='Yes'
                   autoComplete='new-password'
-                  checked={booking.bookStudio === 'Yes'}
+                  checked={booking.bookStudio === 'yes'}
                 />
                 <label className='form__label-select' htmlFor='bookStudio'>
                   Yes
                 </label>
               </div>
 
-              <div className='form__field-select'>
+              <div
+                className={
+                  booking.studio
+                    ? 'done form__field-select'
+                    : 'form__field-select'
+                }
+              >
                 <input
                   className='form__field'
                   type='checkbox'
                   id='bookStudioNo'
                   name='bookStudio'
-                  value='No'
+                  value='no'
                   onChange={onChangeHandler}
                   placeholder='No'
                   autoComplete='new-password'
-                  checked={booking.bookStudio === 'No'}
+                  checked={booking.bookStudio === 'no'}
                 />
                 <label className='form__label-select' htmlFor='bookStudio'>
                   No
@@ -206,9 +236,15 @@ export const BookingForm = ({ motionForm }) => {
               </div>
             </div>
 
-            {booking.bookStudio === 'Yes' && (
+            {booking.bookStudio === 'yes' && (
               <motion.div variants={motionForm} className='form-inner'>
-                <div className='form__group field'>
+                <div
+                  className={
+                    booking.studio
+                      ? 'done form__group field'
+                      : 'form__group field'
+                  }
+                >
                   <input
                     className='form__field'
                     type='text'
@@ -224,7 +260,13 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
-                <div className='form__group field'>
+                <div
+                  className={
+                    booking.studio
+                      ? 'done form__group field'
+                      : 'form__group field'
+                  }
+                >
                   <input
                     className='form__field'
                     type='text'
@@ -240,7 +282,13 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
-                <div className='form__group field'>
+                <div
+                  className={
+                    booking.studio
+                      ? 'done form__group field'
+                      : 'form__group field'
+                  }
+                >
                   <input
                     className='form__field'
                     type='text'
@@ -258,7 +306,13 @@ export const BookingForm = ({ motionForm }) => {
 
                 <div className='form__group field'>
                   <h3 className='form__group__header'>Studio</h3>
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -274,8 +328,13 @@ export const BookingForm = ({ motionForm }) => {
                       studio 1
                     </label>
                   </div>
-
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -291,8 +350,13 @@ export const BookingForm = ({ motionForm }) => {
                       studio 2
                     </label>
                   </div>
-
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -312,9 +376,15 @@ export const BookingForm = ({ motionForm }) => {
               </motion.div>
             )}
 
-            {booking.studio && (
+            {booking.bookStudio === 'yes' && booking.studio ? (
               <motion.div variants={motionForm} className='form-inner'>
-                <div className='form__group field'>
+                <div
+                  className={
+                    booking.acceptance
+                      ? 'done form__group field'
+                      : 'form__group field'
+                  }
+                >
                   <input
                     className='form__field'
                     type='date'
@@ -330,7 +400,13 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
-                <div className='form__group field'>
+                <div
+                  className={
+                    booking.acceptance
+                      ? 'done form__group field'
+                      : 'form__group field'
+                  }
+                >
                   <input
                     className='form__field'
                     type='date'
@@ -346,7 +422,13 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
-                <div className='form__group field'>
+                <div
+                  className={
+                    booking.acceptance
+                      ? 'done form__group field'
+                      : 'form__group field'
+                  }
+                >
                   <h3 className='form__group__header'>Working Hours</h3>
                   <input
                     className='form__field'
@@ -363,7 +445,13 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
-                <div className='form__group field'>
+                <div
+                  className={
+                    booking.acceptance
+                      ? 'done form__group field'
+                      : 'form__group field'
+                  }
+                >
                   <input
                     className='form__field'
                     type='text'
@@ -379,16 +467,24 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
               </motion.div>
+            ) : (
+              ''
             )}
 
-            {booking.studio && (
+            {booking.bookStudio === 'yes' && booking.studio ? (
               <motion.div
                 variants={motionForm}
                 className='form-inner form-inner-selects'
               >
                 <div className='form__group field'>
                   <h3 className='form__group__header'>Audio Recording</h3>
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -408,7 +504,13 @@ export const BookingForm = ({ motionForm }) => {
                     </label>
                   </div>
 
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -431,7 +533,13 @@ export const BookingForm = ({ motionForm }) => {
 
                 <div className='form__group field'>
                   <h3 className='form__group__header'>Catering</h3>
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -448,7 +556,13 @@ export const BookingForm = ({ motionForm }) => {
                     </label>
                   </div>
 
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -471,7 +585,13 @@ export const BookingForm = ({ motionForm }) => {
 
                 <div className='form__group field'>
                   <h3 className='form__group__header'>Production Type</h3>
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -491,7 +611,13 @@ export const BookingForm = ({ motionForm }) => {
                     </label>
                   </div>
 
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -511,7 +637,13 @@ export const BookingForm = ({ motionForm }) => {
                     </label>
                   </div>
 
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -532,13 +664,21 @@ export const BookingForm = ({ motionForm }) => {
                   </div>
                 </div>
               </motion.div>
+            ) : (
+              ''
             )}
 
             {booking.productionType && booking.productionType !== 'music' && (
               <motion.div variants={motionForm} className='form-inner'>
                 <div className='form__group field'>
                   <h3 className='form__group__header'>Work Type</h3>
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -554,7 +694,13 @@ export const BookingForm = ({ motionForm }) => {
                       Commercial
                     </label>
                   </div>
-                  <div className='form__field-select'>
+                  <div
+                    className={
+                      booking.acceptance
+                        ? 'done form__field-select'
+                        : 'form__field-select'
+                    }
+                  >
                     <input
                       className='form__field'
                       type='checkbox'
@@ -574,31 +720,14 @@ export const BookingForm = ({ motionForm }) => {
               </motion.div>
             )}
 
-            <div className='form__field-select acceptance'>
-              <input
-                className='form__field'
-                type='checkbox'
-                id='acceptance'
-                name='acceptance'
-                value='yes'
-                onChange={onChangeHandler}
-                placeholder='acceptance'
-                autoComplete='new-password'
-                checked={booking.acceptance === 'yes'}
-              />
-              <label
-                className='form__label-select acceptance'
-                htmlFor='workType'
-              >
-                If you submit a question via an enquiry form or contact form, we
-                need to process your data in order to respond. However, your
-                data will only be processed for this purpose, and will not be
-                used for anything else.
-              </label>
-            </div>
-
             <div className='form-inner'>
-              <div className='form__group large field'>
+              <div
+                className={
+                  booking.acceptance
+                    ? 'done form__group field large'
+                    : 'form__group field large'
+                }
+              >
                 <textarea
                   className='form__field'
                   name='message'
@@ -613,6 +742,35 @@ export const BookingForm = ({ motionForm }) => {
                   Message
                 </label>
               </div>
+            </div>
+
+            <div
+              className={
+                booking.name && booking.email
+                  ? 'form__field-select acceptance ready'
+                  : 'form__field-select acceptance'
+              }
+            >
+              <input
+                className='form__field'
+                type='checkbox'
+                id='acceptance'
+                name='acceptance'
+                value='yes'
+                onChange={onChangeHandler}
+                placeholder='acceptance'
+                autoComplete='new-password'
+                checked={booking.acceptance === 'yes'}
+              />
+              <label
+                className='form__label-select acceptance-terms'
+                htmlFor='workType'
+              >
+                If you submit a question via an enquiry form or contact form, we
+                need to process your data in order to respond. However, your
+                data will only be processed for this purpose, and will not be
+                used for anything else.
+              </label>
             </div>
 
             <button type='submit' className='form-btn '>
