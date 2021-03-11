@@ -14,7 +14,6 @@
         position: absolute;
         top: 50vh;
         padding: 0 2%;
-        font-weight: 600;
       }
 
       .navbar-left-item {
@@ -37,9 +36,10 @@
     color: var(--off-white);
     letter-spacing: var(--medium-spacing);
     text-transform: uppercase;
-    font-family: var(--alt-font);
+    font-family: var(--main-font);
     transition: all 0.4s ease-in-out;
     font-size: calc(12px + (16 - 12) var(--calc-size));
+    letter-spacing: 1.4px;
 
     &:hover {
       color: rgba(255, 255, 255, 0.4);
