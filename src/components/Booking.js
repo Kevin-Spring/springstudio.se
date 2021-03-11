@@ -51,6 +51,7 @@ const motionForm = {
 
 export const Booking = () => {
   const { posts } = useFetch(url)
+
   return (
     <>
       {posts.map((post) => {

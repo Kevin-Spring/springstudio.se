@@ -2,6 +2,7 @@ import React from 'react'
 import { Booking } from '../components/Booking'
 import { motion } from 'framer-motion'
 import { PageTransition } from '../animations/PageTransition'
+
 import '../styles/_bookingPage.scss'
 
 export const BookingPage = ({ transition }) => {

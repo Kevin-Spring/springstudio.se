@@ -45,7 +45,7 @@ export const Studio = () => {
         onEnterBack: () => goToSection(i),
       })
     })
-  }, [loading])
+  }, [])
 
   return (
     <>

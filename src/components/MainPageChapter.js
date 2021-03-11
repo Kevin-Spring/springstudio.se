@@ -25,9 +25,9 @@ export const MainPageChapter = () => {
 
   const goToSection = (i, anim) => {
     gsap.to(window, {
-      //Sätt autKill till true för att dotnavigeringen ska fungera, och inte bara hoppa ett steg
-      //Scrollen blir dock extremt känslig för input.
-      scrollTo: { y: i * window.innerHeight, autoKill: false },
+      //Sätt autKill till false för att dscrollen inte ska kunna avbrytas
+      //Mouse pad scroll blir extremt känslig för input med autokill: true.
+      scrollTo: { y: i * window.innerHeight, autoKill: true },
       duration: 0.8,
     })
   }
@@ -49,33 +49,28 @@ export const MainPageChapter = () => {
 
   return (
     <>
-      <section>
-        {posts.map((post, i) => {
-          const { id, title, content, acf } = post
-          return (
-            <section
-              id={`${post.id}`}
-              ref={addToRefs}
-              className={`panel main-section main-page-section section section${
-                i + 1
-              }`}
-              key={id}
-            >
-              <MainPageContent
-                id={id}
-                title={title}
-                content={content}
-                acf={acf}
-              />
-            </section>
-          )
-        })}
-        <AsideNav
-          posts={posts}
-          loading={loading}
-          sections={revealRefs.current}
-        />
-      </section>
+      {posts.map((post, i) => {
+        const { id, title, content, acf } = post
+        return (
+          <section
+            id={`${post.id}`}
+            ref={addToRefs}
+            className={`panel main-section main-page-section section section${
+              i + 1
+            }`}
+            key={id}
+          >
+            <MainPageContent
+              id={id}
+              title={title}
+              content={content}
+              acf={acf}
+            />
+          </section>
+        )
+      })}
+
+      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} />
     </>
   )
 }

@@ -8,10 +8,10 @@ export const MainPage = ({ transition }) => {
   return (
     <>
       <main className='main-page'>
-        <motion.section exit={{ opacity: 0 }} transition={transition}>
+        <motion.div exit={{ opacity: 0 }} transition={transition}>
           <PageTransition />
           <MainPageChapter />
-        </motion.section>
+        </motion.div>
       </main>
     </>
   )
