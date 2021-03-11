@@ -1,14 +1,12 @@
-import { Header } from "./components/Header";
-import "./styles/main.scss";
-import { Navbar } from "./components/Navbar";
+import { Header } from './components/Header'
+import './styles/main.scss'
 
 function App() {
   return (
     <>
-      <Navbar />
       <Header />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

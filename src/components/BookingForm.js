@@ -187,11 +187,11 @@ export const BookingForm = ({ motionForm }) => {
               </label>
             </div>
 
+            <h3 className='form__group__header'> Book Studio</h3>
             <div className='form__group field'>
-              <h3 className='form__group__header'> Book Studio</h3>
               <div
                 className={
-                  booking.studio
+                  booking.bookStudio === 'yes'
                     ? 'done form__field-select'
                     : 'form__field-select'
                 }
@@ -214,7 +214,7 @@ export const BookingForm = ({ motionForm }) => {
 
               <div
                 className={
-                  booking.studio
+                  booking.bookStudio === 'yes'
                     ? 'done form__field-select'
                     : 'form__field-select'
                 }
@@ -304,8 +304,8 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
+                <h3 className='form__group__header'>Studio</h3>
                 <div className='form__group field'>
-                  <h3 className='form__group__header'>Studio</h3>
                   <div
                     className={
                       booking.acceptance
@@ -325,7 +325,7 @@ export const BookingForm = ({ motionForm }) => {
                       checked={booking.studio === 'studio 1'}
                     />
                     <label className='form__label-select' htmlFor='studio'>
-                      studio 1
+                      Studio 1
                     </label>
                   </div>
                   <div
@@ -347,7 +347,7 @@ export const BookingForm = ({ motionForm }) => {
                       checked={booking.studio === 'studio 2'}
                     />
                     <label className='form__label-select' htmlFor='studio'>
-                      studio 2
+                      Studio 2
                     </label>
                   </div>
                   <div
@@ -369,7 +369,7 @@ export const BookingForm = ({ motionForm }) => {
                       checked={booking.studio === 'studio 3'}
                     />
                     <label className='form__label-select' htmlFor='studio'>
-                      studio 3
+                      Studio 3
                     </label>
                   </div>
                 </div>
@@ -422,6 +422,7 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
+                <h3 className='form__group__header'>Working Hours</h3>
                 <div
                   className={
                     booking.acceptance
@@ -429,7 +430,6 @@ export const BookingForm = ({ motionForm }) => {
                       : 'form__group field'
                   }
                 >
-                  <h3 className='form__group__header'>Working Hours</h3>
                   <input
                     className='form__field'
                     type='text'
@@ -572,12 +572,9 @@ export const BookingForm = ({ motionForm }) => {
                       onChange={onChangeHandler}
                       placeholder='No'
                       autoComplete='new-password'
-                      checked={booking.audioRecording === 'No'}
+                      checked={booking.catering === 'No'}
                     />
-                    <label
-                      className='form__label-select'
-                      htmlFor='audioRecording'
-                    >
+                    <label className='form__label-select' htmlFor='catering'>
                       No
                     </label>
                   </div>
@@ -668,10 +665,12 @@ export const BookingForm = ({ motionForm }) => {
               ''
             )}
 
-            {booking.productionType && booking.productionType !== 'music' && (
+            {booking.productionType &&
+            booking.productionType !== 'music' &&
+            booking.bookStudio === 'yes' ? (
               <motion.div variants={motionForm} className='form-inner'>
+                <h3 className='form__group__header'>Work Type</h3>
                 <div className='form__group field'>
-                  <h3 className='form__group__header'>Work Type</h3>
                   <div
                     className={
                       booking.acceptance
@@ -718,6 +717,8 @@ export const BookingForm = ({ motionForm }) => {
                   </div>
                 </div>
               </motion.div>
+            ) : (
+              ''
             )}
 
             <div className='form-inner'>

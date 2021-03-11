@@ -5,6 +5,7 @@ import { Logo } from './Logo'
 import { useFetchNav } from './useFetchNav'
 import { useNavbar } from './useNavbar'
 import { Power3, TweenLite } from 'gsap'
+import { motion } from 'framer-motion'
 import '../styles/_navbar.scss'
 import { endpoints } from '../endpoints/endpoints'
 
@@ -55,7 +56,15 @@ export const Navbar = () => {
       <NavLink to='/'>
         <Logo />
       </NavLink>
-      <nav ref={navbar} className='primary-nav-container'>
+      <motion.nav
+        exit={{ opacity: 0 }}
+        ref={navbar}
+        className={
+          location.pathname === '/'
+            ? 'primary-nav-container light'
+            : 'primary-nav-container dark'
+        }
+      >
         <div className='primary-nav'>
           <ul>
             {navbarItems.leftItem && (
@@ -82,7 +91,7 @@ export const Navbar = () => {
             )}
           </ul>
         </div>
-      </nav>
+      </motion.nav>
     </>
   )
 }

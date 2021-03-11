@@ -31,6 +31,11 @@
       display: flex;
       flex-flow: row wrap;
 
+      .form__group__header {
+        text-align: center;
+        width: 100%;
+      }
+
       .error-message {
         color: red;
         padding-top: 4rem;
@@ -48,16 +53,23 @@
       .form__group {
         position: relative;
         display: flex;
-        flex: 0 0 100%;
-        max-width: 100%;
+        flex: 0 0 80%;
+        max-width: 80%;
         padding: 1rem;
         padding-bottom: 2rem;
         z-index: 2;
         transition: all 0.4s ease-in-out;
+        margin: 0 auto;
+        justify-content: space-around;
       }
 
       .form__field-select {
         transition: all 0.4s ease-in-out;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
       }
 
       .form__group.done .form__field,
@@ -104,14 +116,13 @@
           top: -0.8rem;
           font-size: var(--fs-small);
           padding: 0 0.3em;
-          color: var(--grey);
+          color: rgba(0, 0, 0, 0.5);
           opacity: 1 !important;
         }
         padding-bottom: 6px;
-        border-bottom: 2px solid var(--grey);
         font-weight: 700;
         border-width: 3px;
-        border-bottom: 2px solid var(--grey);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
         opacity: 1 !important;
       }
 
