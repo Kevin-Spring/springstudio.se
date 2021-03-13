@@ -4,7 +4,7 @@
   bottom: 0;
   color: white;
   padding: 20px;
-  z-index: 2;
+  z-index: 999;
   cursor: pointer;
 
   & ul {
@@ -44,9 +44,16 @@
         .dot-active {
           transform: scale(1.2);
           transition: all 0.2s ease-in-out;
-          color: var(--grey);
+          opacity: 0.3;
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .dots-container {
+    top: 2vh;
+    bottom: auto;
   }
 }

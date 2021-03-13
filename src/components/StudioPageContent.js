@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
-import { AngleDown } from './AngleDown'
 import { Link } from 'react-router-dom'
 
 export const StudioPageContent = ({ id, title, content, acf }) => {
@@ -52,7 +51,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
 
   return (
     <>
-      <div className='content-container'>
+      <div className='studio-page-content-container'>
         <picture>
           <source
             srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
@@ -68,7 +67,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
           />
           <img src={acf.background.sizes.large} alt='background' />
         </picture>
-        <div className='text-container'>
+        <div className='studio-page-text-container'>
           <header ref={addToRefTexts}>
             <h3>{title.rendered}</h3>
           </header>
@@ -79,14 +78,15 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
             />
           </article>
           <div ref={addToRefTexts} className='btn-container'>
-            <div className='studio-btn'>{acf.button}</div>
+            <Link to='/studio-3'>
+              <div className='studio-btn'>{acf.button}</div>
+            </Link>
             <Link to='/three'>
               <div className='studio-btn'>{acf.button_3d} (demo)</div>
             </Link>
           </div>
         </div>
       </div>
-      <AngleDown />
     </>
   )
 }

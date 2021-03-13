@@ -1,22 +1,22 @@
-import React from "react";
-import { SpinningMesh } from "../animations/SpinningMesh";
-import "../styles/_studios3D.scss";
-import { motion } from "framer-motion";
-import { Canvas } from "react-three-fiber";
-import { softShadows, OrbitControls } from "drei";
-import { PageTransition } from "../animations/PageTransition";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { SpinningMesh } from '../animations/SpinningMesh'
+import '../styles/_studios3D.scss'
+import { motion } from 'framer-motion'
+import { Canvas } from 'react-three-fiber'
+import { softShadows, OrbitControls } from 'drei'
+import { PageTransition } from '../animations/PageTransition'
+import { Link } from 'react-router-dom'
 
-softShadows();
+softShadows()
 
-export const Studios3D = () => {
+export const Studios3D = ({ transition }) => {
   return (
     <>
-      <motion.section exit={{ opacity: 0 }}>
+      <motion.section exit={{ opacity: 0 }} transition={transition}>
         <PageTransition />
-        <section className="three-container">
-          <h2 className="header">Work in progress</h2>
-          <Link className="link" to="/studios">
+        <section className='three__container'>
+          <h2 className='three__container-header'>Work in progress</h2>
+          <Link className='three__container-link' to='/studios'>
             Back to studios
           </Link>
           <Canvas
@@ -46,17 +46,17 @@ export const Studios3D = () => {
                 rotation={[-Math.PI / 2, 0, 0]}
                 position={[0, -3, 0]}
               >
-                <planeBufferGeometry attach="geometry" args={[100, 100]} />
-                <shadowMaterial attach="material" opacity={0.3} />
+                <planeBufferGeometry attach='geometry' args={[100, 100]} />
+                <shadowMaterial attach='material' opacity={0.3} />
               </mesh>
               <SpinningMesh
                 position={[0, 1, 0]}
                 args={[3, 2, 1]}
-                color="lightblue"
+                color='lightblue'
                 speed={2}
               />
-              <SpinningMesh position={[-2, 1, -5]} color="pink" speed={6} />
-              <SpinningMesh position={[5, 1, -2]} color="pink" speed={6} />
+              <SpinningMesh position={[-2, 1, -5]} color='pink' speed={6} />
+              <SpinningMesh position={[5, 1, -2]} color='pink' speed={6} />
             </group>
 
             <OrbitControls />
@@ -64,5 +64,5 @@ export const Studios3D = () => {
         </section>
       </motion.section>
     </>
-  );
-};
+  )
+}

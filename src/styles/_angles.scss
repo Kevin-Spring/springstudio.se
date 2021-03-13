@@ -1,6 +1,8 @@
-.angle {
-  color: white;
-  font-size: 20px;
+.angle-down-title {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
 }
 
 .angle-down {
@@ -11,6 +13,7 @@
   width: 100%;
   transform: rotate(180deg);
   margin-bottom: 10px;
+  z-index: 9999;
 }
 
 .angle-right {
@@ -21,4 +24,10 @@
 .angle-left {
   transform: rotate(-90deg);
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 475px) {
+  .angle-down {
+    bottom: 2vh;
+  }
 }

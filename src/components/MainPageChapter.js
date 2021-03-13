@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
-import { motion } from 'framer-motion'
 import { useFetch } from './useFetch'
 import { AsideNav } from './AsideNav'
 import { endpoints } from '../endpoints/endpoints'
+import { AngleDown } from './AngleDown'
 import { MainPageContent } from './MainPageContent'
 
 const url = endpoints[0].url
@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 export const MainPageChapter = () => {
   const { loading, posts } = useFetch(url)
 
-  const revealRefs = useRef([])
+  let revealRefs = useRef([])
   revealRefs.current = []
 
   const addToRefs = (el) => {
@@ -26,9 +26,9 @@ export const MainPageChapter = () => {
 
   const goToSection = (i, anim) => {
     gsap.to(window, {
-      //Sätt autKill till true för att dotnavigeringen ska fungera, och inte bara hoppa ett steg
-      //Scrollen blir dock extremt känslig för input.
-      scrollTo: { y: i * window.innerHeight, autoKill: false },
+      //Sätt autKill till false för att dscrollen inte ska kunna avbrytas
+      //Mouse pad scroll blir extremt känslig för input med autokill: true.
+      scrollTo: { y: i * window.innerHeight, autoKill: true },
       duration: 0.8,
     })
   }
@@ -50,31 +50,29 @@ export const MainPageChapter = () => {
 
   return (
     <>
-      <motion.section exit={{ opacity: 0 }}>
-        {posts.map((post, i) => {
-          const { id, title, content, acf } = post
-          return (
-            <section
-              id={`${post.id}`}
-              ref={addToRefs}
-              className={`panel main-section section section${i + 1}`}
-              key={id}
-            >
-              <MainPageContent
-                id={id}
-                title={title}
-                content={content}
-                acf={acf}
-              />
-            </section>
-          )
-        })}
-        <AsideNav
-          posts={posts}
-          loading={loading}
-          sections={revealRefs.current}
-        />
-      </motion.section>
+      {posts.map((post, i) => {
+        const { id, title, content, acf } = post
+        return (
+          <section
+            id={`${post.id}`}
+            ref={addToRefs}
+            className={`panel main-section main-page-section section section${
+              i + 1
+            }`}
+            key={id}
+          >
+            <MainPageContent
+              id={id}
+              title={title}
+              content={content}
+              acf={acf}
+            />
+            <AngleDown />
+          </section>
+        )
+      })}
+
+      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} />
     </>
   )
 }

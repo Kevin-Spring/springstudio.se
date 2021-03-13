@@ -1,28 +1,30 @@
-import React from "react";
+import React from 'react'
 import {
   GoogleMap,
   useLoadScript,
   Circle,
   Marker,
-} from "@react-google-maps/api";
-import mapStyles from "../styles/mapStyles";
+} from '@react-google-maps/api'
+import mapStyles from '../styles/mapStyles'
+
+let mapWidth = window.innerWidth > 980 ? '40vw' : '100vw'
 
 const containerStyle = {
-  width: "40vw",
-  height: "100vh",
-};
+  width: mapWidth,
+  height: '100vh',
+}
 
 const options = {
   styles: mapStyles,
   disableDefaultUI: true,
   //zoomControl: true,
-};
+}
 
 const circleOptions = {
-  strokeColor: "#FFF",
+  strokeColor: '#FFF',
   strokeOpacity: 0.2,
   strokeWeight: 0,
-  fillColor: "#FF0000",
+  fillColor: '#FF0000',
   fillOpacity: 0.35,
   clickable: false,
   draggable: false,
@@ -30,20 +32,20 @@ const circleOptions = {
   visible: true,
   radius: 150,
   zIndex: 1,
-};
+}
 
 const GoogleMaps = ({ lat, lng }) => {
   //const libraries = "places";
 
-  const center = { lat, lng };
+  const center = { lat, lng }
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     //libraries: ["places"],
-  });
+  })
 
-  if (loadError) return "Error Loading maps";
-  if (!isLoaded) return "Loading Maps";
+  if (loadError) return 'Error Loading maps'
+  if (!isLoaded) return 'Loading Maps'
 
   return (
     <div>
@@ -57,7 +59,7 @@ const GoogleMaps = ({ lat, lng }) => {
         <Marker position={center} />
       </GoogleMap>
     </div>
-  );
-};
+  )
+}
 
-export default React.memo(GoogleMaps);
+export default React.memo(GoogleMaps)

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
-import { AngleDown } from './AngleDown'
 import GoogleMaps from './GoogleMaps'
+import { Link } from 'react-router-dom'
 
 export const MainPageContent = ({ id, title, content, acf }) => {
   const revealText = useRef([])
@@ -51,7 +51,7 @@ export const MainPageContent = ({ id, title, content, acf }) => {
   }, [])
   return (
     <>
-      <div className='content-container'>
+      <div className='main-page-content-container'>
         <picture>
           <source
             srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
@@ -67,33 +67,34 @@ export const MainPageContent = ({ id, title, content, acf }) => {
           />
           <img src={acf.background.sizes.large} alt='background' />
         </picture>
-        <div className='text-container'>
-          <div className='text-container-inner'>
+        <div className='main-page-text-container'>
+          <div className='main-page-text-container-inner'>
             <header ref={addToRefTexts}>
               <h2>{title.rendered}</h2>
             </header>
-            <article ref={addToRefTexts}>
-              <div
-                className='text-container-paragraph'
-                dangerouslySetInnerHTML={{ __html: content.rendered }}
-              />
-            </article>
-            {!acf.cta ? (
-              ''
-            ) : (
-              <div ref={addToRefTexts} className='cta-btn'>
-                {acf.cta}
-              </div>
+            {content.rendered && (
+              <article ref={addToRefTexts}>
+                <div
+                  className='main-page-text-container-paragraph'
+                  dangerouslySetInnerHTML={{ __html: content.rendered }}
+                />
+              </article>
+            )}
+            {acf.cta && (
+              <Link to={acf.cta.link} className='main-page-cta-btn-link'>
+                <div ref={addToRefTexts} className='main-page-cta-btn'>
+                  {acf.cta.title}
+                </div>
+              </Link>
             )}
           </div>
         </div>
         {acf.maps && (
-          <div className='google-maps'>
+          <div className='main-page-google-maps'>
             <GoogleMaps lat={acf.maps.lat} lng={acf.maps.lng} />
           </div>
         )}
       </div>
-      <AngleDown />
     </>
   )
 }
