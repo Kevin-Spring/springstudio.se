@@ -20,18 +20,13 @@ export const endpoints = [
       'http://localhost/developement/springstudio.se/wp-json/wp/v2/menus/primary-menu',
   },
   {
-    type: 'contact form',
+    type: 'contact & booking form',
     url:
-      'http://localhost/developement/springstudio.se/wp-json/contact-form-7/v1/contact-forms/5/feedback',
+      'http://localhost/developement/springstudio.se/wp-json/contact-form-7/v1/contact-forms/96/feedback',
   },
   {
     type: 'logo inverted',
     url:
       'http://localhost/developement/springstudio.se/wp-content/uploads/2021/02/logo-inverted-1.png',
-  },
-  {
-    type: 'booking form',
-    url:
-      'http://localhost/developement/springstudio.se/wp-json/contact-form-7/v1/contact-forms/72/feedback',
   },
 ]

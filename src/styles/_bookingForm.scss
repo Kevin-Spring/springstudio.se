@@ -40,6 +40,7 @@
 
     .form-inner.done {
       opacity: 0.3;
+      transition: opacity var(--std-trans);
     }
 
     .form-inner {

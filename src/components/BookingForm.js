@@ -5,7 +5,7 @@ import '../styles/_bookingForm.scss'
 import { endpoints } from '../endpoints/endpoints'
 import { Envelope } from './Envelope'
 
-const url = endpoints[6].url
+const url = endpoints[4].url
 
 export const BookingForm = ({ motionForm }) => {
   const [booking, setBooking] = useState({
