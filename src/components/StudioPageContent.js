@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
-import { AngleDown } from './AngleDown'
 import { Link } from 'react-router-dom'
 
 export const StudioPageContent = ({ id, title, content, acf }) => {
@@ -88,7 +87,6 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
           </div>
         </div>
       </div>
-      <AngleDown />
     </>
   )
 }

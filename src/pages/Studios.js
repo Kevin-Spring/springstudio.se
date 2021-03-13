@@ -8,10 +8,10 @@ export const Studios = ({ transition }) => {
   return (
     <>
       <main className='studio-page'>
-        <motion.section exit={{ opacity: 0 }} transition={transition}>
+        <motion.div exit={{ opacity: 0 }} transition={transition}>
           <PageTransition />
           <Studio />
-        </motion.section>
+        </motion.div>
       </main>
     </>
   )

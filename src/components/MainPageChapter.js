@@ -5,6 +5,7 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { useFetch } from './useFetch'
 import { AsideNav } from './AsideNav'
 import { endpoints } from '../endpoints/endpoints'
+import { AngleDown } from './AngleDown'
 import { MainPageContent } from './MainPageContent'
 
 const url = endpoints[0].url
@@ -66,6 +67,7 @@ export const MainPageChapter = () => {
               content={content}
               acf={acf}
             />
+            <AngleDown />
           </section>
         )
       })}

@@ -10,6 +10,7 @@
   --faded-black: #101010;
   --grey: #c7c7c7;
   --off-white: #fffdf7;
+  --off-white-70: rgba(255, 253, 247, 0.7);
   --black: #000;
   --white: #fff;
   --def-background: linear-gradient(
@@ -18,11 +19,13 @@
     rgba(0, 0, 0, 1) 100%
   ) !important;
 
+  --std-trans: 0.2s ease-in-out;
+
   /* Font Sizes */
   --calc-size: * (100vw - 320px) / 1120;
-  --h2: calc(30px + (100 - 30) var(--calc-size));
+  --h2: calc(30px + (80 - 30) var(--calc-size));
   --h3: calc(18px + (30 - 18) var(--calc-size));
-  --article: calc(14px + (20 - 14) var(--calc-size));
+  --article: calc(14px + (18 - 14) var(--calc-size));
   --fs-small: calc(16px + (18 - 16) var(--calc-size));
   --row: calc((100vw - ((20px + (140 - 20) * (100vw - 320px) / 1120) * 2)));
 
@@ -62,8 +65,14 @@ h6 {
   padding-bottom: calc(20px + (30 - 20) var(--calc-size));
 }
 
+h2 {
+  padding-bottom: 10px;
+  font-size: var(--h2);
+}
+
 h3 {
   font-family: var(--main-font);
+  font-size: var(--h3);
 }
 
 a {
@@ -72,13 +81,18 @@ a {
   font-family: var(--alt-font);
   line-height: 1.4;
   letter-spacing: 1.3px;
+  transition: opacity var(--std-trans);
+}
+
+a:hover:not(.main-page-cta-btn-link) {
+  opacity: 0.7;
 }
 
 p {
   font-family: var(--main-font);
   line-height: 1.4;
   letter-spacing: 1.3px;
-  padding-bottom: calc(20px + (40 - 20) var(--calc-size));
+  padding-bottom: calc(10px + (20 - 10) var(--calc-size));
 }
 
 p:last-child {

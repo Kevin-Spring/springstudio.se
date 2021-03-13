@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
-import { AngleDown } from './AngleDown'
 import GoogleMaps from './GoogleMaps'
 import { Link } from 'react-router-dom'
 
@@ -82,7 +81,7 @@ export const MainPageContent = ({ id, title, content, acf }) => {
             {!acf.cta ? (
               ''
             ) : (
-              <Link to={acf.cta.link}>
+              <Link to={acf.cta.link} className='main-page-cta-btn-link'>
                 <div ref={addToRefTexts} className='main-page-cta-btn'>
                   {acf.cta.title}
                 </div>
@@ -96,7 +95,6 @@ export const MainPageContent = ({ id, title, content, acf }) => {
           </div>
         )}
       </div>
-      <AngleDown />
     </>
   )
 }
