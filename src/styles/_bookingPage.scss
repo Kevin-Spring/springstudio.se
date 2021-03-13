@@ -1,5 +1,7 @@
 .book-studio-section {
   color: var(--faded-black);
+  background: var(--off-white);
+  min-height: 100vh;
 
   .book-studio-section-header {
     font-size: var(--h2);
@@ -8,8 +10,6 @@
   }
 
   .book-studio-content-container {
-    background: var(--off-white);
-
     picture img {
       position: absolute;
       top: 0;

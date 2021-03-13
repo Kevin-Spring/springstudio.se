@@ -61,7 +61,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 30vh;
+  padding: calc(40px + (50 - 40) var(--calc-size)) 0;
 }
 
 .envelope-front {

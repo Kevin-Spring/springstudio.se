@@ -12,22 +12,30 @@ export const BookingForm = ({ motionForm }) => {
     name: '',
     email: '',
     phone: '',
-    bookStudio: '',
+    bookStudio: false,
     company: '',
     billingAddress: '',
     orgNr: '',
-    studio: '',
+    studio1: false,
+    studio2: false,
+    studio3: false,
     bookingDateFrom: '',
     bookingDateTo: '',
     workingHoursFrom: '',
     workingHoursTo: '',
-    productionType: '',
-    audioRecording: '',
-    workType: '',
-    catering: '',
-    acceptance: '',
+    productionTypePhoto: false,
+    productionTypeVideo: false,
+    productionTypeMusic: false,
+    audioRecordingYes: false,
+    audioRecordingNo: false,
+    workTypeEditorial: false,
+    workTypeCommercial: false,
+    cateringYes: false,
+    cateringNo: false,
+    acceptance: false,
     message: '',
   })
+
   const [validationMessage, setValidationMessage] = useState({
     successMessage: '',
     errorMessage: '',
@@ -144,7 +152,7 @@ export const BookingForm = ({ motionForm }) => {
             >
               <div
                 className={
-                  booking.bookStudio === 'yes'
+                  booking.bookStudio
                     ? 'done form__group field'
                     : 'form__group field'
                 }
@@ -167,7 +175,7 @@ export const BookingForm = ({ motionForm }) => {
 
               <div
                 className={
-                  booking.bookStudio === 'yes'
+                  booking.bookStudio
                     ? 'done form__group field'
                     : 'form__group field'
                 }
@@ -190,7 +198,7 @@ export const BookingForm = ({ motionForm }) => {
 
               <div
                 className={
-                  booking.bookStudio === 'yes'
+                  booking.bookStudio
                     ? 'done form__group field'
                     : 'form__group field'
                 }
@@ -215,7 +223,7 @@ export const BookingForm = ({ motionForm }) => {
               <div className='form__group field'>
                 <div
                   className={
-                    booking.bookStudio === 'yes'
+                    booking.bookStudio
                       ? 'done form__field-select'
                       : 'form__field-select'
                   }
@@ -226,10 +234,15 @@ export const BookingForm = ({ motionForm }) => {
                     id='bookStudioYes'
                     name='bookStudio'
                     value='yes'
-                    onChange={onChangeHandler}
                     placeholder='Yes'
                     autoComplete='new-password'
-                    checked={booking.bookStudio === 'yes'}
+                    checked={booking.bookStudio === true}
+                    onClick={() =>
+                      setBooking({
+                        ...booking,
+                        bookStudio: !booking.bookStudio,
+                      })
+                    }
                   />
                   <label className='form__label-select' htmlFor='bookStudio'>
                     Yes
@@ -238,7 +251,7 @@ export const BookingForm = ({ motionForm }) => {
 
                 <div
                   className={
-                    booking.bookStudio === 'yes'
+                    booking.bookStudio
                       ? 'done form__field-select'
                       : 'form__field-select'
                   }
@@ -249,10 +262,15 @@ export const BookingForm = ({ motionForm }) => {
                     id='bookStudioNo'
                     name='bookStudio'
                     value='no'
-                    onChange={onChangeHandler}
                     placeholder='No'
                     autoComplete='new-password'
-                    checked={booking.bookStudio === 'no'}
+                    checked={booking.bookStudio === false}
+                    onClick={() =>
+                      setBooking({
+                        ...booking,
+                        bookStudio: !booking.bookStudio,
+                      })
+                    }
                   />
                   <label className='form__label-select' htmlFor='bookStudio'>
                     No
@@ -260,11 +278,11 @@ export const BookingForm = ({ motionForm }) => {
                 </div>
               </div>
 
-              {booking.bookStudio === 'yes' && (
+              {booking.bookStudio && (
                 <motion.div variants={motionForm} className='form-inner'>
                   <div
                     className={
-                      booking.studio
+                      booking.studio1 || booking.studio2 || booking.studio3
                         ? 'done form__group field'
                         : 'form__group field'
                     }
@@ -286,7 +304,7 @@ export const BookingForm = ({ motionForm }) => {
 
                   <div
                     className={
-                      booking.studio
+                      booking.studio1 || booking.studio2 || booking.studio3
                         ? 'done form__group field'
                         : 'form__group field'
                     }
@@ -308,7 +326,7 @@ export const BookingForm = ({ motionForm }) => {
 
                   <div
                     className={
-                      booking.studio
+                      booking.studio1 || booking.studio2 || booking.studio3
                         ? 'done form__group field'
                         : 'form__group field'
                     }
@@ -337,10 +355,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='studio1'
                         name='studio'
                         value='studio 1'
-                        onChange={onChangeHandler}
                         placeholder='studio'
                         autoComplete='new-password'
-                        checked={booking.studio === 'studio 1'}
+                        checked={booking.studio1 === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            studio1: !booking.studio1,
+                          })
+                        }
                       />
                       <label className='form__label-select' htmlFor='studio'>
                         Studio 1
@@ -353,10 +376,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='studio2'
                         name='studio'
                         value='studio 2'
-                        onChange={onChangeHandler}
                         placeholder='studio'
                         autoComplete='new-password'
-                        checked={booking.studio === 'studio 2'}
+                        checked={booking.studio2 === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            studio2: !booking.studio2,
+                          })
+                        }
                       />
                       <label className='form__label-select' htmlFor='studio'>
                         Studio 2
@@ -369,10 +397,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='studio3'
                         name='studio'
                         value='studio 3'
-                        onChange={onChangeHandler}
                         placeholder='studio'
                         autoComplete='new-password'
-                        checked={booking.studio === 'studio 3'}
+                        checked={booking.studio3 === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            studio3: !booking.studio3,
+                          })
+                        }
                       />
                       <label className='form__label-select' htmlFor='studio'>
                         Studio 3
@@ -382,7 +415,9 @@ export const BookingForm = ({ motionForm }) => {
                 </motion.div>
               )}
 
-              {booking.bookStudio === 'yes' && booking.studio ? (
+              {booking.studio1 ||
+              booking.studio2 ||
+              (booking.studio3 && booking.bookStudio) ? (
                 <motion.div variants={motionForm} className='form-inner'>
                   <div className='form__group field'>
                     <input
@@ -453,7 +488,8 @@ export const BookingForm = ({ motionForm }) => {
                 ''
               )}
 
-              {booking.bookStudio === 'yes' && booking.studio ? (
+              {(booking.studio1 || booking.studio2 || booking.studio3) &&
+              booking.bookStudio ? (
                 <motion.div
                   variants={motionForm}
                   className='form-inner form-inner-selects'
@@ -469,10 +505,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='audioRecordingYes'
                         name='audioRecording'
                         value='Yes'
-                        onChange={onChangeHandler}
                         placeholder='Yes'
                         autoComplete='new-password'
-                        checked={booking.audioRecording === 'Yes'}
+                        checked={booking.audioRecordingYes === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            audioRecordingYes: !booking.audioRecordingYes,
+                          })
+                        }
                       />
                       <label
                         className='form__label-select'
@@ -489,10 +530,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='audioRecordingNo'
                         name='audioRecording'
                         value='No'
-                        onChange={onChangeHandler}
                         placeholder='No'
                         autoComplete='new-password'
-                        checked={booking.audioRecording === 'No'}
+                        checked={booking.audioRecordingNo === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            audioRecordingNo: !booking.audioRecordingNo,
+                          })
+                        }
                       />
                       <label
                         className='form__label-select'
@@ -512,10 +558,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='cateringYes'
                         name='catering'
                         value='Yes'
-                        onChange={onChangeHandler}
                         placeholder='Yes'
                         autoComplete='new-password'
-                        checked={booking.catering === 'Yes'}
+                        checked={booking.cateringYes === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            cateringYes: !booking.cateringYes,
+                          })
+                        }
                       />
                       <label className='form__label-select' htmlFor='catering'>
                         Yes
@@ -529,10 +580,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='cateringNo'
                         name='catering'
                         value='No'
-                        onChange={onChangeHandler}
                         placeholder='No'
                         autoComplete='new-password'
-                        checked={booking.catering === 'No'}
+                        checked={booking.cateringNo === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            cateringNo: !booking.cateringNo,
+                          })
+                        }
                       />
                       <label className='form__label-select' htmlFor='catering'>
                         No
@@ -544,7 +600,8 @@ export const BookingForm = ({ motionForm }) => {
                 ''
               )}
 
-              {booking.bookStudio === 'yes' && booking.studio ? (
+              {booking.bookStudio &&
+              (booking.studio1 || booking.studio2 || booking.studio3) ? (
                 <motion.div variants={motionForm} className='form-inner'>
                   <h3 className='form__group__header'>Production Type</h3>
                   <div className='form__group field'>
@@ -555,10 +612,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='photo'
                         name='productionType'
                         value='photo'
-                        onChange={onChangeHandler}
                         placeholder='photo'
                         autoComplete='new-password'
-                        checked={booking.productionType === 'photo'}
+                        checked={booking.productionTypePhoto === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            productionTypePhoto: !booking.productionTypePhoto,
+                          })
+                        }
                       />
                       <label
                         className='form__label-select'
@@ -572,13 +634,18 @@ export const BookingForm = ({ motionForm }) => {
                       <input
                         className='form__field'
                         type='checkbox'
-                        id='video'
+                        id='Photo'
                         name='productionType'
                         value='video'
-                        onChange={onChangeHandler}
                         placeholder='video'
                         autoComplete='new-password'
-                        checked={booking.productionType === 'video'}
+                        checked={booking.productionTypeVideo === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            productionTypeVideo: !booking.productionTypeVideo,
+                          })
+                        }
                       />
                       <label
                         className='form__label-select'
@@ -595,10 +662,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='music'
                         name='productionType'
                         value='music'
-                        onChange={onChangeHandler}
                         placeholder='music'
                         autoComplete='new-password'
-                        checked={booking.productionType === 'music'}
+                        checked={booking.productionTypeMusic === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            productionTypeMusic: !booking.productionTypeMusic,
+                          })
+                        }
                       />
                       <label
                         className='form__label-select'
@@ -613,9 +685,9 @@ export const BookingForm = ({ motionForm }) => {
                 ''
               )}
 
-              {booking.productionType &&
+              {(booking.productionTypePhoto || booking.productionTypeVideo) &&
               booking.productionType !== 'music' &&
-              booking.bookStudio === 'yes' ? (
+              booking.bookStudio ? (
                 <motion.div variants={motionForm} className='form-inner'>
                   <h3 className='form__group__header'>Work Type</h3>
                   <div className='form__group field'>
@@ -626,10 +698,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='commercial'
                         name='workType'
                         value='commercial'
-                        onChange={onChangeHandler}
                         placeholder='commercial'
                         autoComplete='new-password'
-                        checked={booking.workType === 'commercial'}
+                        checked={booking.workTypeCommercial === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            workTypeCommercial: !booking.workTypeCommercial,
+                          })
+                        }
                       />
                       <label className='form__label-select' htmlFor='workType'>
                         Commercial
@@ -642,10 +719,15 @@ export const BookingForm = ({ motionForm }) => {
                         id='Editorial'
                         name='workType'
                         value='Editorial'
-                        onChange={onChangeHandler}
                         placeholder='Editorial'
                         autoComplete='new-password'
-                        checked={booking.workType === 'Editorial'}
+                        checked={booking.workTypeEditorial === true}
+                        onClick={() =>
+                          setBooking({
+                            ...booking,
+                            workTypeEditorial: !booking.workTypeEditorial,
+                          })
+                        }
                       />
                       <label className='form__label-select' htmlFor='workType'>
                         Editorial
@@ -697,10 +779,12 @@ export const BookingForm = ({ motionForm }) => {
                   id='acceptance'
                   name='acceptance'
                   value='yes'
-                  onChange={onChangeHandler}
                   placeholder='acceptance'
                   autoComplete='new-password'
-                  checked={booking.acceptance === 'yes'}
+                  checked={booking.acceptance === true}
+                  onClick={() =>
+                    setBooking({ ...booking, acceptance: !booking.acceptance })
+                  }
                 />
               </div>
             </div>
