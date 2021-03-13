@@ -164,6 +164,7 @@
         .form__label-select.acceptance-terms {
           font-size: calc(10px + (12 - 10) var(--calc-size));
           padding-top: calc(20px + (30 - 20) var(--calc-size));
+          width: 80%;
         }
       }
 

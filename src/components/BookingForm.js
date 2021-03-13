@@ -26,12 +26,10 @@ export const BookingForm = ({ motionForm }) => {
     productionTypePhoto: false,
     productionTypeVideo: false,
     productionTypeMusic: false,
-    audioRecordingYes: false,
-    audioRecordingNo: false,
+    audioRecording: false,
     workTypeEditorial: false,
     workTypeCommercial: false,
-    cateringYes: false,
-    cateringNo: false,
+    catering: false,
     acceptance: false,
     message: '',
   })
@@ -63,19 +61,30 @@ export const BookingForm = ({ motionForm }) => {
     formData.set('your-name', booking.name)
     formData.set('your-email', booking.email)
     formData.set('your-phone', booking.phone)
-    formData.set('book-studio', booking.bookStudio)
+    formData.set('book-studio', booking.bookStudio ? 'Yes' : 'No')
     formData.set('your-company', booking.company)
     formData.set('your-billing-address', booking.billingAddress)
     formData.set('your-orgnr', booking.orgNr)
-    formData.set('studio', booking.studio)
+    formData.set('studio', [
+      booking.studio1 ? ' Studio 1 ' : ' ',
+      booking.studio2 ? ' Studio 2 ' : ' ',
+      booking.studio3 ? ' Studio 3 ' : ' ',
+    ])
     formData.set('your-booking-date-from', booking.bookingDateFrom)
     formData.set('your-booking-date-to', booking.bookingDateTo)
     formData.set('your-working-hours-from', booking.workingHoursFrom)
     formData.set('your-working-hours-to', booking.workingHoursTo)
-    formData.set('your-production-type', booking.productionType)
-    formData.set('audio-recording', booking.audioRecording)
-    formData.set('your-work-type', booking.workType)
-    formData.set('catering', booking.catering)
+    formData.set('your-production-type', [
+      booking.productionTypePhoto ? ' Photo: Yes ' : ' ',
+      booking.productionTypeVideo ? ' Video: Yes ' : ' ',
+      booking.productionTypeMusic ? ' Music: Yes ' : ' ',
+    ])
+    formData.set('audio-recording', booking.audioRecording ? ' Yes ' : ' No ')
+    formData.set('your-work-type', [
+      booking.workTypeCommercial ? ' Commercial: Yes ' : ' ',
+      booking.workTypeEditorial ? ' Editorial: Yes ' : ' ',
+    ])
+    formData.set('catering', booking.catering ? 'Yes' : 'No')
     formData.set('acceptance', booking.acceptance)
     formData.set('your-message', booking.message)
 
@@ -237,7 +246,7 @@ export const BookingForm = ({ motionForm }) => {
                     placeholder='Yes'
                     autoComplete='new-password'
                     checked={booking.bookStudio === true}
-                    onClick={() =>
+                    onChange={() =>
                       setBooking({
                         ...booking,
                         bookStudio: !booking.bookStudio,
@@ -264,13 +273,13 @@ export const BookingForm = ({ motionForm }) => {
                     value='no'
                     placeholder='No'
                     autoComplete='new-password'
-                    checked={booking.bookStudio === false}
-                    onClick={() =>
+                    onChange={() =>
                       setBooking({
                         ...booking,
                         bookStudio: !booking.bookStudio,
                       })
                     }
+                    checked={booking.bookStudio === false}
                   />
                   <label className='form__label-select' htmlFor='bookStudio'>
                     No
@@ -358,7 +367,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='studio'
                         autoComplete='new-password'
                         checked={booking.studio1 === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             studio1: !booking.studio1,
@@ -379,7 +388,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='studio'
                         autoComplete='new-password'
                         checked={booking.studio2 === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             studio2: !booking.studio2,
@@ -400,7 +409,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='studio'
                         autoComplete='new-password'
                         checked={booking.studio3 === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             studio3: !booking.studio3,
@@ -507,11 +516,11 @@ export const BookingForm = ({ motionForm }) => {
                         value='Yes'
                         placeholder='Yes'
                         autoComplete='new-password'
-                        checked={booking.audioRecordingYes === true}
-                        onClick={() =>
+                        checked={booking.audioRecording === true}
+                        onChange={() =>
                           setBooking({
                             ...booking,
-                            audioRecordingYes: !booking.audioRecordingYes,
+                            audioRecording: !booking.audioRecording,
                           })
                         }
                       />
@@ -532,11 +541,11 @@ export const BookingForm = ({ motionForm }) => {
                         value='No'
                         placeholder='No'
                         autoComplete='new-password'
-                        checked={booking.audioRecordingNo === true}
-                        onClick={() =>
+                        checked={booking.audioRecording === false}
+                        onChange={() =>
                           setBooking({
                             ...booking,
-                            audioRecordingNo: !booking.audioRecordingNo,
+                            audioRecording: !booking.audioRecording,
                           })
                         }
                       />
@@ -560,11 +569,11 @@ export const BookingForm = ({ motionForm }) => {
                         value='Yes'
                         placeholder='Yes'
                         autoComplete='new-password'
-                        checked={booking.cateringYes === true}
-                        onClick={() =>
+                        checked={booking.catering === true}
+                        onChange={() =>
                           setBooking({
                             ...booking,
-                            cateringYes: !booking.cateringYes,
+                            catering: !booking.catering,
                           })
                         }
                       />
@@ -582,11 +591,11 @@ export const BookingForm = ({ motionForm }) => {
                         value='No'
                         placeholder='No'
                         autoComplete='new-password'
-                        checked={booking.cateringNo === true}
-                        onClick={() =>
+                        checked={booking.catering === false}
+                        onChange={() =>
                           setBooking({
                             ...booking,
-                            cateringNo: !booking.cateringNo,
+                            catering: !booking.catering,
                           })
                         }
                       />
@@ -615,7 +624,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='photo'
                         autoComplete='new-password'
                         checked={booking.productionTypePhoto === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             productionTypePhoto: !booking.productionTypePhoto,
@@ -640,7 +649,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='video'
                         autoComplete='new-password'
                         checked={booking.productionTypeVideo === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             productionTypeVideo: !booking.productionTypeVideo,
@@ -665,7 +674,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='music'
                         autoComplete='new-password'
                         checked={booking.productionTypeMusic === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             productionTypeMusic: !booking.productionTypeMusic,
@@ -701,7 +710,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='commercial'
                         autoComplete='new-password'
                         checked={booking.workTypeCommercial === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             workTypeCommercial: !booking.workTypeCommercial,
@@ -722,7 +731,7 @@ export const BookingForm = ({ motionForm }) => {
                         placeholder='Editorial'
                         autoComplete='new-password'
                         checked={booking.workTypeEditorial === true}
-                        onClick={() =>
+                        onChange={() =>
                           setBooking({
                             ...booking,
                             workTypeEditorial: !booking.workTypeEditorial,
@@ -782,7 +791,7 @@ export const BookingForm = ({ motionForm }) => {
                   placeholder='acceptance'
                   autoComplete='new-password'
                   checked={booking.acceptance === true}
-                  onClick={() =>
+                  onChange={() =>
                     setBooking({ ...booking, acceptance: !booking.acceptance })
                   }
                 />
