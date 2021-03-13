@@ -39,10 +39,12 @@ export const BookingForm = ({ motionForm }) => {
     errorMessage: '',
   })
 
-  const errorRef = useRef(null)
-
   const executeScroll = () => {
-    errorRef.current.scrollIntoView({ behavior: 'smooth' })
+    window.scroll({
+      top: 100,
+      left: 100,
+      behavior: 'smooth',
+    })
   }
 
   const onChangeHandler = (e) => {
@@ -133,11 +135,14 @@ export const BookingForm = ({ motionForm }) => {
     <>
       <span>
         {validationMessage.successMessage && (
-          <p className=''>{validationMessage.successMessage}</p>
+          <p className=''>
+            {validationMessage.successMessage}
+            {executeScroll()}
+          </p>
         )}
       </span>
 
-      <span ref={errorRef}>
+      <span>
         {validationMessage.errorMessage && (
           <p className='error-message'>
             {validationMessage.errorMessage}

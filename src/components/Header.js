@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion'
 import { Studios3D } from '../pages/Studios3D'
 import { Navbar } from './Navbar'
 import { envelopetest } from '../pages/envelopetest'
+import { Found404 } from '../pages/Found404'
 
 const transtition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -47,6 +48,7 @@ export const Header = () => {
             component={envelopetest}
             transtition={transtition}
           />
+          <Route component={Found404} />
         </Switch>
       </AnimatePresence>
     </>

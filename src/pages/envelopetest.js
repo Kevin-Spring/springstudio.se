@@ -10,7 +10,6 @@ export const envelopetest = () => {
         background: 'var(--off-white)',
       }}
     >
-      <h2>hej</h2>
       <Envelope />
     </div>
   )
