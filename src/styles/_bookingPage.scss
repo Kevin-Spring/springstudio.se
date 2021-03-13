@@ -2,9 +2,9 @@
   color: var(--faded-black);
 
   .book-studio-section-header {
-    font-size: var(--h3);
+    font-size: var(--h2);
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: calc(20px + (40 - 20) var(--calc-size));
   }
 
   .book-studio-content-container {

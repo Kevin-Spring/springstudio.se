@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 export const MainPageChapter = () => {
   const { loading, posts } = useFetch(url)
 
-  const revealRefs = useRef([])
+  let revealRefs = useRef([])
   revealRefs.current = []
 
   const addToRefs = (el) => {

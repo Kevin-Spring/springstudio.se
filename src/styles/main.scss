@@ -8,6 +8,8 @@
 :root {
   /* Colors */
   --faded-black: #101010;
+  --faded-black-dark: #0c0c0c;
+  --faded-black-70: rgb(22, 22, 22);
   --grey: #c7c7c7;
   --off-white: #fffdf7;
   --off-white-70: rgba(255, 253, 247, 0.7);
@@ -20,6 +22,7 @@
   ) !important;
 
   --std-trans: 0.2s ease-in-out;
+  --long-trans: 0.4s ease-in-out;
 
   /* Font Sizes */
   --calc-size: * (100vw - 320px) / 1120;

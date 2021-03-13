@@ -72,15 +72,15 @@ export const MainPageContent = ({ id, title, content, acf }) => {
             <header ref={addToRefTexts}>
               <h2>{title.rendered}</h2>
             </header>
-            <article ref={addToRefTexts}>
-              <div
-                className='main-page-text-container-paragraph'
-                dangerouslySetInnerHTML={{ __html: content.rendered }}
-              />
-            </article>
-            {!acf.cta ? (
-              ''
-            ) : (
+            {content.rendered && (
+              <article ref={addToRefTexts}>
+                <div
+                  className='main-page-text-container-paragraph'
+                  dangerouslySetInnerHTML={{ __html: content.rendered }}
+                />
+              </article>
+            )}
+            {acf.cta && (
               <Link to={acf.cta.link} className='main-page-cta-btn-link'>
                 <div ref={addToRefTexts} className='main-page-cta-btn'>
                   {acf.cta.title}
