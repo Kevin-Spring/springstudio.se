@@ -5,15 +5,49 @@
   transform: translateX(-50%);
 }
 
+.angle-down.dark {
+  color: var(--faded-black);
+}
+
 .angle-down {
   position: absolute;
   display: flex;
   bottom: 0;
+  opacity: 0;
   justify-content: center;
-  width: 100%;
+  width: auto;
+  left: 50%;
   transform: rotate(180deg);
   margin-bottom: 10px;
   z-index: 9999;
+  animation-name: bounce;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: rotate(180deg) translateX(50%) translateY(0);
+  }
+  10% {
+    transform: rotate(180deg) translateX(50%) translateY(0);
+  }
+  30% {
+    transform: rotate(180deg) translateX(50%) translateY(20px);
+  }
+  50% {
+    transform: rotate(180deg) translateX(50%) translateY(0);
+  }
+  57% {
+    transform: rotate(180deg) translateX(50%) translateY(2px);
+  }
+  64% {
+    transform: rotate(180deg) translateX(50%) translateY(0);
+  }
+  100% {
+    transform: rotate(180deg) translateX(50%) translateY(0);
+  }
 }
 
 .angle-right {

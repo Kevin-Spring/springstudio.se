@@ -1,11 +1,15 @@
+.page-transition-container.animate{
+  display: flex;
+}
+
 .page-transition-container {
   background-color: var(--black);
-  z-index: 999999;
+  z-index: 4;
   position: absolute;
   width: 100vw;
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 
   .page-transition-svg {
     position: fixed;
@@ -80,5 +84,11 @@
         left: 50%;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .page-transition-container .page-transition-arrow-keys {
+    display: none;
   }
 }

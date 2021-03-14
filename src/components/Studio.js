@@ -50,6 +50,7 @@ export const Studio = () => {
 
   return (
     <>
+      <h1 style={{ position: 'absolute' }}>Studios</h1>
       {posts.map((post, i) => {
         const { id, title, content, acf } = post
         return (

@@ -66,6 +66,7 @@ export const MainPageChapter = () => {
               title={title}
               content={content}
               acf={acf}
+              index={i}
             />
             <AngleDown />
           </section>

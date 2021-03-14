@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useFetch } from './useFetch'
-//import { ContactForm } from './ContactForm'
 import { endpoints } from '../endpoints/endpoints'
 import { BookingForm } from './BookingForm'
 
@@ -82,12 +81,12 @@ export const Booking = () => {
                 variants={motionContent}
                 className='form-container'
               >
-                <motion.h2
+                <motion.h1
                   variants={motionTitle}
                   className='book-studio-section-header'
                 >
                   {title.rendered}
-                </motion.h2>
+                </motion.h1>
                 <BookingForm motionForm={motionForm} />
               </motion.div>
             </div>

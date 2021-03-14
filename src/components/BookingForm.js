@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import '../styles/_bookingForm.scss'
@@ -103,20 +103,25 @@ export const BookingForm = ({ motionForm }) => {
             name: '',
             email: '',
             phone: '',
-            bookStudio: '',
+            bookStudio: false,
             company: '',
             billingAddress: '',
             orgNr: '',
-            studio: '',
+            studio1: false,
+            studio2: false,
+            studio3: false,
             bookingDateFrom: '',
             bookingDateTo: '',
             workingHoursFrom: '',
             workingHoursTo: '',
-            productionType: '',
-            audioRecording: '',
-            workType: '',
-            catering: '',
-            acceptance: '',
+            productionTypePhoto: false,
+            productionTypeVideo: false,
+            productionTypeMusic: false,
+            audioRecording: false,
+            workTypeEditorial: false,
+            workTypeCommercial: false,
+            catering: false,
+            acceptance: false,
             message: '',
           })
           setValidationMessage({
@@ -162,7 +167,11 @@ export const BookingForm = ({ motionForm }) => {
             autoComplete='new-password'
           >
             <div
-              className={booking.acceptance ? 'done form-inner' : 'form-inner'}
+              className={
+                booking.acceptance && !validationMessage.errorMessage
+                  ? 'done form-inner'
+                  : 'form-inner'
+              }
             >
               <div
                 className={
@@ -172,7 +181,11 @@ export const BookingForm = ({ motionForm }) => {
                 }
               >
                 <input
-                  className='form__field'
+                  className={
+                    validationMessage.errorMessage && !booking.name
+                      ? 'error form__field'
+                      : 'form__field'
+                  }
                   type='text'
                   id='name'
                   name='name'
@@ -180,7 +193,6 @@ export const BookingForm = ({ motionForm }) => {
                   onChange={onChangeHandler}
                   placeholder='Name'
                   autoComplete='new-password'
-                  required
                 />
                 <label className='form__label' htmlFor='name'>
                   Name*
@@ -195,7 +207,11 @@ export const BookingForm = ({ motionForm }) => {
                 }
               >
                 <input
-                  className='form__field'
+                  className={
+                    validationMessage.errorMessage && !booking.email
+                      ? 'error form__field'
+                      : 'form__field'
+                  }
                   type='email'
                   id='email'
                   name='email'
@@ -203,7 +219,6 @@ export const BookingForm = ({ motionForm }) => {
                   onChange={onChangeHandler}
                   placeholder='Email'
                   autoComplete='new-password'
-                  required
                 />
                 <label className='form__label' htmlFor='email'>
                   Email*
@@ -218,7 +233,11 @@ export const BookingForm = ({ motionForm }) => {
                 }
               >
                 <input
-                  className='form__field'
+                  className={
+                    validationMessage.errorMessage && !booking.phone
+                      ? 'error form__field'
+                      : 'form__field'
+                  }
                   type='tel'
                   id='phone'
                   name='phone'
@@ -226,7 +245,6 @@ export const BookingForm = ({ motionForm }) => {
                   onChange={onChangeHandler}
                   placeholder='Phone'
                   autoComplete='new-password'
-                  required
                 />
                 <label className='form__label' htmlFor='phone'>
                   Phone*
@@ -334,7 +352,7 @@ export const BookingForm = ({ motionForm }) => {
                       autoComplete='new-password'
                     />
                     <label className='form__label' htmlFor='billingAddress'>
-                      billing address
+                      Billing Address
                     </label>
                   </div>
 
@@ -478,7 +496,7 @@ export const BookingForm = ({ motionForm }) => {
                       autoComplete='new-password'
                     />
                     <label className='form__label' htmlFor='workingHoursFrom'>
-                      From
+                      Start of Day
                     </label>
                   </div>
 
@@ -494,7 +512,7 @@ export const BookingForm = ({ motionForm }) => {
                       autoComplete='new-password'
                     />
                     <label className='form__label' htmlFor='workingHoursTo'>
-                      To
+                      Wrap Time
                     </label>
                   </div>
                 </motion.div>
@@ -701,6 +719,7 @@ export const BookingForm = ({ motionForm }) => {
 
               {(booking.productionTypePhoto || booking.productionTypeVideo) &&
               booking.productionType !== 'music' &&
+              (booking.studio1 || booking.studio2 || booking.studio3) &&
               booking.bookStudio ? (
                 <motion.div variants={motionForm} className='form-inner'>
                   <h3 className='form__group__header'>Work Type</h3>
@@ -788,7 +807,11 @@ export const BookingForm = ({ motionForm }) => {
                   not be used for anything else. *
                 </label>
                 <input
-                  className='form__field'
+                  className={
+                    validationMessage.errorMessage && !booking.acceptance
+                      ? 'error form__field'
+                      : 'form__field'
+                  }
                   type='checkbox'
                   id='acceptance'
                   name='acceptance'
@@ -799,6 +822,7 @@ export const BookingForm = ({ motionForm }) => {
                   onChange={() =>
                     setBooking({ ...booking, acceptance: !booking.acceptance })
                   }
+                  required
                 />
               </div>
             </div>

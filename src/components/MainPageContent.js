@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import GoogleMaps from './GoogleMaps'
 import { Link } from 'react-router-dom'
 
-export const MainPageContent = ({ id, title, content, acf }) => {
+export const MainPageContent = ({ id, title, content, acf, index }) => {
   const revealText = useRef([])
   revealText.current = []
 
@@ -70,7 +70,11 @@ export const MainPageContent = ({ id, title, content, acf }) => {
         <div className='main-page-text-container'>
           <div className='main-page-text-container-inner'>
             <header ref={addToRefTexts}>
-              <h2>{title.rendered}</h2>
+              {index === 0 ? (
+                <h1>{title.rendered}</h1>
+              ) : (
+                <h2>{title.rendered}</h2>
+              )}
             </header>
             {content.rendered && (
               <article ref={addToRefTexts}>

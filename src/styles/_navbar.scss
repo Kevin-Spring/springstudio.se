@@ -14,6 +14,7 @@
         position: absolute;
         top: 50vh;
         padding: 0 2%;
+        z-index: 999;
       }
 
       .navbar-left-item {
@@ -26,6 +27,7 @@
 
       li {
         display: flex;
+        align-items: center;
       }
     }
   }
@@ -47,7 +49,7 @@
   }
   .angle {
     color: var(--off-white);
-    font-size: calc(12px + (20 - 12) var(--calc-size));
+    font-size: 1em;
   }
 }
 
@@ -65,14 +67,20 @@
     }
     .angle {
       color: var(--faded-black);
-      font-size: calc(12px + (20 - 12) var(--calc-size));
+      font-size: 1em;
     }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .primary-nav-container .primary-nav ul .navbar-item {
+    top: 92vh;
+    padding: 0 40px;
   }
 }
 
 @media only screen and (max-width: 475px) {
   .primary-nav-container .primary-nav ul .navbar-item {
     top: 94vh;
-    padding: 0 40px;
   }
 }
