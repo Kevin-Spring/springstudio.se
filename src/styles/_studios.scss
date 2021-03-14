@@ -80,7 +80,7 @@
             padding: calc( 5px + ( 10 - 5 ) var(--calc-size) );
             max-width: calc( 180px + ( 200 - 180 ) var(--calc-size));
             cursor: pointer;
-            transition: background 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out;
             display: flex;
             justify-content: center;
             align-items: center;

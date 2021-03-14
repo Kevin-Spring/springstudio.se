@@ -18,6 +18,7 @@ export const Header = () => {
     <>
     {/* exitBeforeEnter prop allows components to dismantle and play their animations before new componenet loads. 
     All exit-props called on different motion-elements (e.g motion.div ) is used to make this possible in majority of components*/}
+    
       <AnimatePresence exitBeforeEnter>
         <Navbar />
         <Switch location={location} key={location.pathname}>

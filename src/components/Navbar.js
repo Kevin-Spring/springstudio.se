@@ -5,7 +5,6 @@ import { IoTriangleOutline } from 'react-icons/io5'
 import { useFetchNav } from './useFetchNav'
 import { useNavbar } from './useNavbar'
 import { Power3, TweenLite } from 'gsap'
-import { motion } from 'framer-motion'
 import '../styles/_navbar.scss'
 import { endpoints } from '../endpoints/endpoints'
 
@@ -60,8 +59,8 @@ export const Navbar = () => {
       <NavLink to='/'>
         <Logo />
       </NavLink> */}
-      <motion.nav
-        exit={{ opacity: 0 }}
+      <nav
+        //exit={{ opacity: 0 }}
         ref={navbar}
         className={
           location.pathname === '/'
@@ -96,7 +95,7 @@ export const Navbar = () => {
             )}
           </ul>
         </div>
-      </motion.nav>
+      </nav>
     </>
   )
 }
