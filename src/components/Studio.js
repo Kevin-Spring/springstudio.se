@@ -11,7 +11,7 @@ import { StudioPageContent } from './StudioPageContent'
 //Pointing get request at correct endpoint
 const url = endpoints[1].url
 
-//Used to avoid bugs
+//Used to avoid bugs with scrolltrigger
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 export const Studio = () => {
