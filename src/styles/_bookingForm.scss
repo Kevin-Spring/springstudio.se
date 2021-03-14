@@ -111,6 +111,11 @@
         opacity: 0.2;
       }
 
+      .error.form__field {
+        border-color: red;
+        opacity: 1 !important;
+      }
+
       .form__field {
         width: 100%;
         border: 0;
