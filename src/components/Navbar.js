@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { NavLink, useLocation, useHistory } from 'react-router-dom'
 import { IoTriangleOutline } from 'react-icons/io5'
-import { Logo } from './Logo'
+//import { Logo } from './Logo'
 import { useFetchNav } from './useFetchNav'
 import { useNavbar } from './useNavbar'
 import { Power3, TweenLite } from 'gsap'
@@ -53,9 +53,9 @@ export const Navbar = () => {
 
   return (
     <>
-      <NavLink to='/'>
+      {/* <NavLink to='/'>
         <Logo />
-      </NavLink>
+      </NavLink> */}
       <motion.nav
         exit={{ opacity: 0 }}
         ref={navbar}

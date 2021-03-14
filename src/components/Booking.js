@@ -81,12 +81,12 @@ export const Booking = () => {
                 variants={motionContent}
                 className='form-container'
               >
-                <motion.h2
+                <motion.h1
                   variants={motionTitle}
                   className='book-studio-section-header'
                 >
                   {title.rendered}
-                </motion.h2>
+                </motion.h1>
                 <BookingForm motionForm={motionForm} />
               </motion.div>
             </div>
