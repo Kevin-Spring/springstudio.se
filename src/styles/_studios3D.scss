@@ -16,9 +16,19 @@
     font-family: var(--main-font);
   }
 
+  .three__tool-tip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .three__container-link {
     color: var(--faded-black);
-    font-size: var(--fs-small);
+    font-size: var(--fs-xs);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -31,4 +41,12 @@
     align-items: center;
     font-family: var(--main-font);
   }
+}
+
+@media only screen and (max-width: 767px) {
+  .three__container .three__container-link{
+    bottom: 0;
+    top: auto
+  }
+  
 }

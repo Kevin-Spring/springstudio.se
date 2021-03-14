@@ -72,9 +72,15 @@
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .primary-nav-container .primary-nav ul .navbar-item {
+    top: 92vh;
+    padding: 0 40px;
+  }
+}
+
 @media only screen and (max-width: 475px) {
   .primary-nav-container .primary-nav ul .navbar-item {
     top: 94vh;
-    padding: 0 40px;
   }
 }

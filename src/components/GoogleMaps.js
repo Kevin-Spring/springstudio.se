@@ -7,7 +7,9 @@ import {
 } from '@react-google-maps/api'
 import mapStyles from '../styles/mapStyles'
 
-let mapWidth = window.innerWidth > 980 ? '40vw' : '100vw'
+let mapWidth = window.innerWidth > 980 ? '45vw' : '100vw'
+
+mapWidth = window.innerWidth < 768 && window.innerWidth > 475 ? '40vw' : mapWidth
 
 const containerStyle = {
   width: mapWidth,

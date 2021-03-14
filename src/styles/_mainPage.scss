@@ -67,7 +67,7 @@
     .main-page-text-container {
       position: relative;
       top: 30px;
-      width: 60vw;
+      width: 55vw;
       display: flex;
       justify-content: center;
       z-index: 2;
@@ -94,8 +94,8 @@
         .main-page-cta-btn {
           border: 1px solid var(--off-white);
           font-size: var(--article);
-          padding: calc(10px + (12 - 10) var(--calc-size))
-            calc(20px + (30 - 20) var(--calc-size));
+          padding: calc(5px + (12 - 5) var(--calc-size))
+            calc(10px + (30 - 10) var(--calc-size));
           cursor: pointer;
           top: 50px;
           transition: background-color 0.2s ease-in-out;
@@ -125,11 +125,14 @@
   .main-page-section:last-of-type {
     .main-page-content-container {
       .main-page-text-container {
+        z-index: 4;
+
         article {
           display: flex;
           align-items: center;
           gap: 20px;
           max-width: 50vw;
+          
           img {
             max-width: 95%;
             height: auto;
@@ -218,6 +221,24 @@
     }
   }
 
+  @media only screen and (max-width: 767px){
+
+    .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner article .main-page-text-container-paragraph, 
+    .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner .main-page-cta-btn{
+      font-size: var(--fs-xs);
+
+    }
+
+    .main-page-google-maps {
+      left: auto;
+    }
+
+    .main-page-cta-btn {
+      display: none;
+    }
+    
+  }
+
   @media only screen and (max-width: 475px) {
     .main-page-section .main-page-content-container .main-page-text-container {
       width: 90vw;
@@ -226,7 +247,7 @@
     .main-page-section:last-of-type
       .main-page-content-container
       .main-page-text-container {
-      padding-left: 20px;
+        padding-left: 20px;
 
       & article {
         max-width: none;

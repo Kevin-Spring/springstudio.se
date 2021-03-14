@@ -7,6 +7,8 @@ import { softShadows, OrbitControls } from 'drei'
 import { PageTransition } from '../animations/PageTransition'
 import { Link } from 'react-router-dom'
 import { IoTriangleOutline } from 'react-icons/io5'
+import { CgMouse } from 'react-icons/cg'
+import {GiHandOfGod} from 'react-icons/gi'
 
 softShadows()
 
@@ -21,6 +23,13 @@ export const Studios3D = ({ transition }) => {
         <PageTransition />
 
         <h1 className='three__container-header'>Work in progress</h1>
+        <p className='three__tool-tip'>
+          Use 
+          {window.innerWidth > 980
+            ? <CgMouse />
+            : <GiHandOfGod /> }
+            to Interact
+        </p>
 
         <Canvas
           shadowMap
