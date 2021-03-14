@@ -15,10 +15,27 @@
     color: white;
 
     .studio-page-content-container {
-      background: rgba(255, 255, 255, 0.5);
       padding-top: 15vh;
       padding-left: 5vw;
       height: 100%;
+      z-index: 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.7) 0%,
+          rgba(255, 255, 255, 0.462062324929972) 100%
+        );
+        z-index: 1;
+      }
 
       picture img {
         position: absolute;
@@ -34,6 +51,8 @@
       .studio-page-text-container {
         height: 100%;
         text-transform: uppercase;
+        z-index: 2;
+        position: relative;
 
         & header {
           margin-bottom: 30px;
@@ -51,6 +70,7 @@
           position: relative;
           padding-top: calc(50px + (70 - 50) var(--calc-size));
           max-width: calc(200px + (230 - 200) var(--calc-size));
+          z-index: 2;
 
           & .studio-btn {
             position: relative;
@@ -82,8 +102,12 @@
   }
 
   .studio-page-section:last-of-type {
-    & .angle-down {
-      transform: rotate(0deg);
+    .angle-down {
+      animation-name: bounceUp;
+      animation-timing-function: ease;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transform: rotate(0deg) !important;
     }
   }
 
@@ -92,5 +116,29 @@
     transition: all 0.2s ease-in-out;
     opacity: 0.8 !important;
     color: var(--white);
+  }
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0) translateX(50%);
+  }
+  10% {
+    transform: translateY(0) translateX(50%);
+  }
+  30% {
+    transform: translateY(-20px) translateX(50%);
+  }
+  50% {
+    transform: translateY(0) translateX(50%);
+  }
+  57% {
+    transform: translateY(-2px) translateX(50%);
+  }
+  64% {
+    transform: translateY(0) translateX(50%);
+  }
+  100% {
+    transform: translateY(0) translateX(50%);
   }
 }

@@ -37,7 +37,11 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.262062324929972) 100%
+      );
       z-index: 1;
     }
 
@@ -141,7 +145,35 @@
       }
     }
     .angle-down {
-      transform: rotate(0deg);
+      animation-name: bounceUp;
+      animation-timing-function: ease;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transform: rotate(0deg) !important;
+    }
+  }
+
+  @keyframes bounceUp {
+    0% {
+      transform: translateY(0) translateX(50%);
+    }
+    10% {
+      transform: translateY(0) translateX(50%);
+    }
+    30% {
+      transform: translateY(-20px) translateX(50%);
+    }
+    50% {
+      transform: translateY(0) translateX(50%);
+    }
+    57% {
+      transform: translateY(-2px) translateX(50%);
+    }
+    64% {
+      transform: translateY(0) translateX(50%);
+    }
+    100% {
+      transform: translateY(0) translateX(50%);
     }
   }
 

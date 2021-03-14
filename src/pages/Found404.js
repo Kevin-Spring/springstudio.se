@@ -5,6 +5,7 @@ import '../styles/_found404.scss'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { PageTransition } from '../animations/PageTransition'
+import { IoTriangleOutline } from 'react-icons/io5'
 
 const motionContent = {
   animate: {
@@ -50,7 +51,10 @@ export const Found404 = ({ transition }) => {
         </motion.h1>
         <Lottie animationData={notFound} className='not-found-animation' />
         <motion.p className='not-found-link-home' variants={motionParagraph}>
-          <Link to='/'> Back to Spring Studio</Link>
+          <Link to='/'>
+            <IoTriangleOutline className='angle angle-left' /> Back to Spring
+            Studio
+          </Link>
         </motion.p>
       </motion.section>
     </motion.main>
