@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+//Custom hook made for fetching the different custom post types and its content from wordpress
 export const useFetch = (url) => {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
@@ -20,9 +21,12 @@ export const useFetch = (url) => {
       .catch((err) => console.log(err));
   };
 
+  //useEffect listening to the depency of url change, 
+  //which makes the hook get posts everytime a new url / endpoint is assigned to the hook
   useEffect(() => {
     getPosts();
   }, [url]);
 
+  //returning the posts / pages / content and loading status of the get-request
   return { loading, posts };
 };

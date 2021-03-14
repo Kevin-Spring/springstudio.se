@@ -1,6 +1,8 @@
 import React from 'react'
 import { Envelope } from '../components/Envelope'
 
+/* Test page for animation on validation success on booking form */
+
 export const envelopetest = () => {
   return (
     <div

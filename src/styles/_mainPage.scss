@@ -67,7 +67,7 @@
     .main-page-text-container {
       position: relative;
       top: 30px;
-      width: 50vw;
+      width: 55vw;
       display: flex;
       justify-content: center;
       z-index: 2;
@@ -233,8 +233,14 @@
       left: auto;
     }
 
-    .main-page-cta-btn {
-      display: none;
+    .main-page-section:last-of-type
+      .main-page-content-container
+      .main-page-text-container {
+        padding-left: 20px;
+
+      .main-page-cta-btn {
+        display: none;
+      }
     }
     
   }

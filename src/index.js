@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 
+/* Using npm package npm React Router & react router dom to make routing nice and clean */
 ReactDOM.render(
   <React.StrictMode>
     <Router>

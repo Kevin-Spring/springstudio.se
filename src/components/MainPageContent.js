@@ -3,16 +3,19 @@ import { gsap } from 'gsap'
 import GoogleMaps from './GoogleMaps'
 import { Link } from 'react-router-dom'
 
+//Writing out the html content and adding animations to the content
 export const MainPageContent = ({ id, title, content, acf, index }) => {
   const revealText = useRef([])
   revealText.current = []
 
+  //A ref which all textcontent is stored in an array
   const addToRefTexts = (el) => {
     if (el && !revealText.current.includes(el)) {
       revealText.current.push(el)
     }
   }
 
+  //Fadein animation using gsap for textelements
   const fadeIn = (element) => {
     gsap.to(element, {
       opacity: 1,
@@ -32,7 +35,10 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
       threshold: 0.9,
     }
 
+    
     // Add observer old way couldn't make it work with array & react-use useIntersection
+    //Observing which items are in viewport and adding animation class accordingly
+    //takes in config settings to determine when content is in viewpage and leaves
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((item) => {
         if (item.intersectionRatio > 0.9) {
@@ -45,6 +51,7 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
     }, config)
 
     // For texts animation
+    //Looking through text items-array and adding the observer to them
     revealText.current.forEach((text) => {
       observer.observe(text)
     })
@@ -76,6 +83,7 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
                 <h2>{title.rendered}</h2>
               )}
             </header>
+            {/* Following is conditional rendering depending on which content made it out from wordpress */}
             {content.rendered && (
               <article ref={addToRefTexts}>
                 <div
