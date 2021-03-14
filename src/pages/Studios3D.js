@@ -12,6 +12,7 @@ import {GiHandOfGod} from 'react-icons/gi'
 
 softShadows()
 
+//Three.js component using npm package react three fiber 
 export const Studios3D = ({ transition }) => {
   return (
     <>
@@ -20,6 +21,7 @@ export const Studios3D = ({ transition }) => {
         transition={transition}
         className='three__container'
       >
+        {/* Page transition when leaving page */}
         <PageTransition />
 
         <h1 className='three__container-header'>Work in progress</h1>
@@ -31,6 +33,7 @@ export const Studios3D = ({ transition }) => {
             to Interact
         </p>
 
+        {/* Drawing canvas & setting up lights */}
         <Canvas
           shadowMap
           colorManagement
@@ -52,6 +55,7 @@ export const Studios3D = ({ transition }) => {
           <pointLight position={[-10, 0, -20]} intensity={0.1} />
           <pointLight position={[0, -10, 0]} intensity={0.2} />
 
+        {/* Adding material and mesh to create shapes */}
           <group>
             <mesh
               receiveShadow
@@ -71,6 +75,7 @@ export const Studios3D = ({ transition }) => {
             <SpinningMesh position={[5, 1, -2]} color='pink' speed={6} />
           </group>
 
+        {/* Orbit controls make it possible to rotate etc */}
           <OrbitControls />
         </Canvas>
         <Link className='three__container-link' to='/studios'>
