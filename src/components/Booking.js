@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useFetch } from './useFetch'
-//import { ContactForm } from './ContactForm'
 import { endpoints } from '../endpoints/endpoints'
 import { BookingForm } from './BookingForm'
 

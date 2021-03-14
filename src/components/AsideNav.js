@@ -31,7 +31,7 @@ export const AsideNav = ({ posts, loading, sections }) => {
       {
         opacity: 0,
         x: 40,
-        delay: 1,
+        delay: 1.5,
         ease: Power3.easeOut,
       },
       0.2

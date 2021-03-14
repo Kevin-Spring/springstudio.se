@@ -8,7 +8,7 @@ import { Navbar } from './Navbar'
 import { envelopetest } from '../pages/envelopetest'
 import { Found404 } from '../pages/Found404'
 
-const transtition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
+const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 
 export const Header = () => {
   const location = useLocation()
@@ -22,33 +22,28 @@ export const Header = () => {
             exact
             path='/studios'
             component={Studios}
-            transtition={transtition}
+            transition={transition}
           />
           <Route
             exact
             path='/booking'
             component={BookingPage}
-            transtition={transtition}
+            transition={transition}
           />
-          <Route
-            exact
-            path='/'
-            component={MainPage}
-            transtition={transtition}
-          />
+          <Route exact path='/' component={MainPage} transition={transition} />
           <Route
             exact
             path='/three'
             component={Studios3D}
-            transtition={transtition}
+            transition={transition}
           />
           <Route
             exact
             path='/envelope'
             component={envelopetest}
-            transtition={transtition}
+            transition={transition}
           />
-          <Route component={Found404} />
+          <Route component={Found404} transition={transition} />
         </Switch>
       </AnimatePresence>
     </>

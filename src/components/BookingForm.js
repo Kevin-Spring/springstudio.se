@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import '../styles/_bookingForm.scss'
