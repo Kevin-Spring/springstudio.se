@@ -49,7 +49,7 @@
   }
   .angle {
     color: var(--off-white);
-    font-size: calc(12px + (20 - 12) var(--calc-size));
+    font-size: 1em;
   }
 }
 
@@ -67,7 +67,7 @@
     }
     .angle {
       color: var(--faded-black);
-      font-size: calc(12px + (20 - 12) var(--calc-size));
+      font-size: 1em;
     }
   }
 }

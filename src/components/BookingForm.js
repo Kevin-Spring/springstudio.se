@@ -352,7 +352,7 @@ export const BookingForm = ({ motionForm }) => {
                       autoComplete='new-password'
                     />
                     <label className='form__label' htmlFor='billingAddress'>
-                      billing address
+                      Billing Address
                     </label>
                   </div>
 

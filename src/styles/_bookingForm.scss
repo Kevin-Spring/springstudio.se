@@ -146,6 +146,7 @@
         font-size: var(--fs-small);
         color: var(--faded-black);
         letter-spacing: var(--medium-spacing);
+        text-transform: capitalize;
       }
 
       .form__field:focus {

@@ -1,11 +1,15 @@
+.page-transition-container.animate{
+  display: flex;
+}
+
 .page-transition-container {
   background-color: var(--black);
   z-index: 4;
   position: absolute;
   width: 100vw;
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 
   .page-transition-svg {
     position: fixed;

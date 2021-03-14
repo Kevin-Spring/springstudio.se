@@ -6,10 +6,10 @@
   align-items: center;
   flex-flow: column;
   z-index: 3;
+  background: var(--faded-black);
 
   .not-found-link-home {
     color: var(--off-white);
-    font-size: var(--h3);
     padding-top: 5%;
     text-transform: uppercase;
 

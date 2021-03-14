@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 import {
   BsArrowUp,
@@ -64,16 +64,23 @@ const tip = {
 }
 
 export const PageTransition = () => {
+  const backdrop = useRef(null)
+
   return (
     <>
       <motion.div
+        ref={backdrop}
         className='page-transition-container'
         initial='initial'
         animate='animate'
         variants={blackBox}
-        onAnimationStart={() => document.body.classList.add('overflow-hidden')}
+        onAnimationStart={() =>
+          //document.body.classList.add('overflow-hidden')
+          backdrop.current.classList.add('animate')
+        }
         onAnimationComplete={() =>
-          document.body.classList.remove('overflow-hidden')
+          //document.body.classList.remove('overflow-hidden')
+          backdrop.current.classList.remove('animate')
         }
       >
         <motion.svg variants={textContainer} className='page-transition-svg'>
