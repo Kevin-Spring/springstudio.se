@@ -5,9 +5,11 @@ import '../styles/_bookingForm.scss'
 import { endpoints } from '../endpoints/endpoints'
 import { Envelope } from './Envelope'
 
+//Pointing get request at correct endpoint
 const url = endpoints[4].url
 
 export const BookingForm = ({ motionForm }) => {
+  //Set up for all form data to be processed by controlled inputs
   const [booking, setBooking] = useState({
     name: '',
     email: '',
@@ -39,6 +41,7 @@ export const BookingForm = ({ motionForm }) => {
     errorMessage: '',
   })
 
+  //Scroll to errror or success validation messages
   const executeScroll = () => {
     window.scroll({
       top: 100,
@@ -47,12 +50,14 @@ export const BookingForm = ({ motionForm }) => {
     })
   }
 
+  //onChange function on inputs which stores info on each state using spread operator and mad es6 hacks
   const onChangeHandler = (e) => {
     const inputName = e.target.name
     const value = e.target.value
     setBooking({ ...booking, [inputName]: value })
   }
 
+  //On submit -> sets all formdata -> makes post request to endpoint -> clears all states to deafult state on success
   const handleSubmit = (e) => {
     e.preventDefault()
     setValidationMessage({
@@ -138,6 +143,7 @@ export const BookingForm = ({ motionForm }) => {
 
   return (
     <>
+    {/* Scroll to validation messages if existing */}
       <span>
         {validationMessage.successMessage && (
           <p className=''>
@@ -156,9 +162,11 @@ export const BookingForm = ({ motionForm }) => {
         )}
       </span>
 
+      {/* Envelope animation on success */}
       {validationMessage.successMessage ? (
         <Envelope />
       ) : (
+        /* Following is the form and all its conditional rendering depending on classnames and states of inputs */
         <motion.div className='form' variants={motionForm}>
           <form
             action='POST'

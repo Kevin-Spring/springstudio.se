@@ -9,11 +9,14 @@ import { motion } from 'framer-motion'
 import '../styles/_navbar.scss'
 import { endpoints } from '../endpoints/endpoints'
 
+//Pointing get request at correct endpoint
 const urlMenu = endpoints[3].url
 
+//Using custom hooks useFetchNav & UseNavbar to get menu items and set correct title to each nav-arrow depending on page location
 export const Navbar = () => {
   const history = useHistory()
   const location = useLocation()
+  const navbar = useRef(null)
   const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu)
   const { navbarItems, navbarPaths } = useNavbar(
     fetchedNavbarItems,
@@ -21,6 +24,7 @@ export const Navbar = () => {
     location
   )
 
+  //Function makes navigation with arrowkeys possible
   const handleKeyDown = (event) => {
     if (event.key === 'ArrowRight') {
       history.push({
@@ -34,8 +38,7 @@ export const Navbar = () => {
     }
   }
 
-  const navbar = useRef(null)
-
+  //Tiny animations for the navbar & eventlistener for arrowkey-events
   useEffect(() => {
     TweenLite.to(navbar.current, 0.8, {
       opacity: 1,
@@ -45,7 +48,7 @@ export const Navbar = () => {
 
     window.addEventListener('keydown', handleKeyDown)
 
-    // cleanup this component
+    // cleanup to remove eventlistener, perventing eventlistener to be called upon several pages and instances
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
@@ -53,7 +56,8 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* <NavLink to='/'>
+      {/* Customer wants to change logo, old commented out
+      <NavLink to='/'>
         <Logo />
       </NavLink> */}
       <motion.nav
@@ -67,6 +71,7 @@ export const Navbar = () => {
       >
         <div className='primary-nav'>
           <ul>
+            {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
             {navbarItems.leftItem && (
               <NavLink
                 className='navbar-left-item navbar-item'

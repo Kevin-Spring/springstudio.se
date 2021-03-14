@@ -4,12 +4,15 @@ import { Power3, TweenLite } from 'gsap'
 import '../styles/_logo.scss'
 import { endpoints } from '../endpoints/endpoints'
 
+//Pointing get request at correct endpoint
 const url = endpoints[5].url
 
 export const Logo = () => {
+  /* Using custom hook to fetch content, passing in the endpoint */
   const { loading, posts } = useFetch(url)
   const logo = useRef(null)
 
+  /* Animation using gsap to fade in logo */
   useEffect(() => {
     TweenLite.to(logo.current, 0.8, {
       opacity: 1,
@@ -32,7 +35,6 @@ export const Logo = () => {
             style={{ opacity: 0 }}
           />
         )}
-        {/* <img src={posts.guid.rendered} alt="logo" /> */}
       </div>
     </>
   )

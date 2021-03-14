@@ -6,12 +6,14 @@ export const AsideNav = ({ posts, loading, sections }) => {
   const refDots = useRef([])
   refDots.current = []
 
+  //Storing all navigation dots in an array by using useRef and this function
   const addToRefDots = (el) => {
     if (el && !refDots.current.includes(el)) {
       refDots.current.push(el)
     }
   }
 
+  //Looks through array of dots and add eventlisteners to each and scrolls to each section that the dot refers to
   useEffect(() => {
     //For Dots scroll
     refDots.current.forEach((dot, index) => {

@@ -2,10 +2,12 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { Link } from 'react-router-dom'
 
+//Writing out the html content and adding animations to the content
 export const StudioPageContent = ({ id, title, content, acf }) => {
   const revealText = useRef([])
   revealText.current = []
 
+  //Fadein animation using gsap for textelements
   const fadeIn = (element) => {
     gsap.to(element, {
       opacity: 1,
@@ -18,6 +20,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
     })
   }
 
+  //A ref which all textcontent is stored in an array
   const addToRefTexts = (el) => {
     if (el && !revealText.current.includes(el)) {
       revealText.current.push(el)
@@ -32,6 +35,8 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
     }
 
     // Add observer old way couldn't make it work with array & react-use useIntersection
+    //Observing which items are in viewport and adding animation class accordingly
+    //takes in config settings to determine when content is in viewpage and leaves
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((item) => {
         if (item.intersectionRatio > 0.9) {
@@ -44,6 +49,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
     }, config)
 
     // For texts animation
+    //Looking through text items-array and adding the observer to them
     revealText.current.forEach((text) => {
       observer.observe(text)
     })

@@ -1,3 +1,4 @@
+//Endpoints for the get-actions, fetching info from wp headless api
 export const endpoints = [
   {
     type: 'post type',

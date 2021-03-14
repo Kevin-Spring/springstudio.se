@@ -6,48 +6,31 @@ export const Envelope = () => {
   const [envelopeClass, setEnvelopeClass] = useState('envelope-open')
 
   var envelopeSentAnimation = function () {
-    //var envelope.current = $('#envelope')
-    //var envelope.currentModule = $('.envelope-code-module')
 
-    /* envelope.currentModule.fadeIn(400)
-    $('#envelope').append(
-      '<div class="envelope-confirmed-checkmark draw-checkmark"></div>'
-    )
-
-    $('html, body').animate(
-      {
-        scrollTop: $('.behovsanalys-form-section').offset().top,
-      },
-      500
-    ) */
-
+    //Envelope close class
     setTimeout(function () {
       setEnvelopeClass('envelope-close')
     }, 1000)
 
-    // Aktivera om brevet ska öppnas igen
+    // Activate if you would like envelope to open after being sent
     setTimeout(function () {
       setEnvelopeClass('envelope-open')
     }, 3200)
 
+    //Send animation triggered
     setTimeout(function () {
       setEnvelopeClass('envelope-close envelope-is-sent ')
     }, 1800)
 
-    // Aktivera om brevet ska komma tillbaka
+    //Activate if you would like the envelope to return on screen after being sent
     setTimeout(function () {
       envelope.current.classList.remove('envelope-is-sent')
       setEnvelopeClass('envelope-close')
     }, 3000)
-
-    /* setTimeout(function () {
-      $('.envelope-confirmed-checkmark').fadeIn(400)
-    }, 3200) */
   }
 
   useEffect(() => {
     envelopeSentAnimation()
-    console.log(envelope.current)
   }, [])
 
   return (

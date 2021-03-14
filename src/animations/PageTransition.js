@@ -8,6 +8,9 @@ import {
 } from 'react-icons/bs'
 import '../styles/_pageTransition.scss'
 
+/* Page transition component created with npm package framer-motion */
+
+//Setting up animation options for each element beforehand
 const blackBox = {
   initial: {
     height: '100vh',
@@ -68,6 +71,8 @@ export const PageTransition = () => {
 
   return (
     <>
+    {/* Adding the black backdrop, the text-svg with fill effect and arrow keys to the page transition
+    using onAnimationStart and onAnimationComplete to hide and show the component */}
       <motion.div
         ref={backdrop}
         className='page-transition-container'

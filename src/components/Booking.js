@@ -4,8 +4,10 @@ import { useFetch } from './useFetch'
 import { endpoints } from '../endpoints/endpoints'
 import { BookingForm } from './BookingForm'
 
+//Pointing get request at correct endpoint
 const url = endpoints[2].url
 
+//Setting up all animation settings for each type of content
 const motionContent = {
   animate: {
     transition: { staggerChildren: 0.1, delayChildren: 1.8 },
@@ -49,6 +51,7 @@ const motionForm = {
 }
 
 export const Booking = () => {
+  /* Fetches the wordpress content of the page using custom fetch hook */
   const { posts } = useFetch(url)
 
   return (
@@ -87,6 +90,7 @@ export const Booking = () => {
                 >
                   {title.rendered}
                 </motion.h1>
+                {/* Gets the actual form from BookingForm component */}
                 <BookingForm motionForm={motionForm} />
               </motion.div>
             </div>
