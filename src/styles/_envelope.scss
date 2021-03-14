@@ -1,0 +1,167 @@
+/* Send Animation */
+.envelope-is-sent {
+  animation: launch 1.5s ease-in-out;
+}
+
+@keyframes launch {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  10%,
+  15% {
+    transform: translateX(0) scale(0.5);
+  }
+  30%,
+  35% {
+    transform: translateX(-20) scale(0.5);
+  }
+  40%,
+  70% {
+    transform: translateX(100vw) scale(0.5);
+  }
+  70% {
+    opacity: 1;
+  }
+  71% {
+    opacity: 0;
+    transform: translateX(100vw) scale(0.5);
+  }
+  72% {
+    opacity: 0;
+    transform: translateX(0px) scale(0.5);
+  }
+  80% {
+    opacity: 0.5;
+    transform: translateX(0px) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+/* End of Send Animation */
+
+#envelope {
+  position: relative;
+  width: 140px;
+  height: 90px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  top: 0;
+  margin-top: 9vh;
+  background-color: var(--faded-black-dark);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.envelope-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: calc(40px + (50 - 40) var(--calc-size)) 0;
+}
+
+.envelope-front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.envelope-front-flap {
+  border-left: calc(140px / 2) solid transparent;
+  border-right: calc(140px / 2) solid transparent;
+  border-bottom: calc(calc(90px / 2) - 4px) solid transparent;
+  border-top: calc(calc(90px / 2) + 4px) solid var(--faded-black);
+  transform-origin: top;
+  pointer-events: none;
+}
+
+.envelope-front-pocket {
+  border-left: calc(140px / 2) solid var(--faded-black-70);
+  border-right: calc(140px / 2) solid var(--faded-black-70);
+  border-bottom: calc(90px / 2) solid var(--faded-black);
+  border-top: calc(90px / 2) solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.envelope-letter {
+  position: relative;
+  background-color: var(--off-white);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  top: 5%;
+  border-radius: 6px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+}
+
+.envelope-letter:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(215, 227, 239, 0.7) 55%,
+    rgba(215, 227, 239, 1) 100%
+  );
+}
+
+.envelope-letter-words {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 14%;
+  background-color: #eeeff0;
+}
+
+.envelope-letter-words.envelope-letter-words-line1 {
+  top: 15%;
+  width: 20%;
+  height: 7%;
+}
+
+.envelope-letter-words.envelope-letter-words-line2 {
+  top: 30%;
+}
+
+.envelope-letter-words.envelope-letter-words-line3 {
+  top: 50%;
+}
+
+.envelope-letter-words.envelope-letter-words-line4 {
+  top: 70%;
+}
+
+.envelope-open .envelope-front-flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.envelope-close .envelope-front-flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.envelope-close .envelope-letter {
+  transform: translateY(0px);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+.envelope-open .envelope-letter {
+  transform: translateY(-30px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}

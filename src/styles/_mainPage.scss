@@ -1,0 +1,267 @@
+@use './navDots';
+
+.main-page-section:first-of-type header h1:before {
+  content: 'welcome to';
+  font-size: var(--article);
+  position: absolute;
+  top: 0;
+  margin-top: -14px;
+}
+
+.main-page-section:first-of-type header h1{
+  font-size: var(--h2);
+}
+
+.main-page-section {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: var(--off-white);
+
+  .main-page-content-container {
+    background: rgba(000, 000, 000, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.262062324929972) 100%
+      );
+      z-index: 1;
+    }
+
+    .main-page-google-maps {
+      z-index: 2;
+    }
+
+    picture img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    .main-page-text-container {
+      position: relative;
+      top: 30px;
+      width: 55vw;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+
+      .main-page-text-container-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        & header,
+        & header + article,
+        .main-page-cta-btn {
+          opacity: 0;
+        }
+
+        article {
+          padding-bottom: calc(20px + (30 - 20) var(--calc-size));
+
+          .main-page-text-container-paragraph {
+            font-size: var(--article);
+          }
+        }
+        .main-page-cta-btn {
+          border: 1px solid var(--off-white);
+          font-size: var(--article);
+          padding: calc(5px + (12 - 5) var(--calc-size))
+            calc(10px + (30 - 10) var(--calc-size));
+          cursor: pointer;
+          top: 50px;
+          transition: background-color 0.2s ease-in-out;
+          letter-spacing: var(--medium-spacing);
+          text-transform: uppercase;
+          font-family: var(--heading-font);
+          background: rgba(0, 0, 0, 0.2);
+          transition: border-color var(--std-trans),
+            background-color var(--std-trans);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12);
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: var(--off-white-70);
+          }
+        }
+      }
+    }
+  }
+}
+.main-page {
+  .main-page-section:last-of-type {
+    .main-page-content-container {
+      .main-page-text-container {
+        z-index: 4;
+
+        article {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          max-width: 50vw;
+          
+          img {
+            max-width: 95%;
+            height: auto;
+          }
+
+          p:last-child {
+            font-size: calc(14px + (16 - 14) var(--calc-size));
+            padding-top: calc(15px + (20 - 15) var(--calc-size));
+          }
+
+          .main-page-text-container-paragraph p {
+            letter-spacing: var(--medium-spacing);
+            padding-bottom: 8px;
+          }
+
+          .main-page-cta-btn {
+            text-align: center;
+            letter-spacing: var(--medium-spacing);
+          }
+        }
+      }
+    }
+    .angle-down {
+      animation-name: bounceUp;
+      animation-timing-function: ease;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transform: rotate(0deg) !important;
+    }
+  }
+
+  @keyframes bounceUp {
+    0% {
+      transform: translateY(0) translateX(50%);
+    }
+    10% {
+      transform: translateY(0) translateX(50%);
+    }
+    30% {
+      transform: translateY(-20px) translateX(50%);
+    }
+    50% {
+      transform: translateY(0) translateX(50%);
+    }
+    57% {
+      transform: translateY(-2px) translateX(50%);
+    }
+    64% {
+      transform: translateY(0) translateX(50%);
+    }
+    100% {
+      transform: translateY(0) translateX(50%);
+    }
+  }
+
+  @media only screen and (max-width: 980px) {
+    .main-page-section:last-of-type {
+      .main-page-content-container {
+        .main-page-text-container {
+          article {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+    .main-page-google-maps {
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .main-page-section:last-of-type
+      .main-page-content-container
+      .main-page-text-container {
+      text-align: left;
+      position: absolute;
+      left: 0;
+      top: 8vh;
+      padding-left: 40px;
+
+      .main-page-text-container-inner {
+        align-items: flex-start;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px){
+
+    .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner article .main-page-text-container-paragraph, 
+    .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner .main-page-cta-btn{
+      font-size: var(--fs-xs);
+
+    }
+
+    .main-page-google-maps {
+      left: auto;
+    }
+
+    .main-page-section:last-of-type
+      .main-page-content-container
+      .main-page-text-container {
+        padding-left: 20px;
+
+      .main-page-cta-btn {
+        display: none;
+      }
+    }
+    
+  }
+
+  @media only screen and (max-width: 475px) {
+    .main-page-section .main-page-content-container .main-page-text-container {
+      width: 90vw;
+    }
+
+    .main-page-section:last-of-type
+      .main-page-content-container
+      .main-page-text-container {
+        padding-left: 20px;
+
+      & article {
+        max-width: none;
+      }
+
+      .main-page-cta-btn {
+        display: none;
+      }
+    }
+  }
+}

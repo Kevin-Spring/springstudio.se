@@ -1,20 +1,30 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from 'react'
+import { motion } from 'framer-motion'
+import {
+  BsArrowUp,
+  BsArrowDown,
+  BsArrowLeft,
+  BsArrowRight,
+} from 'react-icons/bs'
+import '../styles/_pageTransition.scss'
 
+/* Page transition component created with npm package framer-motion */
+
+//Setting up animation options for each element beforehand
 const blackBox = {
   initial: {
-    height: "100vh",
+    height: '100vh',
     bottom: 0,
   },
   animate: {
     height: 0,
     transition: {
-      when: "afterChildren",
-      duration: 1.5,
+      when: 'afterChildren',
+      duration: 0.8,
       ease: [0.87, 0, 0.13, 1],
     },
   },
-};
+}
 
 const textContainer = {
   initial: {
@@ -24,10 +34,10 @@ const textContainer = {
     opacity: 0,
     transition: {
       duration: 0.25,
-      when: "afterChildren",
+      when: 'afterChildren',
     },
   },
-};
+}
 
 const text = {
   initial: {
@@ -36,79 +46,83 @@ const text = {
   animate: {
     y: 80,
     transition: {
-      duration: 1.5,
+      duration: 1,
       ease: [0.87, 0, 0.13, 1],
     },
   },
-};
+}
+
+const tip = {
+  initial: {
+    opacity: 1,
+  },
+  animate: {
+    opacity: 0,
+    transition: {
+      delay: 0.7,
+      duration: 0.8,
+      ease: [0.87, 0, 0.13, 1],
+    },
+  },
+}
 
 export const PageTransition = () => {
+  const backdrop = useRef(null)
+
   return (
-    <motion.div
-      style={{
-        backgroundColor: "#000",
-        zIndex: 50,
-        position: "absolute",
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-      initial="initial"
-      animate="animate"
-      variants={blackBox}
-      onAnimationStart={() => document.body.classList.add("overflow-hidden")}
-      onAnimationComplete={() =>
-        document.body.classList.remove("overflow-hidden")
-      }
-    >
-      <motion.svg
-        variants={textContainer}
-        style={{
-          position: "fixed",
-          zIndex: 50,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+    <>
+    {/* Adding the black backdrop, the text-svg with fill effect and arrow keys to the page transition
+    using onAnimationStart and onAnimationComplete to hide and show the component */}
+      <motion.div
+        ref={backdrop}
+        className='page-transition-container'
+        initial='initial'
+        animate='animate'
+        variants={blackBox}
+        onAnimationStart={() =>
+          //document.body.classList.add('overflow-hidden')
+          backdrop.current.classList.add('animate')
+        }
+        onAnimationComplete={() =>
+          //document.body.classList.remove('overflow-hidden')
+          backdrop.current.classList.remove('animate')
+        }
       >
-        <pattern
-          id="pattern"
-          patternUnits="userSpaceOnUse"
-          width={750}
-          height={800}
-          style={{ color: "white" }}
-        >
-          <rect
-            style={{ width: "100%", height: "100%", fill: "currentColor" }}
-          />
-          <motion.rect
-            variants={text}
-            style={{
-              width: "100%",
-              height: "100%",
-              color: "#A29C9B",
-              fill: "currentColor",
-            }}
-          />
-        </pattern>
-        <text
-          textAnchor="middle"
-          x="50%"
-          y="50%"
-          style={{
-            fill: "url(#pattern)",
-            position: "absolute",
-            fontSize: "2.25rem",
-            lineHeight: "2.5rem",
-            fontWeight: "bold",
-            top: "50%",
-            left: "50%",
-          }}
-        >
-          Spring Studio
-        </text>
-      </motion.svg>
-    </motion.div>
-  );
-};
+        <motion.svg variants={textContainer} className='page-transition-svg'>
+          <pattern
+            id='pattern'
+            width='100%'
+            height='100%'
+            patternUnits='userSpaceOnUse'
+          >
+            <rect />
+
+            <motion.rect
+              variants={text}
+              className='page-transition-text-rect'
+            />
+          </pattern>
+          <text
+            className='page-transition-text'
+            textAnchor='middle'
+            x='50%'
+            y='50%'
+          >
+            Spring Studio
+          </text>
+        </motion.svg>
+        <motion.div variants={tip} className='page-transition-arrow-keys'>
+          <div className='page-transition-arrow-keys-title'>Tip:</div>
+          <div className='page-transition-arrow-keys-row'>
+            <BsArrowUp className='page-transition-arrow-key-up' />
+          </div>
+          <div className='page-transition-arrow-keys-row'>
+            <BsArrowLeft className='page-transition-arrow-key' />
+            <BsArrowDown className='page-transition-arrow-key' />
+            <BsArrowRight className='page-transition-arrow-key' />
+          </div>
+        </motion.div>
+      </motion.div>
+    </>
+  )
+}

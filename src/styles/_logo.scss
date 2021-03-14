@@ -1,0 +1,12 @@
+.logo {
+  position: fixed;
+  top: 0;
+  left: -20px;
+  z-index: 2;
+  padding: 20px;
+
+  & img {
+    height: 75px;
+    max-width: 100%;
+  }
+}

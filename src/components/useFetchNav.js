@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+//Custom hook made forr fetching menu items from wordpress
 export const useFetchNav = (url) => {
   const [loadingNavbar, setLoadingNavbar] = useState(true);
   const [fetchedNavbarItems, setFetchedNavbarItems] = useState([]);
@@ -24,5 +25,6 @@ export const useFetchNav = (url) => {
     getPosts();
   }, [url]);
 
+  //Returning load status of the get request and the different menu items
   return { loadingNavbar, fetchedNavbarItems };
 };

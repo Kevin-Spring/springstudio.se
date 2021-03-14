@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --faded-black: #101010;
+  --faded-black-dark: #0c0c0c;
+  --faded-black-70: rgb(22, 22, 22);
+  --grey: #c7c7c7;
+  --off-white: #fffdf7;
+  --off-white-70: rgba(255, 253, 247, 0.7);
+  --black: #000;
+  --white: #fff;
+  --def-background: linear-gradient(
+    90deg,
+    rgb(29, 29, 29) 18%,
+    rgba(0, 0, 0, 1) 100%
+  ) !important;
+
+  --std-trans: 0.2s ease-in-out;
+  --long-trans: 0.4s ease-in-out;
+
+  /* Font Sizes */
+  --calc-size: * (100vw - 320px) / 1120;
+  --h2: calc(30px + (80 - 30) var(--calc-size));
+  --h3: calc(18px + (30 - 18) var(--calc-size));
+  --article: calc(14px + (18 - 14) var(--calc-size));
+  --fs-small: calc(16px + (18 - 16) var(--calc-size));
+  --fs-xs: calc( 12px + ( 16 - 12 ) var(--calc-size) );
+  --row: calc((100vw - ((20px + (140 - 20) * (100vw - 320px) / 1120) * 2)));
+
+  --medium-spacing: 0.08rem;
+
+  /* Font families */
+  --main-font: 'Roboto', sans-serif;
+  --alt-font: 'Montserrat', sans-serif;
+  --heading-font: 'Raleway', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--black);
+  /* Hide scrollbar for IE and Edge */
+  -ms-overflow-style: none;
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  font-family: var(--main-font);
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: var(--medium-spacing);
+  padding-bottom: calc(20px + (30 - 20) var(--calc-size));
+}
+
+h2 {
+  padding-bottom: 10px;
+  font-size: var(--h2);
+}
+
+h3 {
+  font-family: var(--main-font);
+  font-size: var(--h3);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--alt-font);
+  line-height: 1.4;
+  letter-spacing: 1.3px;
+  transition: opacity var(--std-trans);
+}
+
+a:hover:not(.main-page-cta-btn-link) {
+  opacity: 0.7;
+}
+
+p {
+  font-family: var(--main-font);
+  line-height: 1.4;
+  letter-spacing: 1.3px;
+  padding-bottom: calc(10px + (20 - 10) var(--calc-size));
+}
+
+p:last-child {
+  padding-bottom: 0;
+}
