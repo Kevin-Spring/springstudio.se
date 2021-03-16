@@ -7,6 +7,7 @@ import { Studios3D } from '../pages/Studios3D'
 import { Navbar } from './Navbar'
 import { envelopetest } from '../pages/envelopetest'
 import { Found404 } from '../pages/Found404'
+import { StudioSingle } from '../pages/StudioSingle'
 
 //Transition settings for the pages on page transition and load
 const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
@@ -16,10 +17,12 @@ export const Header = () => {
 
   return (
     <>
-    {/* exitBeforeEnter prop allows components to dismantle and play their animations before new componenet loads. 
+      {/* exitBeforeEnter prop allows components to dismantle and play their animations before new componenet loads. 
     All exit-props called on different motion-elements (e.g motion.div ) is used to make this possible in majority of components*/}
-    
+
       <AnimatePresence exitBeforeEnter>
+        {/* Navbar causes the framer-motion warning in console about animating multiple children, needs to be placed inside switch or outside the animateprescene.
+        But any of those ways wont animate the navbar on exit.  */}
         <Navbar />
         <Switch location={location} key={location.pathname}>
           <Route
@@ -45,6 +48,12 @@ export const Header = () => {
             exact
             path='/envelope'
             component={envelopetest}
+            transition={transition}
+          />
+          <Route
+            exact
+            path='/studio'
+            component={StudioSingle}
             transition={transition}
           />
           <Route component={Found404} transition={transition} />

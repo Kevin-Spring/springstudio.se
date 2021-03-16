@@ -59,8 +59,8 @@ export const Navbar = () => {
       <NavLink to='/'>
         <Logo />
       </NavLink> */}
-      <nav
-        //exit={{ opacity: 0 }}
+      
+      <nav  
         ref={navbar}
         className={
           location.pathname === '/'

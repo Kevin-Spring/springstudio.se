@@ -8,7 +8,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
   revealText.current = []
 
   //Fadein animation using gsap for textelements
-  const fadeIn = (element) => {
+  const fadeIn = element => {
     gsap.to(element, {
       opacity: 1,
       y: -30,
@@ -21,7 +21,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
   }
 
   //A ref which all textcontent is stored in an array
-  const addToRefTexts = (el) => {
+  const addToRefTexts = el => {
     if (el && !revealText.current.includes(el)) {
       revealText.current.push(el)
     }
@@ -37,8 +37,8 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
     // Add observer old way couldn't make it work with array & react-use useIntersection
     //Observing which items are in viewport and adding animation class accordingly
     //takes in config settings to determine when content is in viewpage and leaves
-    let observer = new IntersectionObserver((entries) => {
-      entries.forEach((item) => {
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(item => {
         if (item.intersectionRatio > 0.9) {
           item.target.classList.add('fadeIn')
           fadeIn('.fadeIn')
@@ -50,7 +50,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
 
     // For texts animation
     //Looking through text items-array and adding the observer to them
-    revealText.current.forEach((text) => {
+    revealText.current.forEach(text => {
       observer.observe(text)
     })
   }, [])
@@ -84,7 +84,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
             />
           </article>
           <div ref={addToRefTexts} className='btn-container'>
-            <Link to='/studio-more'>
+            <Link to='/studio'>
               <div className='studio-btn'>{acf.button}</div>
             </Link>
             <Link to='/three'>

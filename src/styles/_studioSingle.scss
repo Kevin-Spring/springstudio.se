@@ -1,0 +1,75 @@
+.studio-sigle-main {
+  background: var(--white);
+  .studio-single-hero-sec {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .studio-single-hero-arrow {
+      position: absolute;
+      bottom: 0;
+      font-size: 40px;
+      font-weight: 100;
+      left: 15vw;
+    }
+
+    .studio-single-hero-header {
+      flex: 0 0 40%;
+      max-width: 40%;
+      margin-left: 15vw;
+
+      .studio-single-hero-header-title {
+        padding-bottom: 10px;
+        font-size: var(--h2);
+        font-family: var(--ff-base);
+      }
+    }
+  }
+
+  .studio-single-slider-sec {
+    height: 70vh;
+    padding: calc(40px + (60 - 40) var(--calc-size)) 0
+      calc(60px + (120 - 60) var(--calc-size)) 0;
+    display: flex;
+    justify-content: center;
+
+    .text-container {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 10vw 15vw;
+    }
+
+    .slick-slider {
+      flex: 0 0 50%;
+      max-width: 50%;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    }
+
+    .slick-slider,
+    .slick-list,
+    .slick-track,
+    .slick-slide,
+    .slick-slide > div,
+    .slick-slide-inner,
+    .slick-slide-inner img {
+      height: 100%;
+    }
+
+    .slick-slide-inner img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .studio-single-text-image-sec {
+    height: 50vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 0 140px;
+    justify-content: center;
+  }
+}
