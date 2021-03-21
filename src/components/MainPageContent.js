@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import GoogleMaps from './GoogleMaps'
 import { Link } from 'react-router-dom'
+import { Socials } from './Socials'
 
 //Writing out the html content and adding animations to the content
 export const MainPageContent = ({ id, title, content, acf, index }) => {
@@ -9,14 +10,14 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
   revealText.current = []
 
   //A ref which all textcontent is stored in an array
-  const addToRefTexts = (el) => {
+  const addToRefTexts = el => {
     if (el && !revealText.current.includes(el)) {
       revealText.current.push(el)
     }
   }
 
   //Fadein animation using gsap for textelements
-  const fadeIn = (element) => {
+  const fadeIn = element => {
     gsap.to(element, {
       opacity: 1,
       y: -30,
@@ -35,12 +36,11 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
       threshold: 0.9,
     }
 
-    
     // Add observer old way couldn't make it work with array & react-use useIntersection
     //Observing which items are in viewport and adding animation class accordingly
     //takes in config settings to determine when content is in viewpage and leaves
-    let observer = new IntersectionObserver((entries) => {
-      entries.forEach((item) => {
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(item => {
         if (item.intersectionRatio > 0.9) {
           item.target.classList.add('fadeIn')
           fadeIn('.fadeIn')
@@ -52,7 +52,7 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
 
     // For texts animation
     //Looking through text items-array and adding the observer to them
-    revealText.current.forEach((text) => {
+    revealText.current.forEach(text => {
       observer.observe(text)
     })
   }, [])
@@ -100,6 +100,15 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
               </Link>
             )}
           </div>
+          {acf.facebook || acf.instagram ? (
+            <Socials
+              fadeRef={addToRefTexts}
+              facebook={acf.facebook.url}
+              instagram={acf.instagram.url}
+            />
+          ) : (
+            ''
+          )}
         </div>
         {acf.maps && (
           <div className='main-page-google-maps'>

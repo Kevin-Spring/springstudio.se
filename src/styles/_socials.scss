@@ -1,0 +1,12 @@
+.studio-single-socials {
+  padding-top: calc(40px + (60 - 40) var(--calc-size));
+  display: flex;
+  padding-right: calc(10px + (20 - 10) var(--calc-size));
+
+  .studio-single-socials-icons {
+    a {
+      font-size: calc(16px + (20 - 16) var(--calc-size));
+      padding: 0 calc(10px + (15 - 10) var(--calc-size));
+    }
+  }
+}

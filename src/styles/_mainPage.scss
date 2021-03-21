@@ -8,7 +8,7 @@
   margin-top: -14px;
 }
 
-.main-page-section:first-of-type header h1{
+.main-page-section:first-of-type header h1 {
   font-size: var(--h2);
 }
 
@@ -69,8 +69,14 @@
       top: 30px;
       width: 55vw;
       display: flex;
+      flex-flow: column;
       justify-content: center;
+      align-items: center;
       z-index: 2;
+
+      .studio-single-socials {
+        opacity: 0;
+      }
 
       .main-page-text-container-inner {
         display: flex;
@@ -132,7 +138,7 @@
           align-items: center;
           gap: 20px;
           max-width: 50vw;
-          
+
           img {
             max-width: 95%;
             height: auto;
@@ -221,12 +227,19 @@
     }
   }
 
-  @media only screen and (max-width: 767px){
-
-    .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner article .main-page-text-container-paragraph, 
-    .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner .main-page-cta-btn{
+  @media only screen and (max-width: 767px) {
+    .main-page-section
+      .main-page-content-container
+      .main-page-text-container
+      .main-page-text-container-inner
+      article
+      .main-page-text-container-paragraph,
+    .main-page-section
+      .main-page-content-container
+      .main-page-text-container
+      .main-page-text-container-inner
+      .main-page-cta-btn {
       font-size: var(--fs-xs);
-
     }
 
     .main-page-google-maps {
@@ -236,13 +249,12 @@
     .main-page-section:last-of-type
       .main-page-content-container
       .main-page-text-container {
-        padding-left: 20px;
+      padding-left: 20px;
 
       .main-page-cta-btn {
         display: none;
       }
     }
-    
   }
 
   @media only screen and (max-width: 475px) {
@@ -253,7 +265,7 @@
     .main-page-section:last-of-type
       .main-page-content-container
       .main-page-text-container {
-        padding-left: 20px;
+      padding-left: 20px;
 
       & article {
         max-width: none;

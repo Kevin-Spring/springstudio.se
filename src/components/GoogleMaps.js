@@ -5,13 +5,14 @@ import {
   Circle,
   Marker,
 } from '@react-google-maps/api'
-import mapStyles from '../styles/mapStyles'
+import { mapStyles } from '../styles/mapStyles'
 
 /* Google map component using npm package react-google-maps-api & adding custom styling */
 
 //Setting up responsive rules
 let mapWidth = window.innerWidth > 980 ? '45vw' : '100vw'
-mapWidth = window.innerWidth < 768 && window.innerWidth > 475 ? '40vw' : mapWidth
+mapWidth =
+  window.innerWidth < 768 && window.innerWidth > 475 ? '40vw' : mapWidth
 
 //Map height and width
 const containerStyle = {
