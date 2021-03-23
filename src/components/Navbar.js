@@ -114,9 +114,18 @@ export const Navbar = () => {
           </div>
           <div className={overlay ? 'overlay open' : 'overlay'}>
             <div className='overlay-content'>
-              <Link to='/'>Home</Link>
-              <Link to='/studios'>Studios</Link>
-              <Link to='/booking'>Booking</Link>
+              <Link to='/'>
+                <IoTriangleOutline className='angle angle-up' />
+                Home
+              </Link>
+              <Link to='/studios'>
+                Studios
+                <IoTriangleOutline className='angle angle-left' />
+              </Link>
+              <Link to='/booking'>
+                Booking
+                <IoTriangleOutline className='angle angle-right' />
+              </Link>
             </div>
           </div>
         </nav>

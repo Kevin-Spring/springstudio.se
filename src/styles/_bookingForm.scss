@@ -435,3 +435,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 475px) {
+  .form-container {
+    max-width: 70vw;
+  }
+}
