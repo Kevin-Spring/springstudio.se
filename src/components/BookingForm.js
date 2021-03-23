@@ -51,14 +51,14 @@ export const BookingForm = ({ motionForm }) => {
   }
 
   //onChange function on inputs which stores info on each state using spread operator and mad es6 hacks
-  const onChangeHandler = (e) => {
+  const onChangeHandler = e => {
     const inputName = e.target.name
     const value = e.target.value
     setBooking({ ...booking, [inputName]: value })
   }
 
   //On submit -> sets all formdata -> makes post request to endpoint -> clears all states to deafult state on success
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     setValidationMessage({
       errorMessage: '',
@@ -101,7 +101,7 @@ export const BookingForm = ({ motionForm }) => {
           'content-type': 'multipart/form-data',
         },
       })
-      .then((res) => {
+      .then(res => {
         console.log(res)
         if (res.data.status === 'mail_sent') {
           setBooking({
@@ -138,12 +138,12 @@ export const BookingForm = ({ motionForm }) => {
           })
         }
       })
-      .catch((err) => console.log(err))
+      .catch(err => console.log(err))
   }
 
   return (
     <>
-    {/* Scroll to validation messages if existing */}
+      {/* Scroll to validation messages if existing */}
       <span>
         {validationMessage.successMessage && (
           <p className=''>
@@ -284,7 +284,7 @@ export const BookingForm = ({ motionForm }) => {
                       })
                     }
                   />
-                  <label className='form__label-select' htmlFor='bookStudio'>
+                  <label className='form__label-select' htmlFor='bookStudioYes'>
                     Yes
                   </label>
                 </div>
@@ -312,7 +312,7 @@ export const BookingForm = ({ motionForm }) => {
                     }
                     checked={booking.bookStudio === false}
                   />
-                  <label className='form__label-select' htmlFor='bookStudio'>
+                  <label className='form__label-select' htmlFor='bookStudioNo'>
                     No
                   </label>
                 </div>
@@ -405,7 +405,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label className='form__label-select' htmlFor='studio'>
+                      <label className='form__label-select' htmlFor='studio1'>
                         Studio 1
                       </label>
                     </div>
@@ -426,7 +426,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label className='form__label-select' htmlFor='studio'>
+                      <label className='form__label-select' htmlFor='studio2'>
                         Studio 2
                       </label>
                     </div>
@@ -447,7 +447,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label className='form__label-select' htmlFor='studio'>
+                      <label className='form__label-select' htmlFor='studio3'>
                         Studio 3
                       </label>
                     </div>
@@ -557,7 +557,7 @@ export const BookingForm = ({ motionForm }) => {
                       />
                       <label
                         className='form__label-select'
-                        htmlFor='audioRecording'
+                        htmlFor='audioRecordingYes'
                       >
                         Yes
                       </label>
@@ -582,7 +582,7 @@ export const BookingForm = ({ motionForm }) => {
                       />
                       <label
                         className='form__label-select'
-                        htmlFor='audioRecording'
+                        htmlFor='audioRecordingNo'
                       >
                         No
                       </label>
@@ -608,7 +608,10 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label className='form__label-select' htmlFor='catering'>
+                      <label
+                        className='form__label-select'
+                        htmlFor='cateringYes'
+                      >
                         Yes
                       </label>
                     </div>
@@ -630,7 +633,10 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label className='form__label-select' htmlFor='catering'>
+                      <label
+                        className='form__label-select'
+                        htmlFor='cateringNo'
+                      >
                         No
                       </label>
                     </div>
@@ -662,10 +668,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='productionType'
-                      >
+                      <label className='form__label-select' htmlFor='photo'>
                         Photo
                       </label>
                     </div>
@@ -674,7 +677,7 @@ export const BookingForm = ({ motionForm }) => {
                       <input
                         className='form__field'
                         type='checkbox'
-                        id='Photo'
+                        id='video'
                         name='productionType'
                         value='video'
                         placeholder='video'
@@ -687,10 +690,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='productionType'
-                      >
+                      <label className='form__label-select' htmlFor='video'>
                         Video
                       </label>
                     </div>
@@ -712,10 +712,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='productionType'
-                      >
+                      <label className='form__label-select' htmlFor='music'>
                         Music
                       </label>
                     </div>
@@ -749,7 +746,10 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label className='form__label-select' htmlFor='workType'>
+                      <label
+                        className='form__label-select'
+                        htmlFor='commercial'
+                      >
                         Commercial
                       </label>
                     </div>
@@ -757,7 +757,7 @@ export const BookingForm = ({ motionForm }) => {
                       <input
                         className='form__field'
                         type='checkbox'
-                        id='Editorial'
+                        id='editorial'
                         name='workType'
                         value='Editorial'
                         placeholder='Editorial'
@@ -770,7 +770,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label className='form__label-select' htmlFor='workType'>
+                      <label className='form__label-select' htmlFor='editorial'>
                         Editorial
                       </label>
                     </div>
@@ -805,15 +805,6 @@ export const BookingForm = ({ motionForm }) => {
                     : 'form__field-select acceptance'
                 }
               >
-                <label
-                  className='form__label-select acceptance-terms'
-                  htmlFor='workType'
-                >
-                  If you submit a question via an enquiry form or contact form,
-                  we need to process your data in order to respond. However,
-                  your data will only be processed for this purpose, and will
-                  not be used for anything else. *
-                </label>
                 <input
                   className={
                     validationMessage.errorMessage && !booking.acceptance
@@ -832,6 +823,15 @@ export const BookingForm = ({ motionForm }) => {
                   }
                   required
                 />
+                <label
+                  className='form__label-select acceptance-terms'
+                  htmlFor='acceptance'
+                >
+                  If you submit a booking request via an enquiry form or a
+                  question via a contact form, we need to process your data in
+                  order to respond. However, your data will only be processed
+                  for this purpose, and will not be used for anything else. *
+                </label>
               </div>
             </div>
             <button type='submit' className='form-btn '>

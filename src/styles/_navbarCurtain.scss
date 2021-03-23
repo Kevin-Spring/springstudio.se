@@ -99,6 +99,10 @@
 
   .overlay.open {
     width: 40vw;
+
+    a {
+      opacity: 1;
+    }
   }
 
   .overlay-content {
@@ -112,7 +116,7 @@
   .overlay a {
     padding: 8px;
     text-decoration: none;
-    font-size: var(--h2);
+    font-size: var(--h3);
     font-family: var(--ff-base);
     color: var(--faded-black);
     display: block;
@@ -120,6 +124,10 @@
     font-weight: 700;
     letter-spacing: var(--medium-spacing);
     text-transform: uppercase;
+    writing-mode: tb;
+    padding-bottom: calc(18px + (24 - 18) var(--calc-size));
+    opacity: 0;
+    transition: var(--std-trans);
   }
 
   .overlay a:hover,
