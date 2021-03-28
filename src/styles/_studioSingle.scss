@@ -39,8 +39,7 @@
 
   .studio-single-slider-sec {
     min-height: 70vh;
-    padding: calc(40px + (60 - 40) var(--calc-size)) 0
-      calc(60px + (120 - 60) var(--calc-size)) 0;
+    padding: calc(40px + (60 - 40) var(--calc-size)) 0 calc(60px + (120 - 60) var(--calc-size)) 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -57,10 +56,8 @@
     .slick-slider {
       flex: 0 0 50%;
       max-width: 50%;
-      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
     }
 
     button.slick-next,
@@ -111,18 +108,13 @@
 
         .photo-grid-img-inner-container {
           position: relative;
-          padding: calc(5px + (10 - 5) var(--calc-size))
-            calc(5px + (10 - 5) var(--calc-size));
+          padding: calc(5px + (10 - 5) var(--calc-size)) calc(5px + (10 - 5) var(--calc-size));
 
           img {
             max-width: 100%;
             height: auto;
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-              0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-              0 12.5px 10px rgba(0, 0, 0, 0.06),
-              0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-              0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-              0 100px 80px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+              0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             transition: var(--std-trans);
 
             &:hover {
@@ -136,8 +128,7 @@
 
   .studio-single-floorplan-sec {
     min-height: 50vw;
-    padding: calc(40px + (60 - 40) var(--calc-size)) 0
-      calc(60px + (120 - 60) var(--calc-size)) 0;
+    padding: calc(40px + (60 - 40) var(--calc-size)) 0 calc(60px + (120 - 60) var(--calc-size)) 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -154,19 +145,28 @@
     }
 
     .floorplan-img-container {
+      position: relative;
       flex: 0 0 50%;
       max-width: 50%;
-      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 
   .studio-single-contact-section {
     display: flex;
-    padding: calc(40px + (60 - 40) var(--calc-size)) 0
-      calc(60px + (120 - 60) var(--calc-size)) 0;
+    padding: calc(40px + (60 - 40) var(--calc-size)) 0 calc(60px + (120 - 60) var(--calc-size)) 0;
     align-items: center;
     flex-flow: column;
     min-height: 50vw;
@@ -192,6 +192,33 @@
         right: 5px;
       }
     }
+
+    .studio-single-socials {
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+
+      p {
+        padding-bottom: 0;
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+        text-align: end;
+      }
+
+      .line {
+        transform: rotate(0deg);
+        width: 33.333%;
+        max-height: 40px;
+      }
+
+      .studio-single-socials-icons {
+        a {
+          padding: calc(10px + (12 - 10) var(--calc-size));
+          flex: 0 0 33.333%;
+          max-width: 33.333%;
+        }
+      }
+    }
   }
 
   .fade {
@@ -215,10 +242,7 @@
     height: 60vw;
   }
 
-  .studio-sigle-main
-    .studio-single-image-grid-sec
-    .studio-single-photo-grid-container
-    .photo-grid-row {
+  .studio-sigle-main .studio-single-image-grid-sec .studio-single-photo-grid-container .photo-grid-row {
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -229,36 +253,44 @@
     padding: 10vw;
     max-width: 100%;
   }
+
+  .studio-sigle-main .studio-single-contact-section .studio-single-socials {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-  .studio-sigle-main .studio-single-hero-sec .studio-single-hero-header {
-    flex: 0 0 60%;
-    max-width: 60%;
-  }
-  .studio-sigle-main .studio-single-image-grid-sec p {
-    max-width: none;
-    padding-bottom: 30px;
-  }
-  .studio-sigle-main .studio-single-slider-sec {
-    flex-flow: column;
+  .studio-sigle-main {
+    .studio-single-hero-sec .studio-single-hero-header {
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+    .studio-single-image-grid-sec p {
+      max-width: none;
+      padding-bottom: 30px;
+    }
+    .studio-single-slider-sec {
+      flex-flow: column;
 
-    .text-container {
+      .text-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .slick-slider {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+      }
+    }
+
+    .studio-single-image-grid-sec .studio-single-photo-grid-container .photo-grid-row {
       flex: 0 0 100%;
       max-width: 100%;
     }
 
-    .slick-slider {
-      flex: 0 0 100%;
-      max-width: 100%;
-      margin-top: 30px;
+    .studio-single-contact-section .studio-single-socials {
+      width: 100%;
     }
-  }
-  .studio-sigle-main
-    .studio-single-image-grid-sec
-    .studio-single-photo-grid-container
-    .photo-grid-row {
-    flex: 0 0 100%;
-    max-width: 100%;
   }
 }

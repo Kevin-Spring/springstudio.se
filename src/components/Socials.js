@@ -1,11 +1,13 @@
 import React from 'react'
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import { AiOutlineMinus } from 'react-icons/ai'
 
 export const Socials = ({ facebook, instagram, fadeRef }) => {
   return (
     <>
       <div ref={fadeRef} className='studio-single-socials'>
         <p>Follow us on</p>
+        <AiOutlineMinus className='line' />
         <div className='studio-single-socials-icons'>
           <a
             href={facebook ? facebook : 'https://facebook.com/SpringStudioSwe'}

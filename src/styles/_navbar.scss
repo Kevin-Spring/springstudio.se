@@ -79,7 +79,7 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
   .primary-nav-container .primary-nav ul .navbar-item {
     top: 87vh;
     padding: 0 40px;

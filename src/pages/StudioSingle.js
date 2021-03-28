@@ -12,8 +12,10 @@ import 'slick-carousel/slick/slick-theme.css'
 import { Link } from 'react-router-dom'
 import { Socials } from '../components/Socials'
 import gsap from 'gsap'
+import { SlideImage } from '../components/SlideImage'
+import { PhotoGridImage } from '../components/PhotoGridImage'
 
-const url = endpoints[1].url
+const url = endpoints[6].url
 
 var settings = {
   dots: true,
@@ -68,16 +70,6 @@ export const StudioSingle = ({ transition }) => {
   /* Using custom hook to fetch content, passing in the endpoint */
   const { loading, posts } = useFetch(url)
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-
-    ScrollTrigger.getAll().forEach(ST => ST.disable())
-  }, [])
-
   const fadeInText = useRef([])
   fadeInText.current = []
 
@@ -102,6 +94,14 @@ export const StudioSingle = ({ transition }) => {
   }
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+
+    ScrollTrigger.getAll().forEach(ST => ST.disable())
+
     const config = {
       root: null,
       rootMargin: '10px',
@@ -124,197 +124,149 @@ export const StudioSingle = ({ transition }) => {
     fadeInText.current.forEach(text => {
       observer.observe(text)
     })
-  }, [])
+  }, [loading])
 
   return (
-    <motion.main
-      className='studio-sigle-main'
-      exit={{ opacity: 0 }}
-      transition={transition}
-    >
+    <motion.main className='studio-sigle-main' exit={{ opacity: 0 }} transition={transition}>
       <PageTransition />
-      <motion.section
-        className='studio-single-hero-sec'
-        initial='initial'
-        animate='animate'
-        variants={motionContent}
-      >
-        <header className='studio-single-hero-header'>
-          <motion.h1
-            className='studio-single-hero-header-title'
-            variants={motionTitle}
-          >
-            Studio
-          </motion.h1>
-          <motion.p variants={motionParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </motion.p>
-        </header>
-        {/* Put dynamic studionumber here instead of hardcoded */}
-        <motion.span variants={motionNumber} className='studio-number'>
-          1
-        </motion.span>
-        <VscArrowDown className='studio-single-hero-arrow' />
-      </motion.section>
 
-      <section className='studio-single-slider-sec'>
-        <div className='text-container'>
-          <h2 ref={addToFadeInTexts} className='fade'>
-            Art
-          </h2>
-          <p ref={addToFadeInTexts} className='fade'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </div>
-        <Slider {...settings}>
-          {posts.map((post, i) => {
-            const { id, acf } = post
-            return (
-              <div key={id} className={`slick-slide-inner`}>
+      {posts.map((post, i) => {
+        const { id, acf } = post
+
+        return (
+          <div key={id}>
+            <motion.section className='studio-single-hero-sec' initial='initial' animate='animate' variants={motionContent}>
+              <header className='studio-single-hero-header'>
+                <motion.h1 className='studio-single-hero-header-title' variants={motionTitle}>
+                  {acf.title}
+                </motion.h1>
+                <motion.p variants={motionParagraph}>{acf.preamble}</motion.p>
+              </header>
+              <motion.span variants={motionNumber} className='studio-number'>
+                {acf.studio_number}
+              </motion.span>
+              <VscArrowDown className='studio-single-hero-arrow' />
+            </motion.section>
+
+            <section className='studio-single-slider-sec'>
+              <div className='text-container'>
+                <h2 ref={addToFadeInTexts} className='fade'>
+                  {acf.slides_section.slide_title}
+                </h2>
+                <p ref={addToFadeInTexts} className='fade'>
+                  {acf.slides_section.slide_text}
+                </p>
+              </div>
+
+              <Slider {...settings}>
+                <SlideImage imageSize={acf.slides_section.slides.slide_1.sizes} imageUrl={acf.slides_section.slides.slide_1.url} />
+                <SlideImage imageSize={acf.slides_section.slides.slide_2.sizes} imageUrl={acf.slides_section.slides.slide_2.url} />
+                <SlideImage imageSize={acf.slides_section.slides.slide_3.sizes} imageUrl={acf.slides_section.slides.slide_3.url} />
+                <SlideImage imageSize={acf.slides_section.slides.slide_4.sizes} imageUrl={acf.slides_section.slides.slide_4.url} />
+              </Slider>
+            </section>
+
+            <section className='studio-single-image-grid-sec'>
+              <h2 ref={addToFadeInTexts} className='fade'>
+                {acf.photo_gallery.gallery_title}
+              </h2>
+
+              <p ref={addToFadeInTexts} className='fade'>
+                {acf.photo_gallery.gallery_text}
+              </p>
+
+              <div className='studio-single-photo-grid-container'>
+                <div className='photo-grid-row'>
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_1.gallery_row_1_image_1.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_1.gallery_row_1_image_1.url}
+                  />
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_1.gallery_row_1_image_2.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_1.gallery_row_1_image_2.url}
+                  />
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_1.gallery_row_1_image_3.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_1.gallery_row_1_image_3.url}
+                  />
+                </div>
+                <div className='photo-grid-row'>
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_2.gallery_row_2_image_1.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_2.gallery_row_2_image_1.url}
+                  />
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_2.gallery_row_2_image_2.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_2.gallery_row_2_image_2.url}
+                  />
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_2.gallery_row_2_image_3.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_2.gallery_row_2_image_3.url}
+                  />
+                </div>
+
+                <div className='photo-grid-row'>
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_3.gallery_row_3_image_1.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_3.gallery_row_3_image_1.url}
+                  />
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_3.gallery_row_3_image_2.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_3.gallery_row_3_image_2.url}
+                  />
+                  <PhotoGridImage
+                    imageSize={acf.photo_gallery.gallery_row_3.gallery_row_3_image_3.sizes}
+                    imageUrl={acf.photo_gallery.gallery_row_3.gallery_row_3_image_3.url}
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section className='studio-single-floorplan-sec'>
+              <div className='floorplan-img-container'>
                 <picture>
                   <source
-                    srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
+                    srcSet={`${acf.floorplan_section.floorplan_image.sizes['1536x1536']} 1200w , ${acf.floorplan_section.floorplan_image.url} 2x`}
                   />
                   <source
-                    srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
+                    srcSet={`${acf.floorplan_section.floorplan_image.sizes['1536x1536']} 1024w , ${acf.floorplan_section.floorplan_image.sizes['2048x2048']} 2x`}
                   />
                   <source
-                    srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
+                    srcSet={`${acf.floorplan_section.floorplan_image.sizes.large} 750w, ${acf.floorplan_section.floorplan_image.sizes['1536x1536']} 2x `}
                   />
                   <source
-                    srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
+                    srcSet={`${acf.floorplan_section.floorplan_image.sizes.medium} 375w , ${acf.floorplan_section.floorplan_image.sizes.large} 2x`}
                   />
-                  <img src={acf.background.sizes.large} alt='background' />
+                  <img src={acf.floorplan_section.floorplan_image.sizes.large} alt='floorplan' />
                 </picture>
               </div>
-            )
-          })}
-        </Slider>
-      </section>
-      <section className='studio-single-image-grid-sec'>
-        <h2 ref={addToFadeInTexts} className='fade'>
-          Photo
-        </h2>
-        <p ref={addToFadeInTexts} className='fade'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+              <div className='text-container'>
+                <h2 ref={addToFadeInTexts} className='fade'>
+                  {acf.floorplan_section.floorplan_title}
+                </h2>
+                <p ref={addToFadeInTexts} className='fade'>
+                  {acf.floorplan_section.floorplan_text}
+                </p>
+              </div>
+            </section>
 
-        {/* Photo grid med tidigare produktioner från studion - Bilder ska hämtas från wp när content är satt och posttyp fixad */}
-        <div className='studio-single-photo-grid-container'>
-          <div className='photo-grid-row'>
-            {posts.map((post, i) => {
-              const { id, acf } = post
-              return (
-                <div key={id} className='photo-grid-img-inner-container'>
-                  <picture>
-                    <source
-                      srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
-                    />
-                    <img src={acf.background.sizes.large} alt='background' />
-                  </picture>
-                </div>
-              )
-            })}
+            <section className='studio-single-contact-section'>
+              <h2 ref={addToFadeInTexts} className='fade'>
+                {acf.contact_section.contact_title}
+              </h2>
+              <p ref={addToFadeInTexts} className='fade'>
+                {acf.contact_section.contact_text}
+              </p>
+              <div ref={addToFadeInTexts} className='fade'>
+                <Link to={acf.contact_section.contact_cta.url} className='booking-link'>
+                  {acf.contact_section.contact_cta.title} <VscArrowRight className='booking-arrow' />
+                </Link>
+              </div>
+              <Socials />
+            </section>
           </div>
-          <div className='photo-grid-row'>
-            {posts.map((post, i) => {
-              const { id, acf } = post
-              return (
-                <div key={id} className='photo-grid-img-inner-container'>
-                  <picture>
-                    <source
-                      srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
-                    />
-                    <img src={acf.background.sizes.large} alt='background' />
-                  </picture>
-                </div>
-              )
-            })}
-          </div>
-          <div className='photo-grid-row'>
-            {posts.map((post, i) => {
-              const { id, acf } = post
-              return (
-                <div key={id} className='photo-grid-img-inner-container'>
-                  <picture>
-                    <source
-                      srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
-                    />
-                    <source
-                      srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
-                    />
-                    <img src={acf.background.sizes.large} alt='background' />
-                  </picture>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-      <section className='studio-single-floorplan-sec'>
-        <div className='floorplan-img-container'>
-          <img src='' alt='' />
-        </div>
-        <div className='text-container'>
-          <h2 ref={addToFadeInTexts} className='fade'>
-            Floorplan
-          </h2>
-          <p ref={addToFadeInTexts} className='fade'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </div>
-      </section>
-
-      <section className='studio-single-contact-section'>
-        <h2 ref={addToFadeInTexts} className='fade'>
-          Looks cool?
-        </h2>
-        <p ref={addToFadeInTexts} className='fade'>
-          Contact us or book studio right here
-        </p>
-        <div ref={addToFadeInTexts} className='fade'>
-          <Link to='/booking' className='booking-link'>
-            Book Studio 1 <VscArrowRight className='booking-arrow' />
-          </Link>
-          <Socials />
-        </div>
-      </section>
+        )
+      })}
     </motion.main>
   )
 }
