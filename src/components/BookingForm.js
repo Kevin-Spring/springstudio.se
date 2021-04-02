@@ -72,11 +72,7 @@ export const BookingForm = ({ motionForm }) => {
     formData.set('your-company', booking.company)
     formData.set('your-billing-address', booking.billingAddress)
     formData.set('your-orgnr', booking.orgNr)
-    formData.set('studio', [
-      booking.studio1 ? ' Studio 1 ' : ' ',
-      booking.studio2 ? ' Studio 2 ' : ' ',
-      booking.studio3 ? ' Studio 3 ' : ' ',
-    ])
+    formData.set('studio', [booking.studio1 ? ' Studio 1 ' : ' ', booking.studio2 ? ' Studio 2 ' : ' ', booking.studio3 ? ' Studio 3 ' : ' '])
     formData.set('your-booking-date-from', booking.bookingDateFrom)
     formData.set('your-booking-date-to', booking.bookingDateTo)
     formData.set('your-working-hours-from', booking.workingHoursFrom)
@@ -87,10 +83,7 @@ export const BookingForm = ({ motionForm }) => {
       booking.productionTypeMusic ? ' Music: Yes ' : ' ',
     ])
     formData.set('audio-recording', booking.audioRecording ? ' Yes ' : ' No ')
-    formData.set('your-work-type', [
-      booking.workTypeCommercial ? ' Commercial: Yes ' : ' ',
-      booking.workTypeEditorial ? ' Editorial: Yes ' : ' ',
-    ])
+    formData.set('your-work-type', [booking.workTypeCommercial ? ' Commercial: Yes ' : ' ', booking.workTypeEditorial ? ' Editorial: Yes ' : ' '])
     formData.set('catering', booking.catering ? 'Yes' : 'No')
     formData.set('acceptance', booking.acceptance)
     formData.set('your-message', booking.message)
@@ -168,32 +161,11 @@ export const BookingForm = ({ motionForm }) => {
       ) : (
         /* Following is the form and all its conditional rendering depending on classnames and states of inputs */
         <motion.div className='form' variants={motionForm}>
-          <form
-            action='POST'
-            onSubmit={handleSubmit}
-            className='form-body'
-            autoComplete='new-password'
-          >
-            <div
-              className={
-                booking.acceptance && !validationMessage.errorMessage
-                  ? 'done form-inner'
-                  : 'form-inner'
-              }
-            >
-              <div
-                className={
-                  booking.bookStudio
-                    ? 'done form__group field'
-                    : 'form__group field'
-                }
-              >
+          <form action='POST' onSubmit={handleSubmit} className='form-body' autoComplete='new-password'>
+            <div className={booking.acceptance && !validationMessage.errorMessage ? 'done form-inner' : 'form-inner'}>
+              <div className={booking.bookStudio ? 'done form__group field' : 'form__group field'}>
                 <input
-                  className={
-                    validationMessage.errorMessage && !booking.name
-                      ? 'error form__field'
-                      : 'form__field'
-                  }
+                  className={validationMessage.errorMessage && !booking.name ? 'error form__field' : 'form__field'}
                   type='text'
                   id='name'
                   name='name'
@@ -207,19 +179,9 @@ export const BookingForm = ({ motionForm }) => {
                 </label>
               </div>
 
-              <div
-                className={
-                  booking.bookStudio
-                    ? 'done form__group field'
-                    : 'form__group field'
-                }
-              >
+              <div className={booking.bookStudio ? 'done form__group field' : 'form__group field'}>
                 <input
-                  className={
-                    validationMessage.errorMessage && !booking.email
-                      ? 'error form__field'
-                      : 'form__field'
-                  }
+                  className={validationMessage.errorMessage && !booking.email ? 'error form__field' : 'form__field'}
                   type='email'
                   id='email'
                   name='email'
@@ -233,19 +195,9 @@ export const BookingForm = ({ motionForm }) => {
                 </label>
               </div>
 
-              <div
-                className={
-                  booking.bookStudio
-                    ? 'done form__group field'
-                    : 'form__group field'
-                }
-              >
+              <div className={booking.bookStudio ? 'done form__group field' : 'form__group field'}>
                 <input
-                  className={
-                    validationMessage.errorMessage && !booking.phone
-                      ? 'error form__field'
-                      : 'form__field'
-                  }
+                  className={validationMessage.errorMessage && !booking.phone ? 'error form__field' : 'form__field'}
                   type='tel'
                   id='phone'
                   name='phone'
@@ -261,13 +213,7 @@ export const BookingForm = ({ motionForm }) => {
 
               <h3 className='form__group__header'> Book Studio</h3>
               <div className='form__group field'>
-                <div
-                  className={
-                    booking.bookStudio
-                      ? 'done form__field-select'
-                      : 'form__field-select'
-                  }
-                >
+                <div className={booking.bookStudio ? 'done form__field-select' : 'form__field-select'}>
                   <input
                     className='form__field'
                     type='checkbox'
@@ -289,13 +235,7 @@ export const BookingForm = ({ motionForm }) => {
                   </label>
                 </div>
 
-                <div
-                  className={
-                    booking.bookStudio
-                      ? 'done form__field-select'
-                      : 'form__field-select'
-                  }
-                >
+                <div className={booking.bookStudio ? 'done form__field-select' : 'form__field-select'}>
                   <input
                     className='form__field'
                     type='checkbox'
@@ -320,13 +260,11 @@ export const BookingForm = ({ motionForm }) => {
 
               {booking.bookStudio && (
                 <motion.div variants={motionForm} className='form-inner'>
-                  <div
-                    className={
-                      booking.studio1 || booking.studio2 || booking.studio3
-                        ? 'done form__group field'
-                        : 'form__group field'
-                    }
-                  >
+                  <span className='form__cancellation-notice'>
+                    *Cancellation must be made no later than 5 days before the booked date, otherwise we have the right to charge half of the agreed
+                    amount.
+                  </span>
+                  <div className={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}>
                     <input
                       className='form__field'
                       type='text'
@@ -342,13 +280,7 @@ export const BookingForm = ({ motionForm }) => {
                     </label>
                   </div>
 
-                  <div
-                    className={
-                      booking.studio1 || booking.studio2 || booking.studio3
-                        ? 'done form__group field'
-                        : 'form__group field'
-                    }
-                  >
+                  <div className={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}>
                     <input
                       className='form__field'
                       type='text'
@@ -364,13 +296,7 @@ export const BookingForm = ({ motionForm }) => {
                     </label>
                   </div>
 
-                  <div
-                    className={
-                      booking.studio1 || booking.studio2 || booking.studio3
-                        ? 'done form__group field'
-                        : 'form__group field'
-                    }
-                  >
+                  <div className={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}>
                     <input
                       className='form__field'
                       type='text'
@@ -455,9 +381,7 @@ export const BookingForm = ({ motionForm }) => {
                 </motion.div>
               )}
 
-              {booking.studio1 ||
-              booking.studio2 ||
-              (booking.studio3 && booking.bookStudio) ? (
+              {booking.studio1 || booking.studio2 || (booking.studio3 && booking.bookStudio) ? (
                 <motion.div variants={motionForm} className='form-inner'>
                   <div className='form__group field'>
                     <input
@@ -528,16 +452,10 @@ export const BookingForm = ({ motionForm }) => {
                 ''
               )}
 
-              {(booking.studio1 || booking.studio2 || booking.studio3) &&
-              booking.bookStudio ? (
-                <motion.div
-                  variants={motionForm}
-                  className='form-inner form-inner-selects'
-                >
+              {(booking.studio1 || booking.studio2 || booking.studio3) && booking.bookStudio ? (
+                <motion.div variants={motionForm} className='form-inner form-inner-selects'>
                   <div className='form__group field'>
-                    <h3 className='form__group__selects-header'>
-                      Audio Recording
-                    </h3>
+                    <h3 className='form__group__selects-header'>Audio Recording</h3>
                     <div className='form__field-select'>
                       <input
                         className='form__field'
@@ -555,10 +473,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='audioRecordingYes'
-                      >
+                      <label className='form__label-select' htmlFor='audioRecordingYes'>
                         Yes
                       </label>
                     </div>
@@ -580,10 +495,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='audioRecordingNo'
-                      >
+                      <label className='form__label-select' htmlFor='audioRecordingNo'>
                         No
                       </label>
                     </div>
@@ -608,10 +520,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='cateringYes'
-                      >
+                      <label className='form__label-select' htmlFor='cateringYes'>
                         Yes
                       </label>
                     </div>
@@ -633,10 +542,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='cateringNo'
-                      >
+                      <label className='form__label-select' htmlFor='cateringNo'>
                         No
                       </label>
                     </div>
@@ -646,8 +552,7 @@ export const BookingForm = ({ motionForm }) => {
                 ''
               )}
 
-              {booking.bookStudio &&
-              (booking.studio1 || booking.studio2 || booking.studio3) ? (
+              {booking.bookStudio && (booking.studio1 || booking.studio2 || booking.studio3) ? (
                 <motion.div variants={motionForm} className='form-inner'>
                   <h3 className='form__group__header'>Production Type</h3>
                   <div className='form__group field'>
@@ -746,10 +651,7 @@ export const BookingForm = ({ motionForm }) => {
                           })
                         }
                       />
-                      <label
-                        className='form__label-select'
-                        htmlFor='commercial'
-                      >
+                      <label className='form__label-select' htmlFor='commercial'>
                         Commercial
                       </label>
                     </div>
@@ -798,19 +700,9 @@ export const BookingForm = ({ motionForm }) => {
                 </div>
               </div>
 
-              <div
-                className={
-                  booking.name && booking.email
-                    ? 'form__field-select acceptance ready'
-                    : 'form__field-select acceptance'
-                }
-              >
+              <div className={booking.name && booking.email ? 'form__field-select acceptance ready' : 'form__field-select acceptance'}>
                 <input
-                  className={
-                    validationMessage.errorMessage && !booking.acceptance
-                      ? 'error form__field'
-                      : 'form__field'
-                  }
+                  className={validationMessage.errorMessage && !booking.acceptance ? 'error form__field' : 'form__field'}
                   type='checkbox'
                   id='acceptance'
                   name='acceptance'
@@ -818,19 +710,12 @@ export const BookingForm = ({ motionForm }) => {
                   placeholder='acceptance'
                   autoComplete='new-password'
                   checked={booking.acceptance === true}
-                  onChange={() =>
-                    setBooking({ ...booking, acceptance: !booking.acceptance })
-                  }
+                  onChange={() => setBooking({ ...booking, acceptance: !booking.acceptance })}
                   required
                 />
-                <label
-                  className='form__label-select acceptance-terms'
-                  htmlFor='acceptance'
-                >
-                  If you submit a booking request via an enquiry form or a
-                  question via a contact form, we need to process your data in
-                  order to respond. However, your data will only be processed
-                  for this purpose, and will not be used for anything else. *
+                <label className='form__label-select acceptance-terms' htmlFor='acceptance'>
+                  If you submit a booking request via an enquiry form or a question via a contact form, we need to process your data in order to
+                  respond. However, your data will only be processed for this purpose, and will not be used for anything else. *
                 </label>
               </div>
             </div>

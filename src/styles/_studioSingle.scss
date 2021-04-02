@@ -9,8 +9,8 @@
 
     .studio-single-hero-arrow {
       position: absolute;
-      bottom: 0;
-      font-size: 40px;
+      bottom: calc(10px + (20 - 10) var(--calc-size));
+      font-size: calc(30px + (50 - 30) var(--calc-size));
       font-weight: 100;
       left: 12vw;
     }
@@ -106,19 +106,51 @@
         display: flex;
         flex-flow: column;
 
-        .photo-grid-img-inner-container {
-          position: relative;
+        .photo-grid-img-container {
           padding: calc(5px + (10 - 5) var(--calc-size)) calc(5px + (10 - 5) var(--calc-size));
 
-          img {
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-              0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-            transition: var(--std-trans);
+          .photo-grid-img-inner-container {
+            position: relative;
 
-            &:hover {
-              transform: scale(1.02);
+            img {
+              max-width: 100%;
+              height: auto;
+              box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+            }
+
+            .photo-meta {
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              display: flex;
+              flex-flow: column;
+              justify-content: center;
+              align-items: center;
+              transition: var(--long-trans);
+              background: var(--faded-black);
+              width: 100%;
+              height: 0;
+              visibility: hidden;
+
+              p {
+                opacity: 0;
+                transition: var(--std-trans);
+                color: var(--off-white);
+                padding-bottom: calc(5px + (10 - 5) var(--calc-size));
+                visibility: hidden;
+              }
+            }
+          }
+          .photo-grid-img-inner-container:hover .photo-meta {
+            height: 100%;
+            visibility: visible;
+
+            p {
+              opacity: 1;
+              visibility: visible;
             }
           }
         }
@@ -223,6 +255,13 @@
 
   .fade {
     opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .studio-sigle-main .studio-single-image-grid-sec .studio-single-photo-grid-container .photo-grid-row {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 

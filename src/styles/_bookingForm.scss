@@ -261,12 +261,8 @@
             -o-transition: var(--std-trans);
             -moz-transition: var(--std-trans);
             transition: var(--std-trans);
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-              0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-              0 12.5px 10px rgba(0, 0, 0, 0.06),
-              0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-              0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-              0 100px 80px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+              0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
           }
         }
       }
@@ -275,7 +271,7 @@
       .form__group.done label,
       .form__field-select.done,
       .form__field-select.done label {
-        opacity: 0.2;
+        opacity: 0.4;
       }
 
       .error.form__field {
@@ -377,6 +373,18 @@
         opacity: 1;
       }
     }
+
+    .form__cancellation-notice {
+      flex: 0 0 60%;
+      max-width: 60%;
+      margin: calc(0px - (20 - 10) var(--calc-size)) auto var(--h2) auto;
+      font-size: calc(10px + (12 - 10) var(--calc-size));
+      padding: calc(10px + (12 - 10) var(--calc-size));
+      color: var(--faded-black);
+      letter-spacing: var(--medium-spacing);
+      transition: all var(--std-trans);
+      text-transform: uppercase;
+    }
   }
   .form-btn {
     z-index: 2;
@@ -402,18 +410,12 @@
     -o-transition: all var(--std-trans);
     -moz-transition: all var(--std-trans);
     transition: all var(--std-trans);
-    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-      0 100px 80px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-      0 100px 80px rgba(0, 0, 0, 0.12);
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-      0 100px 80px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 
     &:hover {
       border: 1px solid rgba(0, 0, 0, 0.072);
