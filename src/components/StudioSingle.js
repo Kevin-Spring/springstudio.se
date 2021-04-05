@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { useFetch } from '../components/useFetch'
+import { useFetch } from './useFetch'
 import { endpoints } from '../endpoints/endpoints'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PageTransition } from '../animations/PageTransition'
@@ -10,10 +10,10 @@ import '../styles/_studioSingle.scss'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Link } from 'react-router-dom'
-import { Socials } from '../components/Socials'
+import { Socials } from './Socials'
 import gsap from 'gsap'
-import { SlideImage } from '../components/SlideImage'
-import { PhotoGridImage } from '../components/PhotoGridImage'
+import { SlideImage } from './SlideImage'
+import { PhotoGridImage } from './PhotoGridImage'
 
 const url = endpoints[6].url
 

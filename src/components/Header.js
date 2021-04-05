@@ -7,7 +7,7 @@ import { Studios3D } from '../pages/Studios3D'
 import { Navbar } from './Navbar'
 import { envelopetest } from '../pages/envelopetest'
 import { Found404 } from '../pages/Found404'
-import { StudioSingle } from '../pages/StudioSingle'
+import { StudioSinglePage } from '../pages/StudioSinglePage'
 
 //Transition settings for the pages on page transition and load
 const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
@@ -30,7 +30,7 @@ export const Header = () => {
           <Route exact path='/' component={MainPage} transition={transition} />
           <Route exact path='/three' component={Studios3D} transition={transition} />
           <Route exact path='/envelope' component={envelopetest} transition={transition} />
-          <Route exact path='/studio' component={StudioSingle} transition={transition} />
+          <Route exact path='/studio' component={StudioSinglePage} transition={transition} />
           <Route component={Found404} transition={transition} />
         </Switch>
       </AnimatePresence>
