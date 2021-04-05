@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import {
-  GoogleMap,
-  useLoadScript,
-  Circle,
-  Marker,
-} from '@react-google-maps/api'
-import { mapStyles } from '../styles/mapStyles'
+import { GoogleMap, useLoadScript, Circle, Marker } from '@react-google-maps/api'
+import { mapStyles2 } from '../styles/mapStyles2'
 
 /* Google map component using npm package react-google-maps-api & adding custom styling */
 
 //Map options
 const options = {
-  styles: mapStyles,
+  styles: mapStyles2,
   disableDefaultUI: true,
   //zoomControl: true,
 }
@@ -70,12 +65,7 @@ const GoogleMaps = ({ lat, lng }) => {
 
   return (
     <div>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        zoom={13}
-        center={center}
-        options={options}
-      >
+      <GoogleMap mapContainerStyle={containerStyle} zoom={13} center={center} options={options}>
         <Circle center={center} options={circleOptions} />
         <Marker position={center} />
       </GoogleMap>
