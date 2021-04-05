@@ -447,9 +447,16 @@
   }
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 479px) {
   .form-container {
     max-width: 70vw;
     padding: 20vw 0;
+  }
+
+  .form-container .form .form-inner .form__group {
+    flex: 0 0 90%;
+    max-width: 90%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
