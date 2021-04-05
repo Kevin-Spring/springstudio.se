@@ -1,27 +1,12 @@
-import React from 'react'
-import {
-  GoogleMap,
-  useLoadScript,
-  Circle,
-  Marker,
-} from '@react-google-maps/api'
-import mapStyles from '../styles/mapStyles'
+import React, { useState, useEffect } from 'react'
+import { GoogleMap, useLoadScript, Circle, Marker } from '@react-google-maps/api'
+import { mapStyles2 } from '../styles/mapStyles2'
 
 /* Google map component using npm package react-google-maps-api & adding custom styling */
 
-//Setting up responsive rules
-let mapWidth = window.innerWidth > 980 ? '45vw' : '100vw'
-mapWidth = window.innerWidth < 768 && window.innerWidth > 475 ? '40vw' : mapWidth
-
-//Map height and width
-const containerStyle = {
-  width: mapWidth,
-  height: '100vh',
-}
-
 //Map options
 const options = {
-  styles: mapStyles,
+  styles: mapStyles2,
   disableDefaultUI: true,
   //zoomControl: true,
 }
@@ -43,8 +28,30 @@ const circleOptions = {
 
 //Getting lat and long from acf and setting up the map with coordinates
 const GoogleMaps = ({ lat, lng }) => {
-  //const libraries = "places";
+  const [size, setSize] = useState(window.innerWidth)
 
+  const checkSize = () => {
+    setSize(window.innerWidth)
+  }
+
+  //Setting up responsive rules
+  let mapWidth = size > 980 ? '45vw' : '100vw'
+
+  //Map height and width
+  const containerStyle = {
+    width: mapWidth,
+    height: '100vh',
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', checkSize)
+    //Clean up callback to prevent several eventlisteners at the same time
+    return () => {
+      window.removeEventListener('resize', checkSize)
+    }
+  }, [])
+
+  //const libraries = "places";
   const center = { lat, lng }
 
   //Fetching apikey from .env-file
@@ -58,12 +65,7 @@ const GoogleMaps = ({ lat, lng }) => {
 
   return (
     <div>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        zoom={14}
-        center={center}
-        options={options}
-      >
+      <GoogleMap mapContainerStyle={containerStyle} zoom={13} center={center} options={options}>
         <Circle center={center} options={circleOptions} />
         <Marker position={center} />
       </GoogleMap>

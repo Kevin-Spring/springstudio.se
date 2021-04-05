@@ -23,7 +23,7 @@ export const MainPageChapter = () => {
   revealRefs.current = []
 
   //Functions which adds all the sections in an array to be stored and used for scrollTrigger
-  const addToRefs = (el) => {
+  const addToRefs = el => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el)
     }
@@ -59,7 +59,7 @@ export const MainPageChapter = () => {
 
   return (
     <>
-    {/* Mapping through posts and writes the html and structure with MainPageContent-component */}
+      {/* Mapping through posts and writes the html and structure with MainPageContent-component */}
       {posts.map((post, i) => {
         const { id, title, content, acf } = post
         return (

@@ -1,11 +1,11 @@
-.page-transition-container.animate{
+.page-transition-container.animate {
   display: flex;
 }
 
 .page-transition-container {
   background-color: var(--black);
   z-index: 4;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   justify-content: center;
   align-items: center;
