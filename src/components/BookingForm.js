@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import '../styles/_bookingForm.scss'
 import { endpoints } from '../endpoints/endpoints'
 import { Envelope } from './Envelope'
+import { VscArrowRight } from 'react-icons/vsc'
 
 //Pointing get request at correct endpoint
 const url = endpoints[4].url
@@ -720,7 +721,7 @@ export const BookingForm = ({ motionForm }) => {
               </div>
             </div>
             <button type='submit' className='form-btn '>
-              Send
+              Send <VscArrowRight className='booking-arrow' />
             </button>
           </form>
         </motion.div>

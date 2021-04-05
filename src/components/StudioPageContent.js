@@ -59,18 +59,10 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
     <>
       <div className='studio-page-content-container'>
         <picture>
-          <source
-            srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
-          />
-          <source
-            srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
-          />
-          <source
-            srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
-          />
-          <source
-            srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
-          />
+          <source srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`} />
+          <source srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`} />
+          <source srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `} />
+          <source srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`} />
           <img src={acf.background.sizes.large} alt='background' />
         </picture>
         <div className='studio-page-text-container'>
@@ -78,17 +70,18 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
             <h3>{title.rendered}</h3>
           </header>
           <article ref={addToRefTexts}>
-            <div
-              className='studio-info'
-              dangerouslySetInnerHTML={{ __html: content.rendered }}
-            />
+            <div className='studio-info' dangerouslySetInnerHTML={{ __html: content.rendered }} />
           </article>
-          <div ref={addToRefTexts} className='btn-container'>
+          <div className='btn-container'>
             <Link to='/studio'>
-              <div className='studio-btn'>{acf.button}</div>
+              <div ref={addToRefTexts} className='studio-btn'>
+                {acf.button}
+              </div>
             </Link>
             <Link to='/three'>
-              <div className='studio-btn'>{acf.button_3d} (demo)</div>
+              <div ref={addToRefTexts} className='studio-btn'>
+                {acf.button_3d} (demo)
+              </div>
             </Link>
           </div>
         </div>
