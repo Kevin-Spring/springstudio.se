@@ -16,11 +16,7 @@
   --off-white-70: rgba(255, 253, 247, 0.7);
   --black: #000;
   --white: #fff;
-  --def-background: linear-gradient(
-    90deg,
-    rgb(29, 29, 29) 18%,
-    rgba(0, 0, 0, 1) 100%
-  ) !important;
+  --def-background: linear-gradient(90deg, rgb(29, 29, 29) 18%, rgba(0, 0, 0, 1) 100%) !important;
 
   --std-trans: 0.2s ease-in-out;
   --long-trans: 0.4s ease-in-out;

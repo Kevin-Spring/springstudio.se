@@ -6,6 +6,7 @@
   position: absolute;
   top: 0;
   margin-top: -14px;
+  font-weight: 300;
 }
 
 .main-page-section:first-of-type header h1 {
@@ -41,11 +42,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.262062324929972) 100%
-      );
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.262062324929972) 100%);
       z-index: 1;
     }
 
@@ -79,8 +76,7 @@
         position: absolute;
         right: 0;
         writing-mode: vertical-rl;
-        padding: calc(8px + (12 - 8) var(--calc-size))
-          calc(8px + (12 - 8) var(--calc-size));
+        padding: calc(8px + (12 - 8) var(--calc-size)) calc(8px + (12 - 8) var(--calc-size));
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
         background: rgba(0, 0, 0, 0.8);
@@ -89,6 +85,7 @@
         justify-content: center;
         height: 70%;
         font-size: var(--fs-xs);
+        color: var(--off-white);
 
         a {
           padding: calc(10px + (12 - 10) var(--calc-size));
@@ -117,8 +114,7 @@
         .main-page-cta-btn {
           border: 1px solid var(--off-white);
           font-size: var(--article);
-          padding: calc(5px + (12 - 5) var(--calc-size))
-            calc(10px + (30 - 10) var(--calc-size));
+          padding: calc(5px + (12 - 5) var(--calc-size)) calc(10px + (30 - 10) var(--calc-size));
           cursor: pointer;
           top: 50px;
           transition: background-color 0.2s ease-in-out;
@@ -126,14 +122,9 @@
           text-transform: uppercase;
           font-family: var(--heading-font);
           background: rgba(0, 0, 0, 0.2);
-          transition: border-color var(--std-trans),
-            background-color var(--std-trans);
-          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-            0 12.5px 10px rgba(0, 0, 0, 0.06),
-            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-            0 100px 80px rgba(0, 0, 0, 0.12);
+          transition: border-color var(--std-trans), background-color var(--std-trans);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 
           &:hover {
             background: rgba(0, 0, 0, 0.3);
@@ -167,14 +158,12 @@
           }
 
           .main-page-text-container-paragraph p {
-            letter-spacing: var(--medium-spacing);
             padding-bottom: 8px;
           }
+        }
 
-          .main-page-cta-btn {
-            text-align: center;
-            letter-spacing: var(--medium-spacing);
-          }
+        .main-page-cta-btn {
+          background: transparent;
         }
       }
     }
@@ -253,6 +242,18 @@
       top: 0;
       left: 0;
       right: 0;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+      }
     }
   }
 
@@ -264,11 +265,7 @@
       article
       .main-page-text-container-paragraph
       p,
-    .main-page-section
-      .main-page-content-container
-      .main-page-text-container
-      .main-page-text-container-inner
-      .main-page-cta-btn {
+    .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner .main-page-cta-btn {
       font-size: 10px;
     }
 
@@ -276,9 +273,7 @@
       left: auto;
     }
 
-    .main-page-section:last-of-type
-      .main-page-content-container
-      .main-page-text-container {
+    .main-page-section:last-of-type .main-page-content-container .main-page-text-container {
       padding-left: 20px;
       width: 90vw;
       font-size: 10px;
@@ -322,11 +317,10 @@
       width: 90vw;
     }
 
-    .main-page-section:last-of-type
-      .main-page-content-container
-      .main-page-text-container {
+    .main-page-section:last-of-type .main-page-content-container .main-page-text-container {
       padding-left: 20px;
       width: 82%;
+      padding-top: 13vh;
 
       .main-page-cta-btn {
         position: relative;
