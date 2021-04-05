@@ -18,11 +18,7 @@ export const Navbar = () => {
   const navbar = useRef(null)
   const [overlay, setOverlay] = useState(false)
   const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu)
-  const { navbarItems, navbarPaths } = useNavbar(
-    fetchedNavbarItems,
-    loadingNav,
-    location
-  )
+  const { navbarItems, navbarPaths } = useNavbar(fetchedNavbarItems, loadingNav, location)
 
   //Function makes navigation with arrowkeys possible
   const handleKeyDown = event => {
@@ -62,28 +58,12 @@ export const Navbar = () => {
       </NavLink> */}
 
       {location.pathname !== '/studio' ? (
-        <nav
-          ref={navbar}
-          className={
-            location.pathname === '/'
-              ? 'primary-nav-container light'
-              : 'primary-nav-container dark'
-          }
-        >
-          <div
-            className={
-              location.pathname === '/studio'
-                ? 'primary-nav top'
-                : 'primary-nav'
-            }
-          >
+        <nav ref={navbar} className={location.pathname === '/' ? 'primary-nav-container light' : 'primary-nav-container dark'}>
+          <div className={location.pathname === '/studio' ? 'primary-nav top' : 'primary-nav'}>
             <ul>
               {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
               {navbarItems.leftItem && (
-                <NavLink
-                  className='navbar-left-item navbar-item'
-                  to={{ pathname: navbarPaths.leftArrow }}
-                >
+                <NavLink className='navbar-left-item navbar-item' to={{ pathname: navbarPaths.leftArrow }}>
                   <li>
                     <IoTriangleOutline className='angle angle-left' />
                     <span>{navbarItems.leftItem}</span>
@@ -91,10 +71,7 @@ export const Navbar = () => {
                 </NavLink>
               )}
               {navbarItems.rightItem && (
-                <NavLink
-                  className='navbar-right-item navbar-item'
-                  to={{ pathname: navbarPaths.rightArrow }}
-                >
+                <NavLink className='navbar-right-item navbar-item' to={{ pathname: navbarPaths.rightArrow }}>
                   <li>
                     <span>{navbarItems.rightItem}</span>
                     <IoTriangleOutline className='angle angle-right' />
@@ -106,10 +83,7 @@ export const Navbar = () => {
         </nav>
       ) : (
         <nav ref={navbar} className='primary-nav-container-curtain'>
-          <div
-            className={overlay ? 'hamburger-icon open' : 'hamburger-icon'}
-            onClick={() => setOverlay(!overlay)}
-          >
+          <div className={overlay ? 'hamburger-icon open' : 'hamburger-icon'} onClick={() => setOverlay(!overlay)}>
             <div className='hamburger'></div>
           </div>
           <div className={overlay ? 'overlay open' : 'overlay'}>

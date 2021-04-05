@@ -278,7 +278,10 @@ export const StudioSingle = ({ transition }) => {
                     {acf.contact_section.contact_cta.title} <VscArrowRight className='booking-arrow' />
                   </Link>
                 </div>
-                <Socials />
+
+                <div ref={addToFadeInTexts} className='studio-single-socials-container'>
+                  <Socials />
+                </div>
               </section>
             </div>
           )

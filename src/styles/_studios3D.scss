@@ -30,8 +30,7 @@
     color: var(--faded-black);
     font-size: var(--fs-xs);
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 3vh;
     z-index: 3;
     text-transform: uppercase;
     text-decoration: none;
@@ -41,12 +40,4 @@
     align-items: center;
     font-family: var(--main-font);
   }
-}
-
-@media only screen and (max-width: 767px) {
-  .three__container .three__container-link{
-    bottom: 0;
-    top: auto
-  }
-  
 }
