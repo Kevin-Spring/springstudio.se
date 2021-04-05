@@ -25,37 +25,12 @@ export const Header = () => {
         But any of those ways wont animate the navbar on exit.  */}
         <Navbar />
         <Switch location={location} key={location.pathname}>
-          <Route
-            exact
-            path='/studios'
-            component={Studios}
-            transition={transition}
-          />
-          <Route
-            exact
-            path='/booking'
-            component={BookingPage}
-            transition={transition}
-          />
+          <Route exact path='/studios' component={Studios} transition={transition} />
+          <Route exact path='/booking' component={BookingPage} transition={transition} />
           <Route exact path='/' component={MainPage} transition={transition} />
-          <Route
-            exact
-            path='/three'
-            component={Studios3D}
-            transition={transition}
-          />
-          <Route
-            exact
-            path='/envelope'
-            component={envelopetest}
-            transition={transition}
-          />
-          <Route
-            exact
-            path='/studio'
-            component={StudioSingle}
-            transition={transition}
-          />
+          <Route exact path='/three' component={Studios3D} transition={transition} />
+          <Route exact path='/envelope' component={envelopetest} transition={transition} />
+          <Route exact path='/studio' component={StudioSingle} transition={transition} />
           <Route component={Found404} transition={transition} />
         </Switch>
       </AnimatePresence>
