@@ -29,11 +29,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.7) 0%,
-          rgba(255, 255, 255, 0.462062324929972) 100%
-        );
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.462062324929972) 100%);
         z-index: 1;
       }
 
@@ -46,6 +42,7 @@
         object-fit: cover;
         height: 100%;
         width: 100%;
+        filter: blur(1px);
       }
 
       .studio-page-text-container {
@@ -68,35 +65,33 @@
         }
 
         & .btn-container {
-          opacity: 0;
           position: relative;
           padding-top: calc(50px + (70 - 50) var(--calc-size));
           max-width: calc(200px + (230 - 200) var(--calc-size));
           z-index: 2;
 
           & .studio-btn {
+            opacity: 0;
             position: relative;
-            border: 1px solid var(--faded-black);
             font-size: var(--fs-xs);
             padding: calc(5px + (10 - 5) var(--calc-size));
             max-width: calc(180px + (200 - 180) var(--calc-size));
             cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
+            transition: background-color var(--std-trans);
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%),
-              0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%),
-              0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%),
-              0 100px 80px rgb(0 0 0 / 12%);
+            box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
+              0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
             letter-spacing: var(--medium-spacing);
             font-family: var(--main-font);
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
           }
 
           & .studio-btn:hover {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.1);
           }
         }
       }
@@ -146,11 +141,7 @@
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
-  .studio-page
-    .studio-page-section
-    .studio-page-content-container
-    .studio-page-text-container
-    .btn-container {
+  .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container .btn-container {
     position: absolute;
     bottom: 0;
     right: 20px;
@@ -158,11 +149,7 @@
 }
 
 @media only screen and (max-width: 479px) {
-  .studio-page
-    .studio-page-section
-    .studio-page-content-container
-    .studio-page-text-container
-    .btn-container {
+  .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container .btn-container {
     position: absolute;
     bottom: 0;
     right: auto;

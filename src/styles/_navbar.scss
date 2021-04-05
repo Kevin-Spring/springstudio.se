@@ -4,7 +4,6 @@
 .primary-nav-container {
   position: fixed;
   z-index: 999;
-  opacity: 0;
   width: 100vw;
 
   .primary-nav {
@@ -13,9 +12,18 @@
 
       .navbar-item {
         position: absolute;
+        opacity: 0;
         top: 50vh;
         padding: 0 2%;
         z-index: 999;
+        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+          0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.2);
+        }
       }
 
       .navbar-left-item {
@@ -29,6 +37,8 @@
       li {
         display: flex;
         align-items: center;
+
+        padding: 10px;
       }
     }
   }
@@ -40,13 +50,9 @@
     letter-spacing: var(--medium-spacing);
     text-transform: uppercase;
     font-family: var(--heading-font);
-    transition: all 0.4s ease-in-out;
+    transition: var(--std-trans);
     font-size: calc(12px + (14 - 12) var(--calc-size));
     letter-spacing: 1.4px;
-
-    &:hover {
-      color: rgba(255, 255, 255, 0.4);
-    }
   }
   .angle {
     color: var(--off-white);
@@ -60,12 +66,9 @@
     letter-spacing: var(--medium-spacing);
     text-transform: uppercase;
     font-family: var(--heading-font);
-    transition: all 0.4s ease-in-out;
+    transition: var(--std-trans);
     font-size: calc(12px + (14 - 12) var(--calc-size));
 
-    &:hover {
-      color: rgba(0, 0, 0, 0.4);
-    }
     .angle {
       color: var(--faded-black);
       font-size: 1em;
@@ -88,7 +91,7 @@
 
 @media only screen and (max-width: 475px) {
   .primary-nav-container .primary-nav ul .navbar-item {
-    top: 94vh;
+    top: 94.6vh;
     padding: 0 15px;
   }
 }
