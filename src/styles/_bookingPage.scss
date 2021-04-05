@@ -21,4 +21,29 @@
       width: 100%;
     }
   }
+
+  .studio-single-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-lr;
+    padding: calc(8px + (12 - 8) var(--calc-size))
+      calc(8px + (12 - 8) var(--calc-size));
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--off-white);
+    height: 30%;
+    font-size: var(--fs-xs);
+
+    .studio-single-socials-icons {
+      a {
+        padding: calc(10px + (12 - 10) var(--calc-size));
+      }
+    }
+  }
 }

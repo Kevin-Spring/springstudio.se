@@ -30,4 +30,9 @@ export const endpoints = [
     url:
       'http://localhost/developement/springstudio.se/wp-content/uploads/2021/02/logo-inverted-1.png',
   },
+  {
+    type: 'post type',
+    url:
+      'http://localhost/developement/springstudio.se/wp-json/wp/v2/studio_single/',
+  },
 ]

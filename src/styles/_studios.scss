@@ -55,9 +55,10 @@
         position: relative;
 
         & header {
-          margin-bottom: calc( 0px + ( 30 - 0 ) var(--calc-size ));
+          margin-bottom: calc(0px + (30 - 0) var(--calc-size));
           font-size: var(--h3);
           opacity: 0;
+          writing-mode: tb;
         }
 
         & article {
@@ -77,8 +78,8 @@
             position: relative;
             border: 1px solid var(--faded-black);
             font-size: var(--fs-xs);
-            padding: calc( 5px + ( 10 - 5 ) var(--calc-size) );
-            max-width: calc( 180px + ( 200 - 180 ) var(--calc-size));
+            padding: calc(5px + (10 - 5) var(--calc-size));
+            max-width: calc(180px + (200 - 180) var(--calc-size));
             cursor: pointer;
             transition: background-color 0.2s ease-in-out;
             display: flex;
@@ -144,9 +145,26 @@
   }
 }
 
-@media only screen and ( max-width: 767px ) {
-.studio-page .studio-page-section .studio-page-content-container .studio-page-text-container .btn-container {
-  position: absolute;
-  bottom: 0;
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+  .studio-page
+    .studio-page-section
+    .studio-page-content-container
+    .studio-page-text-container
+    .btn-container {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
 }
+
+@media only screen and (max-width: 479px) {
+  .studio-page
+    .studio-page-section
+    .studio-page-content-container
+    .studio-page-text-container
+    .btn-container {
+    position: absolute;
+    bottom: 0;
+    right: auto;
+  }
 }

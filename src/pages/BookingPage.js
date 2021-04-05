@@ -9,7 +9,7 @@ import '../styles/_bookingPage.scss'
 export const BookingPage = ({ transition }) => {
   //Disable scrolltrigger on bookingpage allowing normal scroll
   useEffect(() => {
-    ScrollTrigger.getAll().forEach((ST) => ST.disable())
+    ScrollTrigger.getAll().forEach(ST => ST.disable())
   }, [])
 
   return (

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useFetch } from './useFetch'
 import { endpoints } from '../endpoints/endpoints'
 import { BookingForm } from './BookingForm'
+import { Socials } from './Socials'
 
 //Pointing get request at correct endpoint
 const url = endpoints[2].url
@@ -56,7 +57,7 @@ export const Booking = () => {
 
   return (
     <>
-      {posts.map((post) => {
+      {posts.map(post => {
         const { id, title, /* content */ acf } = post
         return (
           <article className='book-studio-section' key={id}>
@@ -94,6 +95,7 @@ export const Booking = () => {
                 <BookingForm motionForm={motionForm} />
               </motion.div>
             </div>
+            <Socials />
           </article>
         )
       })}

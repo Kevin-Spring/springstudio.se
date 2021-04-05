@@ -11,7 +11,7 @@ import { StudioPageContent } from './StudioPageContent'
 //Pointing get request at correct endpoint
 const url = endpoints[1].url
 
-//Used to avoid bugs
+//Used to avoid bugs with scrolltrigger
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 export const Studio = () => {
@@ -23,7 +23,7 @@ export const Studio = () => {
   revealRefsStudio.current = []
 
   //Functions which adds all the sections in an arraye to be stored and used for scrollTrigger
-  const addToRefs = (el) => {
+  const addToRefs = el => {
     if (el && !revealRefsStudio.current.includes(el)) {
       revealRefsStudio.current.push(el)
     }
@@ -64,30 +64,14 @@ export const Studio = () => {
       {posts.map((post, i) => {
         const { id, title, content, acf } = post
         return (
-          <section
-            id={`${post.id}`}
-            ref={addToRefs}
-            className={`main-section studio-page-section section${
-              i + 1
-            } studio${i + 1}`}
-            key={id}
-          >
-            <StudioPageContent
-              id={id}
-              title={title}
-              content={content}
-              acf={acf}
-            />
+          <section id={`${post.id}`} ref={addToRefs} className={`main-section studio-page-section section${i + 1} studio${i + 1}`} key={id}>
+            <StudioPageContent id={id} title={title} content={content} acf={acf} />
             <AngleDown />
           </section>
         )
       })}
       {/* Navigations dots located at the bottom of the page */}
-      <AsideNav
-        posts={posts}
-        loading={loading}
-        sections={revealRefsStudio.current}
-      />
+      <AsideNav posts={posts} loading={loading} sections={revealRefsStudio.current} />
     </>
   )
 }

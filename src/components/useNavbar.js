@@ -15,19 +15,19 @@ export const useNavbar = (posts, loading, location) => {
   const storedMenuItems = []
 
   //Maping throguh all menu items from wp and pushing them to new array
-  const mapMenuItems = (menuItems) => {
-    menuItems.map((item) => {
+  const mapMenuItems = menuItems => {
+    menuItems.map(item => {
       return storedMenuItems.push(item.title)
     })
   }
 
   //Looking through new array of menu items and assigning the items to different states
   const findMenuItem = () => {
-    let studios = storedMenuItems.find((studios) => studios === 'Studios')
+    let studios = storedMenuItems.find(studios => studios === 'Studios')
     let bookStudio = storedMenuItems.find(
-      (bookStudio) => bookStudio === 'Booking'
+      bookStudio => bookStudio === 'Booking'
     )
-    let home = storedMenuItems.find((home) => home === 'Home')
+    let home = storedMenuItems.find(home => home === 'Home')
     setStudio(studios)
     setbookStudio(bookStudio)
     setHome(home)
@@ -87,10 +87,27 @@ export const useNavbar = (posts, loading, location) => {
         leftArrow: '/studios',
         rightArrow: '/booking',
       })
+    } else if (location.pathname === '/studio') {
+      if (studio) {
+        setNavbarItems({
+          leftItem: studio,
+          rightItem: '',
+        })
+      } else {
+        setNavbarItems({
+          leftItem: 'Studios',
+          rightItem: '',
+        })
+      }
+
+      setNavbarPaths({
+        leftArrow: '/studios',
+        rightArrow: '',
+      })
     }
   }
 
-  //Calling all the different functions with dependencies looking at each states activity 
+  //Calling all the different functions with dependencies looking at each states activity
   //and page location
   useEffect(() => {
     renderNavbar()

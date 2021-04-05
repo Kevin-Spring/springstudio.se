@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react'
-import { NavLink, useLocation, useHistory } from 'react-router-dom'
+import React, { useRef, useEffect, useState } from 'react'
+import { NavLink, useLocation, useHistory, Link } from 'react-router-dom'
 import { IoTriangleOutline } from 'react-icons/io5'
 //import { Logo } from './Logo'
 import { useFetchNav } from './useFetchNav'
@@ -16,15 +16,12 @@ export const Navbar = () => {
   const history = useHistory()
   const location = useLocation()
   const navbar = useRef(null)
+  const [overlay, setOverlay] = useState(false)
   const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu)
-  const { navbarItems, navbarPaths } = useNavbar(
-    fetchedNavbarItems,
-    loadingNav,
-    location
-  )
+  const { navbarItems, navbarPaths } = useNavbar(fetchedNavbarItems, loadingNav, location)
 
   //Function makes navigation with arrowkeys possible
-  const handleKeyDown = (event) => {
+  const handleKeyDown = event => {
     if (event.key === 'ArrowRight') {
       history.push({
         pathname: navbarPaths.rightArrow,
@@ -59,43 +56,54 @@ export const Navbar = () => {
       <NavLink to='/'>
         <Logo />
       </NavLink> */}
-      <nav
-        //exit={{ opacity: 0 }}
-        ref={navbar}
-        className={
-          location.pathname === '/'
-            ? 'primary-nav-container light'
-            : 'primary-nav-container dark'
-        }
-      >
-        <div className='primary-nav'>
-          <ul>
-            {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
-            {navbarItems.leftItem && (
-              <NavLink
-                className='navbar-left-item navbar-item'
-                to={{ pathname: navbarPaths.leftArrow }}
-              >
-                <li>
-                  <IoTriangleOutline className='angle angle-left' />
-                  <span>{navbarItems.leftItem}</span>
-                </li>
-              </NavLink>
-            )}
-            {navbarItems.rightItem && (
-              <NavLink
-                className='navbar-right-item navbar-item'
-                to={{ pathname: navbarPaths.rightArrow }}
-              >
-                <li>
-                  <span>{navbarItems.rightItem}</span>
-                  <IoTriangleOutline className='angle angle-right' />
-                </li>
-              </NavLink>
-            )}
-          </ul>
-        </div>
-      </nav>
+
+      {location.pathname !== '/studio' ? (
+        <nav ref={navbar} className={location.pathname === '/' ? 'primary-nav-container light' : 'primary-nav-container dark'}>
+          <div className={location.pathname === '/studio' ? 'primary-nav top' : 'primary-nav'}>
+            <ul>
+              {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
+              {navbarItems.leftItem && (
+                <NavLink className='navbar-left-item navbar-item' to={{ pathname: navbarPaths.leftArrow }}>
+                  <li>
+                    <IoTriangleOutline className='angle angle-left' />
+                    <span>{navbarItems.leftItem}</span>
+                  </li>
+                </NavLink>
+              )}
+              {navbarItems.rightItem && (
+                <NavLink className='navbar-right-item navbar-item' to={{ pathname: navbarPaths.rightArrow }}>
+                  <li>
+                    <span>{navbarItems.rightItem}</span>
+                    <IoTriangleOutline className='angle angle-right' />
+                  </li>
+                </NavLink>
+              )}
+            </ul>
+          </div>
+        </nav>
+      ) : (
+        <nav ref={navbar} className='primary-nav-container-curtain'>
+          <div className={overlay ? 'hamburger-icon open' : 'hamburger-icon'} onClick={() => setOverlay(!overlay)}>
+            <div className='hamburger'></div>
+          </div>
+          <div className={overlay ? 'overlay open' : 'overlay'}>
+            <div className='overlay-content'>
+              <Link to='/'>
+                <IoTriangleOutline className='angle angle-up' />
+                Home
+              </Link>
+              <Link to='/studios'>
+                Studios
+                <IoTriangleOutline className='angle angle-left' />
+              </Link>
+              <Link to='/booking'>
+                Booking
+                <IoTriangleOutline className='angle angle-right' />
+              </Link>
+            </div>
+          </div>
+        </nav>
+      )}
     </>
   )
 }
