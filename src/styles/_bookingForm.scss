@@ -261,6 +261,10 @@
             -o-transition: var(--std-trans);
             -moz-transition: var(--std-trans);
             transition: var(--std-trans);
+            -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+              0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+              0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
               0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
           }
@@ -375,13 +379,26 @@
     }
 
     .form__cancellation-notice {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 60%;
+      -moz-box-flex: 0;
+      -ms-flex: 0 0 60%;
       flex: 0 0 60%;
       max-width: 60%;
+      margin: -webkit-calc(0px - (20 - 10) var(--calc-size)) auto var(--h2) auto;
+      margin: -moz-calc(0px - (20 - 10) var(--calc-size)) auto var(--h2) auto;
       margin: calc(0px - (20 - 10) var(--calc-size)) auto var(--h2) auto;
+      font-size: -webkit-calc(10px + (12 - 10) var(--calc-size));
+      font-size: -moz-calc(10px + (12 - 10) var(--calc-size));
       font-size: calc(10px + (12 - 10) var(--calc-size));
+      padding: -webkit-calc(10px + (12 - 10) var(--calc-size));
+      padding: -moz-calc(10px + (12 - 10) var(--calc-size));
       padding: calc(10px + (12 - 10) var(--calc-size));
       color: var(--faded-black);
       letter-spacing: var(--medium-spacing);
+      -webkit-transition: all var(--std-trans);
+      -o-transition: all var(--std-trans);
+      -moz-transition: all var(--std-trans);
       transition: all var(--std-trans);
       text-transform: uppercase;
     }
@@ -418,9 +435,18 @@
     background: rgba(255, 255, 255, 0.2);
 
     .booking-arrow {
+      -webkit-transition: right 0.4s ease-in-out;
+      -o-transition: right 0.4s ease-in-out;
+      -moz-transition: right 0.4s ease-in-out;
       transition: right 0.4s ease-in-out;
       position: absolute;
       right: 10px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
 
     &:hover .booking-arrow {
@@ -454,6 +480,10 @@
   }
 
   .form-container .form .form-inner .form__group {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 90%;
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 90%;
     flex: 0 0 90%;
     max-width: 90%;
     padding-left: 0;

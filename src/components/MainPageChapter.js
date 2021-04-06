@@ -42,7 +42,12 @@ export const MainPageChapter = () => {
 
   //Functions which creates scrolltrigger elements of the sections stored in the revealRefs-array
   //Listening to the loading status of the get-request before setting up the scroll-sections (gsap doesn't recognize the sections otherwise)
+
   useEffect(() => {
+    //revealRefs.current is empty at first render triggering "GSAP target null not found." - warning
+    //needs the right dependency on useEffect to make it go away
+    //console.log(revealRefs.current)
+
     //For section scroll & calling the goToSection function
     revealRefs.current.forEach((panel, i) => {
       ScrollTrigger.create({
@@ -55,7 +60,7 @@ export const MainPageChapter = () => {
         onEnterBack: () => goToSection(i),
       })
     })
-  }, [loading])
+  }, [loading, revealRefs])
 
   return (
     <>
@@ -63,21 +68,8 @@ export const MainPageChapter = () => {
       {posts.map((post, i) => {
         const { id, title, content, acf } = post
         return (
-          <section
-            id={`${post.id}`}
-            ref={addToRefs}
-            className={`panel main-section main-page-section section section${
-              i + 1
-            }`}
-            key={id}
-          >
-            <MainPageContent
-              id={id}
-              title={title}
-              content={content}
-              acf={acf}
-              index={i}
-            />
+          <section id={`${post.id}`} ref={addToRefs} className={`panel main-section main-page-section section section${i + 1}`} key={id}>
+            <MainPageContent id={id} title={title} content={content} acf={acf} index={i} />
             <AngleDown />
           </section>
         )
