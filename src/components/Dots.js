@@ -9,7 +9,7 @@ export const Dots = ({ title, id, sections }) => {
 
   //Same method as before with scroll sections
   //Adding a ref on each dot and storing them in an array to make different animations and actions possible
-  const addToDots = (el) => {
+  const addToDots = el => {
     if (el && !dots.current.includes(el)) {
       dots.current.push(el)
     }
@@ -24,10 +24,10 @@ export const Dots = ({ title, id, sections }) => {
 
     // Add observer old way couldn't make it work with array & react-use useIntersection
     // observing which dot is in viewport and adds css-class accordingly
-    let observer = new IntersectionObserver((entries) => {
-      entries.forEach((section) => {
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(section => {
         if (section.intersectionRatio > 0.9) {
-          dots.current.forEach((dot) => {
+          dots.current.forEach(dot => {
             if (dot.id === section.target.id) {
               dot.classList.add('dot-active')
             } else {
@@ -40,10 +40,10 @@ export const Dots = ({ title, id, sections }) => {
 
     // For dots animation
     // observing which dot is in viewport and adds css-class accordingly
-    sections.forEach((section) => {
+    sections.forEach(section => {
       observer.observe(section)
     })
-  }, [dots])
+  }, [dots, sections])
 
   return (
     <div className='dot-container'>

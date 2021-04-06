@@ -44,17 +44,20 @@ export const Studio = () => {
   //Listening to the loading status of the get-request before setting up the scroll-sections (gsap doesn't recognize the sections otherwise)
   useEffect(() => {
     //For section scroll & calling the goToSection function
-    revealRefsStudio.current.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        onEnter: () => goToSection(i),
+
+    if (!loading) {
+      revealRefsStudio.current.forEach((panel, i) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          onEnter: () => goToSection(i),
+        })
+        ScrollTrigger.create({
+          trigger: panel,
+          start: 'bottom bottom',
+          onEnterBack: () => goToSection(i),
+        })
       })
-      ScrollTrigger.create({
-        trigger: panel,
-        start: 'bottom bottom',
-        onEnterBack: () => goToSection(i),
-      })
-    })
+    }
   }, [loading])
 
   return (

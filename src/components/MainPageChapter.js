@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
@@ -15,6 +15,9 @@ const url = endpoints[0].url
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 export const MainPageChapter = () => {
+  //Figure out a way to set sectionscroll autokill dynamic with onClick on asidenav
+  //const [autoKill, setAutoKill] = useState(true)
+
   /* Using custom hook to fetch content, passing in the endpoint */
   const { loading, posts } = useFetch(url)
 
@@ -44,23 +47,21 @@ export const MainPageChapter = () => {
   //Listening to the loading status of the get-request before setting up the scroll-sections (gsap doesn't recognize the sections otherwise)
 
   useEffect(() => {
-    //revealRefs.current is empty at first render triggering "GSAP target null not found." - warning
-    //needs the right dependency on useEffect to make it go away
-    //console.log(revealRefs.current)
-
-    //For section scroll & calling the goToSection function
-    revealRefs.current.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        onEnter: () => goToSection(i),
+    if (!loading) {
+      //For section scroll & calling the goToSection function
+      revealRefs.current.forEach((panel, i) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          onEnter: () => goToSection(i),
+        })
+        ScrollTrigger.create({
+          trigger: panel,
+          start: 'bottom bottom',
+          onEnterBack: () => goToSection(i),
+        })
       })
-      ScrollTrigger.create({
-        trigger: panel,
-        start: 'bottom bottom',
-        onEnterBack: () => goToSection(i),
-      })
-    })
-  }, [loading, revealRefs])
+    }
+  }, [loading])
 
   return (
     <>
@@ -75,7 +76,7 @@ export const MainPageChapter = () => {
         )
       })}
       {/* Navigations dots located at the bottom of the page */}
-      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} />
+      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} /* changeAutoKill={autoKill => setAutoKill(autoKill)} */ />
     </>
   )
 }

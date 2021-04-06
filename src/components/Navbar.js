@@ -44,12 +44,6 @@ export const Navbar = () => {
 
   //Tiny animations for the navbar & eventlistener for arrowkey-events
   useEffect(() => {
-    TweenLite.to(navbar.current, 0.8, {
-      opacity: 1,
-      delay: 2,
-      ease: Power3.easeOut,
-    })
-
     fadeIn.current.forEach(item => {
       TweenLite.to(item, 0.2, {
         opacity: 1,
@@ -57,7 +51,6 @@ export const Navbar = () => {
         ease: Power3.easeOut,
       })
     })
-
     window.addEventListener('keydown', handleKeyDown)
 
     // cleanup to remove eventlistener, perventing eventlistener to be called upon several pages and instances
@@ -65,6 +58,16 @@ export const Navbar = () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [navbarPaths])
+
+  useEffect(() => {
+    if (location.pathname === '/studio') {
+      TweenLite.to(navbar.current, 0.8, {
+        opacity: 1,
+        delay: 2,
+        ease: Power3.easeOut,
+      })
+    }
+  }, [location.pathname])
 
   return (
     <>
