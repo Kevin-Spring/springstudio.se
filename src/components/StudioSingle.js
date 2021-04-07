@@ -128,7 +128,7 @@ export const StudioSingle = ({ transition }) => {
 
   return (
     <motion.main className='studio-sigle-main' exit={{ opacity: 0 }} transition={transition}>
-      <PageTransition />
+      {!loading && <PageTransition /> }
       {!loading &&
         posts.map((post, i) => {
           const { id, acf } = post
