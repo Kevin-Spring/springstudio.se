@@ -5,6 +5,7 @@ import '../styles/_bookingForm.scss'
 import { endpoints } from '../endpoints/endpoints'
 import { Envelope } from './Envelope'
 import { VscArrowRight } from 'react-icons/vsc'
+import { InputField } from './InputField'
 
 //Pointing get request at correct endpoint
 const url = endpoints[4].url
@@ -162,101 +163,91 @@ export const BookingForm = ({ motionForm }) => {
       ) : (
         /* Following is the form and all its conditional rendering depending on classnames and states of inputs */
         <motion.div className='form' variants={motionForm}>
-          <form action='POST' onSubmit={handleSubmit} className='form-body' autoComplete='new-password'>
+          <form action='POST' onSubmit={handleSubmit} className='form-body'>
             <div className={booking.acceptance && !validationMessage.errorMessage ? 'done form-inner' : 'form-inner'}>
-              <div className={booking.bookStudio ? 'done form__group field' : 'form__group field'}>
-                <input
-                  className={validationMessage.errorMessage && !booking.name ? 'error form__field' : 'form__field'}
-                  type='text'
-                  id='name'
-                  name='name'
-                  value={booking.name}
-                  onChange={onChangeHandler}
-                  placeholder='Name'
-                  autoComplete='new-password'
-                />
-                <label className='form__label' htmlFor='name'>
-                  Name*
-                </label>
-              </div>
+              <InputField
+                classNameGroup={booking.bookStudio ? 'done form__group field' : 'form__group field'}
+                classNameInput={validationMessage.errorMessage && !booking.name ? 'error form__field' : 'form__field'}
+                classNameLabel={'form__label'}
+                inputType={'text'}
+                inputId={'name'}
+                inputName={'name'}
+                inpuValue={booking.name}
+                inputOnChange={onChangeHandler}
+                inputPlaceholder={'Name'}
+                labelHtmlFor={'name'}
+                labelContent={'Name*'}
+              />
 
-              <div className={booking.bookStudio ? 'done form__group field' : 'form__group field'}>
-                <input
-                  className={validationMessage.errorMessage && !booking.email ? 'error form__field' : 'form__field'}
-                  type='email'
-                  id='email'
-                  name='email'
-                  value={booking.email}
-                  onChange={onChangeHandler}
-                  placeholder='Email'
-                  autoComplete='new-password'
-                />
-                <label className='form__label' htmlFor='email'>
-                  Email*
-                </label>
-              </div>
+              <InputField
+                classNameGroup={booking.bookStudio ? 'done form__group field' : 'form__group field'}
+                classNameInput={validationMessage.errorMessage && !booking.email ? 'error form__field' : 'form__field'}
+                classNameLabel={'form__label'}
+                inputType={'email'}
+                inputId={'email'}
+                inputName={'email'}
+                inpuValue={booking.email}
+                inputOnChange={onChangeHandler}
+                inputPlaceholder={'Email'}
+                labelHtmlFor={'email'}
+                labelContent={'Email*'}
+              />
 
-              <div className={booking.bookStudio ? 'done form__group field' : 'form__group field'}>
-                <input
-                  className={validationMessage.errorMessage && !booking.phone ? 'error form__field' : 'form__field'}
-                  type='tel'
-                  id='phone'
-                  name='phone'
-                  value={booking.phone}
-                  onChange={onChangeHandler}
-                  placeholder='Phone'
-                  autoComplete='new-password'
-                />
-                <label className='form__label' htmlFor='phone'>
-                  Phone*
-                </label>
-              </div>
+              <InputField
+                classNameGroup={booking.bookStudio ? 'done form__group field' : 'form__group field'}
+                classNameInput={validationMessage.errorMessage && !booking.phone ? 'error form__field' : 'form__field'}
+                classNameLabel={'form__label'}
+                inputType={'tel'}
+                inputId={'phone'}
+                inputName={'phone'}
+                inpuValue={booking.phone}
+                inputOnChange={onChangeHandler}
+                inputPlaceholder={'Phone'}
+                labelHtmlFor={'phone'}
+                labelContent={'Phone*'}
+              />
 
               <h3 className='form__group__header'> Book Studio</h3>
               <div className='form__group field'>
-                <div className={booking.bookStudio ? 'done form__field-select' : 'form__field-select'}>
-                  <input
-                    className='form__field'
-                    type='checkbox'
-                    id='bookStudioYes'
-                    name='bookStudio'
-                    value='yes'
-                    placeholder='Yes'
-                    autoComplete='new-password'
-                    checked={booking.bookStudio === true}
-                    onChange={() =>
-                      setBooking({
-                        ...booking,
-                        bookStudio: !booking.bookStudio,
-                      })
-                    }
-                  />
-                  <label className='form__label-select' htmlFor='bookStudioYes'>
-                    Yes
-                  </label>
-                </div>
+                <InputField
+                  classNameGroup={booking.bookStudio ? 'done form__field-select' : 'form__field-select'}
+                  classNameInput={'form__field'}
+                  classNameLabel={'form__label-select'}
+                  inputType={'checkbox'}
+                  inputId={'bookStudioYes'}
+                  inputName={'bookStudio'}
+                  inpuValue={'yes'}
+                  inputOnChange={() =>
+                    setBooking({
+                      ...booking,
+                      bookStudio: !booking.bookStudio,
+                    })
+                  }
+                  inputPlaceholder={'Yes'}
+                  inputChecked={booking.bookStudio === true}
+                  labelHtmlFor={'bookStudioYes'}
+                  labelContent={'Yes'}
+                />
 
-                <div className={booking.bookStudio ? 'done form__field-select' : 'form__field-select'}>
-                  <input
-                    className='form__field'
-                    type='checkbox'
-                    id='bookStudioNo'
-                    name='bookStudio'
-                    value='no'
-                    placeholder='No'
-                    autoComplete='new-password'
-                    onChange={() =>
-                      setBooking({
-                        ...booking,
-                        bookStudio: !booking.bookStudio,
-                      })
-                    }
-                    checked={booking.bookStudio === false}
-                  />
-                  <label className='form__label-select' htmlFor='bookStudioNo'>
-                    No
-                  </label>
-                </div>
+                <InputField
+                  classNameGroup={booking.bookStudio ? 'done form__field-select' : 'form__field-select'}
+                  classNameInput={'form__field'}
+                  classNameLabel={'form__label-select'}
+                  inputType={'checkbox'}
+                  inputId={'bookStudioNo'}
+                  inputName={'bookStudio'}
+                  inpuValue={'no'}
+                  inputOnChange={() =>
+                    setBooking({
+                      ...booking,
+                      bookStudio: !booking.bookStudio,
+                    })
+                  }
+                  inputPlaceholder={'No'}
+                  inputChecked={booking.bookStudio === false}
+                  labelHtmlFor={'bookStudioNo'}
+                  labelContent={'No'}
+                />
               </div>
 
               {booking.bookStudio && (
@@ -265,189 +256,173 @@ export const BookingForm = ({ motionForm }) => {
                     *Cancellation must be made no later than 5 days before the booked date, otherwise we have the right to charge half of the agreed
                     amount.
                   </span>
-                  <div className={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}>
-                    <input
-                      className='form__field'
-                      type='text'
-                      id='company'
-                      name='company'
-                      value={booking.company}
-                      onChange={onChangeHandler}
-                      placeholder='Company'
-                      autoComplete='new-password'
-                    />
-                    <label className='form__label' htmlFor='company'>
-                      Company
-                    </label>
-                  </div>
 
-                  <div className={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}>
-                    <input
-                      className='form__field'
-                      type='text'
-                      id='billingAddress'
-                      name='billingAddress'
-                      value={booking.billingAddress}
-                      onChange={onChangeHandler}
-                      placeholder='billing address'
-                      autoComplete='new-password'
-                    />
-                    <label className='form__label' htmlFor='billingAddress'>
-                      Billing Address
-                    </label>
-                  </div>
+                  <InputField
+                    classNameGroup={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}
+                    classNameInput={'form__field'}
+                    classNameLabel={'form__label'}
+                    inputType={'text'}
+                    inputId={'company'}
+                    inputName={'company'}
+                    inpuValue={booking.company}
+                    inputOnChange={onChangeHandler}
+                    inputPlaceholder={'Company'}
+                    labelHtmlFor={'company'}
+                    labelContent={'Company'}
+                  />
 
-                  <div className={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}>
-                    <input
-                      className='form__field'
-                      type='text'
-                      id='orgNr'
-                      name='orgNr'
-                      value={booking.orgNr}
-                      onChange={onChangeHandler}
-                      placeholder='organization number'
-                      autoComplete='new-password'
-                    />
-                    <label className='form__label' htmlFor='orgNr'>
-                      organization number
-                    </label>
-                  </div>
+                  <InputField
+                    classNameGroup={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}
+                    classNameInput={'form__field'}
+                    classNameLabel={'form__label'}
+                    inputType={'text'}
+                    inputId={'billingAddress'}
+                    inputName={'billingAddress'}
+                    inpuValue={booking.billingAddress}
+                    inputOnChange={onChangeHandler}
+                    inputPlaceholder={'billing address'}
+                    labelHtmlFor={'billingAddress'}
+                    labelContent={'Billing Address'}
+                  />
+
+                  <InputField
+                    classNameGroup={booking.studio1 || booking.studio2 || booking.studio3 ? 'done form__group field' : 'form__group field'}
+                    classNameInput={'form__field'}
+                    classNameLabel={'form__label'}
+                    inputType={'text'}
+                    inputId={'orgNr'}
+                    inputName={'orgNr'}
+                    inpuValue={booking.orgNr}
+                    inputOnChange={onChangeHandler}
+                    inputPlaceholder={'Organization Number'}
+                    labelHtmlFor={'orgNr'}
+                    labelContent={'Organization Number'}
+                  />
 
                   <h3 className='form__group__header'>Studio</h3>
                   <div className='form__group field'>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='studio1'
-                        name='studio'
-                        value='studio 1'
-                        placeholder='studio'
-                        autoComplete='new-password'
-                        checked={booking.studio1 === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            studio1: !booking.studio1,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='studio1'>
-                        Studio 1
-                      </label>
-                    </div>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='studio2'
-                        name='studio'
-                        value='studio 2'
-                        placeholder='studio'
-                        autoComplete='new-password'
-                        checked={booking.studio2 === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            studio2: !booking.studio2,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='studio2'>
-                        Studio 2
-                      </label>
-                    </div>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='studio3'
-                        name='studio'
-                        value='studio 3'
-                        placeholder='studio'
-                        autoComplete='new-password'
-                        checked={booking.studio3 === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            studio3: !booking.studio3,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='studio3'>
-                        Studio 3
-                      </label>
-                    </div>
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'studio1'}
+                      inputName={'studio'}
+                      inpuValue={'studio 1'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          studio1: !booking.studio1,
+                        })
+                      }
+                      inputPlaceholder={'studio'}
+                      inputChecked={booking.studio1 === true}
+                      labelHtmlFor={'studio1'}
+                      labelContent={'Studio 1'}
+                    />
+
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'studio2'}
+                      inputName={'studio'}
+                      inpuValue={'studio 2'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          studio2: !booking.studio2,
+                        })
+                      }
+                      inputPlaceholder={'studio'}
+                      inputChecked={booking.studio2 === true}
+                      labelHtmlFor={'studio2'}
+                      labelContent={'Studio 2'}
+                    />
+
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'studio3'}
+                      inputName={'studio'}
+                      inpuValue={'studio 3'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          studio3: !booking.studio3,
+                        })
+                      }
+                      inputPlaceholder={'studio'}
+                      inputChecked={booking.studio3 === true}
+                      labelHtmlFor={'studio3'}
+                      labelContent={'Studio 3'}
+                    />
                   </div>
                 </motion.div>
               )}
 
               {booking.studio1 || booking.studio2 || (booking.studio3 && booking.bookStudio) ? (
                 <motion.div variants={motionForm} className='form-inner'>
-                  <div className='form__group field'>
-                    <input
-                      className='form__field'
-                      type='date'
-                      id='bookingDateFrom'
-                      name='bookingDateFrom'
-                      value={booking.bookingDateFrom}
-                      onChange={onChangeHandler}
-                      placeholder='Booking Date From'
-                      autoComplete='new-password'
-                    />
-                    <label className='form__label' htmlFor='bookingDateFrom'>
-                      From:
-                    </label>
-                  </div>
+                  <InputField
+                    classNameGroup={'form__group field'}
+                    classNameInput={'form__field'}
+                    classNameLabel={'form__label'}
+                    inputType={'date'}
+                    inputId={'bookingDateFrom'}
+                    inputName={'bookingDateFrom'}
+                    inpuValue={booking.bookingDateFrom}
+                    inputOnChange={onChangeHandler}
+                    inputPlaceholder={'Booking Date From'}
+                    labelHtmlFor={'bookingDateFrom'}
+                    labelContent={'From:'}
+                  />
 
-                  <div className='form__group field'>
-                    <input
-                      className='form__field'
-                      type='date'
-                      id='bookingDateTo'
-                      name='bookingDateTo'
-                      value={booking.bookingDateTo}
-                      onChange={onChangeHandler}
-                      placeholder='Booking Date To'
-                      autoComplete='new-password'
-                    />
-                    <label className='form__label' htmlFor='bookingDateTo'>
-                      To:
-                    </label>
-                  </div>
+                  <InputField
+                    classNameGroup={'form__group field'}
+                    classNameInput={'form__field'}
+                    classNameLabel={'form__label'}
+                    inputType={'date'}
+                    inputId={'bookingDateTo'}
+                    inputName={'bookingDateTo'}
+                    inpuValue={booking.bookingDateTo}
+                    inputOnChange={onChangeHandler}
+                    inputPlaceholder={'Booking Date To'}
+                    labelHtmlFor={'bookingDateTo'}
+                    labelContent={'To:'}
+                  />
 
                   <h3 className='form__group__header'>Working Hours</h3>
-                  <div className='form__group field'>
-                    <input
-                      className='form__field'
-                      type='text'
-                      id='workingHoursFrom'
-                      name='workingHoursFrom'
-                      value={booking.workingHoursFrom}
-                      onChange={onChangeHandler}
-                      placeholder='working hours from'
-                      autoComplete='new-password'
-                    />
-                    <label className='form__label' htmlFor='workingHoursFrom'>
-                      Start of Day
-                    </label>
-                  </div>
 
-                  <div className='form__group field'>
-                    <input
-                      className='form__field'
-                      type='text'
-                      id='workingHoursTo'
-                      name='workingHoursTo'
-                      value={booking.workingHoursTo}
-                      onChange={onChangeHandler}
-                      placeholder='working hours to'
-                      autoComplete='new-password'
-                    />
-                    <label className='form__label' htmlFor='workingHoursTo'>
-                      Wrap Time
-                    </label>
-                  </div>
+                  <InputField
+                    classNameGroup={'form__group field'}
+                    classNameInput={'form__field'}
+                    classNameLabel={'form__label'}
+                    inputType={'text'}
+                    inputId={'workingHoursFrom'}
+                    inputName={'workingHoursFrom'}
+                    inpuValue={booking.workingHoursFrom}
+                    inputOnChange={onChangeHandler}
+                    inputPlaceholder={'working Hours From'}
+                    labelHtmlFor={'workingHoursFrom'}
+                    labelContent={'Start of Day'}
+                  />
+
+                  <InputField
+                    classNameGroup={'form__group field'}
+                    classNameInput={'form__field'}
+                    classNameLabel={'form__label'}
+                    inputType={'text'}
+                    inputId={'workingHoursTo'}
+                    inputName={'workingHoursTo'}
+                    inpuValue={booking.workingHoursTo}
+                    inputOnChange={onChangeHandler}
+                    inputPlaceholder={'working Hours To'}
+                    labelHtmlFor={'workingHoursTo'}
+                    labelContent={'Wrap Time'}
+                  />
                 </motion.div>
               ) : (
                 ''
@@ -457,96 +432,90 @@ export const BookingForm = ({ motionForm }) => {
                 <motion.div variants={motionForm} className='form-inner form-inner-selects'>
                   <div className='form__group field'>
                     <h3 className='form__group__selects-header'>Audio Recording</h3>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='audioRecordingYes'
-                        name='audioRecording'
-                        value='Yes'
-                        placeholder='Yes'
-                        autoComplete='new-password'
-                        checked={booking.audioRecording === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            audioRecording: !booking.audioRecording,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='audioRecordingYes'>
-                        Yes
-                      </label>
-                    </div>
 
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='audioRecordingNo'
-                        name='audioRecording'
-                        value='No'
-                        placeholder='No'
-                        autoComplete='new-password'
-                        checked={booking.audioRecording === false}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            audioRecording: !booking.audioRecording,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='audioRecordingNo'>
-                        No
-                      </label>
-                    </div>
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'audioRecordingYes'}
+                      inputName={'audioRecording'}
+                      inpuValue={'Yes'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          audioRecording: !booking.audioRecording,
+                        })
+                      }
+                      inputPlaceholder={'Yes'}
+                      inputChecked={booking.audioRecording === true}
+                      labelHtmlFor={'audioRecordingYes'}
+                      labelContent={'Yes'}
+                    />
+
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'audioRecordingNo'}
+                      inputName={'audioRecording'}
+                      inpuValue={'No'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          audioRecording: !booking.audioRecording,
+                        })
+                      }
+                      inputPlaceholder={'No'}
+                      inputChecked={booking.audioRecording === false}
+                      labelHtmlFor={'audioRecordingNo'}
+                      labelContent={'No'}
+                    />
                   </div>
 
                   <div className='form__group field'>
                     <h3 className='form__group__selects-header'>Catering</h3>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='cateringYes'
-                        name='catering'
-                        value='Yes'
-                        placeholder='Yes'
-                        autoComplete='new-password'
-                        checked={booking.catering === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            catering: !booking.catering,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='cateringYes'>
-                        Yes
-                      </label>
-                    </div>
 
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='cateringNo'
-                        name='catering'
-                        value='No'
-                        placeholder='No'
-                        autoComplete='new-password'
-                        checked={booking.catering === false}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            catering: !booking.catering,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='cateringNo'>
-                        No
-                      </label>
-                    </div>
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'cateringYes'}
+                      inputName={'catering'}
+                      inpuValue={'Yes'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          catering: !booking.catering,
+                        })
+                      }
+                      inputPlaceholder={'Yes'}
+                      inputChecked={booking.catering === true}
+                      labelHtmlFor={'cateringYes'}
+                      labelContent={'Yes'}
+                    />
+
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'cateringNo'}
+                      inputName={'catering'}
+                      inpuValue={'No'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          catering: !booking.catering,
+                        })
+                      }
+                      inputPlaceholder={'No'}
+                      inputChecked={booking.catering === false}
+                      labelHtmlFor={'cateringNo'}
+                      labelContent={'No'}
+                    />
                   </div>
                 </motion.div>
               ) : (
@@ -557,71 +526,65 @@ export const BookingForm = ({ motionForm }) => {
                 <motion.div variants={motionForm} className='form-inner'>
                   <h3 className='form__group__header'>Production Type</h3>
                   <div className='form__group field'>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='photo'
-                        name='productionType'
-                        value='photo'
-                        placeholder='photo'
-                        autoComplete='new-password'
-                        checked={booking.productionTypePhoto === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            productionTypePhoto: !booking.productionTypePhoto,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='photo'>
-                        Photo
-                      </label>
-                    </div>
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'photo'}
+                      inputName={'productionType'}
+                      inpuValue={'photo'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          productionTypePhoto: !booking.productionTypePhoto,
+                        })
+                      }
+                      inputPlaceholder={'photo'}
+                      inputChecked={booking.productionTypePhoto === true}
+                      labelHtmlFor={'photo'}
+                      labelContent={'Photo'}
+                    />
 
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='video'
-                        name='productionType'
-                        value='video'
-                        placeholder='video'
-                        autoComplete='new-password'
-                        checked={booking.productionTypeVideo === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            productionTypeVideo: !booking.productionTypeVideo,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='video'>
-                        Video
-                      </label>
-                    </div>
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'video'}
+                      inputName={'productionType'}
+                      inpuValue={'video'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          productionTypeVideo: !booking.productionTypeVideo,
+                        })
+                      }
+                      inputPlaceholder={'video'}
+                      inputChecked={booking.productionTypeVideo === true}
+                      labelHtmlFor={'video'}
+                      labelContent={'Video'}
+                    />
 
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='music'
-                        name='productionType'
-                        value='music'
-                        placeholder='music'
-                        autoComplete='new-password'
-                        checked={booking.productionTypeMusic === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            productionTypeMusic: !booking.productionTypeMusic,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='music'>
-                        Music
-                      </label>
-                    </div>
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'music'}
+                      inputName={'productionType'}
+                      inpuValue={'music'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          productionTypeMusic: !booking.productionTypeMusic,
+                        })
+                      }
+                      inputPlaceholder={'music'}
+                      inputChecked={booking.productionTypeMusic === true}
+                      labelHtmlFor={'music'}
+                      labelContent={'Music'}
+                    />
                   </div>
                 </motion.div>
               ) : (
@@ -635,54 +598,51 @@ export const BookingForm = ({ motionForm }) => {
                 <motion.div variants={motionForm} className='form-inner'>
                   <h3 className='form__group__header'>Work Type</h3>
                   <div className='form__group field'>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='commercial'
-                        name='workType'
-                        value='commercial'
-                        placeholder='commercial'
-                        autoComplete='new-password'
-                        checked={booking.workTypeCommercial === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            workTypeCommercial: !booking.workTypeCommercial,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='commercial'>
-                        Commercial
-                      </label>
-                    </div>
-                    <div className='form__field-select'>
-                      <input
-                        className='form__field'
-                        type='checkbox'
-                        id='editorial'
-                        name='workType'
-                        value='Editorial'
-                        placeholder='Editorial'
-                        autoComplete='new-password'
-                        checked={booking.workTypeEditorial === true}
-                        onChange={() =>
-                          setBooking({
-                            ...booking,
-                            workTypeEditorial: !booking.workTypeEditorial,
-                          })
-                        }
-                      />
-                      <label className='form__label-select' htmlFor='editorial'>
-                        Editorial
-                      </label>
-                    </div>
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'commercial'}
+                      inputName={'workType'}
+                      inpuValue={'commercial'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          workTypeCommercial: !booking.workTypeCommercial,
+                        })
+                      }
+                      inputPlaceholder={'commercial'}
+                      inputChecked={booking.workTypeCommercial === true}
+                      labelHtmlFor={'commercial'}
+                      labelContent={'Commercial'}
+                    />
+
+                    <InputField
+                      classNameGroup={'form__field-select'}
+                      classNameInput={'form__field'}
+                      classNameLabel={'form__label-select'}
+                      inputType={'checkbox'}
+                      inputId={'editorial'}
+                      inputName={'workType'}
+                      inpuValue={'Editorial'}
+                      inputOnChange={() =>
+                        setBooking({
+                          ...booking,
+                          workTypeEditorial: !booking.workTypeEditorial,
+                        })
+                      }
+                      inputPlaceholder={'Editorial'}
+                      inputChecked={booking.workTypeEditorial === true}
+                      labelHtmlFor={'editorial'}
+                      labelContent={'Editorial'}
+                    />
                   </div>
                 </motion.div>
               ) : (
                 ''
               )}
-
+              <h3 className='form__group__header'>Message</h3>
               <div className='form-inner'>
                 <div className='form__group field large'>
                   <textarea
@@ -696,29 +656,32 @@ export const BookingForm = ({ motionForm }) => {
                     placeholder='Message'
                   ></textarea>
                   <label className='form__label' htmlFor='message'>
-                    Message
+                    What's on your mind?
                   </label>
                 </div>
               </div>
 
-              <div className={booking.name && booking.email ? 'form__field-select acceptance ready' : 'form__field-select acceptance'}>
-                <input
-                  className={validationMessage.errorMessage && !booking.acceptance ? 'error form__field' : 'form__field'}
-                  type='checkbox'
-                  id='acceptance'
-                  name='acceptance'
-                  value='yes'
-                  placeholder='acceptance'
-                  autoComplete='new-password'
-                  checked={booking.acceptance === true}
-                  onChange={() => setBooking({ ...booking, acceptance: !booking.acceptance })}
-                  required
-                />
-                <label className='form__label-select acceptance-terms' htmlFor='acceptance'>
-                  If you submit a booking request via an enquiry form or a question via a contact form, we need to process your data in order to
-                  respond. However, your data will only be processed for this purpose, and will not be used for anything else. *
-                </label>
-              </div>
+              <InputField
+                classNameGroup={booking.name && booking.email ? 'form__field-select acceptance ready' : 'form__field-select acceptance'}
+                classNameInput={validationMessage.errorMessage && !booking.acceptance ? 'error form__field' : 'form__field'}
+                classNameLabel={'form__label-select acceptance-terms'}
+                inputType={'checkbox'}
+                inputId={'acceptance'}
+                inputName={'acceptance'}
+                inpuValue={'yes'}
+                inputOnChange={() =>
+                  setBooking({
+                    ...booking,
+                    acceptance: !booking.acceptance,
+                  })
+                }
+                inputPlaceholder={'acceptance'}
+                inputChecked={booking.acceptance === true}
+                labelHtmlFor={'acceptance'}
+                labelContent={
+                  'If you submit a booking request via an enquiry form or a question via a contact form, we need to process your data in order torespond. However, your data will only be processed for this purpose, and will not be used for anything else. *'
+                }
+              />
             </div>
             <button type='submit' className='form-btn '>
               Send <VscArrowRight className='booking-arrow' />
