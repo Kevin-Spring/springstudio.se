@@ -67,20 +67,21 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
         </picture>
         <div className='studio-page-text-container'>
           <header ref={addToRefTexts}>
-            <h3>{title.rendered}</h3>
+            <h3>{acf.title && acf.title}</h3>
           </header>
           <article ref={addToRefTexts}>
+            {/* When rendering acf text editors html markup follows the content, hence why wordpress content is rendered instead */}
             <div className='studio-info' dangerouslySetInnerHTML={{ __html: content.rendered }} />
           </article>
           <div className='btn-container'>
-            <Link to='/studio'>
+            <Link to={acf.link_studio.url && acf.link_studio.url}>
               <div ref={addToRefTexts} className='studio-btn'>
-                {acf.button}
+                {acf.link_studio.title && acf.link_studio.title}
               </div>
             </Link>
-            <Link to='/three'>
+            <Link to={acf.link_3d.url && acf.link_3d.url}>
               <div ref={addToRefTexts} className='studio-btn'>
-                {acf.button_3d} (demo)
+                {acf.link_3d.title && acf.link_3d.title} (demo)
               </div>
             </Link>
           </div>

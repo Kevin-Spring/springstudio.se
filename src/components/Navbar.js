@@ -60,7 +60,7 @@ export const Navbar = () => {
   }, [navbarPaths])
 
   useEffect(() => {
-    if (location.pathname === '/studio') {
+    if (location.pathname.includes('/studio/')) {
       TweenLite.to(navbar.current, 0.8, {
         opacity: 1,
         delay: 2,
@@ -76,7 +76,7 @@ export const Navbar = () => {
         <Logo />
       </NavLink> */}
 
-      {location.pathname !== '/studio' ? (
+      {!location.pathname.includes('/studio/') ? (
         <nav className={location.pathname === '/' ? 'primary-nav-container light' : 'primary-nav-container dark'}>
           <div className={location.pathname === '/studio' ? 'primary-nav top' : 'primary-nav'}>
             <ul>
