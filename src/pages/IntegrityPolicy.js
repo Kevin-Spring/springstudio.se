@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export const PrivacyPolicy = () => {
   return (
     <motion.div style={{ color: '#fffdf7' }} exit={{ opacity: 0 }}>
-      {/* WORK IN PROGRESS */}
+      {/* WORK IN PROGRESS - style this*/}
       <h1>Privacy Policy</h1>
       <h2>Who we are</h2>
       <div>Our website address is: http://localhost/developement/springstudio.se.</div>
