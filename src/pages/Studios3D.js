@@ -1,6 +1,6 @@
 import React from 'react'
 import { SpinningMesh } from '../animations/SpinningMesh'
-import '../styles/scss/_studios3D.scss'
+import '../styles/css/_studios3D.css'
 import { motion } from 'framer-motion'
 import { Canvas } from 'react-three-fiber'
 import { softShadows, OrbitControls } from 'drei'

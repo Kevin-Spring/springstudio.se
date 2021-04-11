@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { BsArrowUp, BsArrowDown, BsArrowLeft, BsArrowRight } from 'react-icons/bs'
-import '../styles/scss/_pageTransition.scss'
+import '../styles/css/_pageTransition.css'
 
 /* Page transition component created with npm package framer-motion */
 

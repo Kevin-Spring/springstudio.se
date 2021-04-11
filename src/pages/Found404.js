@@ -1,7 +1,7 @@
 import React from 'react'
 import Lottie from 'lottie-react'
 import notFound from '../animations/41393-monkey-see.json'
-import '../styles/scss/_found404.scss'
+import '../styles/css/_found404.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { PageTransition } from '../animations/PageTransition'

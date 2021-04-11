@@ -1,6 +1,6 @@
 import { Header } from './components/Header'
-import './styles/scss/main.scss'
-import './styles/scss/_cookies.scss'
+import './styles/css/main.css'
+import './styles/css/_cookies.css'
 import CookieConsent from 'react-cookie-consent'
 import { Link } from 'react-router-dom'
 
