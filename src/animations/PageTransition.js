@@ -1,12 +1,7 @@
 import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
-import {
-  BsArrowUp,
-  BsArrowDown,
-  BsArrowLeft,
-  BsArrowRight,
-} from 'react-icons/bs'
-import '../styles/_pageTransition.scss'
+import { BsArrowUp, BsArrowDown, BsArrowLeft, BsArrowRight } from 'react-icons/bs'
+import '../styles/scss/_pageTransition.scss'
 
 /* Page transition component created with npm package framer-motion */
 
@@ -71,7 +66,7 @@ export const PageTransition = () => {
 
   return (
     <>
-    {/* Adding the black backdrop, the text-svg with fill effect and arrow keys to the page transition
+      {/* Adding the black backdrop, the text-svg with fill effect and arrow keys to the page transition
     using onAnimationStart and onAnimationComplete to hide and show the component */}
       <motion.div
         ref={backdrop}
@@ -89,25 +84,12 @@ export const PageTransition = () => {
         }
       >
         <motion.svg variants={textContainer} className='page-transition-svg'>
-          <pattern
-            id='pattern'
-            width='100%'
-            height='100%'
-            patternUnits='userSpaceOnUse'
-          >
+          <pattern id='pattern' width='100%' height='100%' patternUnits='userSpaceOnUse'>
             <rect />
 
-            <motion.rect
-              variants={text}
-              className='page-transition-text-rect'
-            />
+            <motion.rect variants={text} className='page-transition-text-rect' />
           </pattern>
-          <text
-            className='page-transition-text'
-            textAnchor='middle'
-            x='50%'
-            y='50%'
-          >
+          <text className='page-transition-text' textAnchor='middle' x='50%' y='50%'>
             Spring Studio
           </text>
         </motion.svg>

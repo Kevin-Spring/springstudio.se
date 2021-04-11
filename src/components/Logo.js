@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { useFetch } from './useFetch'
 import { Power3, TweenLite } from 'gsap'
-import '../styles/_logo.scss'
+import '../styles/scss/_logo.scss'
 import { endpoints } from '../endpoints/endpoints'
 
 //Pointing get request at correct endpoint
@@ -24,18 +24,7 @@ export const Logo = () => {
 
   return (
     <>
-      <div className='logo'>
-        {loading ? (
-          ''
-        ) : (
-          <img
-            ref={logo}
-            src={posts.guid.rendered}
-            alt='logo'
-            style={{ opacity: 0 }}
-          />
-        )}
-      </div>
+      <div className='logo'>{loading ? '' : <img ref={logo} src={posts.guid.rendered} alt='logo' style={{ opacity: 0 }} />}</div>
     </>
   )
 }

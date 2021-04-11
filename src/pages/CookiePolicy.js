@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import '../styles/_policy.scss'
+import '../styles/scss/_policy.scss'
 import { PageTransition } from '../animations/PageTransition'
 
 const motionContent = {
