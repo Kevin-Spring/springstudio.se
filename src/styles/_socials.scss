@@ -7,9 +7,7 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  padding-right: -webkit-calc(10px + (20 - 10) var(--calc-size));
-  padding-right: -moz-calc(10px + (20 - 10) var(--calc-size));
-  padding-right: calc(10px + (20 - 10) var(--calc-size));
+  padding-right: var(--size-20);
 
   .line {
     -webkit-transform: rotate(90deg);

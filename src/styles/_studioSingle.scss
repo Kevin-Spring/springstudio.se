@@ -17,12 +17,8 @@
 
     .studio-single-hero-arrow {
       position: absolute;
-      bottom: -webkit-calc(10px + (20 - 10) var(--calc-size));
-      bottom: -moz-calc(10px + (20 - 10) var(--calc-size));
-      bottom: calc(10px + (20 - 10) var(--calc-size));
-      font-size: -webkit-calc(30px + (50 - 30) var(--calc-size));
-      font-size: -moz-calc(30px + (50 - 30) var(--calc-size));
-      font-size: calc(30px + (50 - 30) var(--calc-size));
+      bottom: var(--size-20);
+      font-size: var(--size-50);
       font-weight: 100;
       left: 12vw;
     }

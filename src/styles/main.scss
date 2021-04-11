@@ -40,9 +40,6 @@
   --fs-xs: -webkit-calc(12px + (16 - 12) var(--calc-size));
   --fs-xs: -moz-calc(12px + (16 - 12) var(--calc-size));
   --fs-xs: calc(12px + (16 - 12) var(--calc-size));
-  --row: -webkit-calc((100vw - ((20px + (140 - 20) * (100vw - 320px) / 1120) * 2)));
-  --row: -moz-calc((100vw - ((20px + (140 - 20) * (100vw - 320px) / 1120) * 2)));
-  --row: calc((100vw - ((20px + (140 - 20) * (100vw - 320px) / 1120) * 2)));
 
   --medium-spacing: 0.08rem;
 
@@ -50,6 +47,23 @@
   --main-font: 'Roboto', sans-serif;
   --alt-font: 'Montserrat', sans-serif;
   --heading-font: 'Raleway', sans-serif;
+
+  /* Sizes */
+  --size-50: -webkit-calc(30px + (50 - 30) var(--calc-size));
+  --size-50: -moz-calc(30px + (50 - 30) var(--calc-size));
+  --size-50: calc(30px + (50 - 30) var(--calc-size));
+  --size-40: -webkit-calc(20px + (40 - 20) var(--calc-size));
+  --size-40: -moz-calc(20px + (40 - 20) var(--calc-size));
+  --size-40: calc(20px + (40 - 20) var(--calc-size));
+  --size-30: -webkit-calc(20px + (30 - 20) var(--calc-size));
+  --size-30: -moz-calc(20px + (30 - 20) var(--calc-size));
+  --size-30: calc(20px + (30 - 20) var(--calc-size));
+  --size-20: -webkit-calc(10px + (20 - 10) var(--calc-size));
+  --size-20: -moz-calc(10px + (20 - 10) var(--calc-size));
+  --size-20: calc(10px + (20 - 10) var(--calc-size));
+  --size-12: -webkit-calc(8px + (12 - 8) var(--calc-size));
+  --size-12: -moz-calc(8px + (12 - 8) var(--calc-size));
+  --size-12: calc(8px + (12 - 8) var(--calc-size));
 }
 
 body {
@@ -77,9 +91,7 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: var(--medium-spacing);
-  padding-bottom: -webkit-calc(20px + (30 - 20) var(--calc-size));
-  padding-bottom: -moz-calc(20px + (30 - 20) var(--calc-size));
-  padding-bottom: calc(20px + (30 - 20) var(--calc-size));
+  padding-bottom: var(--size-30);
 }
 
 h2 {
@@ -112,9 +124,7 @@ p {
   font-family: var(--main-font);
   line-height: 1.4;
   letter-spacing: 1.3px;
-  padding-bottom: -webkit-calc(10px + (20 - 10) var(--calc-size));
-  padding-bottom: -moz-calc(10px + (20 - 10) var(--calc-size));
-  padding-bottom: calc(10px + (20 - 10) var(--calc-size));
+  padding-bottom: var(--size-20);
 }
 
 p:last-child {

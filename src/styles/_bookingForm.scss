@@ -20,9 +20,7 @@
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
     text-align: center;
-    padding-bottom: -webkit-calc(20px + (30 - 20) var(--calc-size));
-    padding-bottom: -moz-calc(20px + (30 - 20) var(--calc-size));
-    padding-bottom: calc(20px + (30 - 20) var(--calc-size));
+    padding-bottom: var(--size-30);
   }
 
   .form {
@@ -174,9 +172,7 @@
         -o-transition: all var(--long-trans);
         -moz-transition: all var(--long-trans);
         transition: all var(--long-trans);
-        padding-bottom: -webkit-calc(20px + (30 - 20) var(--calc-size));
-        padding-bottom: -moz-calc(20px + (30 - 20) var(--calc-size));
-        padding-bottom: calc(20px + (30 - 20) var(--calc-size));
+        padding-bottom: var(--size-30);
         display: -webkit-box;
         display: -webkit-flex;
         display: -moz-box;
@@ -356,17 +352,13 @@
 
       .acceptance {
         opacity: 0.2;
-        padding: -webkit-calc(20px + (30 - 20) var(--calc-size)) 0;
-        padding: -moz-calc(20px + (30 - 20) var(--calc-size)) 0;
-        padding: calc(20px + (30 - 20) var(--calc-size)) 0;
+        padding: var(--size-30) 0;
 
         .form__label-select.acceptance-terms {
           font-size: -webkit-calc(10px + (12 - 10) var(--calc-size));
           font-size: -moz-calc(10px + (12 - 10) var(--calc-size));
           font-size: calc(10px + (12 - 10) var(--calc-size));
-          padding-top: -webkit-calc(20px + (30 - 20) var(--calc-size));
-          padding-top: -moz-calc(20px + (30 - 20) var(--calc-size));
-          padding-top: calc(20px + (30 - 20) var(--calc-size));
+          padding-top: var(--size-30);
           width: 80%;
         }
       }

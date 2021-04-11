@@ -13,7 +13,7 @@ function App() {
       <CookieConsent>
         <span>
           This website uses cookies to improve the user experience.{' '}
-          <Link to='cookies' style={{ textDecoration: 'underline' }}>
+          <Link to='/studio/cookies' style={{ textDecoration: 'underline' }}>
             Read more
           </Link>
         </span>
