@@ -10,6 +10,7 @@ function App() {
     <>
       <Header />
 
+      {/* Cookie banner created by NPM-package */}
       <CookieConsent>
         <span>
           This website uses cookies to improve the user experience.{' '}
