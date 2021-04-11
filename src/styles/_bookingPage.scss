@@ -6,9 +6,7 @@
   .book-studio-section-header {
     font-size: var(--h2);
     text-align: center;
-    padding-bottom: -webkit-calc(20px + (40 - 20) var(--calc-size));
-    padding-bottom: -moz-calc(20px + (40 - 20) var(--calc-size));
-    padding-bottom: calc(20px + (40 - 20) var(--calc-size));
+    padding-bottom: var(--size-40);
   }
 
   .book-studio-content-container {
@@ -52,9 +50,7 @@
     -webkit-writing-mode: vertical-lr;
     -ms-writing-mode: tb-lr;
     writing-mode: vertical-lr;
-    padding: -webkit-calc(8px + (12 - 8) var(--calc-size)) -webkit-calc(8px + (12 - 8) var(--calc-size));
-    padding: -moz-calc(8px + (12 - 8) var(--calc-size)) -moz-calc(8px + (12 - 8) var(--calc-size));
-    padding: calc(8px + (12 - 8) var(--calc-size)) calc(8px + (12 - 8) var(--calc-size));
+    padding: var(--size-12) var(--size-12);
     -webkit-border-bottom-left-radius: 5px;
     -moz-border-radius-bottomleft: 5px;
     border-bottom-left-radius: 5px;
@@ -76,9 +72,7 @@
 
     .studio-single-socials-icons {
       a {
-        padding: -webkit-calc(10px + (12 - 10) var(--calc-size));
-        padding: -moz-calc(10px + (12 - 10) var(--calc-size));
-        padding: calc(10px + (12 - 10) var(--calc-size));
+        padding: var(--size-12);
       }
     }
   }

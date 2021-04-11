@@ -1,11 +1,7 @@
 .primary-nav-container-curtain {
   position: fixed;
-  top: -webkit-calc(15px + (30 - 15) var(--calc-size));
-  top: -moz-calc(15px + (30 - 15) var(--calc-size));
-  top: calc(15px + (30 - 15) var(--calc-size));
-  left: -webkit-calc(15px + (30 - 15) var(--calc-size));
-  left: -moz-calc(15px + (30 - 15) var(--calc-size));
-  left: calc(15px + (30 - 15) var(--calc-size));
+  top: var(--size-30);
+  left: var(--size-30);
   z-index: 2;
   opacity: 0;
 
@@ -114,7 +110,7 @@
     z-index: 20;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--off-white-70);
     overflow-x: hidden;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;

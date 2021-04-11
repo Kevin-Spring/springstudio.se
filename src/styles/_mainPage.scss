@@ -130,9 +130,7 @@
         -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
-        padding: -webkit-calc(8px + (12 - 8) var(--calc-size)) -webkit-calc(8px + (12 - 8) var(--calc-size));
-        padding: -moz-calc(8px + (12 - 8) var(--calc-size)) -moz-calc(8px + (12 - 8) var(--calc-size));
-        padding: calc(8px + (12 - 8) var(--calc-size)) calc(8px + (12 - 8) var(--calc-size));
+        padding: var(--size-12) var(--size-12);
         -webkit-border-bottom-left-radius: 5px;
         -moz-border-radius-bottomleft: 5px;
         border-bottom-left-radius: 5px;
@@ -201,9 +199,7 @@
         }
 
         article {
-          padding-bottom: -webkit-calc(20px + (30 - 20) var(--calc-size));
-          padding-bottom: -moz-calc(20px + (30 - 20) var(--calc-size));
-          padding-bottom: calc(20px + (30 - 20) var(--calc-size));
+          padding-bottom: var(--size-30);
 
           .main-page-text-container-paragraph {
             font-size: var(--article);
