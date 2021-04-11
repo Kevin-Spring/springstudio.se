@@ -6,7 +6,6 @@ export const Envelope = () => {
   const [envelopeClass, setEnvelopeClass] = useState('envelope-open')
 
   var envelopeSentAnimation = function () {
-
     //Envelope close class
     setTimeout(function () {
       setEnvelopeClass('envelope-close')
@@ -35,15 +34,15 @@ export const Envelope = () => {
 
   return (
     <div>
-      <div class='envelope-wrapper'>
-        <div id='envelope' ref={envelope} class={envelopeClass}>
-          <div class='envelope-front envelope-front-flap'></div>
-          <div class='envelope-front envelope-front-pocket'></div>
-          <div class='envelope-letter'>
-            <div class='envelope-letter-words envelope-letter-words-line1'></div>
-            <div class='envelope-letter-words envelope-letter-words-line2'></div>
-            <div class='envelope-letter-words envelope-letter-words-line3'></div>
-            <div class='envelope-letter-words envelope-letter-words-line4'></div>
+      <div className='envelope-wrapper'>
+        <div id='envelope' ref={envelope} className={envelopeClass}>
+          <div className='envelope-front envelope-front-flap'></div>
+          <div className='envelope-front envelope-front-pocket'></div>
+          <div className='envelope-letter'>
+            <div className='envelope-letter-words envelope-letter-words-line1'></div>
+            <div className='envelope-letter-words envelope-letter-words-line2'></div>
+            <div className='envelope-letter-words envelope-letter-words-line3'></div>
+            <div className='envelope-letter-words envelope-letter-words-line4'></div>
           </div>
         </div>
       </div>

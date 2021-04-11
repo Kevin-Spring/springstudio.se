@@ -24,9 +24,7 @@ export const useNavbar = (posts, loading, location) => {
   //Looking through new array of menu items and assigning the items to different states
   const findMenuItem = () => {
     let studios = storedMenuItems.find(studios => studios === 'Studios')
-    let bookStudio = storedMenuItems.find(
-      bookStudio => bookStudio === 'Booking'
-    )
+    let bookStudio = storedMenuItems.find(bookStudio => bookStudio === 'Booking')
     let home = storedMenuItems.find(home => home === 'Home')
     setStudio(studios)
     setbookStudio(bookStudio)

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
@@ -15,6 +15,9 @@ const url = endpoints[0].url
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 export const MainPageChapter = () => {
+  //Figure out a way to set sectionscroll autokill dynamic with onClick on asidenav
+  //const [autoKill, setAutoKill] = useState(true)
+
   /* Using custom hook to fetch content, passing in the endpoint */
   const { loading, posts } = useFetch(url)
 
@@ -42,19 +45,22 @@ export const MainPageChapter = () => {
 
   //Functions which creates scrolltrigger elements of the sections stored in the revealRefs-array
   //Listening to the loading status of the get-request before setting up the scroll-sections (gsap doesn't recognize the sections otherwise)
+
   useEffect(() => {
-    //For section scroll & calling the goToSection function
-    revealRefs.current.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        onEnter: () => goToSection(i),
+    if (!loading) {
+      //For section scroll & calling the goToSection function
+      revealRefs.current.forEach((panel, i) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          onEnter: () => goToSection(i),
+        })
+        ScrollTrigger.create({
+          trigger: panel,
+          start: 'bottom bottom',
+          onEnterBack: () => goToSection(i),
+        })
       })
-      ScrollTrigger.create({
-        trigger: panel,
-        start: 'bottom bottom',
-        onEnterBack: () => goToSection(i),
-      })
-    })
+    }
   }, [loading])
 
   return (
@@ -63,27 +69,14 @@ export const MainPageChapter = () => {
       {posts.map((post, i) => {
         const { id, title, content, acf } = post
         return (
-          <section
-            id={`${post.id}`}
-            ref={addToRefs}
-            className={`panel main-section main-page-section section section${
-              i + 1
-            }`}
-            key={id}
-          >
-            <MainPageContent
-              id={id}
-              title={title}
-              content={content}
-              acf={acf}
-              index={i}
-            />
+          <section id={`${post.id}`} ref={addToRefs} className={`panel main-section main-page-section section section${i + 1}`} key={id}>
+            <MainPageContent id={id} title={title} content={content} acf={acf} index={i} />
             <AngleDown />
           </section>
         )
       })}
       {/* Navigations dots located at the bottom of the page */}
-      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} />
+      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} /* changeAutoKill={autoKill => setAutoKill(autoKill)} */ />
     </>
   )
 }

@@ -60,36 +60,19 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
     <>
       <div className='main-page-content-container'>
         <picture>
-          <source
-            srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
-          />
-          <source
-            srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
-          />
-          <source
-            srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
-          />
-          <source
-            srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
-          />
+          <source srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`} />
+          <source srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`} />
+          <source srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `} />
+          <source srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`} />
           <img src={acf.background.sizes.large} alt='background' />
         </picture>
         <div className='main-page-text-container'>
           <div className='main-page-text-container-inner'>
-            <header ref={addToRefTexts}>
-              {index === 0 ? (
-                <h1>{title.rendered}</h1>
-              ) : (
-                <h2>{title.rendered}</h2>
-              )}
-            </header>
+            <header ref={addToRefTexts}>{index === 0 ? <h1>{title.rendered}</h1> : <h2>{title.rendered}</h2>}</header>
             {/* Following is conditional rendering depending on which content made it out from wordpress */}
             {content.rendered && (
               <article ref={addToRefTexts}>
-                <div
-                  className='main-page-text-container-paragraph'
-                  dangerouslySetInnerHTML={{ __html: content.rendered }}
-                />
+                <div className='main-page-text-container-paragraph' dangerouslySetInnerHTML={{ __html: content.rendered }} />
               </article>
             )}
             {acf.cta && (
@@ -100,15 +83,7 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
               </Link>
             )}
           </div>
-          {acf.facebook || acf.instagram ? (
-            <Socials
-              fadeRef={addToRefTexts}
-              facebook={acf.facebook.url}
-              instagram={acf.instagram.url}
-            />
-          ) : (
-            ''
-          )}
+          {acf.facebook || acf.instagram ? <Socials fadeRef={addToRefTexts} facebook={acf.facebook.url} instagram={acf.instagram.url} /> : ''}
         </div>
         {acf.maps && (
           <div className='main-page-google-maps'>

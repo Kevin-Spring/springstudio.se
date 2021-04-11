@@ -1,8 +1,9 @@
 .primary-nav-container-curtain {
   position: fixed;
-  top: calc(15px + (30 - 15) var(--calc-size));
-  left: calc(15px + (30 - 15) var(--calc-size));
+  top: var(--size-30);
+  left: var(--size-30);
   z-index: 2;
+  opacity: 0;
 
   .hamburger {
     z-index: 999;
@@ -17,6 +18,9 @@
     height: 2px;
     background: var(--faded-black);
     vertical-align: middle;
+    -webkit-transition: background-color 0.2s ease-in-out 0.2s;
+    -o-transition: background-color 0.2s ease-in-out 0.2s;
+    -moz-transition: background-color 0.2s ease-in-out 0.2s;
     transition: background-color 0.2s ease-in-out 0.2s;
   }
 
@@ -25,6 +29,9 @@
     content: '';
     position: absolute;
     display: block;
+    -webkit-transition: all 0.2s ease 0.2s;
+    -o-transition: all 0.2s ease 0.2s;
+    -moz-transition: all 0.2s ease 0.2s;
     transition: all 0.2s ease 0.2s;
   }
 
@@ -37,18 +44,29 @@
   }
 
   .hamburger-icon {
+    -webkit-transition: background-color 0s ease 0.2s;
+    -o-transition: background-color 0s ease 0.2s;
+    -moz-transition: background-color 0s ease 0.2s;
     transition: background-color 0s ease 0.2s;
   }
 
   .hamburger-icon.open .hamburger {
     background: none;
+    -webkit-transition: background-color 0s ease 0.2s;
+    -o-transition: background-color 0s ease 0.2s;
+    -moz-transition: background-color 0s ease 0.2s;
     transition: background-color 0s ease 0.2s;
   }
 
   .hamburger-icon.open .hamburger:before,
   .hamburger-icon.open .hamburger:after {
     top: 0;
+    -webkit-transition: top 0.2s ease, -webkit-transform 0.2s ease 0.2s;
+    transition: top 0.2s ease, -webkit-transform 0.2s ease 0.2s;
+    -o-transition: top 0.2s ease, -o-transform 0.2s ease 0.2s;
+    -moz-transition: top 0.2s ease, transform 0.2s ease 0.2s, -moz-transform 0.2s ease 0.2s;
     transition: top 0.2s ease, transform 0.2s ease 0.2s;
+    transition: top 0.2s ease, transform 0.2s ease 0.2s, -webkit-transform 0.2s ease 0.2s, -moz-transform 0.2s ease 0.2s, -o-transform 0.2s ease 0.2s;
   }
 
   .hamburger-icon.open .hamburger:before {
@@ -92,8 +110,11 @@
     z-index: 20;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--off-white-70);
     overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
     transition: 0.5s;
   }
 
@@ -120,11 +141,18 @@
     font-family: var(--ff-base);
     color: var(--faded-black);
     display: block;
+    -webkit-transition: var(--std-trans);
+    -o-transition: var(--std-trans);
+    -moz-transition: var(--std-trans);
     transition: var(--std-trans);
     font-weight: 700;
     letter-spacing: var(--medium-spacing);
     text-transform: uppercase;
+    -webkit-writing-mode: tb;
+    -ms-writing-mode: tb;
     writing-mode: tb;
+    padding-bottom: -webkit-calc(18px + (24 - 18) var(--calc-size));
+    padding-bottom: -moz-calc(18px + (24 - 18) var(--calc-size));
     padding-bottom: calc(18px + (24 - 18) var(--calc-size));
     opacity: 0;
     transition: var(--std-trans);
