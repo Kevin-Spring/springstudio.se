@@ -9,45 +9,23 @@
 }
 
 .dots-container ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -moz-box-orient: vertical;
-  -moz-box-direction: normal;
-  -ms-flex-direction: column;
+
   flex-direction: column;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  -moz-box-align: end;
-  -ms-flex-align: end;
+
   align-items: flex-end;
 }
 
 .dots-container ul li {
   list-style-type: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
+
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
+
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -moz-box-pack: center;
-  -ms-flex-pack: center;
+
   justify-content: center;
-  font-size: -webkit-calc(14px + (16 - 14) var(--calc-size));
-  font-size: -moz-calc(14px + (16 - 14) var(--calc-size));
-  font-size: calc(14px + (16 - 14) var(--calc-size));
+
+  font-size: calc(14px + (16 - 14) * (100vw - 320px) / 1120);
 }
 
 .dots-container ul li a {
@@ -57,9 +35,7 @@
 
 .dots-container ul li span {
   opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
+
   transition: all 0.5s ease-in-out;
   font-size: var(--size-12);
   letter-spacing: var(--medium-spacing);
@@ -72,27 +48,14 @@
 }
 
 .dot-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
+
   align-items: center;
 }
 
 .dot-container .dot-active {
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
   transform: scale(0.9);
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
+
   transition: all 0.2s ease-in-out;
   opacity: 0.3;
 }
