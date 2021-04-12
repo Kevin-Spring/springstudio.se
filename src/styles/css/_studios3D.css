@@ -1,0 +1,48 @@
+.three__container {
+  background: var(--off-white);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.three__container .three__container-header {
+  position: absolute;
+  left: 50%;
+
+  transform: translateX(-50%);
+  top: 3vh;
+  font-size: var(--h3);
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  font-family: var(--main-font);
+}
+
+.three__container .three__tool-tip {
+  display: flex;
+
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.three__container .three__container-link {
+  color: var(--faded-black);
+  font-size: var(--fs-xs);
+  position: absolute;
+  top: 3vh;
+  z-index: 3;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 2rem;
+  letter-spacing: 0.04rem;
+
+  display: flex;
+
+  align-items: center;
+  font-family: var(--main-font);
+}

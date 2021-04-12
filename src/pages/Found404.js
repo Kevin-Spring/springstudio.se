@@ -1,7 +1,7 @@
 import React from 'react'
 import Lottie from 'lottie-react'
 import notFound from '../animations/41393-monkey-see.json'
-import '../styles/_found404.scss'
+import '../styles/css/_found404.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { PageTransition } from '../animations/PageTransition'
@@ -44,11 +44,7 @@ export const Found404 = ({ transition }) => {
   return (
     <motion.main exit={{ opacity: 0 }}>
       <PageTransition />
-      <motion.section
-        className='not-found-container'
-        variants={motionContent}
-        transition={transition}
-      >
+      <motion.section className='not-found-container' variants={motionContent} transition={transition}>
         <motion.h1 className='not-found-header' variants={motionTitle}>
           404 Page not found
         </motion.h1>
@@ -56,8 +52,7 @@ export const Found404 = ({ transition }) => {
         <Lottie animationData={notFound} className='not-found-animation' />
         <motion.p className='not-found-link-home' variants={motionParagraph}>
           <Link to='/'>
-            <IoTriangleOutline className='angle angle-left' /> Back to Spring
-            Studio
+            <IoTriangleOutline className='angle angle-left' /> Back to Spring Studio
           </Link>
         </motion.p>
       </motion.section>

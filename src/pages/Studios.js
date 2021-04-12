@@ -2,7 +2,7 @@ import React from 'react'
 import { Studio } from '../components/Studio'
 import { motion } from 'framer-motion'
 import { PageTransition } from '../animations/PageTransition'
-import '../styles/_studios.scss'
+import '../styles/css/_studios.css'
 
 /* Setting up component with page transition and exit-prop from npm package framer motion to make page transitions smooth
 then loads component content */

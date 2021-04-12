@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { motion } from 'framer-motion'
 import { PageTransition } from '../animations/PageTransition'
 
-import '../styles/_bookingPage.scss'
+import '../styles/css/_bookingPage.css'
 
 export const BookingPage = ({ transition }) => {
   //Disable scrolltrigger on bookingpage allowing normal scroll

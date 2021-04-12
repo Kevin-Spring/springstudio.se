@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import '../styles/_envelope.scss'
+import '../styles/css/_envelope.css'
 
 export const Envelope = () => {
   const envelope = useRef(null)

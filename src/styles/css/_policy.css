@@ -1,0 +1,28 @@
+.policy-section {
+  background: var(--off-white);
+  color: var(--faded-black);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.policy-section article {
+  max-width: 60vw;
+  padding-top: var(--size-50);
+  margin-bottom: var(--size-50);
+}
+
+.policy-section article a {
+  font-family: var(--base-font);
+  text-decoration: underline;
+  font-weight: 700;
+  padding: 0 var(--size-12);
+}
+
+.policy-section article h1 {
+  font-size: var(--h2);
+}
+
+.policy-section article h2 {
+  font-size: var(--size-30);
+}

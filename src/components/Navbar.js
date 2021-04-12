@@ -5,7 +5,7 @@ import { IoTriangleOutline } from 'react-icons/io5'
 import { useFetchNav } from './useFetchNav'
 import { useNavbar } from './useNavbar'
 import { Power3, TweenLite } from 'gsap'
-import '../styles/_navbar.scss'
+import '../styles/css/_navbar.css'
 import { endpoints } from '../endpoints/endpoints'
 
 //Pointing get request at correct endpoint

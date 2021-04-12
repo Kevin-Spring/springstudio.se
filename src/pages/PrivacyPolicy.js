@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import '../styles/_policy.scss'
+import '../styles/css/_policy.css'
 import { PageTransition } from '../animations/PageTransition'
 
 export const PrivacyPolicy = () => {

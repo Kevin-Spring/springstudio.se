@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
-import '../styles/_bookingForm.scss'
+import '../styles/css/_bookingForm.css'
 import { endpoints } from '../endpoints/endpoints'
 import { Envelope } from './Envelope'
 import { VscArrowRight } from 'react-icons/vsc'
