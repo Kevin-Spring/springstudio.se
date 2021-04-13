@@ -81,7 +81,6 @@
   position: relative;
   font-size: var(--fs-xs);
   padding: calc(5px + (10 - 5) * (100vw - 320px) / 1120);
-  max-width: calc(180px + (200 - 180) * (100vw - 320px) / 1120);
   cursor: pointer;
   transition: background-color var(--std-trans);
   display: flex;
