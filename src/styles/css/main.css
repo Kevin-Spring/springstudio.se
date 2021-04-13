@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
+  /* Colors */
   --faded-black: #101010;
   --faded-black-dark: #0c0c0c;
   --faded-black-70: rgb(22, 22, 22);
@@ -12,9 +13,11 @@
   --white: #fff;
   --def-background: linear-gradient(90deg, rgb(29, 29, 29) 18%, rgba(0, 0, 0, 1) 100%) !important;
 
+  /* Transitions */
   --std-trans: 0.2s ease-in-out;
   --long-trans: 0.4s ease-in-out;
 
+  /* Typography */
   /* --calc-size: (100vw - 320px) / 1120; */
   --h2: calc(30px + (80 - 30) * (100vw - 320px) / 1120);
   --h3: calc(18px + (30 - 18) * (100vw - 320px) / 1120);
@@ -27,6 +30,7 @@
   --alt-font: 'Montserrat', sans-serif;
   --heading-font: 'Raleway', sans-serif;
 
+  /* Sizes */
   --size-50: calc(30px + (50 - 30) * (100vw - 320px) / 1120);
   --size-40: calc(20px + (40 - 20) * (100vw - 320px) / 1120);
   --size-30: calc(20px + (30 - 20) * (100vw - 320px) / 1120);
@@ -38,10 +42,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  overflow-x: hidden;
   background: var(--black);
   font-family: var(--main-font);
 }
