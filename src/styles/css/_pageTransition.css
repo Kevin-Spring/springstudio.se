@@ -4,12 +4,10 @@
 
 .page-transition-container {
   background-color: var(--black);
-  z-index: 4;
+  z-index: 99999;
   position: fixed;
   width: 100vw;
-
   justify-content: center;
-
   align-items: center;
   display: none;
 }
@@ -17,11 +15,8 @@
 .page-transition-container .page-transition-svg {
   position: fixed;
   z-index: 50;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 }
 
@@ -61,19 +56,15 @@
   font-weight: bold;
   bottom: calc(80px + (100 - 80) * (100vw - 320px) / 1120);
   left: 50%;
-
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.61);
-
   display: flex;
-
   flex-flow: row wrap;
 }
 
 .page-transition-container .page-transition-arrow-keys-title {
   font-size: 50%;
   position: relative;
-
   transform: translateX(-50%);
   left: 50%;
 }
@@ -81,9 +72,7 @@
 .page-transition-container .page-transition-arrow-keys-row {
   flex: 0 0 100%;
   max-width: 100%;
-
   display: flex;
-
   justify-content: center;
   padding: 5px;
 }

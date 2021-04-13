@@ -10,21 +10,15 @@
 
 .dots-container ul {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-end;
 }
 
 .dots-container ul li {
   list-style-type: none;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   font-size: calc(14px + (16 - 14) * (100vw - 320px) / 1120);
 }
 
@@ -35,7 +29,6 @@
 
 .dots-container ul li span {
   opacity: 0;
-
   transition: all 0.5s ease-in-out;
   font-size: var(--size-12);
   letter-spacing: var(--medium-spacing);
@@ -49,13 +42,11 @@
 
 .dot-container {
   display: flex;
-
   align-items: center;
 }
 
 .dot-container .dot-active {
   transform: scale(0.9);
-
   transition: all 0.2s ease-in-out;
   opacity: 0.3;
 }
