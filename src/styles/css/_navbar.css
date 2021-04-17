@@ -275,7 +275,16 @@
 
 @media only screen and (max-width: 980px) {
   .primary-nav-container .primary-nav ul .navbar-item {
-    top: 94vh;
+    /* top: 94vh; */
+    top: 0;
+  }
+
+  .primary-nav-container .primary-nav ul .navbar-right-item {
+    border-bottom-left-radius: 5px;
+  }
+
+  .primary-nav-container .primary-nav ul .navbar-left-item {
+    border-bottom-right-radius: 5px;
   }
 
   .primary-nav-container-curtain .overlay.open {
@@ -298,7 +307,7 @@
 
 @media only screen and (max-width: 479px) {
   .primary-nav-container .primary-nav ul .navbar-item {
-    top: 94.6vh;
+    /*top: 94.6vh;*/
     padding: 0 15px;
   }
 

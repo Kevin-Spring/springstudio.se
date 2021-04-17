@@ -3,6 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { useFetch } from './useFetch'
+import { PageTransition } from '../animations/PageTransition'
+import { StaticLoading } from './StaticLoading'
 import { AsideNav } from './AsideNav'
 import { endpoints } from '../endpoints/endpoints'
 import { AngleDown } from './AngleDown'
@@ -65,6 +67,8 @@ export const MainPageChapter = () => {
 
   return (
     <>
+      {loading && <StaticLoading />}
+      {!loading && <PageTransition />}
       {/* Mapping through posts and writes the html and structure with MainPageContent-component */}
       {posts.map((post, i) => {
         const { id, title, content, acf } = post

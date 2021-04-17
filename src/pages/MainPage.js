@@ -1,6 +1,5 @@
 import React from 'react'
 import { MainPageChapter } from '../components/MainPageChapter'
-import { PageTransition } from '../animations/PageTransition'
 import { motion } from 'framer-motion'
 import '../styles/css/_mainPage.css'
 
@@ -12,7 +11,6 @@ export const MainPage = ({ transition }) => {
     <>
       <main className='main-page'>
         <motion.div exit={{ opacity: 0 }} transition={transition}>
-          <PageTransition />
           <MainPageChapter />
         </motion.div>
       </main>
