@@ -297,6 +297,11 @@
   font-size: var(--fs-xs);
 }
 
+.from input {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
 .form input:-webkit-autofill,
 .form input:-webkit-autofill:hover,
 .form input:-webkit-autofill:focus,
@@ -314,9 +319,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .form-container {
-    width: 100%;
-  }
   .form-container .form__label-select.acceptance-terms {
     max-width: 70%;
   }
@@ -324,7 +326,7 @@
 
 @media only screen and (max-width: 479px) {
   .form-container {
-    max-width: 70vw;
+    width: 65vw;
     padding: 20vw 0;
   }
 
@@ -333,5 +335,15 @@
     max-width: 90%;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .form__cancellation-notice {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .form .acceptance .form__label-select.acceptance-terms {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }

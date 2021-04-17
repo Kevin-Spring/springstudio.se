@@ -1,7 +1,6 @@
 import React from 'react'
 import { Studio } from '../components/Studio'
 import { motion } from 'framer-motion'
-import { PageTransition } from '../animations/PageTransition'
 import '../styles/css/_studios.css'
 
 /* Setting up component with page transition and exit-prop from npm package framer motion to make page transitions smooth
@@ -11,7 +10,6 @@ export const Studios = ({ transition }) => {
     <>
       <main className='studio-page'>
         <motion.div exit={{ opacity: 0 }} transition={transition}>
-          <PageTransition />
           <Studio />
         </motion.div>
       </main>

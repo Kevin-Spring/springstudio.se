@@ -151,7 +151,7 @@
 @media only screen and (max-width: 479px) {
   .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container .btn-container {
     position: absolute;
-    bottom: 0;
+    bottom: 10vh;
     right: auto;
   }
 }

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { useFetch } from './useFetch'
 import { endpoints } from '../endpoints/endpoints'
 import { BookingForm } from './BookingForm'
+import { PageTransition } from '../animations/PageTransition'
+import { StaticLoading } from './StaticLoading'
 import { Socials } from './Socials'
 
 //Pointing get request at correct endpoint
@@ -53,10 +55,12 @@ const motionForm = {
 
 export const Booking = () => {
   /* Fetches the wordpress content of the page using custom fetch hook */
-  const { posts } = useFetch(url)
+  const { loading, posts } = useFetch(url)
 
   return (
     <>
+      {loading && <StaticLoading />}
+      {!loading && <PageTransition />}
       {posts.map(post => {
         const { id, title, /* content */ acf } = post
         return (
@@ -64,31 +68,15 @@ export const Booking = () => {
             <div className='book-studio-content-container'>
               {acf.background && (
                 <picture>
-                  <source
-                    srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`}
-                  />
-                  <source
-                    srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`}
-                  />
-                  <source
-                    srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `}
-                  />
-                  <source
-                    srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
-                  />
+                  <source srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`} />
+                  <source srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`} />
+                  <source srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes['1536x1536']} 2x `} />
+                  <source srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`} />
                   <img src={acf.background.sizes.large} alt='background' />
                 </picture>
               )}
-              <motion.div
-                initial='initial'
-                animate='animate'
-                variants={motionContent}
-                className='form-container'
-              >
-                <motion.h1
-                  variants={motionTitle}
-                  className='book-studio-section-header'
-                >
+              <motion.div initial='initial' animate='animate' variants={motionContent} className='form-container'>
+                <motion.h1 variants={motionTitle} className='book-studio-section-header'>
                   {title.rendered}
                 </motion.h1>
                 {/* Gets the actual form from BookingForm component */}

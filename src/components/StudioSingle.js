@@ -13,6 +13,7 @@ import { Socials } from './Socials'
 import gsap from 'gsap'
 import { SlideImage } from './SlideImage'
 import { PhotoGridImage } from './PhotoGridImage'
+import { StaticLoading } from './StaticLoading'
 
 var settings = {
   dots: true,
@@ -125,6 +126,7 @@ export const StudioSingle = ({ content, transition }) => {
 
   return (
     <motion.main className='studio-sigle-main' exit={{ opacity: 0 }} transition={transition}>
+      {loading && <StaticLoading />}
       {!loading && <PageTransition />}
       {!loading && (
         <div key={posts.id}>

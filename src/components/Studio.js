@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
+import { PageTransition } from '../animations/PageTransition'
+import { StaticLoading } from './StaticLoading'
 import { useFetch } from './useFetch'
 import { AsideNav } from './AsideNav'
 import { endpoints } from '../endpoints/endpoints'
@@ -62,6 +64,8 @@ export const Studio = () => {
 
   return (
     <>
+      {loading && <StaticLoading />}
+      {!loading && <PageTransition />}
       <h1 style={{ position: 'absolute' }}>Studios</h1>
       {/* Mapping through posts and writes the html and structure with StudioPageContent-component */}
       {posts.map((post, i) => {
