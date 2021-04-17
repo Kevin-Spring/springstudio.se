@@ -7,6 +7,8 @@
   align-items: center;
   display: flex;
   height: 100vh;
+  min-height: -webkit-fill-available;
+  animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-svg {
@@ -15,18 +17,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.loading-container .loading-svg #pattern {
-  width: 100%;
-  height: 100%;
-  color: white;
-}
-
-.loading-container .loading-svg #pattern rect {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
 }
 
 .loading-container .loading-svg #pattern .loading-text-rect {
@@ -83,6 +73,18 @@
 }
 .loading-container .loading-arrow-keys-row .loading-arrow-key-up {
   left: 50%;
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 @media only screen and (max-width: 980px) {

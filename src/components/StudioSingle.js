@@ -126,8 +126,7 @@ export const StudioSingle = ({ content, transition }) => {
 
   return (
     <motion.main className='studio-sigle-main' exit={{ opacity: 0 }} transition={transition}>
-      {loading && <StaticLoading />}
-      {!loading && <PageTransition />}
+      {loading ? <StaticLoading /> : <PageTransition />}
       {!loading && (
         <div key={posts.id}>
           <motion.section className='studio-single-hero-sec' initial='initial' animate='animate' variants={motionContent}>

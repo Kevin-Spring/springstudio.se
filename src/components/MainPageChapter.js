@@ -17,11 +17,13 @@ const url = endpoints[0].url
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 export const MainPageChapter = () => {
-  //Figure out a way to set sectionscroll autokill dynamic with onClick on asidenav
-  //const [autoKill, setAutoKill] = useState(true)
-
   /* Using custom hook to fetch content, passing in the endpoint */
   const { loading, posts } = useFetch(url)
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
+
+  const checkSize = () => {
+    setWindowSize(window.innerWidth)
+  }
 
   //Setting up useRef on each section to make scrolltrigger-animation possible
   let revealRefs = useRef([])
@@ -52,23 +54,33 @@ export const MainPageChapter = () => {
     if (!loading) {
       //For section scroll & calling the goToSection function
       revealRefs.current.forEach((panel, i) => {
-        ScrollTrigger.create({
-          trigger: panel,
-          onEnter: () => goToSection(i),
-        })
-        ScrollTrigger.create({
-          trigger: panel,
-          start: 'bottom bottom',
-          onEnterBack: () => goToSection(i),
-        })
+        if (windowSize > 981) {
+          ScrollTrigger.create({
+            trigger: panel,
+            onEnter: () => goToSection(i),
+          })
+          ScrollTrigger.create({
+            trigger: panel,
+            start: 'bottom bottom',
+            onEnterBack: () => goToSection(i),
+          })
+        }
       })
     }
   }, [loading])
 
+  //Function to disable scrolltrigger on mobile devices, too buggy - swith to slider.js
+  useEffect(() => {
+    window.addEventListener('resize', checkSize)
+    //Clean up callback to prevent several eventlisteners at the same time
+    return () => {
+      window.removeEventListener('resize', checkSize)
+    }
+  }, [])
+
   return (
     <>
-      {loading && <StaticLoading />}
-      {!loading && <PageTransition />}
+      {loading ? <StaticLoading /> : <PageTransition />}
       {/* Mapping through posts and writes the html and structure with MainPageContent-component */}
       {posts.map((post, i) => {
         const { id, title, content, acf } = post
@@ -80,7 +92,7 @@ export const MainPageChapter = () => {
         )
       })}
       {/* Navigations dots located at the bottom of the page */}
-      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} /* changeAutoKill={autoKill => setAutoKill(autoKill)} */ />
+      <AsideNav posts={posts} loading={loading} sections={revealRefs.current} />
     </>
   )
 }
