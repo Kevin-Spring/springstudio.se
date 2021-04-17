@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
@@ -19,6 +19,13 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 export const Studio = () => {
   /* Using custom hook to fetch content, passing in the endpoint */
   const { loading, posts } = useFetch(url)
+  const [autoKillTrue, setAutoKillTrue] = useState(true)
+
+  useEffect(() => {
+    if (window.innerWidth < 981) {
+      setAutoKillTrue(!autoKillTrue)
+    }
+  }, [])
 
   //Setting up useRef on each section to make scrolltrigger-animation possible
   const revealRefsStudio = useRef([])
@@ -37,7 +44,7 @@ export const Studio = () => {
       //Sätt autKill till false för att scrollen inte ska kunna avbrytas
       //Mouse pad scroll blir extremt känslig för input med autokill: true.
       //Därremot funkar inte dot-navigationen mellan sektionerna med autokill: false
-      scrollTo: { y: i * window.innerHeight, autoKill: true },
+      scrollTo: { y: i * window.innerHeight, autoKill: autoKillTrue },
       duration: 0.8,
     })
   }
