@@ -377,7 +377,7 @@ export const BookingForm = ({ motionForm }) => {
                     inputOnChange={onChangeHandler}
                     inputPlaceholder={'Booking Date From'}
                     labelHtmlFor={'bookingDateFrom'}
-                    labelContent={'From:'}
+                    labelContent={'Booking Date From:'}
                   />
 
                   <InputField
@@ -391,7 +391,7 @@ export const BookingForm = ({ motionForm }) => {
                     inputOnChange={onChangeHandler}
                     inputPlaceholder={'Booking Date To'}
                     labelHtmlFor={'bookingDateTo'}
-                    labelContent={'To:'}
+                    labelContent={'Booking Date To:'}
                   />
 
                   <h3 className='form__group__header'>Working Hours</h3>

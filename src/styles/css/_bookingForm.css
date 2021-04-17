@@ -297,9 +297,16 @@
   font-size: var(--fs-xs);
 }
 
-.from input {
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='date'],
+textarea {
   border-radius: 0;
   -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .form input:-webkit-autofill,
@@ -345,5 +352,9 @@
   .form .acceptance .form__label-select.acceptance-terms {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  .form .form-inner.form-inner-selects .form__group {
+    height: auto;
   }
 }

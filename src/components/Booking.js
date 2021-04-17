@@ -59,8 +59,7 @@ export const Booking = () => {
 
   return (
     <>
-      {loading && <StaticLoading />}
-      {!loading && <PageTransition />}
+      {loading ? <StaticLoading /> : <PageTransition />}
       {posts.map(post => {
         const { id, title, /* content */ acf } = post
         return (

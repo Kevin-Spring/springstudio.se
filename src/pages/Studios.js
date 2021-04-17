@@ -8,11 +8,9 @@ then loads component content */
 export const Studios = ({ transition }) => {
   return (
     <>
-      <main className='studio-page'>
-        <motion.div exit={{ opacity: 0 }} transition={transition}>
-          <Studio />
-        </motion.div>
-      </main>
+      <motion.main exit={{ opacity: 0 }} transition={transition} className='studio-page'>
+        <Studio transition={transition} />
+      </motion.main>
     </>
   )
 }

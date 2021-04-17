@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
@@ -19,6 +19,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 export const Studio = () => {
   /* Using custom hook to fetch content, passing in the endpoint */
   const { loading, posts } = useFetch(url)
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
+
+  const checkSize = () => {
+    setWindowSize(window.innerWidth)
+  }
 
   //Setting up useRef on each section to make scrolltrigger-animation possible
   const revealRefsStudio = useRef([])
@@ -49,36 +54,51 @@ export const Studio = () => {
 
     if (!loading) {
       revealRefsStudio.current.forEach((panel, i) => {
-        ScrollTrigger.create({
-          trigger: panel,
-          onEnter: () => goToSection(i),
-        })
-        ScrollTrigger.create({
-          trigger: panel,
-          start: 'bottom bottom',
-          onEnterBack: () => goToSection(i),
-        })
+        if (windowSize > 981) {
+          ScrollTrigger.create({
+            trigger: panel,
+            onEnter: () => goToSection(i),
+          })
+          ScrollTrigger.create({
+            trigger: panel,
+            start: 'bottom bottom',
+            onEnterBack: () => goToSection(i),
+          })
+        }
       })
     }
   }, [loading])
 
+  //Function to disable scrolltrigger on mobile devices, too buggy - swith to slider.js
+  useEffect(() => {
+    window.addEventListener('resize', checkSize)
+    //Clean up callback to prevent several eventlisteners at the same time
+    return () => {
+      window.removeEventListener('resize', checkSize)
+    }
+  }, [])
+
   return (
     <>
-      {loading && <StaticLoading />}
-      {!loading && <PageTransition />}
-      <h1 style={{ position: 'absolute' }}>Studios</h1>
-      {/* Mapping through posts and writes the html and structure with StudioPageContent-component */}
-      {posts.map((post, i) => {
-        const { id, title, content, acf } = post
-        return (
-          <section id={`${post.id}`} ref={addToRefs} className={`main-section studio-page-section section${i + 1} studio${i + 1}`} key={id}>
-            <StudioPageContent id={id} title={title} content={content} acf={acf} />
-            <AngleDown />
-          </section>
-        )
-      })}
-      {/* Navigations dots located at the bottom of the page */}
-      <AsideNav posts={posts} loading={loading} sections={revealRefsStudio.current} />
+      {loading ? <StaticLoading /> : <PageTransition />}
+      {!loading && (
+        <div>
+          <h1 style={{ position: 'absolute' }}>Studios</h1>
+          {/* Mapping through posts and writes the html and structure with StudioPageContent-component */}
+
+          {posts.map((post, i) => {
+            const { id, title, content, acf } = post
+            return (
+              <section id={`${post.id}`} ref={addToRefs} className={`main-section studio-page-section section${i + 1} studio${i + 1}`} key={id}>
+                <StudioPageContent id={id} title={title} content={content} acf={acf} />
+                <AngleDown />
+              </section>
+            )
+          })}
+          {/* Navigations dots located at the bottom of the page */}
+          <AsideNav posts={posts} loading={loading} sections={revealRefsStudio.current} />
+        </div>
+      )}
     </>
   )
 }
