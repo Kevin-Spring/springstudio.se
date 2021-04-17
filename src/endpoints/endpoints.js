@@ -1,8 +1,6 @@
 //Endpoints for the get-actions, fetching info from wp headless api
 
-/* 
-
-PRODUCTION
+/* PRODUCTION */
 
 export const endpoints = [
   {
@@ -45,11 +43,11 @@ export const endpoints = [
     type: 'single post - studio 3',
     url: 'https://dev.springstudio.se/wp-json/wp/v2/studio_single/332',
   },
-] */
+]
 
 /* DEVELOPMENT */
 
-export const endpoints = [
+/* export const endpoints = [
   {
     type: 'post type - main pages',
     url: 'http://localhost/developement/springstudio.se/index.php/wp-json/wp/v2/main',
@@ -90,4 +88,4 @@ export const endpoints = [
     type: 'single post - studio 3',
     url: 'http://localhost/developement/springstudio.se/wp-json/wp/v2/studio_single/332',
   },
-]
+] */
