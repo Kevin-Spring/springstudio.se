@@ -37,7 +37,7 @@ export const Studio = () => {
       //Sätt autKill till false för att scrollen inte ska kunna avbrytas
       //Mouse pad scroll blir extremt känslig för input med autokill: true.
       //Därremot funkar inte dot-navigationen mellan sektionerna med autokill: false
-      scrollTo: { y: i * window.innerHeight, autoKill: false },
+      scrollTo: { y: i * window.innerHeight, autoKill: true },
       duration: 0.8,
     })
   }
