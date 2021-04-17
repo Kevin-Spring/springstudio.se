@@ -1,3 +1,32 @@
+# Usage
+
+## Setup
+
+### Wordpress
+
+Run a wordpress installation in your XAMPP / MAMP.
+
+### React
+
+Store your React-project wherever you want.
+
+### Wordpress db
+
+Download the mysql-file and upload it to your local phpmyadmin.
+Search replace urls in wordpress db to your own localhost-address.
+Add your database info in the wp-config.php file.
+
+### Endpoints
+
+Change the url of the endpoints in the react-project located in the endpoints.js file to fetch data from wp-endpoints.
+
+### Google Maps
+
+To try out google maps you can add your own maps api-key in the functions.php file in the acf_maps-hoook and add it to a .env.local-file in the react project, with the name of:
+REACT_APP_GOOGLE_MAPS_API_KEY = "value"
+
+### Run npm install in the react project
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,8 +97,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-#### Note to self
-
-Glöm inte att lägga in custom hook i temats functions.php för att kunna hämta navigeringsmenyn som json.
-Glöm inte att lägga in google maps inställningar i temats functions.php för att acf google maps ska lira.
