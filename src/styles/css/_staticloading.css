@@ -1,6 +1,6 @@
 .loading-container {
   background-color: var(--black);
-  z-index: 9999;
+  z-index: 99999;
   position: fixed;
   width: 100vw;
   justify-content: center;
