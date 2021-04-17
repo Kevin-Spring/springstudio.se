@@ -1,10 +1,12 @@
+# Live example dev-site @ https://springstudio.netlify.app/
+
 # Usage
 
 ## Setup
 
 ### Wordpress
 
-Run a wordpress installation in your XAMPP / MAMP.
+Download the wordpress folder and store it in your XAMPP / MAMP.
 
 ### React
 
@@ -25,7 +27,7 @@ Change the url of the endpoints in the react-project located in the endpoints.js
 To try out google maps you can add your own maps api-key in the functions.php file in the acf_maps-hoook and add it to a .env.local-file in the react project, with the name of:
 REACT_APP_GOOGLE_MAPS_API_KEY = "value"
 
-### Run npm install in the react project
+### Run `npm install` in the react project
 
 # Getting Started with Create React App
 
