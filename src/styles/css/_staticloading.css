@@ -8,7 +8,6 @@
   display: flex;
   height: 100vh;
   min-height: -webkit-fill-available;
-  animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-svg {
@@ -24,6 +23,7 @@
   height: 100%;
   color: var(--dark-grey);
   fill: currentColor;
+  animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-text {
@@ -47,6 +47,7 @@
   color: var(--grey);
   display: flex;
   flex-flow: row wrap;
+  animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-arrow-keys-title {
