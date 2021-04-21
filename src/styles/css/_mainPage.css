@@ -23,7 +23,7 @@
 }
 
 .main-page-section .main-page-content-container {
-  background: rgba(000, 000, 000, 0.3);
+  background: rgba(0, 0, 0, 0.3);
 
   display: flex;
 
@@ -343,7 +343,7 @@
   }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+@media only screen and (min-device-width: 480px) and (max-device-width: 812px) and (orientation: landscape) {
   .main-page-section
     .main-page-content-container
     .main-page-text-container
@@ -351,7 +351,8 @@
     article
     .main-page-text-container-paragraph
     p,
-  .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner .main-page-cta-btn {
+  .main-page-section .main-page-content-container .main-page-text-container .main-page-text-container-inner .main-page-cta-btn,
+  .main-page .main-page-section:last-of-type .main-page-content-container .main-page-text-container article p:last-child {
     font-size: 10px;
   }
 
@@ -360,14 +361,14 @@
   }
 
   .main-page-section:last-of-type .main-page-content-container .main-page-text-container {
-    padding-left: 20px;
+    padding-left: 12%;
+    padding-top: calc(var(--size-50) + var(--size-50));
     width: 90vw;
     font-size: 10px;
   }
 
   .main-page-section:last-of-type .main-page-content-container .main-page-text-container h2 {
     font-size: var(--fs-h3);
-    padding-top: 20px;
   }
 
   .main-page-section:last-of-type .main-page-content-container .main-page-text-container .studio-single-socials {

@@ -42,6 +42,11 @@ export const Navbar = () => {
     }
   }
 
+  const navbarOpen = () => {
+    setOverlay(!overlay)
+    !overlay ? document.body.classList.add('fixed') : document.body.classList.remove('fixed')
+  }
+
   //Tiny animations for the navbar & eventlistener for arrowkey-events
   useEffect(() => {
     fadeIn.current.forEach(item => {
@@ -60,12 +65,20 @@ export const Navbar = () => {
   }, [navbarPaths])
 
   useEffect(() => {
-    if (location.pathname.includes('/studio/')) {
-      TweenLite.to(navbar.current, 0.8, {
-        opacity: 1,
-        delay: 2,
-        ease: Power3.easeOut,
-      })
+    // if (location.pathname.includes('/studio/')) {
+    TweenLite.to(navbar.current, 0.8, {
+      opacity: 1,
+      delay: 2,
+      ease: Power3.easeOut,
+    })
+    //}
+
+    if (location.pathname === '/studios') {
+      navbar.current.classList.add('left')
+    } else if (location.pathname === '/booking') {
+      navbar.current.classList.add('right')
+    } else if (location.pathname.includes('/studio/')) {
+      navbar.current.classList.add('left')
     }
   }, [location.pathname])
 
@@ -76,53 +89,67 @@ export const Navbar = () => {
         <Logo />
       </NavLink> */}
 
-      {!location.pathname.includes('/studio/') ? (
-        <nav className={location.pathname === '/' ? 'primary-nav-container light' : 'primary-nav-container dark'}>
-          <div className={location.pathname === '/studio' ? 'primary-nav top' : 'primary-nav'}>
-            <ul>
-              {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
-              {navbarItems.leftItem && (
-                <NavLink ref={addToFadeInNav} className='navbar-left-item navbar-item' to={{ pathname: navbarPaths.leftArrow }}>
-                  <li>
-                    <IoTriangleOutline className='angle angle-left' />
-                    <span>{navbarItems.leftItem}</span>
-                  </li>
-                </NavLink>
-              )}
-              {navbarItems.rightItem && (
-                <NavLink ref={addToFadeInNav} className='navbar-right-item navbar-item' to={{ pathname: navbarPaths.rightArrow }}>
-                  <li>
-                    <span>{navbarItems.rightItem}</span>
-                    <IoTriangleOutline className='angle angle-right' />
-                  </li>
-                </NavLink>
-              )}
-            </ul>
+      {/* {!location.pathname.includes('/studio/') ? ( */}
+      <nav className={location.pathname === '/' ? 'primary-nav-container light' : 'primary-nav-container dark'}>
+        <div className={'primary-nav'}>
+          <ul>
+            {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
+            {navbarItems.leftItem && (
+              <NavLink
+                ref={addToFadeInNav}
+                className={overlay ? 'navbar-left-item navbar-item dark' : 'navbar-left-item navbar-item'}
+                to={{ pathname: navbarPaths.leftArrow }}
+              >
+                <li>
+                  <IoTriangleOutline className='angle angle-left' />
+                  <span>{navbarItems.leftItem}</span>
+                </li>
+              </NavLink>
+            )}
+            {navbarItems.rightItem && (
+              <NavLink
+                ref={addToFadeInNav}
+                className={overlay ? 'navbar-right-item navbar-item dark' : 'navbar-right-item navbar-item'}
+                to={{ pathname: navbarPaths.rightArrow }}
+              >
+                <li>
+                  <span>{navbarItems.rightItem}</span>
+                  <IoTriangleOutline className='angle angle-right' />
+                </li>
+              </NavLink>
+            )}
+          </ul>
+        </div>
+      </nav>
+      {/* ) : ( */}
+      <nav ref={navbar} className={location.pathname === '/' ? 'primary-nav-container-curtain light' : 'primary-nav-container-curtain dark'}>
+        <div className={overlay ? 'hamburger-icon open' : 'hamburger-icon'} onClick={navbarOpen /* () => setOverlay(!overlay) */}>
+          <div className='hamburger'></div>
+        </div>
+        <div className={overlay ? 'overlay open' : 'overlay'}>
+          <div className='overlay-content'>
+            <Link className={location.pathname === '/' ? 'active' : ''} to='/'>
+              Home
+            </Link>
+            <Link className={location.pathname === '/booking' ? 'active' : ''} to='/booking'>
+              Booking
+            </Link>
+            <Link className={location.pathname === '/studios' ? 'active' : ''} to='/studios'>
+              Studios
+            </Link>
+            <Link className={location.pathname === '/studio/1' ? 'submenu-item active' : 'submenu-item'} to='/studio/1'>
+              Studio 1
+            </Link>
+            <Link className={location.pathname === '/studio/2' ? 'submenu-item active' : 'submenu-item'} to='/studio/2'>
+              Studio 2
+            </Link>
+            <Link className={location.pathname === '/studio/3' ? 'submenu-item active' : 'submenu-item'} to='/studio/3'>
+              Studio 3
+            </Link>
           </div>
-        </nav>
-      ) : (
-        <nav ref={navbar} className='primary-nav-container-curtain'>
-          <div className={overlay ? 'hamburger-icon open' : 'hamburger-icon'} onClick={() => setOverlay(!overlay)}>
-            <div className='hamburger'></div>
-          </div>
-          <div className={overlay ? 'overlay open' : 'overlay'}>
-            <div className='overlay-content'>
-              <Link to='/'>
-                <IoTriangleOutline className='angle angle-up' />
-                Home
-              </Link>
-              <Link to='/studios'>
-                Studios
-                <IoTriangleOutline className='angle angle-left' />
-              </Link>
-              <Link to='/booking'>
-                Booking
-                <IoTriangleOutline className='angle angle-right' />
-              </Link>
-            </div>
-          </div>
-        </nav>
-      )}
+        </div>
+      </nav>
+      {/* )} */}
     </>
   )
 }

@@ -140,11 +140,19 @@
   }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+@media only screen and (min-device-width: 480px) and (max-device-width: 812px) and (orientation: landscape) {
   .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container .btn-container {
     position: absolute;
     bottom: 10vh;
     right: 0;
+  }
+
+  .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container {
+    padding-top: 10%;
+  }
+
+  .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container header {
+    writing-mode: unset;
   }
 }
 
