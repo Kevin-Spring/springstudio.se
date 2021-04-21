@@ -52,6 +52,10 @@ body {
   font-family: var(--main-font);
 }
 
+body.fixed {
+  overflow: hidden;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
