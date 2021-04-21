@@ -80,6 +80,9 @@ export const Navbar = () => {
     } else if (location.pathname.includes('/studio/')) {
       navbar.current.classList.add('left')
     }
+
+    //remove body fixed when switching page
+    overlay ? document.body.classList.add('fixed') : document.body.classList.remove('fixed')
   }, [location.pathname])
 
   return (
