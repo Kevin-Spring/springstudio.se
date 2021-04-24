@@ -296,6 +296,7 @@
     bottom: 0;
   }
 
+  /*
   .primary-nav-container .primary-nav ul .navbar-right-item {
     border-top-left-radius: 5px;
   }
@@ -303,6 +304,7 @@
   .primary-nav-container .primary-nav ul .navbar-left-item {
     border-top-right-radius: 5px;
   }
+  */
 
   .primary-nav-container .primary-nav ul .navbar-item.dark,
   .primary-nav-container .primary-nav ul .navbar-item.dark .angle {
