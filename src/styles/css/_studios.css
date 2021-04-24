@@ -5,6 +5,7 @@
 
 .studio-page .studio-page-section {
   height: 100vh;
+  min-height: -webkit-fill-available;
   width: 100vw;
   position: relative;
   top: 0;

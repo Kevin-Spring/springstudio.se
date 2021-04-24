@@ -73,13 +73,14 @@ export const Navbar = () => {
     })
     //}
 
+    /*
     if (location.pathname === '/studios') {
       navbar.current.classList.add('left')
     } else if (location.pathname === '/booking') {
       navbar.current.classList.add('right')
     } else if (location.pathname.includes('/studio/')) {
       navbar.current.classList.add('left')
-    }
+    } */
 
     //remove body fixed when switching page
     overlay ? document.body.classList.add('fixed') : document.body.classList.remove('fixed')
