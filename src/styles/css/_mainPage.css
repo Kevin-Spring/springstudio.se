@@ -323,7 +323,7 @@
   }
 
   .dots-container {
-    top: 5vh;
+    top: 0;
     bottom: auto;
   }
 }

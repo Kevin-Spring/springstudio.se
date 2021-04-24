@@ -358,8 +358,10 @@
 
 @media only screen and (max-width: 479px) {
   .primary-nav-container .primary-nav ul .navbar-item {
-    /*top: 94.6vh;*/
-    top: 77vh;
+    /* Mobile browsers toolbar blocking nav at bottom
+      top: 94.6vh;
+    */
+    top: 82.5vh;
     padding: 0 15px;
   }
 
