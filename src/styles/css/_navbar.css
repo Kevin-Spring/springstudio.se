@@ -285,15 +285,9 @@
 }
 
 @media only screen and (max-width: 980px) {
-  .primary-nav-container {
-    z-index: 4;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
   .primary-nav-container .primary-nav ul .navbar-item {
     /* top: 94vh; */
-    top: auto;
-    bottom: 0;
+    top: 87vh;
   }
 
   /*
@@ -364,6 +358,7 @@
     /* Mobile browsers toolbar blocking nav at bottom
       top: 94.6vh;
     */
+    top: 83vh;
     padding: 0 15px;
   }
 
