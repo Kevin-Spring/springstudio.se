@@ -51,7 +51,7 @@
 .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container {
   height: 100%;
   text-transform: uppercase;
-  z-index: 2;
+  z-index: 4;
   position: relative;
 }
 

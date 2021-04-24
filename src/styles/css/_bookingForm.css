@@ -325,6 +325,12 @@ textarea {
   letter-spacing: 1.3px;
 }
 
+@media only screen and (max-width: 980px) {
+  .form-container {
+    z-index: 4;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .form-container .form__label-select.acceptance-terms {
     max-width: 70%;

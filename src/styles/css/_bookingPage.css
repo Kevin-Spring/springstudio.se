@@ -54,5 +54,6 @@
 @media only screen and (max-width: 980px) {
   .book-studio-section .studio-single-socials {
     height: 40%;
+    z-index: 4;
   }
 }

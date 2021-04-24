@@ -50,9 +50,9 @@ export const Navbar = () => {
   //Tiny animations for the navbar & eventlistener for arrowkey-events
   useEffect(() => {
     fadeIn.current.forEach(item => {
-      TweenLite.to(item, 0.2, {
+      TweenLite.to(item, 0.1, {
         opacity: 1,
-        delay: 2,
+        delay: 5,
         ease: Power3.easeOut,
       })
     })
@@ -66,9 +66,9 @@ export const Navbar = () => {
 
   useEffect(() => {
     // if (location.pathname.includes('/studio/')) {
-    TweenLite.to(navbar.current, 0.8, {
+    TweenLite.to(navbar.current, 1.2, {
       opacity: 1,
-      delay: 2,
+      delay: 4.8,
       ease: Power3.easeOut,
     })
     //}

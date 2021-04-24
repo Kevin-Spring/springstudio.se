@@ -68,7 +68,7 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .main-page-section .main-page-content-container .main-page-text-container .studio-single-socials {
