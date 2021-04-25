@@ -1,6 +1,5 @@
 .CookieConsent {
   background: rgba(0, 0, 0, 0.8) !important;
-  z-index: 3 !important;
   position: fixed !important;
   bottom: 0 !important;
   max-width: 500px !important;
