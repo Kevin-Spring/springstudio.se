@@ -285,6 +285,10 @@
 }
 
 @media only screen and (max-width: 980px) {
+  .primary-nav-container {
+    display: none;
+  }
+
   .primary-nav-container .primary-nav ul .navbar-item {
     /* top: 94vh; */
     top: 87vh;

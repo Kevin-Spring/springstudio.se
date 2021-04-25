@@ -27,6 +27,10 @@
   padding: var(--size-12);
 }
 
+.CookieConsent div span {
+  font-size: var(--size-12);
+}
+
 .CookieConsent div button {
   margin: 0 !important;
 }
@@ -54,17 +58,9 @@
 
 @media only screen and (max-width: 479px) {
   .CookieConsent {
-    top: 0 !important;
     z-index: 9999 !important;
     width: 100% !important;
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
-    background: rgba(0, 0, 0, 0.9) !important;
-    flex-direction: column !important;
-  }
-
-  .CookieConsent div {
-    flex: 0 0 10% !important;
-    max-width: 60%;
   }
 }
