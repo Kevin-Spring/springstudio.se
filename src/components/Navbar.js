@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { NavLink, useLocation, useHistory, Link } from 'react-router-dom'
-import { IoReturnUpForwardSharp, IoTriangleOutline } from 'react-icons/io5'
+import { IoTriangleOutline } from 'react-icons/io5'
 //import { Logo } from './Logo'
 import { useFetchNav } from './useFetchNav'
 import { useNavbar } from './useNavbar'
