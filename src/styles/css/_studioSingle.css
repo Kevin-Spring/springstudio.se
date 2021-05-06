@@ -284,33 +284,33 @@
 }
 
 .studio-single-socials-container {
-  width: 30%;
+  width: 70%;
   opacity: 0;
 }
 
 .studio-single-socials-container .studio-single-socials {
   justify-content: center;
-
   align-items: center;
-
   padding-top: calc(40px + (60 - 40) * (100vw - 320px) / 1120);
-
   display: flex;
   padding-right: var(--size-20);
 }
 
 .studio-single-socials-container .studio-single-socials p {
   padding-bottom: 0;
-
   flex: 0 0 33.333%;
   max-width: 33.333%;
   text-align: end;
+  font-family: var(--main-font);
+  font-size: var(--h3);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: var(--medium-spacing);
 }
 
 .studio-single-socials-container .studio-single-socials .line {
-  transform: rotate(0deg);
   width: 33.333%;
-  max-height: 40px;
+  font-size: var(--h3);
 }
 
 .studio-single-socials-container .studio-single-socials .studio-single-socials-icons {
@@ -320,20 +320,11 @@
 
 .studio-single-socials-container .studio-single-socials .studio-single-socials-icons a {
   padding: var(--size-12);
-  flex: 0 0 33.333%;
-  max-width: 33.333%;
-  font-size: calc(16px + (20 - 16) * (100vw - 320px) / 1120);
+  font-size: var(--h3);
 }
 
 .fade {
   opacity: 0;
-}
-
-@media only screen and (max-width: 1200px) {
-  .studio-sigle-main .studio-single-image-grid-sec .studio-single-photo-grid-container .photo-grid-row {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
 }
 
 @media only screen and (max-width: 980px) {
@@ -382,10 +373,7 @@
     padding-bottom: 50%;
   }
 
-  .studio-sigle-main .studio-single-contact-section .studio-single-socials-container {
-    width: 50%;
-  }
-
+  .studio-sigle-main .studio-single-contact-section .studio-single-socials-container,
   .studio-sigle-main .studio-single-contact-section .studio-single-socials {
     width: 100%;
   }
@@ -437,8 +425,18 @@
     padding-right: 0;
   }
 
-  .studio-sigle-main .studio-single-contact-section .studio-single-socials-container,
-  .studio-sigle-main .studio-single-contact-section .studio-single-socials {
-    width: 100%;
+  .studio-single-socials-container .studio-single-socials p {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+
+  .studio-single-socials-container .studio-single-socials .line {
+    width: 10%;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .studio-single-socials-container .studio-single-socials {
+    flex-direction: column;
   }
 }
