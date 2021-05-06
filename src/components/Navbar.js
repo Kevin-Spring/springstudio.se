@@ -28,17 +28,27 @@ export const Navbar = () => {
     }
   }
 
-  //Function makes navigation with arrowkeys possible
+  //Function makes navigation with arrowkeys possible & block usage if an input or textarea would be in focus
   const handleKeyDown = event => {
     if (event.key === 'ArrowRight') {
-      history.push({
-        pathname: navbarPaths.rightArrow,
-      })
+      if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+        return
+      }
+      if (navbarPaths.rightArrow) {
+        history.push({
+          pathname: navbarPaths.rightArrow,
+        })
+      }
     }
     if (event.key === 'ArrowLeft') {
-      history.push({
-        pathname: navbarPaths.leftArrow,
-      })
+      if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+        return
+      }
+      if (navbarPaths.leftArrow) {
+        history.push({
+          pathname: navbarPaths.leftArrow,
+        })
+      }
     }
   }
 
