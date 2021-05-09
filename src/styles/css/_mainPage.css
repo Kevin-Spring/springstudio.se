@@ -346,8 +346,8 @@
   }
 
   .main-page-section:last-of-type .main-page-content-container .main-page-text-container {
-    padding-left: 12%;
-    padding-top: calc(var(--size-50) + var(--size-50));
+    padding-left: 4%;
+    padding-top: 15%;
     width: 90vw;
     font-size: 10px;
   }
@@ -380,6 +380,10 @@
   .main-page-section:last-of-type .main-page-content-container .main-page-text-container .studio-single-socials a {
     padding: 20px 10px;
     font-size: 110%;
+  }
+
+  .main-page-section .main-page-content-container .main-page-text-container .studio-single-socials svg {
+    transform: rotate(0deg);
   }
 }
 

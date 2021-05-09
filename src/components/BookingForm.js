@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import '../styles/css/_bookingForm.css'
@@ -11,6 +11,7 @@ import { InputField } from './InputField'
 const url = endpoints[4].url
 
 export const BookingForm = ({ motionForm }) => {
+  const [loadingForm, setLoadingForm] = useState(false)
   //Set up for all form data to be processed by controlled inputs
   const [booking, setBooking] = useState({
     name: '',
@@ -38,6 +39,8 @@ export const BookingForm = ({ motionForm }) => {
     message: '',
   })
 
+  const form = useRef(false)
+
   const [validationMessage, setValidationMessage] = useState({
     successMessage: '',
     errorMessage: '',
@@ -62,6 +65,9 @@ export const BookingForm = ({ motionForm }) => {
   //On submit -> sets all formdata -> makes post request to endpoint -> clears all states to deafult state on success
   const handleSubmit = e => {
     e.preventDefault()
+
+    setLoadingForm(true)
+
     setValidationMessage({
       errorMessage: '',
     })
@@ -97,7 +103,6 @@ export const BookingForm = ({ motionForm }) => {
         },
       })
       .then(res => {
-        console.log(res)
         if (res.data.status === 'mail_sent') {
           setBooking({
             name: '',
@@ -128,6 +133,7 @@ export const BookingForm = ({ motionForm }) => {
             successMessage: res.data.message,
           })
         } else {
+          setLoadingForm(false)
           setValidationMessage({
             errorMessage: res.data.message,
           })
@@ -136,34 +142,32 @@ export const BookingForm = ({ motionForm }) => {
       .catch(err => console.log(err))
   }
 
+  /* Scroll to validation messages if existing */
+  useEffect(() => {
+    executeScroll()
+  }, [validationMessage])
+
   return (
     <>
-      {/* Scroll to validation messages if existing */}
-      <span>
-        {validationMessage.successMessage && (
-          <p className=''>
-            {validationMessage.successMessage}
-            {executeScroll()}
-          </p>
-        )}
-      </span>
+      {/* Animated spinner */}
+      <div className={loadingForm ? 'spinner-box active' : 'spinner-box'}>
+        <div className='circle-border'>
+          <div className='circle-core'></div>
+        </div>
+      </div>
 
-      <span>
-        {validationMessage.errorMessage && (
-          <p className='error-message'>
-            {validationMessage.errorMessage}
-            {executeScroll()}
-          </p>
-        )}
-      </span>
+      {/* Validation messages form form */}
+      <span>{validationMessage.successMessage && <p className=''>{validationMessage.successMessage}</p>}</span>
+
+      <span>{validationMessage.errorMessage && <p className='error-message'>{validationMessage.errorMessage}</p>}</span>
 
       {/* Envelope animation on success */}
       {validationMessage.successMessage ? (
         <Envelope />
       ) : (
         /* Following is the form and all its conditional rendering depending on classnames and states of inputs */
-        <motion.div className='form' variants={motionForm}>
-          <form action='POST' onSubmit={handleSubmit} className='form-body'>
+        <motion.div className={loadingForm ? 'form submitting' : 'form'} variants={motionForm}>
+          <form ref={form} action='POST' onSubmit={handleSubmit} className={loadingForm ? 'form-body submitting' : 'form-body'}>
             <div className={booking.acceptance && !validationMessage.errorMessage ? 'done form-inner' : 'form-inner'}>
               <InputField
                 classNameGroup={booking.bookStudio ? 'done form__group field' : 'form__group field'}
@@ -683,7 +687,7 @@ export const BookingForm = ({ motionForm }) => {
                 }
               />
             </div>
-            <button type='submit' className='form-btn '>
+            <button type='submit' className='form-btn'>
               Send <VscArrowRight className='booking-arrow' />
             </button>
           </form>
