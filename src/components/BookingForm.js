@@ -104,6 +104,8 @@ export const BookingForm = ({ motionForm }) => {
       })
       .then(res => {
         if (res.data.status === 'mail_sent') {
+          setLoadingForm(false)
+
           setBooking({
             name: '',
             email: '',

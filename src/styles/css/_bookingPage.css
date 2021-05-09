@@ -57,3 +57,9 @@
     z-index: 4;
   }
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+  .book-studio-section .studio-single-socials {
+    height: 60%;
+  }
+}
