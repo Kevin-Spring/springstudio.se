@@ -23,6 +23,10 @@ REACT_APP_GOOGLE_MAPS_API_KEY = "value"
 
 To try out the form you can change the recipents mail address under 'Contact' -> 'Contact Forms' -> Choose the form -> 'Mail' -> Change the 'To' & 'From' fields in wp-admin.
 
+### Google Oauth
+
+Will not work on dev env because of uri missmatches and worng user permissions, sorry :(
+
 ## React
 
 Store your React-project wherever you want.
@@ -33,6 +37,8 @@ Change the url of the endpoints in the react-project located in the endpoints.js
 
 ### Google Maps React
 
+Create a .env.local-file in the project folder containing your api key.
+REACT_APP_GOOGLE_MAPS_API_KEY = "value".
 See info above.
 
 ## Run `npm install` in the react project
