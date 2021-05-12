@@ -34,12 +34,18 @@ Store your React-project wherever you want.
 ### Endpoints
 
 Change the url of the endpoints in the react-project located in the endpoints.js file to fetch data from wp-endpoints.
+If you get 404 error on fetching json endpoints, and the endpoints are correct, add index.php into the path right before /wp-json/ and it usually works.
+Example: https://dev.springstudio.se/index.php/wp-json/wp/v2/main
 
 ### Google Maps React
 
 Create a .env.local-file in the project folder containing your api key.
 REACT_APP_GOOGLE_MAPS_API_KEY = "value".
 See info above.
+
+### If you run into 'Access to XMLHttpRequest at from origin has been blocked by cors policy' error
+
+A plugin like this might solve it https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
 
 ## Run `npm install` in the react project
 
