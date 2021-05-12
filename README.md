@@ -4,13 +4,9 @@
 
 ## Setup
 
-### Wordpress
+## Wordpress
 
-Download the wordpress folder and store it in your XAMPP / MAMP.
-
-### React
-
-Store your React-project wherever you want.
+Download the wordpress folder and store it in your XAMPP / MAMP / Localhost-machine.
 
 ### Wordpress db
 
@@ -18,16 +14,28 @@ Download the mysql-file and upload it to your local phpmyadmin.
 Search replace urls in wordpress db to your own localhost-address.
 Add your database info in the wp-config.php file.
 
-### Endpoints
-
-Change the url of the endpoints in the react-project located in the endpoints.js file to fetch data from wp-endpoints.
-
 ### Google Maps
 
 To try out google maps you can add your own maps api-key in the functions.php file in the acf_maps-hoook and add it to a .env.local-file in the react project, with the name of:
 REACT_APP_GOOGLE_MAPS_API_KEY = "value"
 
-### Run `npm install` in the react project
+### Form
+
+To try out the form you can change the recipents mail address under 'Contact' -> 'Contact Forms' -> Choose the form -> 'Mail' -> Change the 'To' & 'From' fields in wp-admin.
+
+## React
+
+Store your React-project wherever you want.
+
+### Endpoints
+
+Change the url of the endpoints in the react-project located in the endpoints.js file to fetch data from wp-endpoints.
+
+### Google Maps React
+
+See info above.
+
+## Run `npm install` in the react project
 
 # Getting Started with Create React App
 
