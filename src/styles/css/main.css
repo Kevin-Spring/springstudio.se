@@ -32,6 +32,7 @@
   --heading-font: 'Raleway', sans-serif;
 
   /* Sizes */
+  --size-60: calc(40px + (60 - 40) * (100vw - 320px) / 1120);
   --size-50: calc(30px + (50 - 30) * (100vw - 320px) / 1120);
   --size-40: calc(20px + (40 - 20) * (100vw - 320px) / 1120);
   --size-30: calc(20px + (30 - 20) * (100vw - 320px) / 1120);
@@ -110,3 +111,30 @@ p {
 p:last-child {
   padding-bottom: 0;
 }
+
+#fp-nav {
+    top: var(--size-60);
+    right: var(--size-30);
+}
+
+#fp-nav ul li a span{
+  background: var(--off-white);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+} 
+
+#fp-nav ul li .fp-tooltip {
+  color: var(--off-white);
+  font-family: var(--main-font);
+  font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);
+  text-transform: uppercase;
+  line-height: 1.4;
+  letter-spacing: 1.3px;
+}
+
+@media only screen and (max-width: 980px) {
+  #fp-nav {
+    top: 5vh;
+  }
+}
+

@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.19",
     "@react-google-maps/api": "^2.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "drei": "^2.2.21",
     "framer-motion": "^3.2.1",
     "gsap": "^3.6.0",

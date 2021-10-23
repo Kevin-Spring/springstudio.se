@@ -4,7 +4,7 @@ import { AngleDown } from './AngleDown';
 import { MainPageContent } from './MainPageContent';
 
 
-export const MainPageChapter = ({posts, loading}) => (
+export const Slide = ({posts, loading}) => (
   <ReactFullpage
     //fullpage options
     licenseKey = {'YOUR_KEY_HERE'}
@@ -12,8 +12,7 @@ export const MainPageChapter = ({posts, loading}) => (
     navigation = {true}
 	  navigationPosition =  {'right'}
     keyboardScrolling = {true}
-    sectionSelector= '.fullpage'
-    navigationTooltips = {['Spring', 'About', 'Studios', 'Info' ]}
+    sectionSelector= '.test'
 
 
     render={({ state, fullpageApi }) => {
@@ -22,7 +21,7 @@ export const MainPageChapter = ({posts, loading}) => (
             {posts.map((post, i) => {
               const { id, title, content, acf } = post
               return (
-                <section id={`${post.id}`} className={`panel fullpage main-section main-page-section section section${i + 1}`} key={id}>
+                <section id={`${post.id}`} className={`panel test main-section main-page-section section section${i + 1}`} key={id}>
                   <MainPageContent id={id} title={title} content={content} acf={acf} index={i} />
                   <AngleDown />
                 </section>

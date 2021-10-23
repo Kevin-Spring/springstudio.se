@@ -4,9 +4,10 @@
 
 .page-transition-container {
   background-color: var(--black);
-  z-index: 99999;
+  z-index: 9999;
   position: fixed;
   width: 100vw;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   display: none;

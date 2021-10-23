@@ -9,7 +9,7 @@ import '../styles/css/_pageTransition.css'
 const blackBox = {
   initial: {
     height: '100vh',
-    bottom: 0,
+    top: 0,
   },
   animate: {
     height: 0,

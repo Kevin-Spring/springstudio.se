@@ -7,7 +7,6 @@
   align-items: center;
   display: flex;
   height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 .loading-container .loading-svg {

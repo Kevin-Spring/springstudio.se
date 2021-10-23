@@ -13,7 +13,6 @@
 
 .main-page-section {
   height: 100vh;
-  min-height: -webkit-fill-available;
   width: 100vw;
   position: relative;
   color: var(--off-white);
@@ -25,7 +24,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  flex-direction: column;
   flex-wrap: wrap;
   height: 100%;
 }
@@ -224,21 +222,15 @@
 
 .dots-container ul {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-end;
 }
 
 .dots-container ul li {
   list-style-type: none;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   font-size: calc(14px + (16 - 14) * (100vw - 320px) / 1120);
 }
 
