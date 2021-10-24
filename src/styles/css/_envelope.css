@@ -1,6 +1,51 @@
 /* Send Animation */
 .envelope-is-sent {
-  animation: launch 1.5s ease-in-out;
+  -webkit-animation: launch 1.5s ease-in-out;
+          animation: launch 1.5s ease-in-out;
+}
+
+@-webkit-keyframes launch {
+  0% {
+    opacity: 1;
+
+    transform: translateX(0) scale(1);
+  }
+  10%,
+  15% {
+    transform: translateX(0) scale(0.5);
+  }
+  30%,
+  35% {
+    transform: translateX(-20) scale(0.5);
+  }
+  40%,
+  70% {
+    transform: translateX(100vw) scale(0.5);
+  }
+  70% {
+    opacity: 1;
+  }
+  71% {
+    opacity: 0;
+
+    transform: translateX(100vw) scale(0.5);
+  }
+  72% {
+    opacity: 0;
+
+    transform: translateX(0px) scale(0.5);
+  }
+  80% {
+    opacity: 0.5;
+
+    transform: translateX(0px) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(0px) scale(1);
+  }
 }
 
 @keyframes launch {
@@ -157,41 +202,28 @@
 }
 
 .envelope-open .envelope-front-flap {
-  -webkit-transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg);
   transform: rotateX(180deg);
-  transition: z-index 0.6s, -webkit-transform 0.4s ease;
   transition: transform 0.4s ease, z-index 0.6s;
-  transition: transform 0.4s ease, z-index 0.6s, -webkit-transform 0.4s ease, -moz-transform 0.4s ease, -o-transform 0.4s ease;
   z-index: 1;
 }
 
 .envelope-close .envelope-front-flap {
   transform: rotateX(0deg);
 
-  transition: z-index 1s, -webkit-transform 0.4s 0.6s ease;
-
   transition: transform 0.4s 0.6s ease, z-index 1s;
-  transition: transform 0.4s 0.6s ease, z-index 1s, -webkit-transform 0.4s 0.6s ease, -moz-transform 0.4s 0.6s ease, -o-transform 0.4s 0.6s ease;
   z-index: 5;
 }
 
 .envelope-close .envelope-letter {
   transform: translateY(0px);
 
-  transition: z-index 1s, -webkit-transform 0.4s ease;
-
   transition: transform 0.4s ease, z-index 1s;
-  transition: transform 0.4s ease, z-index 1s, -webkit-transform 0.4s ease, -moz-transform 0.4s ease, -o-transform 0.4s ease;
   z-index: 1;
 }
 
 .envelope-open .envelope-letter {
   transform: translateY(-30px);
 
-  transition: z-index 0.6s, -webkit-transform 0.4s 0.6s ease;
-
   transition: transform 0.4s 0.6s ease, z-index 0.6s;
-  transition: transform 0.4s 0.6s ease, z-index 0.6s, -webkit-transform 0.4s 0.6s ease, -moz-transform 0.4s 0.6s ease, -o-transform 0.4s 0.6s ease;
   z-index: 2;
 }
