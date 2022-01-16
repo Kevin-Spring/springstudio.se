@@ -59,6 +59,7 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
   return (
     <>
       <div className='main-page-content-container'>
+        {/* If image is missing render background, site crashes now lol :) */}
         <picture>
           <source srcSet={`${acf.background.sizes['1536x1536']} 1200w , ${acf.background.url} 2x`} />
           <source srcSet={`${acf.background.sizes['1536x1536']} 1024w , ${acf.background.sizes['2048x2048']} 2x`} />

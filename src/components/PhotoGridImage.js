@@ -9,7 +9,7 @@ export const PhotoGridImage = ({ imageSize, imageUrl, metaData }) => {
           <source srcSet={`${imageSize['1536x1536']} 1024w , ${imageSize['2048x2048']} 2x`} />
           <source srcSet={`${imageSize.large} 750w, ${imageSize['1536x1536']} 2x `} />
           <source srcSet={`${imageSize.medium} 375w , ${imageSize.large} 2x`} />
-          <img src={imageSize.large} alt='gallery' />
+          <img data-src={imageSize.large} alt='gallery' />
         </picture>
         <div className='photo-meta'>
           <p>{metaData.production_company}</p>

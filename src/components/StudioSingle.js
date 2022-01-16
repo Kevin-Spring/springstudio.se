@@ -246,7 +246,7 @@ export const StudioSingle = ({ content, transition }) => {
                 <source
                   srcSet={`${posts.acf.floorplan_section.floorplan_image.sizes.medium} 375w , ${posts.acf.floorplan_section.floorplan_image.sizes.large} 2x`}
                 />
-                <img src={posts.acf.floorplan_section.floorplan_image.sizes.large} alt='floorplan' />
+                <img data-src={posts.acf.floorplan_section.floorplan_image.sizes.large} alt='floorplan' />
               </picture>
             </div>
             <div className='text-container'>
