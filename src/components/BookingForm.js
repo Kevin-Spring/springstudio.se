@@ -6,6 +6,7 @@ import { endpoints } from '../endpoints/endpoints'
 import { Envelope } from './Envelope'
 import { VscArrowRight } from 'react-icons/vsc'
 import { InputField } from './InputField'
+import ReCAPTCHA from "react-google-recaptcha";
 
 //Pointing get request at correct endpoint
 const url = endpoints[4].url
@@ -45,6 +46,10 @@ export const BookingForm = ({ motionForm }) => {
     successMessage: '',
     errorMessage: '',
   })
+
+  function handleCaptcha(value) {
+    console.log("Captcha value:", value);
+  }
 
   //Scroll to errror or success validation messages
   const executeScroll = () => {
@@ -689,6 +694,15 @@ export const BookingForm = ({ motionForm }) => {
                 }
               />
             </div>
+
+            <div className="form-recaptcha">
+              <ReCAPTCHA
+                sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_KEY}
+                theme='dark'
+                onChange={handleCaptcha}
+              />
+            </div>
+
             <button type='submit' className='form-btn'>
               Send <VscArrowRight className='booking-arrow' />
             </button>

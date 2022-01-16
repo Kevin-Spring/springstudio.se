@@ -308,6 +308,12 @@ input[type='checkbox'].error.form__field + label {
   text-transform: uppercase;
 }
 
+.form .form-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--size-30);
+}
+
 .form .form-btn {
   z-index: 2;
   color: var(--faded-black);
