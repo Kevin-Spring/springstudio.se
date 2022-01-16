@@ -7,7 +7,7 @@ import { MainPageContent } from './MainPageContent';
 export const MainPageChapter = ({posts, loading}) => (
   <ReactFullpage
     //fullpage options
-    licenseKey = {'YOUR_KEY_HERE'}
+    licenseKey = {process.env.REACT_APP_FULLPAGE_LICENSE_KEY}
     scrollingSpeed = {800} /* Options here */
     navigation = {true}
 	  navigationPosition =  {'right'}
@@ -17,6 +17,7 @@ export const MainPageChapter = ({posts, loading}) => (
 
 
     render={({ state, fullpageApi }) => {
+
       return (   
         <ReactFullpage.Wrapper>
             {posts.map((post, i) => {

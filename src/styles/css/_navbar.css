@@ -221,6 +221,21 @@
   transition: var(--std-trans);
 }
 
+.primary-nav-container-curtain .overlay-content a.submenu-item {
+  font-size: var(--h4);
+  display: flex;
+  align-items: center;
+}
+
+.primary-nav-container-curtain .overlay-content a.submenu-item:before {
+  content: '';
+  display: block;
+  height: 3px;
+  width: var(--size-12);
+  background: var(--faded-black);
+  margin-right: var(--size-12);
+}
+
 .primary-nav-container-curtain .overlay-content a.active {
   text-decoration: underline;
 }

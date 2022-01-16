@@ -4,12 +4,12 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { StudioPageContent } from './StudioPageContent';
 
 
-export const Studio = ({posts, loading}) => {
+export const StudioPageChapter = ({posts, loading}) => {
 
   return (
     <ReactFullpage
     //fullpage options
-    licenseKey = {'YOUR_KEY_HERE'}
+    licenseKey = {process.env.REACT_APP_FULLPAGE_LICENSE_KEY}
     scrollingSpeed = {800} /* Options here */
     navigation = {true}
 	  navigationPosition =  {'right'}

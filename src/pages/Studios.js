@@ -1,5 +1,5 @@
 import React from 'react'
-import { Studio } from '../components/Studio'
+import { StudioPageChapter } from '../components/StudioPageChapter'
 import { motion } from 'framer-motion'
 import '../styles/css/_studios.css'
 import { useFetch } from '../components/useFetch'
@@ -19,7 +19,7 @@ export const Studios = ({ transition }) => {
   return (
         <motion.main exit={{ opacity: 0 }} transition={transition} className='studio-page'>
             {loading ? <StaticLoading /> : <PageTransition />}
-            {!loading && <Studio posts={posts} loading={loading} />}
+            {!loading && <StudioPageChapter posts={posts} loading={loading} />}
         </motion.main>
   )
 };
