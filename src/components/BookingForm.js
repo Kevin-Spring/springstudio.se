@@ -169,7 +169,7 @@ export const BookingForm = ({ motionForm }) => {
       ) : (
         /* Following is the form and all its conditional rendering depending on classnames and states of inputs */
         <motion.div className={loadingForm ? 'form submitting' : 'form'} variants={motionForm}>
-          <form ref={form} action='POST' onSubmit={handleSubmit} className={loadingForm ? 'form-body submitting' : 'form-body'}>
+          <form name="contact" netlify ref={form} action='POST' onSubmit={handleSubmit} className={loadingForm ? 'form-body submitting' : 'form-body'}>
             <div className={booking.acceptance && !validationMessage.errorMessage ? 'done form-inner' : 'form-inner'}>
               <InputField
                 classNameGroup={booking.bookStudio ? 'done form__group field' : 'form__group field'}
