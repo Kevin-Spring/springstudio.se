@@ -157,6 +157,10 @@ export const StudioSingle = ({ content, transition }) => {
               <SlideImage imageSize={posts.acf.slides_section.slides.slide_2.sizes} imageUrl={posts.acf.slides_section.slides.slide_2.url} />
               <SlideImage imageSize={posts.acf.slides_section.slides.slide_3.sizes} imageUrl={posts.acf.slides_section.slides.slide_3.url} />
               <SlideImage imageSize={posts.acf.slides_section.slides.slide_4.sizes} imageUrl={posts.acf.slides_section.slides.slide_4.url} />
+              <SlideImage imageSize={posts.acf.slides_section.slides.slide_5.sizes} imageUrl={posts.acf.slides_section.slides.slide_5.url} />
+              <SlideImage imageSize={posts.acf.slides_section.slides.slide_6.sizes} imageUrl={posts.acf.slides_section.slides.slide_6.url} />
+              <SlideImage imageSize={posts.acf.slides_section.slides.slide_7.sizes} imageUrl={posts.acf.slides_section.slides.slide_7.url} />
+              <SlideImage imageSize={posts.acf.slides_section.slides.slide_8.sizes} imageUrl={posts.acf.slides_section.slides.slide_8.url} />
             </Slider>
           </section>
 
