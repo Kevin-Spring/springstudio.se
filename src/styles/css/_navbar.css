@@ -12,7 +12,7 @@
   position: absolute;
   opacity: 0;
   top: 50vh;
-  padding: 0 2%;
+  padding: 0 calc(5px + (10 - 5) * (100vw - 320px) / 1120);
   z-index: 999;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -45,7 +45,7 @@
   text-transform: uppercase;
   font-family: var(--heading-font);
   transition: var(--std-trans);
-  font-size: calc(12px + (14 - 12) * (100vw - 320px) / 1120);
+  font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);
   letter-spacing: 1.4px;
   opacity: 0;
 }
@@ -65,7 +65,9 @@
   text-transform: uppercase;
   font-family: var(--heading-font);
   transition: var(--std-trans);
-  font-size: calc(12px + (14 - 12) * (100vw - 320px) / 1120);
+  font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);
+  letter-spacing: 1.4px;
+  opacity: 0;
 }
 
 .primary-nav-container.dark .angle {
@@ -86,6 +88,8 @@
 
 .primary-nav-container-curtain .hamburger {
   z-index: 999;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .primary-nav-container-curtain .hamburger,
@@ -119,6 +123,8 @@
   position: absolute;
   display: block;
   transition: all 0.2s ease 0.2s;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .primary-nav-container-curtain .hamburger:before {
@@ -215,6 +221,21 @@
   transition: var(--std-trans);
 }
 
+.primary-nav-container-curtain .overlay-content a.submenu-item {
+  font-size: var(--h4);
+  display: flex;
+  align-items: center;
+}
+
+.primary-nav-container-curtain .overlay-content a.submenu-item:before {
+  content: '';
+  display: block;
+  height: 3px;
+  width: var(--size-12);
+  background: var(--faded-black);
+  margin-right: var(--size-12);
+}
+
 .primary-nav-container-curtain .overlay-content a.active {
   text-decoration: underline;
 }
@@ -243,36 +264,64 @@
   opacity: 0;
   width: auto;
   left: 50%;
-  transform: rotate(180deg);
+  transform: rotate(180deg) translateX(-50%);
   margin-bottom: 10px;
   z-index: 3;
-  animation-name: bounce;
-  animation-timing-function: ease;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: rotate(180deg) translateY(0) translateX(-50%);
+  }
+  10% {
+    transform: rotate(180deg) translateY(0) translateX(-50%) ;
+  }
+  30% {
+    transform: rotate(180deg) translateY(20px) translateX(-50%) ;
+  }
+  50% {
+    transform: rotate(180deg) translateY(0) translateX(-50%);
+  }
+  57% {
+    transform: rotate(180deg) translateY(2px ) translateX(-50%);
+  }
+  64% {
+    transform: rotate(180deg) translateY(0) translateX(-50%);
+  }
+  100% {
+    transform: rotate(180deg) translateY(0) translateX(-50%);
+  }
 }
 
 @keyframes bounce {
   0% {
-    transform: rotate(180deg) translateX(50%) translateY(0);
+    transform: rotate(180deg) translateY(0 ) translateX(-50%);
   }
   10% {
-    transform: rotate(180deg) translateX(50%) translateY(0);
+    transform: rotate(180deg) translateY(0) translateX(-50%);
   }
   30% {
-    transform: rotate(180deg) translateX(50%) translateY(20px);
+    transform: rotate(180deg) translateY(20px ) translateX(-50%);
   }
   50% {
-    transform: rotate(180deg) translateX(50%) translateY(0);
+    transform: rotate(180deg) translateY(0) translateX(-50%);
   }
   57% {
-    transform: rotate(180deg) translateX(50%) translateY(2px);
+    transform: rotate(180deg) translateY(2px ) translateX(-50%);
   }
   64% {
-    transform: rotate(180deg) translateX(50%) translateY(0);
+    transform: rotate(180deg) translateY(0) translateX(-50%);
   }
   100% {
-    transform: rotate(180deg) translateX(50%) translateY(0);
+    transform: rotate(180deg) translateY(0) translateX(-50%);
   }
 }
 

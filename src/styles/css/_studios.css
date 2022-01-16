@@ -41,7 +41,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
   /* -webkit-filter: blur(1px);
@@ -59,7 +60,8 @@
   margin-bottom: calc(0px + (30 - 0) * (100vw - 320px) / 1120);
   font-size: var(--h3);
   opacity: 0;
-  writing-mode: tb;
+  -webkit-writing-mode: tb;
+          writing-mode: tb;
 }
 
 .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container article {
@@ -100,43 +102,22 @@
 }
 
 .studio-page-section:last-of-type .angle-down {
-  animation-name: bounceUp;
-  animation-timing-function: ease;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  transform: rotate(0deg) !important;
+  -webkit-animation-name: bounceUp;
+          animation-name: bounceUp;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  transform: rotate(0deg) translateX(-50%);
 }
 
 .studio-page .dot-active {
   transform: scale(1.2);
-
   transition: all 0.2s ease-in-out;
   opacity: 0.8 !important;
   color: var(--white);
-}
-
-@keyframes bounceUp {
-  0% {
-    transform: translateY(0) translateX(50%);
-  }
-  10% {
-    transform: translateY(0) translateX(50%);
-  }
-  30% {
-    transform: translateY(-20px) translateX(50%);
-  }
-  50% {
-    transform: translateY(0) translateX(50%);
-  }
-  57% {
-    transform: translateY(-2px) translateX(50%);
-  }
-  64% {
-    transform: translateY(0) translateX(50%);
-  }
-  100% {
-    transform: translateY(0) translateX(50%);
-  }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
@@ -151,7 +132,8 @@
   }
 
   .studio-page .studio-page-section .studio-page-content-container .studio-page-text-container header {
-    writing-mode: unset;
+    -webkit-writing-mode: unset;
+            writing-mode: unset;
   }
 }
 

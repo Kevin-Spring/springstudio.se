@@ -7,7 +7,6 @@
   align-items: center;
   display: flex;
   height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 .loading-container .loading-svg {
@@ -23,7 +22,8 @@
   height: 100%;
   color: var(--dark-grey);
   fill: currentColor;
-  animation: pulsate 2s ease-out infinite;
+  -webkit-animation: pulsate 2s ease-out infinite;
+          animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-text {
@@ -47,7 +47,8 @@
   color: var(--grey);
   display: flex;
   flex-flow: row wrap;
-  animation: pulsate 2s ease-out infinite;
+  -webkit-animation: pulsate 2s ease-out infinite;
+          animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-arrow-keys-title {
@@ -74,6 +75,18 @@
 }
 .loading-container .loading-arrow-keys-row .loading-arrow-key-up {
   left: 50%;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 @keyframes pulsate {
