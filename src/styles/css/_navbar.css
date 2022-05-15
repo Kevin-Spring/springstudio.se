@@ -254,6 +254,20 @@
   color: var(--faded-black-50);
 }
 
+.primary-nav-container-curtain .nav-socials-container p,
+.primary-nav-container-curtain .nav-socials-container p + svg {
+  display: none;
+}
+
+.primary-nav-container-curtain .nav-socials-container {
+  padding-top: var(--size-30);
+}
+
+.primary-nav-container-curtain .nav-socials-container a {
+  font-size: var(--size-50);
+  margin-right: var(--size-15);
+}
+
 /* Angles */
 
 .angle-down-title {
