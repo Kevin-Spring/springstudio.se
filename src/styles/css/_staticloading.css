@@ -23,7 +23,7 @@
   color: var(--dark-grey);
   fill: currentColor;
   -webkit-animation: pulsate 2s ease-out infinite;
-          animation: pulsate 2s ease-out infinite;
+  animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-text {
@@ -48,7 +48,7 @@
   display: flex;
   flex-flow: row wrap;
   -webkit-animation: pulsate 2s ease-out infinite;
-          animation: pulsate 2s ease-out infinite;
+  animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-arrow-keys-title {

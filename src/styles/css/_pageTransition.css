@@ -33,7 +33,10 @@
   fill: currentColor;
 }
 
-.page-transition-container .page-transition-svg #pattern .page-transition-text-rect {
+.page-transition-container
+  .page-transition-svg
+  #pattern
+  .page-transition-text-rect {
   width: 100%;
   height: 100%;
   color: var(--dark-grey);
@@ -78,14 +81,20 @@
   padding: 5px;
 }
 
-.page-transition-container .page-transition-arrow-keys-row .page-transition-arrow-key,
-.page-transition-container .page-transition-arrow-keys-row .page-transition-arrow-key-up {
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key,
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key-up {
   border: 2px solid var(--grey);
   border-radius: 5px;
   padding: 5px;
   margin: 0 5px;
 }
-.page-transition-container .page-transition-arrow-keys-row .page-transition-arrow-key-up {
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key-up {
   left: 50%;
 }
 
