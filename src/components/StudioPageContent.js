@@ -1,24 +1,10 @@
 import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 
 //Writing out the html content and adding animations to the content
 export const StudioPageContent = ({ id, title, content, acf }) => {
   const revealText = useRef([]);
   revealText.current = [];
-
-  //Fadein animation using gsap for textelements
-  const fadeIn = (element) => {
-    gsap.to(element, {
-      opacity: 1,
-      y: -30,
-      duration: 1.3,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.2,
-      },
-    });
-  };
 
   //A ref which all textcontent is stored in an array
   const addToRefTexts = (el) => {
@@ -41,9 +27,6 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
       entries.forEach((item) => {
         if (item.intersectionRatio > 0.9) {
           item.target.classList.add("fadeIn");
-          fadeIn(".fadeIn");
-        } else {
-          item.target.classList.remove("fadeIn");
         }
       });
     }, config);

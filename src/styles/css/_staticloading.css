@@ -22,8 +22,6 @@
   height: 100%;
   color: var(--dark-grey);
   fill: currentColor;
-  -webkit-animation: pulsate 2s ease-out infinite;
-  animation: pulsate 2s ease-out infinite;
 }
 
 .loading-container .loading-text {
@@ -34,6 +32,7 @@
   font-weight: bold;
   top: 50%;
   left: 50%;
+  animation: pulsate 2s ease-in-out infinite;
 }
 
 .loading-container .loading-arrow-keys {
@@ -47,8 +46,7 @@
   color: var(--grey);
   display: flex;
   flex-flow: row wrap;
-  -webkit-animation: pulsate 2s ease-out infinite;
-  animation: pulsate 2s ease-out infinite;
+  animation: pulsate 2s ease-in-out infinite;
 }
 
 .loading-container .loading-arrow-keys-title {

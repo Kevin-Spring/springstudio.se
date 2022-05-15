@@ -10,18 +10,17 @@
 
 .primary-nav-container .primary-nav ul .navbar-item {
   position: absolute;
-  opacity: 0;
+  opacity: 1;
   top: 50vh;
   padding: 0 calc(15px + (25 - 15) * (100vw - 320px) / 1120);
   z-index: 999;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
   font-size: var(--h5);
+  transition: var(--std-trans);
 }
 
 .primary-nav-container .primary-nav ul .navbar-item:hover {
@@ -50,7 +49,6 @@
   transition: var(--std-trans);
   font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);
   letter-spacing: 1.4px;
-  opacity: 0;
 }
 
 .primary-nav-container .angle {
@@ -70,7 +68,6 @@
   transition: var(--std-trans);
   font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);
   letter-spacing: 1.4px;
-  opacity: 0;
 }
 
 .primary-nav-container.dark .angle {
@@ -85,8 +82,8 @@
   top: var(--size-30);
   left: var(--size-30);
   z-index: 2;
-  opacity: 0;
   z-index: 999;
+  transition: var(--long-trans);
 }
 
 .primary-nav-container-curtain .hamburger {
@@ -194,7 +191,7 @@
   background-color: var(--off-white);
   opacity: 0.9;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: var(--long-trans);
   box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
     0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
     0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
@@ -284,7 +281,6 @@
 .angle-down {
   position: absolute;
   bottom: 0;
-  opacity: 0;
   width: auto;
   left: 50%;
   transform: rotate(180deg) translateX(-50%);

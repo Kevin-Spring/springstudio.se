@@ -1,10 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { NavLink, useLocation, useHistory, Link } from "react-router-dom";
 import { IoTriangleOutline } from "react-icons/io5";
-//import { Logo } from './Logo'
 import { useFetchNav } from "./useFetchNav";
 import { useNavbar } from "./useNavbar";
-import { Power3, TweenLite } from "gsap";
 import "../styles/css/_navbar.css";
 import { endpoints } from "../endpoints/endpoints";
 import { Socials } from "./Socials";
@@ -17,8 +15,6 @@ export const Navbar = () => {
   const history = useHistory();
   const location = useLocation();
   const navbar = useRef(null);
-  const fadeIn = useRef([]);
-  fadeIn.current = [];
   const [overlay, setOverlay] = useState(false);
   const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu);
   const { navbarItems, navbarPaths } = useNavbar(
@@ -26,12 +22,6 @@ export const Navbar = () => {
     loadingNav,
     location
   );
-
-  const addToFadeInNav = (el) => {
-    if (el && !fadeIn.current.includes(el)) {
-      fadeIn.current.push(el);
-    }
-  };
 
   //Function makes navigation with arrowkeys possible & block usage if an input or textarea would be in focus
   const handleKeyDown = (event) => {
@@ -70,15 +60,8 @@ export const Navbar = () => {
       : document.body.classList.remove("fixed");
   };
 
-  //Tiny animations for the navbar & eventlistener for arrowkey-events
+  // Eventlistener for arrowkey-events
   useEffect(() => {
-    fadeIn.current.forEach((item) => {
-      TweenLite.to(item, 0.1, {
-        opacity: 1,
-        delay: 5,
-        ease: Power3.easeOut,
-      });
-    });
     window.addEventListener("keydown", handleKeyDown);
 
     // cleanup to remove eventlistener, perventing eventlistener to be called upon several pages and instances
@@ -88,23 +71,6 @@ export const Navbar = () => {
   }, [navbarPaths]);
 
   useEffect(() => {
-    // if (location.pathname.includes('/studio/')) {
-    TweenLite.to(navbar.current, 1.2, {
-      opacity: 1,
-      delay: 4.8,
-      ease: Power3.easeOut,
-    });
-    //}
-
-    /*
-    if (location.pathname === '/studios') {
-      navbar.current.classList.add('left')
-    } else if (location.pathname === '/booking') {
-      navbar.current.classList.add('right')
-    } else if (location.pathname.includes('/studio/')) {
-      navbar.current.classList.add('left')
-    } */
-
     //remove body fixed when switching page
     overlay
       ? document.body.classList.add("fixed")
@@ -113,11 +79,6 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* Customer wants to change logo, old commented out
-      <NavLink to='/'>
-        <Logo />
-      </NavLink> */}
-
       {/* {!location.pathname.includes('/studio/') ? ( */}
       <nav
         className={
@@ -131,7 +92,6 @@ export const Navbar = () => {
             {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
             {navbarItems.leftItem && (
               <NavLink
-                ref={addToFadeInNav}
                 className={
                   overlay
                     ? "navbar-left-item navbar-item dark"
@@ -147,7 +107,6 @@ export const Navbar = () => {
             )}
             {navbarItems.rightItem && (
               <NavLink
-                ref={addToFadeInNav}
                 className={
                   overlay
                     ? "navbar-right-item navbar-item dark"
