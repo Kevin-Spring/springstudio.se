@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap");
 
 :root {
   /* Colors */
@@ -12,7 +12,11 @@
   --off-white-70: rgba(255, 253, 247, 0.7);
   --black: #000;
   --white: #fff;
-  --def-background: linear-gradient(90deg, rgb(29, 29, 29) 18%, rgba(0, 0, 0, 1) 100%) !important;
+  --def-background: linear-gradient(
+    90deg,
+    rgb(29, 29, 29) 18%,
+    rgba(0, 0, 0, 1) 100%
+  ) !important;
 
   /* Transitions */
   --std-trans: 0.2s ease-in-out;
@@ -28,11 +32,12 @@
   --fs-xs: calc(12px + (16 - 12) * (100vw - 320px) / 1120);
   --medium-spacing: 0.08rem;
 
-  --main-font: 'Roboto', sans-serif;
-  --alt-font: 'Montserrat', sans-serif;
-  --heading-font: 'Raleway', sans-serif;
+  --main-font: "Roboto", sans-serif;
+  --alt-font: "Montserrat", sans-serif;
+  --heading-font: "Raleway", sans-serif;
 
   /* Sizes */
+  --size-80: calc(60px + (80 - 60) * (100vw - 320px) / 1120);
   --size-60: calc(40px + (60 - 40) * (100vw - 320px) / 1120);
   --size-50: calc(30px + (50 - 30) * (100vw - 320px) / 1120);
   --size-40: calc(20px + (40 - 20) * (100vw - 320px) / 1120);
@@ -114,15 +119,17 @@ p:last-child {
 }
 
 #fp-nav {
-    top: var(--size-60) !important;
-    right: var(--size-30) !important;
+  top: var(--size-60) !important;
+  right: var(--size-30) !important;
 }
 
-#fp-nav ul li a span{
+#fp-nav ul li a span {
   background: var(--off-white) !important;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-} 
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
 
 #fp-nav ul li .fp-tooltip {
   color: var(--off-white);
@@ -186,4 +193,3 @@ p:last-child {
     transform: translateY(0) translateX(-50%);
   }
 }
-
