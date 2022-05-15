@@ -1,10 +1,3 @@
-.fadeIn,
-.fade.fadeIn {
-  opacity: 1;
-  transform: translateY(-40px);
-  transition: all 0.8s ease-in-out;
-}
-
 .studio-sigle-main {
   background: var(--white);
 }
@@ -363,6 +356,14 @@
 
 .fade {
   opacity: 0;
+}
+
+.fadeIn,
+.fade.fadeIn,
+.studio-single-socials-container.fadeIn {
+  opacity: 1;
+  transform: translateY(-40px);
+  transition: all 0.8s ease-in-out;
 }
 
 @media only screen and (max-width: 980px) {
