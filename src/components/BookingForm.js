@@ -810,7 +810,9 @@ export const BookingForm = ({ motionForm }) => {
 
             <div
               className={
-                captchaStatus ? "form-recaptcha" : "form-recaptcha error"
+                captchaStatus === false
+                  ? "form-recaptcha error"
+                  : "form-recaptcha"
               }
             >
               <ReCAPTCHA

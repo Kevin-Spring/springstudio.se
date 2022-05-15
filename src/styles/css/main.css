@@ -37,6 +37,7 @@
   --heading-font: "Raleway", sans-serif;
 
   /* Sizes */
+  --size-80: calc(60px + (80 - 60) * (100vw - 320px) / 1120);
   --size-60: calc(40px + (60 - 40) * (100vw - 320px) / 1120);
   --size-50: calc(30px + (50 - 30) * (100vw - 320px) / 1120);
   --size-40: calc(20px + (40 - 20) * (100vw - 320px) / 1120);

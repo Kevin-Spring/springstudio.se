@@ -335,12 +335,13 @@ input[type="checkbox"].error.form__field + label {
   color: var(--faded-black);
   border: none;
   position: relative;
-  padding: 1rem;
-  padding-right: 2.5rem;
+  padding: calc(15px + (20 - 15) * (100vw - 320px) / 1120)
+    calc(35px + (40 - 35) * (100vw - 320px) / 1120);
+  padding-right: var(--size-60);
   margin: 0 auto 5vw auto;
   left: 50%;
   transform: translateX(-50%);
-  font-size: calc(12px + (14 - 12) * (100vw - 320px) / 1120);
+  font-size: calc(14px + (16 - 14) * (100vw - 320px) / 1120);
   letter-spacing: var(--medium-spacing);
   text-transform: uppercase;
   transition: all var(--std-trans);
@@ -349,14 +350,16 @@ input[type="checkbox"].error.form__field + label {
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
   background: rgba(255, 255, 255, 0.2);
+  margin-top: var(--size-30);
 }
 
 .form .form-btn .booking-arrow {
   transition: right 0.4s ease-in-out;
   position: absolute;
-  right: 10px;
+  right: var(--size-12);
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-55%);
+  font-size: calc(18px + (20 - 18) * (100vw - 320px) / 1120);
 }
 
 .form .form-btn:hover .booking-arrow {

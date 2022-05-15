@@ -4,9 +4,7 @@
 
 .studio-sigle-main .studio-single-hero-sec {
   min-height: 100vh;
-
   display: flex;
-
   align-items: center;
 }
 
@@ -28,8 +26,8 @@
   .studio-single-hero-sec
   .studio-single-hero-header
   .studio-single-hero-header-title {
-  padding-bottom: 10px;
-  font-size: var(--h2);
+  padding-bottom: calc(20 + (30 - 20) * (100vw - 320px) / 1120);
+  font-size: var(--size-80);
   font-family: var(--ff-base);
 }
 
@@ -277,10 +275,11 @@
 
 .studio-single-contact-section {
   display: flex;
-  padding: calc(40px + (60 - 40) * (100vw - 320px) / 1120) 0
-    calc(60px + (120 - 60) * (100vw - 320px) / 1120) 0;
+  padding: calc(40px + (60 - 40) * (100vw - 320px) / 1120)
+    calc(20px + (40 - 20) * (100vw - 320px) / 1120);
   align-items: center;
   flex-flow: column;
+  text-align: center;
 }
 
 .studio-single-contact-section .booking-link {
@@ -399,7 +398,7 @@
   }
 
   .studio-sigle-main .studio-single-floorplan-sec .text-container {
-    padding: 10vw 5vw;
+    padding: 20vw 5vw;
   }
 
   .studio-sigle-main .studio-single-floorplan-sec .text-container h2 {

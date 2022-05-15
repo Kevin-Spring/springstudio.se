@@ -12,7 +12,7 @@
   position: absolute;
   opacity: 0;
   top: 50vh;
-  padding: 0 calc(5px + (10 - 5) * (100vw - 320px) / 1120);
+  padding: 0 calc(15px + (25 - 15) * (100vw - 320px) / 1120);
   z-index: 999;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -21,6 +21,7 @@
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
+  font-size: var(--h5);
 }
 
 .primary-nav-container .primary-nav ul .navbar-item:hover {
