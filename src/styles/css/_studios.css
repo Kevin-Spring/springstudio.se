@@ -1,3 +1,7 @@
+.studio-page-section {
+    min-height: -webkit-fill-available;
+}
+
 .studio-page .studio-page-section .studio-page-content-container:after {
   content: "";
   position: absolute;
@@ -21,6 +25,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+    -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -78,6 +83,10 @@
     .studio-page-content-container {
         padding-top: var(--size-60);
         
+    }
+
+    .studio-page-text-container .studio-info {
+        font-size: var(--size-12);
     }
     
     .studio-page header {

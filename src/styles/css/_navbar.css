@@ -210,8 +210,7 @@
 }
 
 .primary-nav-container-curtain .overlay-content {
-  padding-top: 15%;
-  padding-left: 15%;
+  padding: 15%;
   margin-top: var(--size-30);
   display: flex;
   flex-flow: row wrap;
@@ -266,13 +265,7 @@
 
 .primary-nav-container-curtain .nav-socials-container {
   padding-top: var(--size-30);
-  flex: 0 0 95%;
-  max-width: 95%;
-}
-
-.primary-nav-container-curtain .nav-socials-container .studio-socials {
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 .primary-nav-container-curtain .nav-socials-container a {
@@ -362,6 +355,10 @@
     justify-content: flex-end;
     padding-right: var(--size-30);
   }
+
+  .primary-nav-container-curtain .overlay-content a.submenu-item {
+    font-size: var(--size-20);
+  }
 }
 
 @media only screen and (max-width: 980px) and (orientation: landscape) {
@@ -378,15 +375,6 @@
   
 }
 
-@media only screen and (max-width: 767px) {
-  .primary-nav-container-curtain .overlay-content {
-    position: absolute;
-    padding-left: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
 @media only screen and (max-width: 479px) {
   .primary-nav-container .primary-nav ul .navbar-item {
     top: 83vh;
@@ -398,10 +386,7 @@
   }
 
   .primary-nav-container-curtain .overlay-content {
-    padding-top: 20%;
-    padding-left: 5%;
+    padding: 20% 5%;
     position: relative;
-    left: 0;
-    transform: none;
   }
 }

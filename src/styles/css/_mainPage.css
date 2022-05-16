@@ -1,11 +1,13 @@
 .main-page-section {
   color: var(--off-white);
+  min-height: -webkit-fill-available;
 }
 
 .main-page-content-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* -webkit-backface-visibility: hidden; */
 }
 
 .main-page-section .main-page-content-container img {
@@ -14,12 +16,13 @@
   bottom: 0;
   left: 0;
   right: 0;
+   -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
   width: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
+  /* -webkit-transform: translate3d(0, 0, 0);
   -webkit-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; */
   z-index: -2;
 }
 
@@ -38,9 +41,9 @@
     rgba(0, 0, 0, 0.262062324929972) 100%
   );
   z-index: -1;
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d; */
 }
 
 .main-page-section:first-of-type header h1:before {
@@ -79,18 +82,20 @@
 
 .main-page-section article {
     padding-bottom: var(--size-30);
-    max-width: 60%;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .main-page-section article .main-page-text-container-paragraph {
   font-size: var(--article);
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 .main-page-section .main-page-cta-btn-link {
-    flex: 0 0 100%;
-    max-width: 100%;
     display: flex;
     justify-content: center;
+    max-width: fit-content;
 }
 
 .main-page-section .main-page-cta-btn {
@@ -112,6 +117,10 @@
   cursor: pointer;
 }
 
+.main-page-section .main-page-content-container .main-page-google-maps {
+  z-index: 2;
+}
+
 .main-page
   .main-page-section:last-of-type
   .main-page-google-maps:after {
@@ -124,6 +133,9 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
   pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
 }
 
 .main-page-section .main-page-content-container .main-page-text-container .studio-single-socials {
@@ -220,8 +232,20 @@
         height: 70%;
     }
 
+    .main-page-section h2 {
+      font-size: var(--size-40);
+    }
+
+    .main-page-section article .main-page-text-container-paragraph{
+        font-size: var(--size-12);
+    }
+
     .main-page .main-page-section:last-of-type .angle-down {
         display: none;
+    }
+
+    .main-page-section .main-page-cta-btn {
+      font-size: var(--fs-xs);
     }
 
 }
