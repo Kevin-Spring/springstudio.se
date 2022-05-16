@@ -6,6 +6,8 @@ export const useFetch = url => {
   const [loading, setLoading] = useState(true)
   const [posts, setPosts] = useState([])
 
+  document.querySelector('body').classList.add('loading');
+
   const getPosts = async () => {
     await axios
       .get(url)
@@ -13,6 +15,7 @@ export const useFetch = url => {
         if (res.status >= 200 && res.status <= 299) {
           setPosts(res.data)
           setLoading(false)
+          document.querySelector('body').classList.remove('loading');
           //setTimeout(() => setLoading(false), 1000);
         } else {
           throw new Error(res.statusText)

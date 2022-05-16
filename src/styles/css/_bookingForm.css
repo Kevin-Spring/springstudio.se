@@ -1,10 +1,8 @@
 .form-container {
   position: relative;
-  display: block;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  padding-top: 10vw;
+  margin: 0 auto;
+  padding: var(--size-60) var(--size-20);
+  max-width: 60vw;
 }
 
 .form-container .error-message {
@@ -119,9 +117,7 @@
 
 .form .form-inner {
   width: 100%;
-
   display: flex;
-
   flex-flow: row wrap;
 }
 
@@ -167,11 +163,8 @@
   transition: all var(--long-trans);
   padding-bottom: var(--size-30);
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   flex-direction: column-reverse;
 }
 
