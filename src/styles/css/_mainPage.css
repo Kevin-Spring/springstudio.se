@@ -116,9 +116,13 @@
   background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+.main-page .main-page-section:last-of-type .main-page-content-container {
+    justify-content: flex-end;
+}
 
 .main-page-section .main-page-content-container .main-page-google-maps {
-  z-index: 2;
+  position: relative;
+  margin: 0 0 0 auto;
 }
 
 .main-page
@@ -129,8 +133,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 45vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.3);
   pointer-events: none;
   -webkit-backface-visibility: hidden;
