@@ -60,12 +60,12 @@ body {
   font-family: var(--main-font); 
 }
 
-/* body.loading {
+body.loading {
   position: fixed;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-} */
+}
 
 body.loading nav,
 body.loading nav .hamburger,
