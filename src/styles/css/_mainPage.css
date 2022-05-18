@@ -64,8 +64,7 @@
 
 .main-page-section .main-page-text-container {
   margin-top: var(--size-30);
-  max-width: 90%;
-  margin: 0 auto;
+  width: 100%;
   position: relative;
   text-align: center;
 }
@@ -75,6 +74,8 @@
   justify-content: center;
   flex-flow: row wrap;
   margin: 0 auto;
+  max-width: 75%;
+  text-align: center;
 }
 
 .main-page-section article {
@@ -187,14 +188,16 @@
   .main-page-section:last-of-type
     .main-page-content-container
     .main-page-text-container {
-        position: static;
+      position: static;
+      margin: 0  auto;
+      padding-right: 0;
   }
 
   .main-page-section:last-of-type
     .main-page-content-container
     .main-page-text-container
     .studio-single-socials {
-        height: 30%;
+        height: 100%;
     }
 
   .main-page-section:last-of-type
