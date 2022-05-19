@@ -74,6 +74,11 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
+.main-page .studio-page-section:last-of-type .angle-down {
+  transform: rotate(0deg);
+  animation: bounceUp 2s infinite;
+}
+
 @media only screen and (max-width: 980px) and (orientation: landscape) {
     .studio-page-section {
         position: relative;
