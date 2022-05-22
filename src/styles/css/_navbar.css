@@ -364,11 +364,6 @@
     flex-flow: row wrap;
   }
 
-  .primary-nav-container-curtain .overlay-content a {
-    flex: 0 0 33.33%;
-    max-width: 33.333%;
-  }
-
   .primary-nav-container-curtain.left {
     justify-content: flex-start;
     padding-left: var(--size-30);
@@ -380,6 +375,11 @@
 }
 
 @media only screen and (max-width: 980px) and (orientation: landscape) {
+  .primary-nav-container-curtain .overlay-content {
+    padding: 6%;
+    align-items: flex-start;
+  }
+
   .primary-nav-container .primary-nav ul .navbar-item {
     padding: 0 var(--size-40);
   }
@@ -394,6 +394,11 @@
 }
 
 @media only screen and (max-width: 479px) {
+  .primary-nav-container-curtain .overlay-content a {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
   .primary-nav-container .primary-nav ul .navbar-item {
     top: 83vh;
     padding: 0 15px;
@@ -404,7 +409,7 @@
   }
 
   .primary-nav-container-curtain .overlay-content {
-    padding: 20% 5%;
+    padding: 15% 5% 40%;
     position: relative;
   }
 }
