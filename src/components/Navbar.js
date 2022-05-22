@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { NavLink, useLocation, useHistory, Link } from "react-router-dom";
 import { IoTriangleOutline } from "react-icons/io5";
+import { FaPhoneAlt } from 'react-icons/fa';
+import { IoIosMail } from 'react-icons/io';
 import { useFetchNav } from "./useFetchNav";
 import { useNavbar } from "./useNavbar";
 import "../styles/css/_navbar.css";
@@ -147,7 +149,7 @@ export const Navbar = () => {
               className={location.pathname === "/booking" ? "active" : ""}
               to="/booking"
             >
-              Booking
+              Contact
             </Link>
             <Link
               className={location.pathname === "/studios" ? "active" : ""}
@@ -185,6 +187,10 @@ export const Navbar = () => {
             >
               Studio 3
             </Link>
+            <div className="nav-contacts-container">
+              <div className="nav-contact"><a href="tel:0046707467233"> <FaPhoneAlt /> 0707467233</a></div>
+              <div className="nav-contact"><a href="mailto:janne@springstudio.se"><IoIosMail /> janne@springstudio.se</a></div>
+            </div>
             <div className="nav-socials-container">
               <Socials />
             </div>
