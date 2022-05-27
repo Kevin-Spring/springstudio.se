@@ -1,6 +1,7 @@
 .book-studio-section {
   color: var(--faded-black);
   background: var(--off-white);
+  min-height: 100vh;
 }
 
 .book-studio-section .book-studio-section-header {
