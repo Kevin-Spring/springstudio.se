@@ -154,7 +154,7 @@ p:last-child {
 
 @media only screen and (max-width: 980px) {
   #fp-nav {
-    top: 6vh !important;
+    top: 66px !important;
   }
 }
 

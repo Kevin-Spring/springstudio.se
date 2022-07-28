@@ -344,6 +344,8 @@ input[type="checkbox"].error.form__field + label {
     0 100px 80px rgba(0, 0, 0, 0.12);
   background: rgba(255, 255, 255, 0.2);
   margin-top: var(--size-30);
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .form .form-btn .booking-arrow {

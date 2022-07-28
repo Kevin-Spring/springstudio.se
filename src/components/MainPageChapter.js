@@ -13,7 +13,7 @@ export const MainPageChapter = ({posts, loading}) => (
 	  navigationPosition =  {'right'}
     keyboardScrolling = {true}
     sectionSelector= '.fullpage'
-    navigationTooltips = {['Spring', 'About', 'Studios', 'Contact' ]}
+    navigationTooltips = {['Spring', 'About', 'Studios', 'Lounge', 'Contact' ]}
 
 
     render={({ state, fullpageApi }) => {
