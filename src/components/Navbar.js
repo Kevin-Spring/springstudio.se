@@ -158,6 +158,12 @@ export const Navbar = () => {
               Studios
             </Link>
             <Link
+              className={location.pathname === "/lounge" ? "active" : ""}
+              to="/lounge"
+            >
+              Lounge
+            </Link>
+            <Link
               className={
                 location.pathname === "/studio/1"
                   ? "submenu-item active"

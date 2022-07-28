@@ -10,6 +10,7 @@ import { CookiePolicy } from "../pages/CookiePolicy";
 import { PrivacyPolicy } from "../pages/PrivacyPolicy";
 import { Studio2 } from "../pages/Studio2";
 import { Studio3 } from "../pages/Studio3";
+import { KitchenLoungePage } from "../pages/KitchenLoungePage";
 
 //Transition settings for the pages on page transition and load
 const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -57,6 +58,13 @@ export const Header = () => {
             path="/studio/3"
             component={Studio3}
             transition={transition}
+          />
+          <Route 
+          exact
+          path="/lounge"
+          component={KitchenLoungePage}
+          transition={transition}
+          
           />
           <Route
             exact

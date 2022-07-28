@@ -6,6 +6,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: var(--size-50);
 }
 
 .studio-sigle-main .studio-single-hero-sec .studio-single-hero-arrow {
@@ -398,7 +399,7 @@
 
 @media only screen and (max-width: 980px) and (orientation: landscape) {
   .studio-sigle-main .studio-single-hero-sec .studio-single-hero-arrow {
-    bottom: -2vw;
+    bottom: -12vw;
   }
 }
 
