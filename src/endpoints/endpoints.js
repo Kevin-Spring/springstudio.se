@@ -43,6 +43,10 @@ export const endpoints = [
     type: 'single post - studio 3',
     url: 'https://dev.springstudio.se/wp-json/wp/v2/studio_single/332',
   },
+  {
+    type: 'single post - Kitchen & Lounge areas',
+    url: 'https://dev.springstudio.se/wp-json/wp/v2/studio_single/507',
+  },
 ]
 
 /* DEVELOPMENT */

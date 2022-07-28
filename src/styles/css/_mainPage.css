@@ -232,7 +232,30 @@
     .main-page-content-container
     .main-page-text-container
     .studio-single-socials {
-        height: 70%;
+      height: 70%;
+    }
+
+    .main-page-section:last-of-type
+    .main-page-content-container
+    .main-page-text-container-inner {
+      max-width: fit-content;
+    }
+
+    .main-page-section:last-of-type
+    .main-page-content-container
+    .main-page-text-container-inner 
+    article {
+      max-width: 93%;
+    }
+
+    .main-page-section:last-of-type
+    .main-page-content-container
+    .main-page-text-container-inner  
+    .main-page-text-container-paragraph {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      gap: var(--size-20);
     }
 
     .main-page-section h2 {
@@ -240,15 +263,15 @@
     }
 
     .main-page-section article .main-page-text-container-paragraph{
-        font-size: var(--size-12);
+      font-size: var(--size-12);
     }
 
     .main-page .main-page-section:last-of-type .angle-down {
-        display: none;
+      display: none;
     }
 
     .main-page-section .main-page-cta-btn {
-      font-size: var(--fs-xs);
+      font-size: var(--size-12);
     }
 
 }

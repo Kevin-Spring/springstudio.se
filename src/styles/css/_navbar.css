@@ -193,7 +193,7 @@
   top: 0;
   left: 0;
   background-color: var(--off-white);
-  opacity: 0.9;
+  opacity: 0.98;
   overflow-x: hidden;
   transition: var(--long-trans);
   box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
@@ -202,7 +202,7 @@
 }
 
 .primary-nav-container-curtain .overlay.open {
-  width: 70vw;
+  width: 80vw;
 }
 
 .primary-nav-container-curtain .overlay.open a {
@@ -210,7 +210,7 @@
 }
 
 .primary-nav-container-curtain .overlay-content {
-  padding: 15%;
+  padding: 10% 8%;
   margin-top: var(--size-30);
   display: flex;
   flex-flow: row wrap;
@@ -228,6 +228,7 @@
   font-weight: 700;
   letter-spacing: var(--medium-spacing);
   text-transform: uppercase;
+  text-align: center;
   padding-bottom: var(--size-20);
   opacity: 0;
   transition: var(--std-trans);
@@ -235,10 +236,16 @@
   max-width: 33.333%;
 }
 
+.primary-nav-container-curtain .overlay-content a:not(.submenu-item){
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
 .primary-nav-container-curtain .overlay-content a.submenu-item {
   font-size: var(--size-15);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .primary-nav-container-curtain .overlay-content a.submenu-item:before {
@@ -394,9 +401,15 @@
 }
 
 @media only screen and (max-width: 479px) {
-  .primary-nav-container-curtain .overlay-content a {
+  .primary-nav-container-curtain .overlay-content a,
+  .primary-nav-container-curtain .overlay-content a:not(.submenu-item) {
     flex: 0 0 100%;
     max-width: 100%;
+    text-align: start;
+  }
+
+  .primary-nav-container-curtain .overlay-content a.submenu-item {
+    justify-content: flex-start;
   }
 
   .primary-nav-container .primary-nav ul .navbar-item {
