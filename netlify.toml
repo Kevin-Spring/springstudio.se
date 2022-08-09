@@ -1,0 +1,42 @@
+# Config for the Netlify Build Plugin: netlify-plugin-fetch-feeds
+[[plugins]]
+  package = "netlify-plugin-fetch-feeds"
+
+  [plugins.inputs]
+    # Where should data files reside
+    dataDir = "site/_data"
+
+    # All the feeds we wish to gather for use in the build
+
+    [[plugins.inputs.feeds]]
+      name = "main"
+      url = "https://dev.springstudio.se/index.php/wp-json/wp/v2/main"
+      ttl = 3600
+    [[plugins.inputs.feeds]]
+      name = "studios"
+      url = "https://dev.springstudio.se/index.php/wp-json/wp/v2/studios"
+      ttl = 3600
+    [[plugins.inputs.feeds]]
+      name = "contact"
+      url = "https://dev.springstudio.se/index.php/wp-json/wp/v2/contact"
+      ttl = 3600
+    [[plugins.inputs.feeds]]
+      name = "studio 1"
+      url = "https://dev.springstudio.se/wp-json/wp/v2/studio_single/156"
+      ttl = 3600
+    [[plugins.inputs.feeds]]
+      name = "studio 2"
+      url = "https://dev.springstudio.se/wp-json/wp/v2/studio_single/331"
+      ttl = 3600
+    [[plugins.inputs.feeds]]
+      name = "studio 3"
+      url = "https://dev.springstudio.se/wp-json/wp/v2/studio_single/332"
+      ttl = 3600
+    [[plugins.inputs.feeds]]
+      name = "Lounge areas"
+      url = "https://dev.springstudio.se/wp-json/wp/v2/studio_single/507"
+      ttl = 3600
+    [[plugins.inputs.feeds]]
+      name = "Nav"
+      url = "https://dev.springstudio.se/wp-json/wp/v2/menus/primary-menu"
+      ttl = 3600

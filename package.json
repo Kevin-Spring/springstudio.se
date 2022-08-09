@@ -12,6 +12,7 @@
     "framer-motion": "^3.2.1",
     "jquery": "^1.9.1",
     "lottie-react": "^2.1.0",
+    "netlify-plugin-fetch-feeds": "^0.2.3",
     "react": "^17.0.1",
     "react-cookie-consent": "^6.2.3",
     "react-dom": "^17.0.1",
