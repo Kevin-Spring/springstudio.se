@@ -50,8 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "netlify-plugin-fetch-feeds": "^0.2.3"
   }
 }

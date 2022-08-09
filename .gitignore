@@ -6,6 +6,9 @@
 .pnp.js
 .eslintcache
 
+# add this if you're using netlify plugins
+.netlify.toml
+
 # testing
 /coverage
 
