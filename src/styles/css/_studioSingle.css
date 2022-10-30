@@ -186,10 +186,10 @@
   visibility: hidden;
 }
 
-.photo-grid-img-inner-container:hover .photo-meta {
+/*.photo-grid-img-inner-container:hover .photo-meta {
   height: 100% !important;
   visibility: visible !important;
-}
+}*/
 
 .photo-grid-img-inner-container:hover .photo-meta p {
   -webkit-animation: fadeIn 0.6s ease-in-out 0.1s forwards;
@@ -254,7 +254,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
 }
@@ -270,7 +270,10 @@
 
 .studio-single-contact-section .booking-link {
   position: relative;
-  padding: calc(10px + (15 - 10) * (100vw - 320px) / 1120) calc(30px + (40 - 30) * (100vw - 320px) / 1120) calc(10px + (15 - 10) * (100vw - 320px) / 1120) calc(10px + (15 - 10) * (100vw - 320px) / 1120);
+  padding: calc(10px + (15 - 10) * (100vw - 320px) / 1120)
+    calc(30px + (40 - 30) * (100vw - 320px) / 1120)
+    calc(10px + (15 - 10) * (100vw - 320px) / 1120)
+    calc(10px + (15 - 10) * (100vw - 320px) / 1120);
   display: flex;
   align-items: center;
   text-transform: uppercase;
@@ -282,8 +285,8 @@
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    font-weight: 500;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .studio-single-contact-section .booking-link .booking-arrow {

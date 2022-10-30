@@ -19,6 +19,8 @@ var settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
 };
 
 const motionContent = {
@@ -136,7 +138,7 @@ export const StudioSingle = ({ content, transition }) => {
             <VscArrowDown className="studio-single-hero-arrow" />
           </motion.section>
 
-          {posts.acf.slides_section.slide_title && 
+          {posts.acf.slides_section.slide_title && (
             <section className="studio-single-slider-sec">
               <div className="text-container">
                 <h2 ref={addToFadeInTexts} className="fade">
@@ -147,71 +149,69 @@ export const StudioSingle = ({ content, transition }) => {
                 </p>
               </div>
 
-              {posts.acf.slides_section.slides &&  
+              {posts.acf.slides_section.slides && (
                 <Slider {...settings}>
-                  
-                  {posts.acf.slides_section.slides.slide_1.url &&
+                  {posts.acf.slides_section.slides.slide_1.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_1.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_1.url}
-                    /> 
-                  }
+                    />
+                  )}
 
-                  {posts.acf.slides_section.slides.slide_2.url &&
+                  {posts.acf.slides_section.slides.slide_2.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_2.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_2.url}
                     />
-                  }
+                  )}
 
-                  {posts.acf.slides_section.slides.slide_3.url &&
+                  {posts.acf.slides_section.slides.slide_3.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_3.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_3.url}
                     />
-                  }
+                  )}
 
-                  {posts.acf.slides_section.slides.slide_4.url &&
+                  {posts.acf.slides_section.slides.slide_4.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_4.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_4.url}
                     />
-                  }
+                  )}
 
-                  {posts.acf.slides_section.slides.slide_5.url &&
+                  {posts.acf.slides_section.slides.slide_5.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_5.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_5.url}
                     />
-                  }
+                  )}
 
-                  {posts.acf.slides_section.slides.slide_6.url &&
+                  {posts.acf.slides_section.slides.slide_6.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_6.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_6.url}
                     />
-                  }
+                  )}
 
-                  {posts.acf.slides_section.slides.slide_7.url &&
+                  {posts.acf.slides_section.slides.slide_7.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_7.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_7.url}
                     />
-                  }
+                  )}
 
-                  {posts.acf.slides_section.slides.slide_8.url &&
+                  {posts.acf.slides_section.slides.slide_8.url && (
                     <SlideImage
                       imageSize={posts.acf.slides_section.slides.slide_8.sizes}
                       imageUrl={posts.acf.slides_section.slides.slide_8.url}
                     />
-                  }
-
+                  )}
                 </Slider>
-              }
+              )}
             </section>
-          }
+          )}
 
-          {posts.acf.photo_gallery.gallery_title && 
+          {posts.acf.photo_gallery.gallery_title && (
             <section className="studio-single-image-grid-sec">
               <h2 ref={addToFadeInTexts} className="fade">
                 {posts.acf.photo_gallery.gallery_title}
@@ -223,10 +223,11 @@ export const StudioSingle = ({ content, transition }) => {
 
               <div className="studio-single-photo-grid-container">
                 <div className="photo-grid-row">
-                  {posts.acf.photo_gallery.gallery_row_1.image_1.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_1.image_1.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_1.image_1.image.sizes
+                        posts.acf.photo_gallery.gallery_row_1.image_1.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_1.image_1.image.url
@@ -235,12 +236,13 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_1.image_1.meta_data
                       }
                     />
-                  }
+                  )}
 
-                  {posts.acf.photo_gallery.gallery_row_1.image_2.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_1.image_2.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_1.image_2.image.sizes
+                        posts.acf.photo_gallery.gallery_row_1.image_2.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_1.image_2.image.url
@@ -249,12 +251,13 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_1.image_2.meta_data
                       }
                     />
-                  }
+                  )}
 
-                  {posts.acf.photo_gallery.gallery_row_1.image_3.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_1.image_3.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_1.image_3.image.sizes
+                        posts.acf.photo_gallery.gallery_row_1.image_3.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_1.image_3.image.url
@@ -263,13 +266,14 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_1.image_3.meta_data
                       }
                     />
-                  }
+                  )}
                 </div>
                 <div className="photo-grid-row">
-                  {posts.acf.photo_gallery.gallery_row_2.image_1.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_2.image_1.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_2.image_1.image.sizes
+                        posts.acf.photo_gallery.gallery_row_2.image_1.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_2.image_1.image.url
@@ -278,12 +282,13 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_2.image_1.meta_data
                       }
                     />
-                  }
+                  )}
 
-                  {posts.acf.photo_gallery.gallery_row_2.image_2.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_2.image_2.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_2.image_2.image.sizes
+                        posts.acf.photo_gallery.gallery_row_2.image_2.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_2.image_2.image.url
@@ -292,12 +297,13 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_2.image_2.meta_data
                       }
                     />
-                  }
+                  )}
 
-                  {posts.acf.photo_gallery.gallery_row_2.image_3.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_2.image_3.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_2.image_3.image.sizes
+                        posts.acf.photo_gallery.gallery_row_2.image_3.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_2.image_3.image.url
@@ -306,14 +312,14 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_2.image_3.meta_data
                       }
                     />
-                  }
+                  )}
                 </div>
                 <div className="photo-grid-row">
-
-                  {posts.acf.photo_gallery.gallery_row_3.image_1.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_3.image_1.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_3.image_1.image.sizes
+                        posts.acf.photo_gallery.gallery_row_3.image_1.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_3.image_1.image.url
@@ -322,12 +328,13 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_3.image_1.meta_data
                       }
                     />
-                  }
+                  )}
 
-                  {posts.acf.photo_gallery.gallery_row_3.image_2.image.url && 
+                  {posts.acf.photo_gallery.gallery_row_3.image_2.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_3.image_2.image.sizes
+                        posts.acf.photo_gallery.gallery_row_3.image_2.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_3.image_2.image.url
@@ -336,12 +343,13 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_3.image_2.meta_data
                       }
                     />
-                  }
-                  
-                  {posts.acf.photo_gallery.gallery_row_3.image_3.image.url && 
+                  )}
+
+                  {posts.acf.photo_gallery.gallery_row_3.image_3.image.url && (
                     <PhotoGridImage
                       imageSize={
-                        posts.acf.photo_gallery.gallery_row_3.image_3.image.sizes
+                        posts.acf.photo_gallery.gallery_row_3.image_3.image
+                          .sizes
                       }
                       imageUrl={
                         posts.acf.photo_gallery.gallery_row_3.image_3.image.url
@@ -350,17 +358,16 @@ export const StudioSingle = ({ content, transition }) => {
                         posts.acf.photo_gallery.gallery_row_3.image_3.meta_data
                       }
                     />
-                  }
-
+                  )}
                 </div>
               </div>
             </section>
-          }
+          )}
 
-          {posts.acf.floorplan_section.floorplan_title && 
+          {posts.acf.floorplan_section.floorplan_title && (
             <section className="studio-single-floorplan-sec">
               <div className="floorplan-img-container">
-                {posts.acf.floorplan_section.floorplan_image && 
+                {posts.acf.floorplan_section.floorplan_image && (
                   <picture>
                     <source
                       srcSet={`${posts.acf.floorplan_section.floorplan_image.sizes["1536x1536"]} 1200w , ${posts.acf.floorplan_section.floorplan_image.url} 2x`}
@@ -381,7 +388,7 @@ export const StudioSingle = ({ content, transition }) => {
                       alt="floorplan"
                     />
                   </picture>
-                }
+                )}
               </div>
               <div className="text-container">
                 <h2 ref={addToFadeInTexts} className="fade">
@@ -392,9 +399,9 @@ export const StudioSingle = ({ content, transition }) => {
                 </p>
               </div>
             </section>
-          }
+          )}
 
-          {posts.acf.contact_section.contact_title && 
+          {posts.acf.contact_section.contact_title && (
             <section className="studio-single-contact-section">
               <h2 ref={addToFadeInTexts} className="fade">
                 {posts.acf.contact_section.contact_title}
@@ -403,7 +410,7 @@ export const StudioSingle = ({ content, transition }) => {
                 {posts.acf.contact_section.contact_text}
               </p>
 
-              {posts.acf.contact_section.contact_cta.url && 
+              {posts.acf.contact_section.contact_cta.url && (
                 <div ref={addToFadeInTexts} className="fade">
                   <Link
                     to={posts.acf.contact_section.contact_cta.url}
@@ -413,7 +420,7 @@ export const StudioSingle = ({ content, transition }) => {
                     <VscArrowRight className="booking-arrow" />
                   </Link>
                 </div>
-              }
+              )}
               <div
                 ref={addToFadeInTexts}
                 className="studio-single-socials-container"
@@ -421,7 +428,7 @@ export const StudioSingle = ({ content, transition }) => {
                 <Socials />
               </div>
             </section>
-          }
+          )}
         </div>
       )}
     </motion.main>
