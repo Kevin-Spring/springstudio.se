@@ -189,12 +189,12 @@
 /*.photo-grid-img-inner-container:hover .photo-meta {
   height: 100% !important;
   visibility: visible !important;
-}*/
+}
 
 .photo-grid-img-inner-container:hover .photo-meta p {
   -webkit-animation: fadeIn 0.6s ease-in-out 0.1s forwards;
   animation: fadeIn 0.6s ease-in-out 0.1s forwards;
-}
+}*/
 
 @-webkit-keyframes fadeIn {
   0% {
