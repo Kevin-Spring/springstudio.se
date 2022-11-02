@@ -1,12 +1,13 @@
 .loading-container {
-  background-color: var(--black);
-  z-index: 99999;
+  background-color: var(--white);
+  z-index: 999;
   position: fixed;
   width: 100vw;
   justify-content: center;
   align-items: center;
   display: flex;
   height: 100vh;
+  display: block;
 }
 
 .loading-container .loading-svg {
@@ -15,12 +16,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .loading-container .loading-svg #pattern .loading-text-rect {
   width: 100%;
   height: 100%;
-  color: var(--dark-grey);
+  color: var(--black);
   fill: currentColor;
 }
 
@@ -43,7 +47,7 @@
   bottom: calc(80px + (100 - 80) * (100vw - 320px) / 1120);
   left: 50%;
   transform: translateX(-50%);
-  color: var(--grey);
+  color: var(--black);
   display: flex;
   flex-flow: row wrap;
   animation: pulsate 2s ease-in-out infinite;
@@ -66,7 +70,7 @@
 
 .loading-container .loading-arrow-keys-row .loading-arrow-key,
 .loading-container .loading-arrow-keys-row .loading-arrow-key-up {
-  border: 2px solid var(--grey);
+  border: 2px solid var(--black);
   border-radius: 5px;
   padding: 5px;
   margin: 0 5px;

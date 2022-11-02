@@ -4,7 +4,23 @@ import { Link } from "react-router-dom";
 import { Socials } from "./Socials";
 
 //Writing out the html content and adding animations to the content
-export const MainPageContent = ({ id, title, content, acf, index }) => {
+export const MainPageContent = ({
+  title,
+  background,
+  content,
+  content2,
+  content3,
+  heading,
+  heading2,
+  heading3,
+  cta,
+  facebook,
+  instagram,
+  ctaLink,
+  titleH1,
+  mapsLat,
+  mapsLong,
+}) => {
   const revealText = useRef([]);
   revealText.current = [];
 
@@ -42,50 +58,65 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
   return (
     <>
       <div className="main-page-content-container">
-        {acf.background && 
-          <picture>
-            <source
-              srcSet={`${acf.background.sizes["1536x1536"]} 1200w , ${acf.background.url} 2x`}
-            />
-            <source
-              srcSet={`${acf.background.sizes["1536x1536"]} 1024w , ${acf.background.sizes["2048x2048"]} 2x`}
-            />
-            <source
-              srcSet={`${acf.background.sizes.large} 750w, ${acf.background.sizes["1536x1536"]} 2x `}
-            />
-            <source
-              srcSet={`${acf.background.sizes.medium} 375w , ${acf.background.sizes.large} 2x`}
-            />
-            <img data-src={acf.background.sizes.large} alt="background" />
-          </picture>
-        }
+        <img src={background} alt="background" />
         <div className="main-page-text-container">
           <div className="main-page-text-container-inner">
-            <header ref={addToRefTexts}>
-              {index === 0 ? (
-                <h1>{title.rendered}</h1>
-              ) : (
-                <h2>{title.rendered}</h2>
-              )}
-            </header>
+            {title && (
+              <header ref={addToRefTexts}>
+                {titleH1 ? <h1>{title}</h1> : <h2>{title}</h2>}
+              </header>
+            )}
+
+            {content && (
+              <article ref={addToRefTexts}>
+                <div className="main-page-text-container-paragraph">
+                  {heading && <h4>{heading}</h4>}
+                  {content && <p>{content}</p>}
+                  {heading2 && <h4>{heading2}</h4>}
+                  {content2 && <p>{content2}</p>}
+                  {heading3 && <h4>{heading3}</h4>}
+                  {content3 && <p>{content3}</p>}
+                </div>
+              </article>
+            )}
+
+            {cta && (
+              <Link to={ctaLink} className="main-page-cta-btn-link">
+                <div ref={addToRefTexts} className="main-page-cta-btn">
+                  {cta}
+                </div>
+              </Link>
+            )}
+
+            {facebook || instagram ? (
+              <Socials
+                fadeRef={addToRefTexts}
+                facebook={facebook}
+                instagram={instagram}
+              />
+            ) : (
+              ""
+            )}
+
             {/* Following is conditional rendering depending on which content made it out from wordpress */}
-            {content.rendered && (
+            {/* {content.rendered && (
               <article ref={addToRefTexts}>
                 <div
                   className="main-page-text-container-paragraph"
                   dangerouslySetInnerHTML={{ __html: content.rendered }}
                 />
               </article>
-            )}
-            {acf.cta && (
+            )} */}
+            {/* {acf.cta && (
               <Link to={acf.cta.link} className="main-page-cta-btn-link">
                 <div ref={addToRefTexts} className="main-page-cta-btn">
                   {acf.cta.title}
                 </div>
               </Link>
-            )}
+            )} */}
           </div>
-          {acf.facebook || acf.instagram ? (
+
+          {/* {acf.facebook || acf.instagram ? (
             <Socials
               fadeRef={addToRefTexts}
               facebook={acf.facebook.url}
@@ -93,12 +124,21 @@ export const MainPageContent = ({ id, title, content, acf, index }) => {
             />
           ) : (
             ""
-          )}
+          )} */}
         </div>
-        {acf.maps && (
+
+        {/* {acf.maps && (
           <div className="main-page-google-maps">
             <GoogleMaps lat={acf.maps.lat} lng={acf.maps.lng} />
           </div>
+        )} */}
+
+        {mapsLat && mapsLong ? (
+          <div className="main-page-google-maps">
+            <GoogleMaps lat={mapsLat} lng={mapsLong} />
+          </div>
+        ) : (
+          ""
         )}
       </div>
     </>

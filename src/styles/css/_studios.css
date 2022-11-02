@@ -1,8 +1,8 @@
 .studio-page-section {
-    min-height: -webkit-fill-available;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
+  min-height: -webkit-fill-available;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
 }
 
 .studio-page .studio-page-section .studio-page-content-container:after {
@@ -28,7 +28,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-    -o-object-fit: cover;
+  -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -82,35 +82,40 @@
 }
 
 @media only screen and (max-width: 980px) and (orientation: landscape) {
-    .studio-page-section {
-        position: relative;
-    }
+  .studio-page-section {
+    position: relative;
+  }
 
-    .studio-page-section h3 {
-        padding-bottom: var(--size-20);
-    }
-    
-    .studio-page-content-container {
-        padding-top: var(--size-60);
-        
-    }
+  .studio-page-section h3 {
+    padding-bottom: var(--size-20);
+  }
 
-    .studio-page-text-container .studio-info {
-        font-size: var(--size-12);
-    }
-    
-    .studio-page header {
-        writing-mode: unset;
-        margin-bottom: 0;
-    }
+  .studio-page-content-container {
+    padding-top: var(--size-60);
+  }
 
-    .studio-page .btn-container {
-        position: absolute;
-        right: var(--size-20);
-        bottom: var(--size-40);
-    }
+  .studio-page-text-container .studio-info {
+    font-size: var(--size-12);
+  }
 
-    .studio-page .btn-container .studio-btn {
-        padding: 15px 40px;
-    }
+  .studio-page header {
+    writing-mode: unset;
+    margin-bottom: 0;
+  }
+
+  .studio-page .btn-container {
+    position: absolute;
+    right: var(--size-20);
+    bottom: var(--size-40);
+  }
+
+  .studio-page .btn-container .studio-btn {
+    padding: 15px 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .studio-page-text-container .studio-info {
+    max-width: 60%;
+  }
 }

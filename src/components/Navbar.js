@@ -1,16 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import { NavLink, useLocation, useHistory, Link } from "react-router-dom";
 import { IoTriangleOutline } from "react-icons/io5";
-import { FaPhoneAlt } from 'react-icons/fa';
-import { IoIosMail } from 'react-icons/io';
-import { useFetchNav } from "./useFetchNav";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+// import { useFetchNav } from "./useFetchNav";
 import { useNavbar } from "./useNavbar";
 import "../styles/css/_navbar.css";
-import { endpoints } from "../endpoints/endpoints";
+// import { endpoints } from "../endpoints/endpoints";
 import { Socials } from "./Socials";
 
 //Pointing get request at correct endpoint
-const urlMenu = endpoints[3].url;
+// const urlMenu = endpoints[3].url;
 
 //Using custom hooks useFetchNav & UseNavbar to get menu items and set correct title to each nav-arrow depending on page location
 export const Navbar = () => {
@@ -18,10 +18,10 @@ export const Navbar = () => {
   const location = useLocation();
   const navbar = useRef(null);
   const [overlay, setOverlay] = useState(false);
-  const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu);
+  // const { loadingNav, fetchedNavbarItems } = useFetchNav(urlMenu);
   const { navbarItems, navbarPaths } = useNavbar(
-    fetchedNavbarItems,
-    loadingNav,
+    //fetchedNavbarItems,
+    //loadingNav,
     location
   );
 
@@ -194,8 +194,17 @@ export const Navbar = () => {
               Studio 3
             </Link>
             <div className="nav-contacts-container">
-              <div className="nav-contact"><a href="tel:0046707467233"> <FaPhoneAlt /> 0707467233</a></div>
-              <div className="nav-contact"><a href="mailto:janne@springstudio.se"><IoIosMail /> janne@springstudio.se</a></div>
+              <div className="nav-contact">
+                <a href="tel:0046707467233">
+                  {" "}
+                  <FaPhoneAlt /> 0707467233
+                </a>
+              </div>
+              <div className="nav-contact">
+                <a href="mailto:janne@springstudio.se">
+                  <IoIosMail /> janne@springstudio.se
+                </a>
+              </div>
             </div>
             <div className="nav-socials-container">
               <Socials />

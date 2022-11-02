@@ -1,6 +1,6 @@
 .book-studio-section {
   color: var(--faded-black);
-  background: var(--off-white);
+  background: var(--white);
   min-height: 100vh;
 }
 
@@ -23,7 +23,7 @@
   padding: var(--size-12) var(--size-12);
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
-  color: var(--off-white);
+  color: var(--white);
   height: 50%;
   font-size: var(--fs-xs);
   font-weight: 500;

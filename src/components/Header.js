@@ -59,12 +59,11 @@ export const Header = () => {
             component={Studio3}
             transition={transition}
           />
-          <Route 
-          exact
-          path="/lounge"
-          component={KitchenLoungePage}
-          transition={transition}
-          
+          <Route
+            exact
+            path="/lounge"
+            component={KitchenLoungePage}
+            transition={transition}
           />
           <Route
             exact
