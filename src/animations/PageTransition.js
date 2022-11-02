@@ -1,25 +1,30 @@
-import React, { useRef } from 'react'
-import { motion } from 'framer-motion'
-import { BsArrowUp, BsArrowDown, BsArrowLeft, BsArrowRight } from 'react-icons/bs'
-import '../styles/css/_pageTransition.css'
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import {
+  BsArrowUp,
+  BsArrowDown,
+  BsArrowLeft,
+  BsArrowRight,
+} from "react-icons/bs";
+import "../styles/css/_pageTransition.css";
 
 /* Page transition component created with npm package framer-motion */
 
 //Setting up animation options for each element beforehand
 const blackBox = {
   initial: {
-    height: '100vh',
+    height: "100vh",
     top: 0,
   },
   animate: {
     height: 0,
     transition: {
-      when: 'afterChildren',
+      when: "afterChildren",
       duration: 0.8,
       ease: [0.87, 0, 0.13, 1],
     },
   },
-}
+};
 
 const textContainer = {
   initial: {
@@ -29,10 +34,10 @@ const textContainer = {
     opacity: 0,
     transition: {
       duration: 0.25,
-      when: 'afterChildren',
+      when: "afterChildren",
     },
   },
-}
+};
 
 const text = {
   initial: {
@@ -45,7 +50,7 @@ const text = {
       ease: [0.87, 0, 0.13, 1],
     },
   },
-}
+};
 
 const tip = {
   initial: {
@@ -59,10 +64,10 @@ const tip = {
       ease: [0.87, 0, 0.13, 1],
     },
   },
-}
+};
 
 export const PageTransition = () => {
-  const backdrop = useRef(null)
+  const backdrop = useRef(null);
 
   return (
     <>
@@ -70,41 +75,54 @@ export const PageTransition = () => {
     using onAnimationStart and onAnimationComplete to hide and show the component */}
       <motion.div
         ref={backdrop}
-        className='page-transition-container'
-        initial='initial'
-        animate='animate'
+        className="page-transition-container"
+        initial="initial"
+        animate="animate"
         variants={blackBox}
         onAnimationStart={() =>
           //document.body.classList.add('overflow-hidden')
-          backdrop.current.classList.add('animate')
+          backdrop.current.classList.add("animate")
         }
         onAnimationComplete={() =>
           //document.body.classList.remove('overflow-hidden')
-          backdrop.current.classList.remove('animate')
+          backdrop.current.classList.remove("animate")
         }
       >
-        <motion.svg variants={textContainer} className='page-transition-svg'>
-          <pattern id='pattern' width='100%' height='100%' patternUnits='userSpaceOnUse'>
+        <motion.svg variants={textContainer} className="page-transition-svg">
+          <pattern
+            id="pattern"
+            width="100%"
+            height="100%"
+            patternUnits="userSpaceOnUse"
+          >
             <rect />
 
-            <motion.rect variants={text} className='page-transition-text-rect' />
+            <motion.rect
+              variants={text}
+              className="page-transition-text-rect"
+            />
           </pattern>
-          <text className='page-transition-text' textAnchor='middle' x='50%' y='50%'>
+          <text
+            className="page-transition-text"
+            textAnchor="middle"
+            x="50%"
+            y="50%"
+          >
             Spring Studio
           </text>
         </motion.svg>
-        <motion.div variants={tip} className='page-transition-arrow-keys'>
-          <div className='page-transition-arrow-keys-title'>Tip:</div>
-          <div className='page-transition-arrow-keys-row'>
-            <BsArrowUp className='page-transition-arrow-key-up' />
+        <motion.div variants={tip} className="page-transition-arrow-keys">
+          <div className="page-transition-arrow-keys-title">Tip:</div>
+          <div className="page-transition-arrow-keys-row">
+            <BsArrowUp className="page-transition-arrow-key-up" />
           </div>
-          <div className='page-transition-arrow-keys-row'>
-            <BsArrowLeft className='page-transition-arrow-key' />
-            <BsArrowDown className='page-transition-arrow-key' />
-            <BsArrowRight className='page-transition-arrow-key' />
+          <div className="page-transition-arrow-keys-row">
+            <BsArrowLeft className="page-transition-arrow-key" />
+            <BsArrowDown className="page-transition-arrow-key" />
+            <BsArrowRight className="page-transition-arrow-key" />
           </div>
         </motion.div>
       </motion.div>
     </>
-  )
-}
+  );
+};

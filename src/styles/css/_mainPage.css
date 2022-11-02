@@ -7,9 +7,9 @@
 }
 
 .main-page-content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-page-section .main-page-content-container img {
@@ -18,7 +18,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-   -o-object-fit: cover;
+  -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -34,11 +34,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.262062324929972) 100%
-  );
+  background: rgba(0, 0, 0, 0.15);
   z-index: -1;
 }
 
@@ -52,10 +48,10 @@
 }
 
 .main-page-section header {
-    display: flex;
-    justify-content: center;
-    flex: 0 0 100%;
-    max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .main-page-section:first-of-type header h1 {
@@ -70,7 +66,7 @@
 }
 
 .main-page-text-container-inner {
-  display: flex; 
+  display: flex;
   justify-content: center;
   flex-flow: row wrap;
   margin: 0 auto;
@@ -79,9 +75,9 @@
 }
 
 .main-page-section article {
-    padding-bottom: var(--size-30);
-    flex: 0 0 100%;
-    max-width: 100%;
+  padding-bottom: var(--size-30);
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .main-page-section article .main-page-text-container-paragraph {
@@ -91,14 +87,14 @@
 }
 
 .main-page-section .main-page-cta-btn-link {
-    display: flex;
-    justify-content: center;
-    max-width: fit-content;
+  display: flex;
+  justify-content: center;
+  max-width: fit-content;
 }
 
 .main-page-section .main-page-cta-btn {
   display: inline-block;
-    font-size: var(--article);
+  font-size: var(--article);
   padding: var(--size-12) calc(15px + (30 - 15) * (100vw - 320px) / 1120);
   letter-spacing: var(--medium-spacing);
   text-transform: uppercase;
@@ -107,9 +103,9 @@
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12); 
-    border-radius: 4px;
-    font-weight: 600;
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  font-weight: 600;
 }
 
 .main-page-section .main-page-cta-btn:hover {
@@ -117,16 +113,14 @@
   cursor: pointer;
 }
 .main-page .main-page-section:last-of-type .main-page-content-container {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .main-page-section .main-page-content-container .main-page-google-maps {
   position: relative;
 }
 
-.main-page
-  .main-page-section:last-of-type
-  .main-page-google-maps:after {
+/* .main-page .main-page-section:last-of-type .main-page-google-maps:after {
   content: "";
   display: block;
   position: absolute;
@@ -134,14 +128,17 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.3);
   pointer-events: none;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-transform-style: preserve-3d;
-}
+} */
 
-.main-page-section .main-page-content-container .main-page-text-container .studio-single-socials {
+.main-page-section
+  .main-page-content-container
+  .main-page-text-container
+  .studio-single-socials {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -187,21 +184,20 @@
 }
 
 @media only screen and (max-width: 980px) {
-
   .main-page-section:last-of-type
     .main-page-content-container
     .main-page-text-container {
-      position: static;
-      margin: 0  auto;
-      padding-right: 0;
+    position: static;
+    margin: 0 auto;
+    padding-right: 0;
   }
 
   .main-page-section:last-of-type
     .main-page-content-container
     .main-page-text-container
     .studio-single-socials {
-        height: 100%;
-    }
+    height: 100%;
+  }
 
   .main-page-section:last-of-type
     .main-page-content-container
@@ -231,56 +227,54 @@
 }
 
 @media only screen and (max-width: 980px) and (orientation: landscape) {
-    .main-page-section:last-of-type
+  .main-page-section:last-of-type
     .main-page-content-container
     .main-page-text-container
     .studio-single-socials {
-      height: 70%;
-    }
+    height: 70%;
+  }
 
-    .main-page-section:last-of-type
+  .main-page-section:last-of-type
     .main-page-content-container
     .main-page-text-container-inner {
-      max-width: fit-content;
-    }
+    max-width: fit-content;
+  }
 
-    .main-page-section:last-of-type
+  .main-page-section:last-of-type
     .main-page-content-container
-    .main-page-text-container-inner  
+    .main-page-text-container-inner
     .main-page-text-container-paragraph {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      gap: var(--size-20);
-    }
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: var(--size-20);
+  }
 
-    .main-page-section
+  .main-page-section
     .main-page-content-container
-    .main-page-text-container-inner 
+    .main-page-text-container-inner
     article {
-      max-width: 93%;
-    }
+    max-width: 93%;
+  }
 
-    .main-page-section h2 {
-      font-size: var(--size-40);
-    }
+  .main-page-section h2 {
+    font-size: var(--size-40);
+  }
 
-    .main-page-section article .main-page-text-container-paragraph{
-      font-size: var(--size-12);
-    }
+  .main-page-section article .main-page-text-container-paragraph {
+    font-size: var(--size-12);
+  }
 
-    .main-page .main-page-section:last-of-type .angle-down {
-      display: none;
-    }
+  .main-page .main-page-section:last-of-type .angle-down {
+    display: none;
+  }
 
-    .main-page-section .main-page-cta-btn {
-      font-size: var(--size-12);
-    }
-
+  .main-page-section .main-page-cta-btn {
+    font-size: var(--size-12);
+  }
 }
 
 @media only screen and (max-width: 767px) {
-
   .main-page-section .main-page-text-container {
     max-width: 100%;
   }
@@ -289,15 +283,13 @@
     .main-page-content-container
     .main-page-text-container
     .studio-single-socials {
-        height: 50%;
-    }
-    .main-page-section .main-page-text-container article {
-        max-width: 80%;
-    }
+    height: 50%;
+  }
+  .main-page-section .main-page-text-container article {
+    max-width: 80%;
+  }
 
-    .main-page-section article .main-page-text-container-paragraph {
-      max-width: 100%;
-    }
+  .main-page-section article .main-page-text-container-paragraph {
+    max-width: 100%;
+  }
 }
-
-

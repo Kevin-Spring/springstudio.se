@@ -2,7 +2,19 @@ import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 //Writing out the html content and adding animations to the content
-export const StudioPageContent = ({ id, title, content, acf }) => {
+export const StudioPageContent = ({
+  title,
+  content,
+  content2,
+  content3,
+  content4,
+  content5,
+  button,
+  background,
+  btn,
+  btnUrl,
+  btnTitle,
+}) => {
   const revealText = useRef([]);
   revealText.current = [];
 
@@ -41,7 +53,7 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
   return (
     <>
       <div className="studio-page-content-container">
-        {acf.background && 
+        {/* {acf.background && 
           <picture>
             <source
               srcSet={`${acf.background.sizes["1536x1536"]} 1200w , ${acf.background.url} 2x`}
@@ -57,25 +69,49 @@ export const StudioPageContent = ({ id, title, content, acf }) => {
             />
             <img data-src={acf.background.sizes.large} alt="background" />
           </picture>
-        }
+        } */}
+        <img src={background} alt="background" />
         <div className="studio-page-text-container">
-          <header ref={addToRefTexts}>
+          {title && (
+            <header ref={addToRefTexts}>
+              <h3>{title}</h3>
+            </header>
+          )}
+          {content && (
+            <article ref={addToRefTexts}>
+              <div className="studio-info">
+                {content && <p>{content}</p>}
+                {content2 && <p>{content2}</p>}
+                {content3 && <p>{content3}</p>}
+                {content4 && <p>{content4}</p>}
+              </div>
+            </article>
+          )}
+          {btn && (
+            <div className="btn-container">
+              <Link to={btnUrl}>
+                <div ref={addToRefTexts} className="studio-btn">
+                  {btn}
+                </div>
+              </Link>
+
+              {/* <Link to={acf.link_studio.url && acf.link_studio.url}>
+              <div ref={addToRefTexts} className="studio-btn">
+                {acf.link_studio.title && acf.link_studio.title}
+              </div>
+            </Link> */}
+            </div>
+          )}
+          {/* <header ref={addToRefTexts}>
             <h3>{acf.title && acf.title}</h3>
-          </header>
-          <article ref={addToRefTexts}>
-            {/* When rendering acf text editors html markup follows the content, hence why wordpress content is rendered instead */}
+          </header> */}
+          {/* <article ref={addToRefTexts}>
+            // When rendering acf text editors html markup follows the content, hence why wordpress content is rendered instead
             <div
               className="studio-info"
               dangerouslySetInnerHTML={{ __html: content.rendered }}
             />
-          </article>
-          <div className="btn-container">
-            <Link to={acf.link_studio.url && acf.link_studio.url}>
-              <div ref={addToRefTexts} className="studio-btn">
-                {acf.link_studio.title && acf.link_studio.title}
-              </div>
-            </Link>
-          </div>
+          </article> */}
         </div>
       </div>
     </>

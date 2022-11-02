@@ -1,6 +1,6 @@
 .primary-nav-container {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   width: 100vw;
 }
 
@@ -13,7 +13,7 @@
   opacity: 1;
   top: 50vh;
   padding: 0 calc(15px + (25 - 15) * (100vw - 320px) / 1120);
-  z-index: 999;
+  z-index: 99;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -110,7 +110,7 @@
 }
 
 .primary-nav-container-curtain .hamburger:before,
-.primary-nav-container-curtain .hamburger:after  {
+.primary-nav-container-curtain .hamburger:after {
   transition: background-color 0.2s ease-in-out 0.2s;
 }
 
@@ -125,7 +125,7 @@
 .primary-nav-container-curtain.light .hamburger,
 .primary-nav-container-curtain.light .hamburger:before,
 .primary-nav-container-curtain.light .hamburger:after {
-  background: var(--off-white);
+  background: var(--white);
 }
 
 .primary-nav-container-curtain .hamburger:before,
@@ -197,7 +197,7 @@
   z-index: 20;
   top: 0;
   left: 0;
-  background-color: var(--off-white);
+  background-color: var(--white);
   opacity: 0.98;
   overflow-x: hidden;
   transition: var(--long-trans);
@@ -241,7 +241,7 @@
   max-width: 33.333%;
 }
 
-.primary-nav-container-curtain .overlay-content a:not(.submenu-item){
+.primary-nav-container-curtain .overlay-content a:not(.submenu-item) {
   flex: 0 0 25%;
   max-width: 25%;
 }
@@ -283,28 +283,28 @@
 
 .primary-nav-container-curtain .nav-contacts-container {
   flex: 0 0 100%;
-    display: flex;
-    gap: var(--size-10);
-    max-width: 100%;
-    flex-flow: row wrap;
+  display: flex;
+  gap: var(--size-10);
+  max-width: 100%;
+  flex-flow: row wrap;
 }
 
 .primary-nav-container-curtain .nav-contact {
   display: flex;
-    align-items: center;
-    flex: 0 0 100%;
-    max-width: 100%;
+  align-items: center;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .primary-nav-container-curtain .overlay-content .nav-contact a {
   font-size: var(--size-15);
-    flex: 0 0 100%;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    gap: var(--size-10);
-    padding-top: 0;
-    padding-bottom: var(--size-10);
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--size-10);
+  padding-top: 0;
+  padding-bottom: var(--size-10);
 }
 
 /* Angles */
@@ -402,7 +402,6 @@
     display: inline-block;
     width: auto;
   }
-  
 }
 
 @media only screen and (max-width: 479px) {
