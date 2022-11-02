@@ -43,7 +43,7 @@ export const MainPageChapter = (
               titleH1={true}
               background={Background_1}
               cta={"Contact"}
-              ctaLink={"/studios"}
+              ctaLink={"/booking"}
             />
             <AngleDown />
           </section>
@@ -56,8 +56,8 @@ export const MainPageChapter = (
                 "Spring Studio provides rental studios for commercials, television, music rehearsals, film and photography productions. We are conveniently located just 15 minutes from Stockholm city, in Sätra."
               }
               background={Background_2}
-              cta={"Contact"}
-              ctaLink={"/studios"}
+              cta={"Say hi"}
+              ctaLink={"/booking"}
             />
             <AngleDown />
           </section>
