@@ -1,5 +1,6 @@
 import React from "react";
 import { StudioSingle } from "../components/StudioSingle";
+import { Helmet } from "react-helmet";
 // import { endpoints } from '../endpoints/endpoints'
 import slide_1 from "../assets/img/studio_2_slider/IMG_5198_Lowres-1024x683.webp";
 import slide_2 from "../assets/img/studio_2_slider/IMG_5199_Lowres-1024x683.webp";
@@ -25,6 +26,19 @@ import floorplan_image from "../assets/img/floorplan/Spring_studio_planritning(E
 export const Studio2 = ({ transition }) => {
   return (
     <>
+      <Helmet>
+        <title>Spring Studio | Studio 2</title>
+        <meta
+          name="description"
+          content=" Studio 2 offers a 250 square meter wide creative area and allows a smooth workflow for productions with a large amount of gear or large sets."
+        />
+        <meta property="og:title" content="Spring Studio | Studio 2" />
+        <meta
+          property="og:description"
+          content=" Studio 2 offers a 250 square meter wide creative area and allows a smooth workflow for productions with a large amount of gear or large sets."
+        />
+        <link rel="canonical" href="https://springstudio.se/studio/2" />
+      </Helmet>
       <StudioSingle
         /* content={url} */ transition={transition}
         title={"STUDIO"}

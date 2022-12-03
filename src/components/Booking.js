@@ -62,11 +62,11 @@ export const Booking = () => {
       {loading ? <StaticLoading /> : <PageTransition />}
       {/* <PageTransition /> */}
       {posts.map((post) => {
-        const { id, title, /* content */ acf } = post;
+        const { id, title /* content  acf */ } = post;
         return (
           <article className="book-studio-section" key={id}>
             <div className="book-studio-content-container">
-              {acf.background && (
+              {/* {acf.background && (
                 <picture>
                   <source
                     srcSet={`${acf.background.sizes["1536x1536"]} 1200w , ${acf.background.url} 2x`}
@@ -82,7 +82,7 @@ export const Booking = () => {
                   />
                   <img src={acf.background.sizes.large} alt="background" />
                 </picture>
-              )}
+              )} */}
               <motion.div
                 initial="initial"
                 animate="animate"

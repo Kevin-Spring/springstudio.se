@@ -70,11 +70,11 @@ export const MainPageContent = ({
             {content && (
               <article ref={addToRefTexts}>
                 <div className="main-page-text-container-paragraph">
-                  {heading && <h4>{heading}</h4>}
+                  {heading && <h3 className="p-h4">{heading}</h3>}
                   {content && <p>{content}</p>}
-                  {heading2 && <h4>{heading2}</h4>}
+                  {heading2 && <h5 className="p-h4">{heading2}</h5>}
                   {content2 && <p>{content2}</p>}
-                  {heading3 && <h4>{heading3}</h4>}
+                  {heading3 && <h6 className="p-h4">{heading3}</h6>}
                   {content3 && <p>{content3}</p>}
                 </div>
               </article>

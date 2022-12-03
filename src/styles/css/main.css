@@ -210,6 +210,15 @@ h3 {
   font-size: var(--h3);
 }
 
+.p-h1,
+.p-h2,
+.p-h3,
+.p-h4,
+.p-h5,
+.p-h6 {
+  font-size: var(--article);
+}
+
 a {
   color: inherit;
   text-decoration: none;

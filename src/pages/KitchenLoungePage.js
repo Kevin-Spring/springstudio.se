@@ -1,5 +1,6 @@
 import React from "react";
 import { StudioSingle } from "../components/StudioSingle";
+import { Helmet } from "react-helmet";
 // import { endpoints } from '../endpoints/endpoints'
 import slide_1 from "../assets/img/lounge_slider/IMG_5082_Lowres-1024x683.jpeg";
 import slide_2 from "../assets/img/lounge_slider/Studio_BO3_0948-HDRLowres-1024x683.jpeg";
@@ -16,6 +17,19 @@ import floorplan_image from "../assets/img/lounge_slider/Studio_BO4_9981-HDRlowr
 export const KitchenLoungePage = ({ transition }) => {
   return (
     <>
+      <Helmet>
+        <title>Spring Studio | Lounge</title>
+        <meta
+          name="description"
+          content="Set up catering in our kitchen or take some time off set and enjoy our lounge with stuffed with games, fresh drinks or hot drinks!"
+        />
+        <meta property="og:title" content="Spring Studio | Lounge" />
+        <meta
+          property="og:description"
+          content="Set up catering in our kitchen or take some time off set and enjoy our lounge with stuffed with games, fresh drinks or hot drinks!"
+        />
+        <link rel="canonical" href="https://springstudio.se/lounge" />
+      </Helmet>
       <StudioSingle
         /* content={url} */ transition={transition}
         title={"LOUNGE"}
