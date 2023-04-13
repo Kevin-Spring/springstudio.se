@@ -93,34 +93,34 @@ export const Navbar = () => {
           <ul>
             {/* Conditionally rendering navbar and setting correct menu items depending on page location using custom hooks */}
             {navbarItems.leftItem && (
-              <NavLink
-                className={
-                  overlay
-                    ? "navbar-left-item navbar-item dark"
-                    : "navbar-left-item navbar-item"
-                }
-                to={{ pathname: navbarPaths.leftArrow }}
-              >
-                <li>
+              <li>
+                <NavLink
+                  className={
+                    overlay
+                      ? "navbar-left-item navbar-item dark"
+                      : "navbar-left-item navbar-item"
+                  }
+                  to={{ pathname: navbarPaths.leftArrow }}
+                >
                   <IoTriangleOutline className="angle angle-left" />
                   <span>{navbarItems.leftItem}</span>
-                </li>
-              </NavLink>
+                </NavLink>
+              </li>
             )}
             {navbarItems.rightItem && (
-              <NavLink
-                className={
-                  overlay
-                    ? "navbar-right-item navbar-item dark"
-                    : "navbar-right-item navbar-item"
-                }
-                to={{ pathname: navbarPaths.rightArrow }}
-              >
-                <li>
+              <li>
+                <NavLink
+                  className={
+                    overlay
+                      ? "navbar-right-item navbar-item dark"
+                      : "navbar-right-item navbar-item"
+                  }
+                  to={{ pathname: navbarPaths.rightArrow }}
+                >
                   <span>{navbarItems.rightItem}</span>
                   <IoTriangleOutline className="angle angle-right" />
-                </li>
-              </NavLink>
+                </NavLink>
+              </li>
             )}
           </ul>
         </div>

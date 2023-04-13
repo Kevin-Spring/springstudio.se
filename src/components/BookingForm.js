@@ -293,7 +293,7 @@ export const BookingForm = ({ motionForm }) => {
                 labelContent={"Phone*"}
               />
 
-              <h3 className="form__group__header"> Book Studio</h3>
+              <h2 className="form__group__header"> Book Studio</h2>
               <div className="form__group field">
                 <InputField
                   classNameGroup={
@@ -406,7 +406,7 @@ export const BookingForm = ({ motionForm }) => {
                     labelContent={"Organization Number"}
                   />
 
-                  <h3 className="form__group__header">Studio</h3>
+                  <h2 className="form__group__header">Studio</h2>
                   <div className="form__group field">
                     <InputField
                       classNameGroup={"form__field-select"}
@@ -503,7 +503,7 @@ export const BookingForm = ({ motionForm }) => {
                     labelContent={"Booking Date To:"}
                   />
 
-                  <h3 className="form__group__header">Working Hours</h3>
+                  <h2 className="form__group__header">Working Hours</h2>
 
                   <InputField
                     classNameGroup={"form__group field"}
@@ -544,9 +544,9 @@ export const BookingForm = ({ motionForm }) => {
                   className="form-inner form-inner-selects"
                 >
                   <div className="form__group field">
-                    <h3 className="form__group__selects-header">
+                    <h2 className="form__group__selects-header">
                       Audio Recording
-                    </h3>
+                    </h2>
 
                     <InputField
                       classNameGroup={"form__field-select"}
@@ -590,7 +590,7 @@ export const BookingForm = ({ motionForm }) => {
                   </div>
 
                   <div className="form__group field">
-                    <h3 className="form__group__selects-header">Catering</h3>
+                    <h2 className="form__group__selects-header">Catering</h2>
 
                     <InputField
                       classNameGroup={"form__field-select"}
@@ -640,7 +640,7 @@ export const BookingForm = ({ motionForm }) => {
               {booking.bookStudio &&
               (booking.studio1 || booking.studio2 || booking.studio3) ? (
                 <motion.div variants={motionForm} className="form-inner">
-                  <h3 className="form__group__header">Production Type</h3>
+                  <h2 className="form__group__header">Production Type</h2>
                   <div className="form__group field">
                     <InputField
                       classNameGroup={"form__field-select"}
@@ -712,7 +712,7 @@ export const BookingForm = ({ motionForm }) => {
               (booking.studio1 || booking.studio2 || booking.studio3) &&
               booking.bookStudio ? (
                 <motion.div variants={motionForm} className="form-inner">
-                  <h3 className="form__group__header">Work Type</h3>
+                  <h2 className="form__group__header">Work Type</h2>
                   <div className="form__group field">
                     <InputField
                       classNameGroup={"form__field-select"}
@@ -758,7 +758,7 @@ export const BookingForm = ({ motionForm }) => {
               ) : (
                 ""
               )}
-              <h3 className="form__group__header">Message</h3>
+              <h2 className="form__group__header">Message</h2>
               <div className="form-inner">
                 <div className="form__group field large">
                   <textarea
