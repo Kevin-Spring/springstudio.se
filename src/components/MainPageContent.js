@@ -72,9 +72,9 @@ export const MainPageContent = ({
                 <div className="main-page-text-container-paragraph">
                   {heading && <h3 className="p-h4">{heading}</h3>}
                   {content && <p>{content}</p>}
-                  {heading2 && <h5 className="p-h4">{heading2}</h5>}
+                  {heading2 && <h3 className="p-h4">{heading2}</h3>}
                   {content2 && <p>{content2}</p>}
-                  {heading3 && <h6 className="p-h4">{heading3}</h6>}
+                  {heading3 && <h3 className="p-h4">{heading3}</h3>}
                   {content3 && <p>{content3}</p>}
                 </div>
               </article>

@@ -47,7 +47,7 @@ const text = {
     y: 80,
     transition: {
       duration: 1,
-      ease: [0.87, 0, 0.13, 1],
+      ease: [0.87, 0, 0.13, 0],
     },
   },
 };

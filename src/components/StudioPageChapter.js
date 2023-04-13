@@ -56,7 +56,7 @@ export const StudioPageChapter = () =>
                   content2={"FLOOR AREA: 110M²"}
                   content3={"CEILING HEIGHT: 7M"}
                   content4={"ELECTRICAL SUPPLY: 1X16A, 1X32A, 1X63A"}
-                  btn={"See more"}
+                  btn={"To studio 3"}
                   btnUrl={"/studio/3"}
                 />
                 <AngleDown />
@@ -71,7 +71,7 @@ export const StudioPageChapter = () =>
                   content2={"FLOOR AREA: 250M²"}
                   content3={"CEILING HEIGHT: 7M"}
                   content4={"ELECTRICAL SUPPLY: 1X16A, 1X32A, 1X63A"}
-                  btn={"See more"}
+                  btn={"To studio 2"}
                   btnUrl={"/studio/2"}
                 />
                 <AngleDown />
@@ -87,7 +87,7 @@ export const StudioPageChapter = () =>
                   content3={"CEILING HEIGHT: 7M"}
                   content4={"ELECTRICAL SUPPLY: 1X16A, 1X32A, 1X63A"}
                   content5={"LARGE WINDOWS TO THE WEST"}
-                  btn={"See more"}
+                  btn={"To studio 1"}
                   btnUrl={"/studio/1"}
                 />
                 <AngleDown />
