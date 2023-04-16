@@ -80,6 +80,14 @@
   left: auto;
 }
 
+.studio-single-slider-sec .slick-slide {
+  cursor: grab;
+}
+
+.studio-single-slider-sec .slick-slide:active {
+  cursor: grabbing;
+}
+
 .studio-single-slider-sec .slick-list,
 .studio-single-slider-sec .slick-track,
 .studio-single-slider-sec .slick-slide,

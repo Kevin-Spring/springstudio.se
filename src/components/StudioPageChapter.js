@@ -2,9 +2,36 @@ import React from "react";
 import { AngleDown } from "./AngleDown";
 import ReactFullpage from "@fullpage/react-fullpage";
 import { StudioPageContent } from "./StudioPageContent";
-import Background_1 from "../assets/img/IMG_5140_Lowres.webp";
-import Background_2 from "../assets/img/IMG_5198_Lowres.webp";
-import Background_3 from "../assets/img/IMG_5286_Lowres.webp";
+
+function importAll(importedItem) {
+  let images = {};
+  importedItem.keys().forEach((item, index) => {
+    images[item.replace("./", "")] = importedItem(item);
+  });
+  return images;
+}
+
+const images_chapter_1 = importAll(
+  require.context(
+    "../assets/img/studio_page/chapter_1/",
+    false,
+    /\.(png|jpe?g|svg|webp)$/
+  )
+);
+const images_chapter_2 = importAll(
+  require.context(
+    "../assets/img/studio_page/chapter_2/",
+    false,
+    /\.(png|jpe?g|svg|webp)$/
+  )
+);
+const images_chapter_3 = importAll(
+  require.context(
+    "../assets/img/studio_page/chapter_3/",
+    false,
+    /\.(png|jpe?g|svg|webp)$/
+  )
+);
 
 export const StudioPageChapter = () =>
   /*{
@@ -50,7 +77,16 @@ export const StudioPageChapter = () =>
                 className={"main-section fullpage studio-page-section section"}
               >
                 <StudioPageContent
-                  background={Background_3}
+                  background={[
+                    images_chapter_1["chapter_1,w_730.jpg"],
+                    images_chapter_1["chapter_1,w_730.webp"],
+                    images_chapter_1["chapter_1,w_1281.jpg"],
+                    images_chapter_1["chapter_1,w_1275.webp"],
+                    images_chapter_1["chapter_1,w_1692.jpg"],
+                    images_chapter_1["chapter_1,w_1839.webp"],
+                    images_chapter_1["chapter_1,w_2048.jpg"],
+                    images_chapter_1["chapter_1,w_2048.webp"],
+                  ]}
                   title={"studio 3"}
                   content={"THE TINIER ONE WITH A HUGE CYCLORAMA WALL."}
                   content2={"FLOOR AREA: 110M²"}
@@ -65,7 +101,16 @@ export const StudioPageChapter = () =>
                 className={"main-section fullpage studio-page-section section"}
               >
                 <StudioPageContent
-                  background={Background_2}
+                  background={[
+                    images_chapter_2["chapter_2,w_730.jpg"],
+                    images_chapter_2["chapter_2,w_730.webp"],
+                    images_chapter_2["chapter_2,w_1281.jpg"],
+                    images_chapter_2["chapter_2,w_1275.webp"],
+                    images_chapter_2["chapter_2,w_1692.jpg"],
+                    images_chapter_2["chapter_2,w_1839.webp"],
+                    images_chapter_2["chapter_2,w_2048.jpg"],
+                    images_chapter_2["chapter_2,w_2048.webp"],
+                  ]}
                   title={"studio 2"}
                   content={"THE ONE WITH THE FLOOR AND BOXING OPPORTUNITY."}
                   content2={"FLOOR AREA: 250M²"}
@@ -80,7 +125,16 @@ export const StudioPageChapter = () =>
                 className={"main-section fullpage studio-page-section section"}
               >
                 <StudioPageContent
-                  background={Background_1}
+                  background={[
+                    images_chapter_3["chapter_3,w_730.jpg"],
+                    images_chapter_3["chapter_3,w_730.webp"],
+                    images_chapter_3["chapter_3,w_1281.jpg"],
+                    images_chapter_3["chapter_3,w_1275.webp"],
+                    images_chapter_3["chapter_3,w_1692.jpg"],
+                    images_chapter_3["chapter_3,w_1839.webp"],
+                    images_chapter_3["chapter_3,w_2048.jpg"],
+                    images_chapter_3["chapter_3,w_2048.webp"],
+                  ]}
                   title={"studio 1"}
                   content={"THE ONE WITH THE WINDOWS AND DAYLIGHT."}
                   content2={"FLOOR AREA: 250M²"}

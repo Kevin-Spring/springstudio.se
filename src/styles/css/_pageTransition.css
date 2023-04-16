@@ -7,7 +7,8 @@
   z-index: 9999;
   width: 100vw;
   height: 100vh;
-  /* position: fixed; */
+  position: fixed;
+  right: 0;
   justify-content: center;
   align-items: center;
   display: none;
@@ -19,6 +20,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  height: max-content;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .page-transition-container .page-transition-svg #pattern {
@@ -44,13 +51,39 @@
 }
 
 .page-transition-container .page-transition-text {
-  fill: url(#pattern);
+  /* fill: url(#pattern); */
+  fill: var(--faded-black);
   position: absolute;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 3rem;
+  line-height: 3rem;
   font-weight: bold;
   top: 50%;
   left: 50%;
+  transform: translate(0, 85%);
+  opacity: 1;
+  animation: popUp 2s cubic-bezier(1, -0.03, 0.71, 1.02) forwards;
+}
+
+@keyframes popUp {
+  0% {
+    transform: translate(0, 85%);
+    opacity: 1;
+  }
+
+  30%,
+  65% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(85%, 0);
+    opacity: 0;
+  }
 }
 
 .page-transition-container .page-transition-arrow-keys {

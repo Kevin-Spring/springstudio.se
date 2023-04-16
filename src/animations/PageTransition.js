@@ -14,19 +14,19 @@ import "../styles/css/_pageTransition.css";
 const blackBox = {
   initial: {
     height: "100vh",
-    top: 0,
+    width: "100vw",
   },
   animate: {
-    height: 0,
+    width: 0,
     transition: {
       when: "afterChildren",
       duration: 0.8,
-      ease: [0.87, 0, 0.13, 1],
+      ease: [1, -0.03, 0.71, 1.02],
     },
   },
 };
 
-const textContainer = {
+/* const textContainer = {
   initial: {
     opacity: 1,
   },
@@ -37,9 +37,9 @@ const textContainer = {
       when: "afterChildren",
     },
   },
-};
+}; */
 
-const text = {
+/* const text = {
   initial: {
     y: 40,
   },
@@ -50,7 +50,7 @@ const text = {
       ease: [0.87, 0, 0.13, 0],
     },
   },
-};
+}; */
 
 const tip = {
   initial: {
@@ -59,9 +59,9 @@ const tip = {
   animate: {
     opacity: 0,
     transition: {
-      delay: 0.7,
+      delay: 1,
       duration: 0.8,
-      ease: [0.87, 0, 0.13, 1],
+      ease: [1, -0.03, 0.71, 1.02],
     },
   },
 };
@@ -88,7 +88,9 @@ export const PageTransition = () => {
           backdrop.current.classList.remove("animate")
         }
       >
-        <motion.svg variants={textContainer} className="page-transition-svg">
+        <motion.svg
+          /* variants={textContainer} */ className="page-transition-svg"
+        >
           <pattern
             id="pattern"
             width="100%"
@@ -98,7 +100,7 @@ export const PageTransition = () => {
             <rect />
 
             <motion.rect
-              variants={text}
+              // variants={text}
               className="page-transition-text-rect"
             />
           </pattern>
