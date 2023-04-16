@@ -1,16 +1,6 @@
 import React from "react";
 import { StudioSingle } from "../components/StudioSingle";
 import { Helmet } from "react-helmet";
-import gallery_image_1 from "../assets/img/studio_3_gallery/IMG_5239_Lowres-1024x683.jpeg";
-import gallery_image_2 from "../assets/img/studio_3_gallery/IMG_5241_Lowres-683x1024.jpeg";
-import gallery_image_3 from "../assets/img/studio_3_gallery/IMG_5246_Lowres-e1635175892343-1024x624.webp";
-import gallery_image_4 from "../assets/img/studio_3_gallery/IMG_5267_Lowres-1024x683.jpeg";
-import gallery_image_5 from "../assets/img/studio_3_gallery/IMG_5270_Lowres-1024x683.jpeg";
-import gallery_image_6 from "../assets/img/studio_3_gallery/IMG_5279_Lowres-1024x683.jpeg";
-import gallery_image_7 from "../assets/img/studio_3_gallery/IMG_5286_Lowres-683x1024.webp";
-import gallery_image_8 from "../assets/img/studio_3_gallery/IMG_5260_Lowres-683x1024.jpeg";
-import gallery_image_9 from "../assets/img/studio_3_gallery/IMG_5289_Lowres-e1635171406362-1024x857.jpeg";
-import floorplan_image from "../assets/img/floorplan/Spring_studio_planritning(ENG).jpg";
 // import { endpoints } from '../endpoints/endpoints'
 
 function importAll(importedItem) {
@@ -21,12 +11,24 @@ function importAll(importedItem) {
   return images;
 }
 
+const images_studio_gallery = importAll(
+  require.context(
+    "../assets/img/studio_3_gallery/",
+    false,
+    /\.(png|jpe?g|svg|webp)$/
+  )
+);
+
 const images_studio_slider = importAll(
   require.context(
     "../assets/img/studio_3_slider/",
     false,
     /\.(png|jpe?g|svg|webp)$/
   )
+);
+
+const studio_floorplan = importAll(
+  require.context("../assets/img/floorplan/", false, /\.(png|jpe?g|svg|webp)$/)
 );
 
 // const url = endpoints[9].url
@@ -59,7 +61,7 @@ export const Studio3 = ({ transition }) => {
           "Thanks to the cyclorama wall Studio 3 is encouraging work that focuses on detail and photography."
         }
         slides={true}
-        slideItems={[
+        slide_items={[
           images_studio_slider["slide_1.jpeg"],
           images_studio_slider["slide_2.jpeg"],
           images_studio_slider["slide_3.jpeg"],
@@ -81,17 +83,31 @@ export const Studio3 = ({ transition }) => {
         gallery_text={
           "Accompanied by the cyclorama wall studio 3 puts no limits on your production."
         }
-        gallery_image_1={gallery_image_1}
-        gallery_image_2={gallery_image_2}
-        gallery_image_3={gallery_image_3}
-        gallery_image_4={gallery_image_4}
-        gallery_image_5={gallery_image_5}
-        gallery_image_6={gallery_image_6}
-        gallery_image_7={gallery_image_7}
-        gallery_image_8={gallery_image_8}
-        gallery_image_9={gallery_image_9}
+        gallery_image={[
+          images_studio_gallery["gallery_1.jpeg"],
+          images_studio_gallery["gallery_2.jpeg"],
+          images_studio_gallery["gallery_3.jpg"],
+          images_studio_gallery["gallery_4.jpeg"],
+          images_studio_gallery["gallery_5.jpeg"],
+          images_studio_gallery["gallery_6.jpeg"],
+          images_studio_gallery["gallery_7.jpeg"],
+          images_studio_gallery["gallery_8.jpg"],
+          images_studio_gallery["gallery_9.jpg"],
+          images_studio_gallery["gallery_1.webp"],
+          images_studio_gallery["gallery_2.webp"],
+          images_studio_gallery["gallery_3.webp"],
+          images_studio_gallery["gallery_4.webp"],
+          images_studio_gallery["gallery_5.webp"],
+          images_studio_gallery["gallery_6.webp"],
+          images_studio_gallery["gallery_7.webp"],
+          images_studio_gallery["gallery_8.webp"],
+          images_studio_gallery["gallery_9.webp"],
+        ]}
         floorplan_title={"FLOORPLAN"}
-        floorplan_image={floorplan_image}
+        floorplan_image={[
+          studio_floorplan["floorplan.jpg"],
+          studio_floorplan["floorplan.webp"],
+        ]}
         floorplan_text={
           "THE TINIER ONE WITH A HUGE CYCLORAMA WALL. FLOOR AREA: 110M² CEILING HEIGHT: 7M ELECTRICAL SUPPLY: 1X16A 1X32A 1X63A"
         }

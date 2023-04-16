@@ -245,9 +245,8 @@
     .main-page-text-container-inner
     .main-page-text-container-paragraph {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: var(--size-20);
+    flex-direction: column;
+    gap: var(--size-5);
   }
 
   .main-page-section

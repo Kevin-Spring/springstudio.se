@@ -20,7 +20,7 @@ const blackBox = {
     width: 0,
     transition: {
       when: "afterChildren",
-      duration: 0.8,
+      duration: 0.55,
       ease: [1, -0.03, 0.71, 1.02],
     },
   },

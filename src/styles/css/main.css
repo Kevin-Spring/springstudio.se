@@ -4,8 +4,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-regular.woff2")
+  src: url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-regular.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-regular.woff")
@@ -17,8 +16,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-600.woff2")
+  src: url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-600.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-600.woff")
@@ -30,8 +28,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-700.woff2")
+  src: url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-700.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/raleway-v28-latin/raleway-v28-latin-700.woff")
@@ -44,8 +41,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/montserrat-v25-latin/montserrat-v25-latin-regular.woff2")
+  src: url("../../assets/fonts/montserrat-v25-latin/montserrat-v25-latin-regular.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/montserrat-v25-latin/montserrat-v25-latin-regular.woff")
@@ -58,8 +54,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-300.woff2")
+  src: url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-300.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-300.woff")
@@ -71,8 +66,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-regular.woff2")
+  src: url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-regular.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-regular.woff")
@@ -84,8 +78,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-500.woff2")
+  src: url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-500.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-500.woff")
@@ -97,8 +90,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local(""),
-    url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-700.woff2")
+  src: url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-700.woff2")
       format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
       url("../../assets/fonts/roboto-v30-latin/roboto-v30-latin-700.woff")
@@ -124,8 +116,8 @@
   ) !important;
 
   /* Transitions */
-  --std-trans: 0.2s ease-in-out;
-  --long-trans: 0.4s ease-in-out;
+  --std-trans: 1.1s cubic-bezier(0.23, 1, 0.32, 1);
+  --long-trans: 1.4s cubic-bezier(0.23, 1, 0.32, 1);
 
   /* Typography */
   /* --calc-size: (100vw - 320px) / 1120; */
@@ -164,6 +156,10 @@ body {
   font-family: var(--main-font);
 }
 
+body.fixed {
+  overflow: hidden;
+}
+
 body.loading {
   position: fixed;
   width: 100vw;
@@ -183,7 +179,7 @@ body nav .hamburger,
 body #fp-nav {
   opacity: 1 !important;
   visibility: visible !important;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity var(--std-trans);
   transition-delay: 2s;
 }
 
@@ -313,7 +309,7 @@ p:last-child {
 .studio-sigle-main .studio-single-socials-container {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transition: opacity var(--std-trans), transform var(--std-trans);
 }
 
 .main-page-section header.fadeIn,
@@ -332,6 +328,6 @@ p:last-child {
 
 .main-page-section .main-page-cta-btn.fadeIn,
 .studio-page .studio-btn.fadeIn {
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out,
+  transition: opacity var(--std-trans), transform var(--std-trans),
     background-color var(--std-trans);
 }

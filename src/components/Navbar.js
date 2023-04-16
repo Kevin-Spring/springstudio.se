@@ -142,57 +142,90 @@ export const Navbar = () => {
         </div>
         <div className={overlay ? "overlay open" : "overlay"}>
           <div className="overlay-content">
-            <Link className={location.pathname === "/" ? "active" : ""} to="/">
-              Home
-            </Link>
-            <Link
-              className={location.pathname === "/booking" ? "active" : ""}
-              to="/booking"
-            >
-              Contact
-            </Link>
-            <Link
-              className={location.pathname === "/studios" ? "active" : ""}
-              to="/studios"
-            >
-              Studios
-            </Link>
-            <Link
-              className={location.pathname === "/lounge" ? "active" : ""}
-              to="/lounge"
-            >
-              Lounge
-            </Link>
-            <Link
-              className={
-                location.pathname === "/studio/1"
-                  ? "submenu-item active"
-                  : "submenu-item"
-              }
-              to="/studio/1"
-            >
-              Studio 1
-            </Link>
-            <Link
-              className={
-                location.pathname === "/studio/2"
-                  ? "submenu-item active"
-                  : "submenu-item"
-              }
-              to="/studio/2"
-            >
-              Studio 2
-            </Link>
-            <Link
-              className={
-                location.pathname === "/studio/3"
-                  ? "submenu-item active"
-                  : "submenu-item"
-              }
-              to="/studio/3"
-            >
-              Studio 3
-            </Link>
+            <div className="link-wrapper">
+              <Link
+                className={
+                  location.pathname === "/" ? "menu-item active" : "menu-item"
+                }
+                to="/"
+              >
+                Home
+              </Link>
+            </div>
+            <div className="link-wrapper">
+              <Link
+                className={
+                  location.pathname === "/booking"
+                    ? "menu-item active"
+                    : "menu-item"
+                }
+                to="/booking"
+              >
+                Contact
+              </Link>
+            </div>
+            <div className="link-wrapper">
+              <Link
+                className={
+                  location.pathname === "/studios"
+                    ? "menu-item active"
+                    : "menu-item"
+                }
+                to="/studios"
+              >
+                Studios
+              </Link>
+            </div>
+            <div className="link-wrapper">
+              <Link
+                className={
+                  location.pathname === "/lounge"
+                    ? "menu-item active"
+                    : "menu-item"
+                }
+                to="/lounge"
+              >
+                Lounge
+              </Link>
+            </div>
+            <div className="submenu-items">
+              <div className="link-wrapper">
+                <Link
+                  className={
+                    location.pathname === "/studio/1"
+                      ? "submenu-item active"
+                      : "submenu-item"
+                  }
+                  to="/studio/1"
+                >
+                  Studio 1
+                </Link>
+              </div>
+              <div className="link-wrapper">
+                <Link
+                  className={
+                    location.pathname === "/studio/2"
+                      ? "submenu-item active"
+                      : "submenu-item"
+                  }
+                  to="/studio/2"
+                >
+                  Studio 2
+                </Link>
+              </div>
+              <div className="link-wrapper">
+                <Link
+                  className={
+                    location.pathname === "/studio/3"
+                      ? "submenu-item active"
+                      : "submenu-item"
+                  }
+                  to="/studio/3"
+                >
+                  Studio 3
+                </Link>
+              </div>
+            </div>
             <div className="nav-contacts-container">
               <div className="nav-contact">
                 <a href="tel:0046707467233">

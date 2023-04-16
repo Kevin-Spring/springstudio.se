@@ -124,7 +124,7 @@ export const MainPageChapter = (
             <MainPageContent
               title={"studios"}
               content={
-                "With 3 excellent studios in different sizes up to 250 sq. meters, each with its' unique features, we are sure you will find something that suits your needs and budget."
+                "With 3 excellent studios in different sizes up to 250 sq. meters, each with its unique features, we are sure you will find something that suits your needs and budget."
               }
               background={[
                 images_chapter_3["chapter_3,w_730.jpg"],

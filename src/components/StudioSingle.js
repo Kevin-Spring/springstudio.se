@@ -72,18 +72,10 @@ export const StudioSingle = ({
   slide_title,
   slide_text,
   slides,
-  slideItems,
+  slide_items,
   gallery_title,
   gallery_text,
-  gallery_image_1,
-  gallery_image_2,
-  gallery_image_3,
-  gallery_image_4,
-  gallery_image_5,
-  gallery_image_6,
-  gallery_image_7,
-  gallery_image_8,
-  gallery_image_9,
+  gallery_image,
   floorplan_title,
   floorplan_image,
   floorplan_text,
@@ -183,36 +175,36 @@ export const StudioSingle = ({
             {slides && (
               <Slider {...settings}>
                 <SlideImage
-                  displaySlide={slideItems[0]}
-                  displaySlideWebp={slideItems[8]}
+                  display_slide={slide_items[0]}
+                  display_slide_webp={slide_items[8]}
                 />
                 <SlideImage
-                  displaySlide={slideItems[1]}
-                  displaySlideWebp={slideItems[9]}
+                  display_slide={slide_items[1]}
+                  display_slide_webp={slide_items[9]}
                 />
                 <SlideImage
-                  displaySlide={slideItems[2]}
-                  displaySlideWebp={slideItems[10]}
+                  display_slide={slide_items[2]}
+                  display_slide_webp={slide_items[10]}
                 />
                 <SlideImage
-                  displaySlide={slideItems[3]}
-                  displaySlideWebp={slideItems[11]}
+                  display_slide={slide_items[3]}
+                  display_slide_webp={slide_items[11]}
                 />
                 <SlideImage
-                  displaySlide={slideItems[4]}
-                  displaySlideWebp={slideItems[12]}
+                  display_slide={slide_items[4]}
+                  display_slide_webp={slide_items[12]}
                 />
                 <SlideImage
-                  displaySlide={slideItems[5]}
-                  displaySlideWebp={slideItems[13]}
+                  display_slide={slide_items[5]}
+                  display_slide_webp={slide_items[13]}
                 />
                 <SlideImage
-                  displaySlide={slideItems[6]}
-                  displaySlideWebp={slideItems[13]}
+                  display_slide={slide_items[6]}
+                  display_slide_webp={slide_items[13]}
                 />
                 <SlideImage
-                  displaySlide={slideItems[7]}
-                  displaySlideWebp={slideItems[14]}
+                  display_slide={slide_items[7]}
+                  display_slide_webp={slide_items[14]}
                 />
               </Slider>
             )}
@@ -230,81 +222,78 @@ export const StudioSingle = ({
             </p>
 
             <div className="studio-single-photo-grid-container">
-              <div className="photo-grid-row">
-                {gallery_image_1 && (
+              {gallery_image && (
+                <div className="photo-grid-row">
                   <PhotoGridImage
                     /* imageSize={gallery_row_1.image_1.image.sizes} */
-                    image={gallery_image_1}
+                    gallery_item={gallery_image[0]}
+                    gallery_item_webp={gallery_image[9]}
                     /* metaData={gallery_row_1.image_1.meta_data} */
                   />
-                )}
 
-                {gallery_image_2 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_1.image_2.image.sizes} */
-                    image={gallery_image_2}
+                    gallery_item={gallery_image[1]}
+                    gallery_item_webp={gallery_image[10]}
                     /* metaData={gallery_row_1.image_2.meta_data} */
                   />
-                )}
 
-                {gallery_image_3 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_1.image_3.image.sizes} */
-                    image={gallery_image_3}
+                    gallery_item={gallery_image[2]}
+                    gallery_item_webp={gallery_image[11]}
                     /* metaData={gallery_row_1.image_3.meta_data} */
                   />
-                )}
-              </div>
-              <div className="photo-grid-row">
-                {gallery_image_4 && (
+                </div>
+              )}
+              {gallery_image && (
+                <div className="photo-grid-row">
                   <PhotoGridImage
                     /* imageSize={gallery_row_2.image_1.image.sizes} */
-                    image={gallery_image_4}
+                    gallery_item={gallery_image[3]}
+                    gallery_item_webp={gallery_image[12]}
                     /* metaData={gallery_row_2.image_1.meta_data} */
                   />
-                )}
 
-                {gallery_image_5 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_2.image_2.image.sizes} */
-                    image={gallery_image_5}
+                    gallery_item={gallery_image[4]}
+                    gallery_item_webp={gallery_image[13]}
                     /* metaData={gallery_row_2.image_2.meta_data} */
                   />
-                )}
 
-                {gallery_image_6 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_2.image_3.image.sizes} */
-                    image={gallery_image_6}
+                    gallery_item={gallery_image[5]}
+                    gallery_item_webp={gallery_image[14]}
                     /* metaData={gallery_row_2.image_3.meta_data} */
                   />
-                )}
-              </div>
-              <div className="photo-grid-row">
-                {gallery_image_7 && (
+                </div>
+              )}
+              {gallery_image && (
+                <div className="photo-grid-row">
                   <PhotoGridImage
                     /* imageSize={gallery_row_3.image_1.image.sizes} */
-                    image={gallery_image_7}
+                    gallery_item={gallery_image[6]}
+                    gallery_item_webp={gallery_image[15]}
                     /* metaData={gallery_row_3.image_1.meta_data} */
                   />
-                )}
 
-                {gallery_image_8 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_3.image_2.image.sizes} */
-                    image={gallery_image_8}
+                    gallery_item={gallery_image[7]}
+                    gallery_item_webp={gallery_image[16]}
                     /* metaData={gallery_row_3.image_2.meta_data} */
                   />
-                )}
 
-                {gallery_image_9 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_3.image_3.image.sizes} */
-                    image={gallery_image_9}
+                    gallery_item={gallery_image[8]}
+                    gallery_item_webp={gallery_image[17]}
                     /* metaData={gallery_row_3.image_3.meta_data} */
                   />
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -326,7 +315,23 @@ export const StudioSingle = ({
                   <source
                     srcSet={`${posts.acf.floorplan_section.floorplan_image.sizes.medium} 375w , ${posts.acf.floorplan_section.floorplan_image.sizes.large} 2x`}
                   /> */}
-                  <img src={floorplan_image} alt="floorplan" />
+
+                  <source
+                    sizes="(max-width: 2048px) 100vw, 2048px"
+                    srcSet={`${floorplan_image[1]} 730w, ${floorplan_image[1]} 1275w,${floorplan_image[1]} 1839w,${floorplan_image[1]} 2048w`}
+                    type="image/webp"
+                  />
+                  <source
+                    sizes="(max-width: 2048px) 100vw, 2048px"
+                    srcSet={`${floorplan_image[0]} 730w, ${floorplan_image[0]} 1275w,${floorplan_image[0]} 1839w,${floorplan_image[0]} 2048w`}
+                    type="image/jpg"
+                  />
+                  <img
+                    src={floorplan_image}
+                    alt="floorplan"
+                    decoding="async"
+                    loading="lazy"
+                  />
                 </picture>
               )}
             </div>

@@ -1,17 +1,29 @@
 import React from "react";
 
 export const PhotoGridImage = ({
-  /* imageSize, imageUrl, metaData */ image,
+  /* imageSize, imageUrl, metaData */ gallery_item,
+  gallery_item_webp,
 }) => {
   return (
     <div className="photo-grid-img-container">
       <div className="photo-grid-img-inner-container">
         <picture>
-          {/* <source srcSet={`${imageSize['1536x1536']} 1200w , ${imageUrl} 2x`} />
-          <source srcSet={`${imageSize['1536x1536']} 1024w , ${imageSize['2048x2048']} 2x`} />
-          <source srcSet={`${imageSize.large} 750w, ${imageSize['1536x1536']} 2x `} />
-          <source srcSet={`${imageSize.medium} 375w , ${imageSize.large} 2x`} /> */}
-          <img src={image} alt="gallery" />
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${gallery_item_webp} 730w, ${gallery_item_webp} 1275w,${gallery_item_webp} 1839w,${gallery_item_webp} 2048w`}
+            type="image/webp"
+          />
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${gallery_item} 730w, ${gallery_item} 1275w,${gallery_item} 1839w,${gallery_item} 2048w`}
+            type="image/jpg"
+          />
+          <img
+            src={gallery_item}
+            alt="slide image"
+            decoding="async"
+            loading="lazy"
+          />
         </picture>
         {/* <div className='photo-meta'>
           <p>{metaData.production_company}</p>
