@@ -72,14 +72,7 @@ export const StudioSingle = ({
   slide_title,
   slide_text,
   slides,
-  slide_1,
-  slide_2,
-  slide_3,
-  slide_4,
-  slide_5,
-  slide_6,
-  slide_7,
-  slide_8,
+  slideItems,
   gallery_title,
   gallery_text,
   gallery_image_1,
@@ -187,24 +180,40 @@ export const StudioSingle = ({
                 {slide_text}
               </p>
             </div>
-
             {slides && (
               <Slider {...settings}>
-                {slide_1 && <SlideImage slide={slide_1} />}
-
-                {slide_2 && <SlideImage slide={slide_2} />}
-
-                {slide_3 && <SlideImage slide={slide_3} />}
-
-                {slide_4 && <SlideImage slide={slide_4} />}
-
-                {slide_5 && <SlideImage slide={slide_5} />}
-
-                {slide_6 && <SlideImage slide={slide_6} />}
-
-                {slide_7 && <SlideImage slide={slide_7} />}
-
-                {slide_8 && <SlideImage slide={slide_8} />}
+                <SlideImage
+                  displaySlide={slideItems[0]}
+                  displaySlideWebp={slideItems[8]}
+                />
+                <SlideImage
+                  displaySlide={slideItems[1]}
+                  displaySlideWebp={slideItems[9]}
+                />
+                <SlideImage
+                  displaySlide={slideItems[2]}
+                  displaySlideWebp={slideItems[10]}
+                />
+                <SlideImage
+                  displaySlide={slideItems[3]}
+                  displaySlideWebp={slideItems[11]}
+                />
+                <SlideImage
+                  displaySlide={slideItems[4]}
+                  displaySlideWebp={slideItems[12]}
+                />
+                <SlideImage
+                  displaySlide={slideItems[5]}
+                  displaySlideWebp={slideItems[13]}
+                />
+                <SlideImage
+                  displaySlide={slideItems[6]}
+                  displaySlideWebp={slideItems[13]}
+                />
+                <SlideImage
+                  displaySlide={slideItems[7]}
+                  displaySlideWebp={slideItems[14]}
+                />
               </Slider>
             )}
           </section>

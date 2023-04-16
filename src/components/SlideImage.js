@@ -1,15 +1,30 @@
 import React from "react";
 
-export const SlideImage = ({ /* imageSize ,*/ slide }) => {
+export const SlideImage = ({
+  /* imageSize ,*/ displaySlide,
+  displaySlideWebp,
+}) => {
   return (
-    slide && (
+    displaySlide && (
       <div className="slick-slide-inner">
+        {console.log(displaySlide, displaySlideWebp)}
         <picture>
-          {/* <source srcSet={`${imageSize['1536x1536']} 1200w , ${imageUrl} 2x`} />
-        <source srcSet={`${imageSize['1536x1536']} 1024w , ${imageSize['2048x2048']} 2x`} />
-        <source srcSet={`${imageSize.large} 750w, ${imageSize['1536x1536']} 2x `} />
-        <source srcSet={`${imageSize.medium} 375w , ${imageSize.large} 2x`} /> */}
-          <img src={slide} alt="slide" />
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${displaySlideWebp} 730w, ${displaySlideWebp} 1275w,${displaySlideWebp} 1839w,${displaySlideWebp} 2048w`}
+            type="image/webp"
+          />
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${displaySlide} 730w, ${displaySlide} 1275w,${displaySlide} 1839w,${displaySlide} 2048w`}
+            type="image/jpg"
+          />
+          <img
+            src={displaySlide}
+            alt="slide image"
+            decoding="async"
+            loading="lazy"
+          />
         </picture>
       </div>
     )

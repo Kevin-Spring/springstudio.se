@@ -1,14 +1,6 @@
 import React from "react";
 import { StudioSingle } from "../components/StudioSingle";
 import { Helmet } from "react-helmet";
-import slide_1 from "../assets/img/studio_3_slider/IMG_5252_Lowres-1024x683.jpeg";
-import slide_2 from "../assets/img/studio_3_slider/IMG_5262_Lowres-1024x683.jpeg";
-import slide_3 from "../assets/img/studio_3_slider/IMG_5267_Lowres-1024x683.jpeg";
-import slide_4 from "../assets/img/studio_3_slider/IMG_5279_Lowres-1024x683.jpeg";
-import slide_5 from "../assets/img/studio_3_slider/Studio3_BO4_4573-HDRLowres-1024x683.jpeg";
-import slide_6 from "../assets/img/studio_3_slider/Studio3_BO4_4741-HDR-kopieraLowres-1024x683.jpeg";
-import slide_7 from "../assets/img/studio_3_slider/Studio3_BO4_4796-HDRLowres-1024x683.jpeg";
-import slide_8 from "../assets/img/studio_3_slider/Studio3_BO4_4831-HDR-kopieraLowres-1024x683.jpeg";
 import gallery_image_1 from "../assets/img/studio_3_gallery/IMG_5239_Lowres-1024x683.jpeg";
 import gallery_image_2 from "../assets/img/studio_3_gallery/IMG_5241_Lowres-683x1024.jpeg";
 import gallery_image_3 from "../assets/img/studio_3_gallery/IMG_5246_Lowres-e1635175892343-1024x624.webp";
@@ -20,6 +12,22 @@ import gallery_image_8 from "../assets/img/studio_3_gallery/IMG_5260_Lowres-683x
 import gallery_image_9 from "../assets/img/studio_3_gallery/IMG_5289_Lowres-e1635171406362-1024x857.jpeg";
 import floorplan_image from "../assets/img/floorplan/Spring_studio_planritning(ENG).jpg";
 // import { endpoints } from '../endpoints/endpoints'
+
+function importAll(importedItem) {
+  let images = {};
+  importedItem.keys().forEach((item, index) => {
+    images[item.replace("./", "")] = importedItem(item);
+  });
+  return images;
+}
+
+const images_studio_slider = importAll(
+  require.context(
+    "../assets/img/studio_3_slider/",
+    false,
+    /\.(png|jpe?g|svg|webp)$/
+  )
+);
 
 // const url = endpoints[9].url
 
@@ -51,14 +59,24 @@ export const Studio3 = ({ transition }) => {
           "Thanks to the cyclorama wall Studio 3 is encouraging work that focuses on detail and photography."
         }
         slides={true}
-        slide_1={slide_1}
-        slide_2={slide_2}
-        slide_3={slide_3}
-        slide_4={slide_4}
-        slide_5={slide_5}
-        slide_6={slide_6}
-        slide_7={slide_7}
-        slide_8={slide_8}
+        slideItems={[
+          images_studio_slider["slide_1.jpeg"],
+          images_studio_slider["slide_2.jpeg"],
+          images_studio_slider["slide_3.jpeg"],
+          images_studio_slider["slide_4.jpeg"],
+          images_studio_slider["slide_5.jpeg"],
+          images_studio_slider["slide_6.jpeg"],
+          images_studio_slider["slide_7.jpeg"],
+          images_studio_slider["slide_8.jpeg"],
+          images_studio_slider["slide_1.webp"],
+          images_studio_slider["slide_2.webp"],
+          images_studio_slider["slide_3.webp"],
+          images_studio_slider["slide_4.webp"],
+          images_studio_slider["slide_5.webp"],
+          images_studio_slider["slide_6.webp"],
+          images_studio_slider["slide_7.webp"],
+          images_studio_slider["slide_8.webp"],
+        ]}
         gallery_title={"Setting"}
         gallery_text={
           "Accompanied by the cyclorama wall studio 3 puts no limits on your production."

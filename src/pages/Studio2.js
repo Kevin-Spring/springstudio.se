@@ -2,14 +2,6 @@ import React from "react";
 import { StudioSingle } from "../components/StudioSingle";
 import { Helmet } from "react-helmet";
 // import { endpoints } from '../endpoints/endpoints'
-import slide_1 from "../assets/img/studio_2_slider/IMG_5198_Lowres-1024x683.webp";
-import slide_2 from "../assets/img/studio_2_slider/IMG_5199_Lowres-1024x683.webp";
-import slide_3 from "../assets/img/studio_2_slider/IMG_5200_Lowres-1024x683.webp";
-import slide_4 from "../assets/img/studio_2_slider/IMG_5320_Lowres-1024x683.jpeg";
-import slide_5 from "../assets/img/studio_2_slider/IMG_5322_Lowres-1024x683.jpeg";
-import slide_6 from "../assets/img/studio_2_slider/IMG_5333_Lowres-1024x683.jpeg";
-import slide_7 from "../assets/img/studio_2_slider/IMG_5337_Lowres-1024x683.jpeg";
-import slide_8 from "../assets/img/studio_2_slider/IMG_5338_Lowres-1024x683.jpeg";
 import gallery_image_1 from "../assets/img/studio_2_gallery/IMG_5177_Lowres-1024x683.webp";
 import gallery_image_2 from "../assets/img/studio_2_gallery/IMG_5183_Lowres-1024x683.webp";
 import gallery_image_3 from "../assets/img/studio_2_gallery/IMG_5198_Lowres-1024x683.webp";
@@ -21,6 +13,21 @@ import gallery_image_8 from "../assets/img/studio_2_gallery/IMG_5336_Lowres-1024
 import gallery_image_9 from "../assets/img/studio_2_gallery/IMG_5337_Lowres-1024x683.jpeg";
 import floorplan_image from "../assets/img/floorplan/Spring_studio_planritning(ENG).jpg";
 
+function importAll(importedItem) {
+  let images = {};
+  importedItem.keys().forEach((item, index) => {
+    images[item.replace("./", "")] = importedItem(item);
+  });
+  return images;
+}
+
+const images_studio_slider = importAll(
+  require.context(
+    "../assets/img/studio_2_slider/",
+    false,
+    /\.(png|jpe?g|svg|webp)$/
+  )
+);
 // const url = endpoints[8].url
 
 export const Studio2 = ({ transition }) => {
@@ -51,14 +58,24 @@ export const Studio2 = ({ transition }) => {
           "Studio 2 is the perfect studio for creative ideas. Everything from production rehearsals, living rooms on fire, to water pools has taken place in the 250 meter wide box of creative spirit."
         }
         slides={true}
-        slide_1={slide_1}
-        slide_2={slide_2}
-        slide_3={slide_3}
-        slide_4={slide_4}
-        slide_5={slide_5}
-        slide_6={slide_6}
-        slide_7={slide_7}
-        slide_8={slide_8}
+        slideItems={[
+          images_studio_slider["slide_1.jpeg"],
+          images_studio_slider["slide_2.jpeg"],
+          images_studio_slider["slide_3.jpeg"],
+          images_studio_slider["slide_4.jpeg"],
+          images_studio_slider["slide_5.jpeg"],
+          images_studio_slider["slide_6.jpeg"],
+          images_studio_slider["slide_7.jpeg"],
+          images_studio_slider["slide_8.jpeg"],
+          images_studio_slider["slide_1.webp"],
+          images_studio_slider["slide_2.webp"],
+          images_studio_slider["slide_3.webp"],
+          images_studio_slider["slide_4.webp"],
+          images_studio_slider["slide_5.webp"],
+          images_studio_slider["slide_6.webp"],
+          images_studio_slider["slide_7.webp"],
+          images_studio_slider["slide_8.webp"],
+        ]}
         gallery_title={"Setting"}
         gallery_text={
           "With its' size and being located near the tall garage doors - film, music and green screen productions is the perfect fit for Studio 2."

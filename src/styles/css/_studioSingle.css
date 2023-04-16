@@ -88,6 +88,10 @@
   cursor: grabbing;
 }
 
+.studio-single-slider-sec .slick-slider .slick-dots button:before {
+  transition: all 0.2s ease-in-out;
+}
+
 .studio-single-slider-sec .slick-list,
 .studio-single-slider-sec .slick-track,
 .studio-single-slider-sec .slick-slide,

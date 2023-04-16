@@ -104,6 +104,18 @@
   position: relative;
   transform: translateX(-50%);
   left: 50%;
+  opacity: 0;
+  animation: reveal 0.2s ease-in-out forwards;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
 
 .page-transition-container .page-transition-arrow-keys-row {
@@ -129,6 +141,52 @@
   .page-transition-arrow-keys-row
   .page-transition-arrow-key-up {
   left: 50%;
+}
+
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key,
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key-up {
+  transform: translateY(10px);
+  animation: fadeUp 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key:first-of-type {
+  animation-delay: 0.1s;
+}
+
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+.page-transition-container
+  .page-transition-arrow-keys-row
+  .page-transition-arrow-key:nth-of-type(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 @media only screen and (max-width: 980px) {

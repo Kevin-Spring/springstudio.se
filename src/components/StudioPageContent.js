@@ -73,30 +73,12 @@ export const StudioPageContent = ({
         <picture>
           <source
             sizes="(max-width: 2048px) 100vw, 2048px"
-            srcSet={
-              background[1] +
-              " 730w," +
-              background[3] +
-              " 1275w," +
-              background[5] +
-              " 1839w," +
-              background[7] +
-              " 2048w,"
-            }
+            srcSet={`${background[1]} 730w, ${background[3]} 1275w,${background[5]} 1839w,${background[7]} 2048w`}
             type="image/webp"
           />
           <source
             sizes="(max-width: 2048px) 100vw, 2048px"
-            srcSet={
-              background[0] +
-              " 730w," +
-              background[2] +
-              " 1281w," +
-              background[4] +
-              " 1692w," +
-              background[6] +
-              " 2048w,"
-            }
+            srcSet={`${background[0]} 730w, ${background[2]} 1275w,${background[4]} 1839w,${background[6]} 2048w`}
             type="image/jpg"
           />
           <img
