@@ -231,8 +231,8 @@ p:last-child {
 #fp-nav {
   top: var(--size-30) !important;
   right: var(--size-30) !important;
-  transform: none;
-  width: var(--size-60);
+  transform: none !important;
+  width: var(--size-60) !important;
 }
 
 #fp-nav ul {
@@ -244,12 +244,12 @@ p:last-child {
 }
 
 #fp-nav ul li {
-  width: 100%;
-  display: inline-flex;
+  width: 100% !important;
+  display: inline-flex !important;
   align-items: center;
-  margin: 0;
-  height: var(--size-15);
-  width: var(--size-15);
+  margin: 0 !important;
+  height: var(--size-15) !important;
+  width: var(--size-15) !important;
 }
 
 #fp-nav ul li a span {
@@ -261,9 +261,9 @@ p:last-child {
 }
 
 #fp-nav ul li .fp-tooltip {
-  color: var(--off-white);
-  font-family: var(--main-font);
-  font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);
+  color: var(--off-white) !important;
+  font-family: var(--main-font) !important;
+  font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120) !important;
   text-transform: uppercase;
   line-height: 1.4;
   letter-spacing: 1.3px;

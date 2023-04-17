@@ -281,7 +281,7 @@
 
 .primary-nav-container-curtain .overlay-content .menu-item,
 .primary-nav-container-curtain .overlay-content .submenu-item {
-  transform: translateY(100%);
+  transform: translateY(150%);
   opacity: 1;
 }
 
