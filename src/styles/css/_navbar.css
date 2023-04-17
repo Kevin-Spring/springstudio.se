@@ -234,7 +234,7 @@
 }
 
 .primary-nav-container-curtain .overlay.open {
-  width: 50vw;
+  width: 30vw;
   transition-delay: 0s;
 }
 
@@ -456,6 +456,10 @@
 @media only screen and (max-width: 980px) {
   .primary-nav-container {
     display: none;
+  }
+
+  .primary-nav-container-curtain .overlay.open {
+    width: 60vw;
   }
 
   .primary-nav-container .primary-nav ul .navbar-item.dark,

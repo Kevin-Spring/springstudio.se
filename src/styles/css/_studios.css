@@ -34,7 +34,8 @@
   .studio-page-section:first-of-type
   .btn-container.fadeIn
   .studio-btn {
-  transition-delay: 2.2s;
+  transition: opacity var(--std-trans) 2.1s, transform var(--std-trans) 2.1s,
+    background-color var(--std-trans);
 }
 
 .studio-page .studio-page-section .studio-page-content-container img {
@@ -89,6 +90,7 @@
 
 .studio-page .btn-container .studio-btn:hover {
   background: rgba(0, 0, 0, 0.1);
+  opacity: 1;
 }
 
 .studio-page .studio-page-section:last-of-type .angle-down {

@@ -129,6 +129,7 @@
   --size-15: calc(10px + (15 - 10) * (100vw - 320px) / 1120);
   --size-12: calc(8px + (12 - 8) * (100vw - 320px) / 1120);
   --size-10: calc(8px + (10 - 8) * (100vw - 320px) / 1120);
+  --size-5: calc(3px + (5 - 3) * (100vw - 320px) / 1120);
 }
 
 * {
@@ -228,8 +229,27 @@ p:last-child {
 }
 
 #fp-nav {
-  top: var(--size-60) !important;
+  top: var(--size-30) !important;
   right: var(--size-30) !important;
+  transform: none;
+  width: var(--size-60);
+}
+
+#fp-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-10);
+  width: 100%;
+  align-items: flex-end;
+}
+
+#fp-nav ul li {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  height: var(--size-15);
+  width: var(--size-15);
 }
 
 #fp-nav ul li a span {
@@ -247,19 +267,8 @@ p:last-child {
   text-transform: uppercase;
   line-height: 1.4;
   letter-spacing: 1.3px;
-}
-
-@media only screen and (max-width: 980px) {
-  #fp-nav {
-    top: 66px !important;
-  }
-}
-
-@media only screen and (max-width: 980px) and (orientation: landscape) {
-  #fp-nav {
-    top: 14vh !important;
-    right: 5vw !important;
-  }
+  font-weight: 500;
+  top: 0;
 }
 
 @keyframes bounceUp {
@@ -317,15 +326,12 @@ p:last-child {
   transition-delay: 0.2s;
 }
 
-.main-page-section .main-page-cta-btn-link .main-page-cta-btn {
-  transition-delay: 0.4s;
-}
-
 .main-page-section .studio-single-socials {
   opacity: 0;
   transition: opacity var(--std-trans);
 }
 
+.main-page-section .main-page-cta-btn-link .main-page-cta-btn,
 .studio-page .btn-container .studio-btn,
 .studio-sigle-main .text-wrapper .booking-link {
   opacity: 0;
@@ -348,20 +354,24 @@ p:last-child {
   transform: translateY(0px);
 }
 
+.main-page-section .main-page-cta-btn-link.fadeIn .main-page-cta-btn,
 .main-page-section .studio-single-socials.fadeIn,
 .studio-page .btn-container.fadeIn .studio-btn,
 .studio-sigle-main .text-wrapper.fadeIn .booking-link {
   opacity: 1;
 }
 
-.main-page-section .main-page-cta-btn.fadeIn,
+.main-page-section:not(:first-of-type)
+  .main-page-cta-btn-link.fadeIn
+  .main-page-cta-btn,
 .studio-page .btn-container.fadeIn .studio-btn,
 .studio-sigle-main .text-wrapper.button-wrapper.fadeIn .booking-link {
-  transition: opacity var(--std-trans), transform var(--std-trans),
+  transition: opacity var(--std-trans) 0.4s, transform var(--std-trans) 0.4s,
     background-color var(--std-trans);
 }
 
 .studio-page .btn-container.fadeIn,
-.studio-sigle-main .text-wrapper.button-wrapper.fadeIn {
+.studio-sigle-main .text-wrapper.button-wrapper.fadeIn,
+.main-page-section .main-page-cta-btn-link.fadeIn {
   overflow: visible;
 }
