@@ -22,6 +22,21 @@
   z-index: -1;
 }
 
+.studio-page .studio-page-section:first-of-type :is(h1, h2, h3, h4, h5, h6) {
+  transition-delay: 1.8s;
+}
+
+.studio-page .studio-page-section:first-of-type .studio-info {
+  transition-delay: 2s;
+}
+
+.studio-page
+  .studio-page-section:first-of-type
+  .btn-container.fadeIn
+  .studio-btn {
+  transition-delay: 2.2s;
+}
+
 .studio-page .studio-page-section .studio-page-content-container img {
   position: absolute;
   top: 0;
@@ -79,6 +94,11 @@
 .studio-page .studio-page-section:last-of-type .angle-down {
   transform: rotate(0deg);
   animation: bounceUp 2s infinite;
+}
+
+.studio-page .studio-page-section:last-of-type .angle-down:hover {
+  opacity: 0.6;
+  animation-play-state: paused;
 }
 
 @media only screen and (max-width: 980px) and (orientation: landscape) {

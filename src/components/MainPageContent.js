@@ -108,10 +108,12 @@ export const MainPageContent = ({
             )}
 
             {cta && (
-              <Link to={ctaLink} className="main-page-cta-btn-link">
-                <div ref={addToRefTexts} className="main-page-cta-btn">
-                  {cta}
-                </div>
+              <Link
+                ref={addToRefTexts}
+                to={ctaLink}
+                className="main-page-cta-btn-link"
+              >
+                <div className="main-page-cta-btn">{cta}</div>
               </Link>
             )}
 

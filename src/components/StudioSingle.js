@@ -165,12 +165,12 @@ export const StudioSingle = ({
         {slide_title && (
           <section className="studio-single-slider-sec">
             <div className="text-container">
-              <h2 ref={addToFadeInTexts} className="fade">
-                {slide_title}
-              </h2>
-              <p ref={addToFadeInTexts} className="fade">
-                {slide_text}
-              </p>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <h2 className="fade">{slide_title}</h2>
+              </div>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <p className="fade">{slide_text}</p>
+              </div>
             </div>
             {slides && (
               <Slider {...settings}>
@@ -213,13 +213,13 @@ export const StudioSingle = ({
 
         {gallery_title && (
           <section className="studio-single-image-grid-sec">
-            <h2 ref={addToFadeInTexts} className="fade">
-              {gallery_title}
-            </h2>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <h2 className="fade">{gallery_title}</h2>
+            </div>
 
-            <p ref={addToFadeInTexts} className="fade">
-              {gallery_text}
-            </p>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <p className="fade">{gallery_text}</p>
+            </div>
 
             <div className="studio-single-photo-grid-container">
               {gallery_image && (
@@ -336,27 +336,30 @@ export const StudioSingle = ({
               )}
             </div>
             <div className="text-container">
-              <h2 ref={addToFadeInTexts} className="fade">
-                {floorplan_title}
-              </h2>
-              <p ref={addToFadeInTexts} className="fade">
-                {floorplan_text}
-              </p>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <h2 className="fade">{floorplan_title}</h2>
+              </div>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <p className="fade">{floorplan_text}</p>
+              </div>
             </div>
           </section>
         )}
 
         {contact_title && (
           <section className="studio-single-contact-section">
-            <h2 ref={addToFadeInTexts} className="fade">
-              {contact_title}
-            </h2>
-            <p ref={addToFadeInTexts} className="fade">
-              {contact_text}
-            </p>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <h2 className="fade">{contact_title}</h2>
+            </div>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <p className="fade">{contact_text}</p>
+            </div>
 
             {contact_cta_url && (
-              <div ref={addToFadeInTexts} className="fade">
+              <div
+                ref={addToFadeInTexts}
+                className="text-wrapper button-wrapper"
+              >
                 <Link to={contact_cta_url} className="booking-link">
                   {contact_cta_title}{" "}
                   <VscArrowRight className="booking-arrow" />

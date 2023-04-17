@@ -93,7 +93,7 @@ export const MainPageChapter = (
               cta={"Contact"}
               ctaLink={"/booking"}
             />
-            <AngleDown />
+            <AngleDown fullpage_api={fullpageApi} />
           </section>
           <section
             className={"panel fullpage main-section main-page-section section"}
@@ -116,7 +116,7 @@ export const MainPageChapter = (
               cta={"Say hi"}
               ctaLink={"/booking"}
             />
-            <AngleDown />
+            <AngleDown fullpage_api={fullpageApi} />
           </section>
           <section
             className={"panel fullpage main-section main-page-section section"}
@@ -139,7 +139,7 @@ export const MainPageChapter = (
               cta={"Have a Look"}
               ctaLink={"/studios"}
             />
-            <AngleDown />
+            <AngleDown fullpage_api={fullpageApi} />
           </section>
           <section
             className={"panel fullpage main-section main-page-section section"}
@@ -162,7 +162,7 @@ export const MainPageChapter = (
               cta={"To the lounge"}
               ctaLink={"/lounge"}
             />
-            <AngleDown />
+            <AngleDown fullpage_api={fullpageApi} />
           </section>
           <section
             className={"panel fullpage main-section main-page-section section"}
@@ -195,7 +195,7 @@ export const MainPageChapter = (
               mapsLong={17.9286279}
               mapsLat={59.2846681}
             />
-            <AngleDown />
+            <AngleDown fullpage_api={fullpageApi} reverse={true} />
           </section>
         </ReactFullpage.Wrapper>
       );

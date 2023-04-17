@@ -53,7 +53,7 @@
 .studio-single-slider-sec .text-container {
   flex: 0 0 50%;
   max-width: 50%;
-  padding: 6vw 12vw;
+  padding: 6vw 4vw 6vw 8vw;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -314,7 +314,6 @@
 
 .studio-single-socials-container {
   width: 70%;
-  opacity: 0;
 }
 
 .studio-single-socials-container .studio-single-socials {

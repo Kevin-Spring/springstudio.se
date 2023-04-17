@@ -105,11 +105,9 @@ export const StudioPageContent = ({
             </article>
           )}
           {btn && (
-            <div className="btn-container">
+            <div ref={addToRefTexts} className="btn-container">
               <Link to={btnUrl}>
-                <div ref={addToRefTexts} className="studio-btn">
-                  {btn}
-                </div>
+                <div className="studio-btn">{btn}</div>
               </Link>
 
               {/* <Link to={acf.link_studio.url && acf.link_studio.url}>

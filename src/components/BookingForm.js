@@ -59,9 +59,9 @@ export const BookingForm = ({ motionForm }) => {
 
   //Scroll to errror or success validation messages
   const executeScroll = () => {
+    console.log("scroll");
     window.scroll({
       top: 100,
-      left: 100,
       behavior: "smooth",
     });
   };

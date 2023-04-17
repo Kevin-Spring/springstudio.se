@@ -95,7 +95,7 @@ export const StudioPageChapter = () =>
                   btn={"To studio 3"}
                   btnUrl={"/studio/3"}
                 />
-                <AngleDown />
+                <AngleDown fullpage_api={fullpageApi} />
               </section>
               <section
                 className={"main-section fullpage studio-page-section section"}
@@ -119,7 +119,7 @@ export const StudioPageChapter = () =>
                   btn={"To studio 2"}
                   btnUrl={"/studio/2"}
                 />
-                <AngleDown />
+                <AngleDown fullpage_api={fullpageApi} />
               </section>
               <section
                 className={"main-section fullpage studio-page-section section"}
@@ -144,7 +144,7 @@ export const StudioPageChapter = () =>
                   btn={"To studio 1"}
                   btnUrl={"/studio/1"}
                 />
-                <AngleDown />
+                <AngleDown fullpage_api={fullpageApi} reverse={true} />
               </section>
             </ReactFullpage.Wrapper>
           );
