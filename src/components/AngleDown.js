@@ -3,7 +3,7 @@ import { IoTriangleOutline } from "react-icons/io5";
 import { useLocation } from "react-router";
 
 /* Component for the navigation arrow on bottom of page */
-export const AngleDown = () => {
+export const AngleDown = ({ fullpage_api, reverse }) => {
   const location = useLocation();
 
   const angle = useRef(null);
@@ -18,6 +18,11 @@ export const AngleDown = () => {
             ? "angle angle-down dark"
             : "angle angle-down"
         }
+        onClick={() => {
+          reverse
+            ? fullpage_api.moveSectionUp()
+            : fullpage_api.moveSectionDown();
+        }}
       >
         <IoTriangleOutline />
       </div>

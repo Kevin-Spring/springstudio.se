@@ -70,7 +70,24 @@ export const StudioPageContent = ({
             <img data-src={acf.background.sizes.large} alt="background" />
           </picture>
         } */}
-        <img src={background} alt="background" />
+        <picture>
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${background[1]} 730w, ${background[3]} 1275w,${background[5]} 1839w,${background[7]} 2048w`}
+            type="image/webp"
+          />
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${background[0]} 730w, ${background[2]} 1275w,${background[4]} 1839w,${background[6]} 2048w`}
+            type="image/jpg"
+          />
+          <img
+            src={background[6]}
+            alt="background"
+            decoding="async"
+            loading="lazy"
+          />
+        </picture>
         <div className="studio-page-text-container">
           {title && (
             <header ref={addToRefTexts}>
@@ -88,11 +105,9 @@ export const StudioPageContent = ({
             </article>
           )}
           {btn && (
-            <div className="btn-container">
+            <div ref={addToRefTexts} className="btn-container">
               <Link to={btnUrl}>
-                <div ref={addToRefTexts} className="studio-btn">
-                  {btn}
-                </div>
+                <div className="studio-btn">{btn}</div>
               </Link>
 
               {/* <Link to={acf.link_studio.url && acf.link_studio.url}>

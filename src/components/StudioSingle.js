@@ -72,25 +72,10 @@ export const StudioSingle = ({
   slide_title,
   slide_text,
   slides,
-  slide_1,
-  slide_2,
-  slide_3,
-  slide_4,
-  slide_5,
-  slide_6,
-  slide_7,
-  slide_8,
+  slide_items,
   gallery_title,
   gallery_text,
-  gallery_image_1,
-  gallery_image_2,
-  gallery_image_3,
-  gallery_image_4,
-  gallery_image_5,
-  gallery_image_6,
-  gallery_image_7,
-  gallery_image_8,
-  gallery_image_9,
+  gallery_image,
   floorplan_title,
   floorplan_image,
   floorplan_text,
@@ -180,31 +165,47 @@ export const StudioSingle = ({
         {slide_title && (
           <section className="studio-single-slider-sec">
             <div className="text-container">
-              <h2 ref={addToFadeInTexts} className="fade">
-                {slide_title}
-              </h2>
-              <p ref={addToFadeInTexts} className="fade">
-                {slide_text}
-              </p>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <h2 className="fade">{slide_title}</h2>
+              </div>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <p className="fade">{slide_text}</p>
+              </div>
             </div>
-
             {slides && (
               <Slider {...settings}>
-                {slide_1 && <SlideImage slide={slide_1} />}
-
-                {slide_2 && <SlideImage slide={slide_2} />}
-
-                {slide_3 && <SlideImage slide={slide_3} />}
-
-                {slide_4 && <SlideImage slide={slide_4} />}
-
-                {slide_5 && <SlideImage slide={slide_5} />}
-
-                {slide_6 && <SlideImage slide={slide_6} />}
-
-                {slide_7 && <SlideImage slide={slide_7} />}
-
-                {slide_8 && <SlideImage slide={slide_8} />}
+                <SlideImage
+                  display_slide={slide_items[0]}
+                  display_slide_webp={slide_items[8]}
+                />
+                <SlideImage
+                  display_slide={slide_items[1]}
+                  display_slide_webp={slide_items[9]}
+                />
+                <SlideImage
+                  display_slide={slide_items[2]}
+                  display_slide_webp={slide_items[10]}
+                />
+                <SlideImage
+                  display_slide={slide_items[3]}
+                  display_slide_webp={slide_items[11]}
+                />
+                <SlideImage
+                  display_slide={slide_items[4]}
+                  display_slide_webp={slide_items[12]}
+                />
+                <SlideImage
+                  display_slide={slide_items[5]}
+                  display_slide_webp={slide_items[13]}
+                />
+                <SlideImage
+                  display_slide={slide_items[6]}
+                  display_slide_webp={slide_items[13]}
+                />
+                <SlideImage
+                  display_slide={slide_items[7]}
+                  display_slide_webp={slide_items[14]}
+                />
               </Slider>
             )}
           </section>
@@ -212,90 +213,87 @@ export const StudioSingle = ({
 
         {gallery_title && (
           <section className="studio-single-image-grid-sec">
-            <h2 ref={addToFadeInTexts} className="fade">
-              {gallery_title}
-            </h2>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <h2 className="fade">{gallery_title}</h2>
+            </div>
 
-            <p ref={addToFadeInTexts} className="fade">
-              {gallery_text}
-            </p>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <p className="fade">{gallery_text}</p>
+            </div>
 
             <div className="studio-single-photo-grid-container">
-              <div className="photo-grid-row">
-                {gallery_image_1 && (
+              {gallery_image && (
+                <div className="photo-grid-row">
                   <PhotoGridImage
                     /* imageSize={gallery_row_1.image_1.image.sizes} */
-                    image={gallery_image_1}
+                    gallery_item={gallery_image[0]}
+                    gallery_item_webp={gallery_image[9]}
                     /* metaData={gallery_row_1.image_1.meta_data} */
                   />
-                )}
 
-                {gallery_image_2 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_1.image_2.image.sizes} */
-                    image={gallery_image_2}
+                    gallery_item={gallery_image[1]}
+                    gallery_item_webp={gallery_image[10]}
                     /* metaData={gallery_row_1.image_2.meta_data} */
                   />
-                )}
 
-                {gallery_image_3 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_1.image_3.image.sizes} */
-                    image={gallery_image_3}
+                    gallery_item={gallery_image[2]}
+                    gallery_item_webp={gallery_image[11]}
                     /* metaData={gallery_row_1.image_3.meta_data} */
                   />
-                )}
-              </div>
-              <div className="photo-grid-row">
-                {gallery_image_4 && (
+                </div>
+              )}
+              {gallery_image && (
+                <div className="photo-grid-row">
                   <PhotoGridImage
                     /* imageSize={gallery_row_2.image_1.image.sizes} */
-                    image={gallery_image_4}
+                    gallery_item={gallery_image[3]}
+                    gallery_item_webp={gallery_image[12]}
                     /* metaData={gallery_row_2.image_1.meta_data} */
                   />
-                )}
 
-                {gallery_image_5 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_2.image_2.image.sizes} */
-                    image={gallery_image_5}
+                    gallery_item={gallery_image[4]}
+                    gallery_item_webp={gallery_image[13]}
                     /* metaData={gallery_row_2.image_2.meta_data} */
                   />
-                )}
 
-                {gallery_image_6 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_2.image_3.image.sizes} */
-                    image={gallery_image_6}
+                    gallery_item={gallery_image[5]}
+                    gallery_item_webp={gallery_image[14]}
                     /* metaData={gallery_row_2.image_3.meta_data} */
                   />
-                )}
-              </div>
-              <div className="photo-grid-row">
-                {gallery_image_7 && (
+                </div>
+              )}
+              {gallery_image && (
+                <div className="photo-grid-row">
                   <PhotoGridImage
                     /* imageSize={gallery_row_3.image_1.image.sizes} */
-                    image={gallery_image_7}
+                    gallery_item={gallery_image[6]}
+                    gallery_item_webp={gallery_image[15]}
                     /* metaData={gallery_row_3.image_1.meta_data} */
                   />
-                )}
 
-                {gallery_image_8 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_3.image_2.image.sizes} */
-                    image={gallery_image_8}
+                    gallery_item={gallery_image[7]}
+                    gallery_item_webp={gallery_image[16]}
                     /* metaData={gallery_row_3.image_2.meta_data} */
                   />
-                )}
 
-                {gallery_image_9 && (
                   <PhotoGridImage
                     /* imageSize={gallery_row_3.image_3.image.sizes} */
-                    image={gallery_image_9}
+                    gallery_item={gallery_image[8]}
+                    gallery_item_webp={gallery_image[17]}
                     /* metaData={gallery_row_3.image_3.meta_data} */
                   />
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -317,32 +315,51 @@ export const StudioSingle = ({
                   <source
                     srcSet={`${posts.acf.floorplan_section.floorplan_image.sizes.medium} 375w , ${posts.acf.floorplan_section.floorplan_image.sizes.large} 2x`}
                   /> */}
-                  <img src={floorplan_image} alt="floorplan" />
+
+                  <source
+                    sizes="(max-width: 2048px) 100vw, 2048px"
+                    srcSet={`${floorplan_image[1]} 730w, ${floorplan_image[1]} 1275w,${floorplan_image[1]} 1839w,${floorplan_image[1]} 2048w`}
+                    type="image/webp"
+                  />
+                  <source
+                    sizes="(max-width: 2048px) 100vw, 2048px"
+                    srcSet={`${floorplan_image[0]} 730w, ${floorplan_image[0]} 1275w,${floorplan_image[0]} 1839w,${floorplan_image[0]} 2048w`}
+                    type="image/jpg"
+                  />
+                  <img
+                    src={floorplan_image}
+                    alt="floorplan"
+                    decoding="async"
+                    loading="lazy"
+                  />
                 </picture>
               )}
             </div>
             <div className="text-container">
-              <h2 ref={addToFadeInTexts} className="fade">
-                {floorplan_title}
-              </h2>
-              <p ref={addToFadeInTexts} className="fade">
-                {floorplan_text}
-              </p>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <h2 className="fade">{floorplan_title}</h2>
+              </div>
+              <div ref={addToFadeInTexts} className="text-wrapper">
+                <p className="fade">{floorplan_text}</p>
+              </div>
             </div>
           </section>
         )}
 
         {contact_title && (
           <section className="studio-single-contact-section">
-            <h2 ref={addToFadeInTexts} className="fade">
-              {contact_title}
-            </h2>
-            <p ref={addToFadeInTexts} className="fade">
-              {contact_text}
-            </p>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <h2 className="fade">{contact_title}</h2>
+            </div>
+            <div ref={addToFadeInTexts} className="text-wrapper">
+              <p className="fade">{contact_text}</p>
+            </div>
 
             {contact_cta_url && (
-              <div ref={addToFadeInTexts} className="fade">
+              <div
+                ref={addToFadeInTexts}
+                className="text-wrapper button-wrapper"
+              >
                 <Link to={contact_cta_url} className="booking-link">
                   {contact_cta_title}{" "}
                   <VscArrowRight className="booking-arrow" />

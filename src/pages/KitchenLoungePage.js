@@ -2,15 +2,22 @@ import React from "react";
 import { StudioSingle } from "../components/StudioSingle";
 import { Helmet } from "react-helmet";
 // import { endpoints } from '../endpoints/endpoints'
-import slide_1 from "../assets/img/lounge_slider/IMG_5082_Lowres-1024x683.jpeg";
-import slide_2 from "../assets/img/lounge_slider/Studio_BO3_0948-HDRLowres-1024x683.jpeg";
-import slide_3 from "../assets/img/lounge_slider/Studio_BO3_1133-HDRLowres-1024x683.jpeg";
-import slide_4 from "../assets/img/lounge_slider/Studio_BO3_1195-HDRLowres-1024x683.jpeg";
-import slide_5 from "../assets/img/lounge_slider/Studio_BO3_1203-HDRLowres-1024x683.jpeg";
-import slide_6 from "../assets/img/lounge_slider/Studio_BO3_1238-HDRLowres-1024x683.jpeg";
-import slide_7 from "../assets/img/lounge_slider/Studio_BO3_1307-HDRLowres-1024x683.jpeg";
-import slide_8 from "../assets/img/lounge_slider/Studio_BO3_1334-HDRLowres-1024x683.jpeg";
-import floorplan_image from "../assets/img/lounge_slider/Studio_BO4_9981-HDRlowres-1024x683.webp";
+
+function importAll(importedItem) {
+  let images = {};
+  importedItem.keys().forEach((item, index) => {
+    images[item.replace("./", "")] = importedItem(item);
+  });
+  return images;
+}
+
+const lounge_slider = importAll(
+  require.context(
+    "../assets/img/lounge_slider/",
+    false,
+    /\.(png|jpe?g|svg|webp)$/
+  )
+);
 
 // const url = endpoints[10].url
 
@@ -42,16 +49,29 @@ export const KitchenLoungePage = ({ transition }) => {
           "Take some time off set and treat yourself with a nice cup of coffee or liven up the mood and challenge a colleague to a game of foosball or dart found around the building."
         }
         slides={true}
-        slide_1={slide_1}
-        slide_2={slide_2}
-        slide_3={slide_3}
-        slide_4={slide_4}
-        slide_5={slide_5}
-        slide_6={slide_6}
-        slide_7={slide_7}
-        slide_8={slide_8}
+        slide_items={[
+          lounge_slider["slide_1.jpeg"],
+          lounge_slider["slide_2.jpeg"],
+          lounge_slider["slide_3.jpeg"],
+          lounge_slider["slide_4.jpeg"],
+          lounge_slider["slide_5.jpeg"],
+          lounge_slider["slide_6.jpeg"],
+          lounge_slider["slide_7.jpeg"],
+          lounge_slider["slide_8.jpeg"],
+          lounge_slider["slide_1.webp"],
+          lounge_slider["slide_2.webp"],
+          lounge_slider["slide_3.webp"],
+          lounge_slider["slide_4.webp"],
+          lounge_slider["slide_5.webp"],
+          lounge_slider["slide_6.webp"],
+          lounge_slider["slide_7.webp"],
+          lounge_slider["slide_8.webp"],
+        ]}
         floorplan_title={"THE OVERLOOK"}
-        floorplan_image={floorplan_image}
+        floorplan_image={[
+          lounge_slider["slide_9.jpg"],
+          lounge_slider["slide_9.webp"],
+        ]}
         floorplan_text={
           "The kitchen offers a view of both Studio 2 and 3 and allows easy communication between the set and the lounge."
         }

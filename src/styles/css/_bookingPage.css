@@ -1,7 +1,7 @@
 .book-studio-section {
   color: var(--faded-black);
   background: var(--white);
-  min-height: 100vh;
+  padding-top: calc(100px + (180 - 100) * (100vw - 320px) / 1120);
 }
 
 .book-studio-section .book-studio-section-header {

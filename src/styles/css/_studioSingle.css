@@ -53,7 +53,7 @@
 .studio-single-slider-sec .text-container {
   flex: 0 0 50%;
   max-width: 50%;
-  padding: 6vw 12vw;
+  padding: 6vw 4vw 6vw 8vw;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -78,6 +78,18 @@
 .studio-single-slider-sec button.slick-next {
   right: 0;
   left: auto;
+}
+
+.studio-single-slider-sec .slick-slide {
+  cursor: grab;
+}
+
+.studio-single-slider-sec .slick-slide:active {
+  cursor: grabbing;
+}
+
+.studio-single-slider-sec .slick-slider .slick-dots button:before {
+  transition: all 0.2s ease-in-out;
 }
 
 .studio-single-slider-sec .slick-list,
@@ -296,13 +308,16 @@
   right: calc(8px + (10 - 8) * (100vw - 320px) / 1120);
 }
 
+.studio-sigle-main .text-wrapper.button-wrapper.fadeIn .booking-link:hover {
+  opacity: 0.7;
+}
+
 .studio-single-contact-section .booking-link:hover .booking-arrow {
   right: calc(3px + (5 - 3) * (100vw - 320px) / 1120);
 }
 
 .studio-single-socials-container {
   width: 70%;
-  opacity: 0;
 }
 
 .studio-single-socials-container .studio-single-socials {

@@ -3,16 +3,17 @@ import GoogleMaps from "./GoogleMaps";
 import { Link } from "react-router-dom";
 import { Socials } from "./Socials";
 
-//Writing out the html content and adding animations to the content
 export const MainPageContent = ({
   title,
   background,
   content,
-  content2,
-  content3,
+  email_1,
+  email_2,
+  phone,
+  address,
   heading,
-  heading2,
-  heading3,
+  heading_2,
+  heading_3,
   cta,
   facebook,
   instagram,
@@ -24,7 +25,7 @@ export const MainPageContent = ({
   const revealText = useRef([]);
   revealText.current = [];
 
-  //A ref which all textcontent is stored in an array
+  // A ref which all textcontent is stored in an array
   const addToRefTexts = (el) => {
     if (el && !revealText.current.includes(el)) {
       revealText.current.push(el);
@@ -38,9 +39,6 @@ export const MainPageContent = ({
       threshold: 0.9,
     };
 
-    // Add observer old way couldn't make it work with array & react-use useIntersection
-    //Observing which items are in viewport and adding animation class accordingly
-    //takes in config settings to determine when content is in viewpage and leaves
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((item) => {
         if (item.intersectionRatio > 0.9) {
@@ -49,8 +47,6 @@ export const MainPageContent = ({
       });
     }, config);
 
-    // For texts animation
-    //Looking through text items-array and adding the observer to them
     revealText.current.forEach((text) => {
       observer.observe(text);
     });
@@ -58,7 +54,25 @@ export const MainPageContent = ({
   return (
     <>
       <div className="main-page-content-container">
-        <img src={background} alt="background" />
+        <picture>
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${background[1]} 730w, ${background[3]} 1275w,${background[5]} 1839w,${background[7]} 2048w`}
+            type="image/webp"
+          />
+          <source
+            sizes="(max-width: 2048px) 100vw, 2048px"
+            srcSet={`${background[0]} 730w, ${background[2]} 1275w,${background[4]} 1839w,${background[6]} 2048w`}
+            type="image/jpg"
+          />
+          <img
+            src={background[6]}
+            alt="background"
+            decoding="async"
+            loading="lazy"
+          />
+        </picture>
+
         <div className="main-page-text-container">
           <div className="main-page-text-container-inner">
             {title && (
@@ -70,21 +84,36 @@ export const MainPageContent = ({
             {content && (
               <article ref={addToRefTexts}>
                 <div className="main-page-text-container-paragraph">
-                  {heading && <h3 className="p-h4">{heading}</h3>}
                   {content && <p>{content}</p>}
-                  {heading2 && <h3 className="p-h4">{heading2}</h3>}
-                  {content2 && <p>{content2}</p>}
-                  {heading3 && <h3 className="p-h4">{heading3}</h3>}
-                  {content3 && <p>{content3}</p>}
+                </div>
+              </article>
+            )}
+
+            {email_1 && (
+              <article ref={addToRefTexts}>
+                <div className="main-page-text-container-paragraph">
+                  {heading && <h3 className="p-h4">{heading}</h3>}
+                  {email_1 && <a href={"mailto:" + { email_1 }}>{email_1}</a>}
+                  {phone && <a href={"tel:" + { phone }}>{phone}</a>}
+                  {heading_2 && <h3 className="p-h4">{heading_2}</h3>}
+                  {email_2 && <a href={"mailto:" + { email_2 }}>{email_2}</a>}
+                  {heading_3 && <h3 className="p-h4">{heading_3}</h3>}
+                  {address && (
+                    <a href="https://goo.gl/maps/oALdgUpjJZAPVK1Z8">
+                      {address}
+                    </a>
+                  )}
                 </div>
               </article>
             )}
 
             {cta && (
-              <Link to={ctaLink} className="main-page-cta-btn-link">
-                <div ref={addToRefTexts} className="main-page-cta-btn">
-                  {cta}
-                </div>
+              <Link
+                ref={addToRefTexts}
+                to={ctaLink}
+                className="main-page-cta-btn-link"
+              >
+                <div className="main-page-cta-btn">{cta}</div>
               </Link>
             )}
 
