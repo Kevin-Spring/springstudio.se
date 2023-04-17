@@ -1,10 +1,7 @@
-.booking-page {
-  padding-top: calc(100px + (150 - 100) * (100vw - 320px) / 1120);
-}
-
 .book-studio-section {
   color: var(--faded-black);
   background: var(--white);
+  padding-top: calc(100px + (180 - 100) * (100vw - 320px) / 1120);
 }
 
 .book-studio-section .book-studio-section-header {

@@ -64,15 +64,40 @@
   animation: popUp 2s cubic-bezier(1, -0.03, 0.71, 1.02) forwards;
 }
 
+.page-transition-container .page-transition-text-wrapper {
+  position: absolute;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: max-content;
+  padding: var(--size-20);
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-transition-container .page-transition-text-title {
+  color: var(--faded-black);
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  transform: translate(0, 150%);
+  opacity: 1;
+  animation: popUp 2s cubic-bezier(1, -0.03, 0.71, 1.02) forwards;
+}
+
 @keyframes popUp {
   0% {
-    transform: translate(0, 85%);
+    transform: translate(0, 150%);
     opacity: 1;
   }
 
   30%,
   65% {
-    transform: translate(0, 0);
+    transform: translate(0, 0%);
     opacity: 1;
   }
 
@@ -81,7 +106,7 @@
   }
 
   100% {
-    transform: translate(85%, 0);
+    transform: translate(85%, 0%);
     opacity: 0;
   }
 }

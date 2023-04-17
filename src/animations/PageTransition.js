@@ -88,8 +88,8 @@ export const PageTransition = () => {
           backdrop.current.classList.remove("animate")
         }
       >
-        <motion.svg
-          /* variants={textContainer} */ className="page-transition-svg"
+        {/* <motion.svg
+          // variants={textContainer} className="page-transition-svg"
         >
           <pattern
             id="pattern"
@@ -112,7 +112,10 @@ export const PageTransition = () => {
           >
             Spring Studio
           </text>
-        </motion.svg>
+        </motion.svg> */}
+        <div className="page-transition-text-wrapper">
+          <span className="page-transition-text-title">Spring Studio</span>
+        </div>
         <motion.div variants={tip} className="page-transition-arrow-keys">
           <div className="page-transition-arrow-keys-title">Tip:</div>
           <div className="page-transition-arrow-keys-row">

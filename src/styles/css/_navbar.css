@@ -312,8 +312,13 @@
 }
 
 .primary-nav-container-curtain .overlay-content .menu-item.active {
+  padding-left: var(--size-15);
   text-decoration: underline;
   text-underline-offset: var(--size-10);
+}
+
+.primary-nav-container-curtain .overlay-content .menu-item.active:hover {
+  padding-left: var(--size-20);
 }
 
 .primary-nav-container-curtain .overlay-content .submenu-item.active:before {

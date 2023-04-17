@@ -308,6 +308,10 @@
   right: calc(8px + (10 - 8) * (100vw - 320px) / 1120);
 }
 
+.studio-sigle-main .text-wrapper.button-wrapper.fadeIn .booking-link:hover {
+  opacity: 0.7;
+}
+
 .studio-single-contact-section .booking-link:hover .booking-arrow {
   right: calc(3px + (5 - 3) * (100vw - 320px) / 1120);
 }

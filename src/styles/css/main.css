@@ -355,7 +355,8 @@ p:last-child {
 }
 
 .main-page-section .main-page-cta-btn.fadeIn,
-.studio-page .btn-container.fadeIn .studio-btn {
+.studio-page .btn-container.fadeIn .studio-btn,
+.studio-sigle-main .text-wrapper.button-wrapper.fadeIn .booking-link {
   transition: opacity var(--std-trans), transform var(--std-trans),
     background-color var(--std-trans);
 }
