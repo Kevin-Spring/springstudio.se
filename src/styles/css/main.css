@@ -268,7 +268,7 @@ p:last-child {
   line-height: 1.4;
   letter-spacing: 1.3px;
   font-weight: 500;
-  top: 0;
+  top: 0 !important;
 }
 
 @keyframes bounceUp {
