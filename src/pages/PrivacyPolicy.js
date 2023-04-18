@@ -9,12 +9,17 @@ export const PrivacyPolicy = () => {
     <motion.section exit={{ opacity: 0 }} className="policy-section">
       {/* WORK IN PROGRESS - style this*/}
       <Helmet>
-        <title>Spring Studio</title>
+        <title>
+          Studios prepped for all creative needs in Stockholm - Policy
+        </title>
         <meta
           name="description"
           content="Spring Studio provides rental studios for commercials, television, music rehearsals, film and photography productions."
         />
-        <meta property="og:title" content="Spring Studio" />
+        <meta
+          property="og:title"
+          content="Studios prepped for all creative needs in Stockholm - Policy"
+        />
         <meta
           property="og:description"
           content="Spring Studio provides rental studios for commercials, television, music rehearsals, film and photography productions."

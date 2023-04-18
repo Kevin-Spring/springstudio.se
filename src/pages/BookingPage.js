@@ -9,12 +9,17 @@ export const BookingPage = ({ transition }) => {
   return (
     <>
       <Helmet>
-        <title>Spring Studio | Booking</title>
+        <title>
+          Studios prepped for all creative needs in Stockholm - Booking
+        </title>
         <meta
           name="description"
           content="Contact us or book your studio here - whether it would be for green screen productions, music rehearsals or fashion shoots. Let us know!"
         />
-        <meta property="og:title" content="Spring Studio | Booking" />
+        <meta
+          property="og:title"
+          content="Studios prepped for all creative needs in Stockholm - Booking"
+        />
         <meta
           property="og:description"
           content="Contact us or book your studio here - whether it would be for green screen productions, music rehearsals or fashion shoots. Let us know!"

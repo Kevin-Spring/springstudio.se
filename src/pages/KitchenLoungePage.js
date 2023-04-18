@@ -25,12 +25,17 @@ export const KitchenLoungePage = ({ transition }) => {
   return (
     <>
       <Helmet>
-        <title>Spring Studio | Lounge</title>
+        <title>
+          Studios prepped for all creative needs in Stockholm - Lounge
+        </title>
         <meta
           name="description"
           content="Set up catering in our kitchen or take some time off set and enjoy our lounge with stuffed with games, fresh drinks or hot drinks!"
         />
-        <meta property="og:title" content="Spring Studio | Lounge" />
+        <meta
+          property="og:title"
+          content="Studios prepped for all creative needs in Stockholm - Lounge"
+        />
         <meta
           property="og:description"
           content="Set up catering in our kitchen or take some time off set and enjoy our lounge with stuffed with games, fresh drinks or hot drinks!"

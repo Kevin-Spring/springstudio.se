@@ -37,12 +37,17 @@ export const Studio3 = ({ transition }) => {
   return (
     <>
       <Helmet>
-        <title>Spring Studio | Studio 3</title>
+        <title>
+          Studios prepped for all creative needs in Stockholm - Studio 3
+        </title>
         <meta
           name="description"
           content="Studio 3 is accompanied by a large cyclorama wall, making it the largest studio through the lens of a camera."
         />
-        <meta property="og:title" content="Spring Studio | Studio 3" />
+        <meta
+          property="og:title"
+          content="Studios prepped for all creative needs in Stockholm - Studio 3"
+        />
         <meta
           property="og:description"
           content="Studio 3 is accompanied by a large cyclorama wall, making it the largest studio through the lens of a camera."

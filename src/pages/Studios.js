@@ -28,12 +28,17 @@ export const Studios = ({ transition }) => {
 
       <PageTransition />
       <Helmet>
-        <title>Spring Studio | Studios</title>
+        <title>
+          Studios prepped for all creative needs in Stockholm - Studios
+        </title>
         <meta
           name="description"
           content="Studios to cover your needs - whether it would be for green screen productions, music rehearsals or fashion shoots. Take a look!"
         />
-        <meta property="og:title" content="Spring Studio | Studios" />
+        <meta
+          property="og:title"
+          content="Studios prepped for all creative needs in Stockholm - Studios"
+        />
         <meta
           property="og:description"
           content="Studios to cover your needs - whether it would be for green screen productions, music rehearsals or fashion shoots. Take a look!"

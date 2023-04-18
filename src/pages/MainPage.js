@@ -24,12 +24,17 @@ export const MainPage = ({ transition }) => {
         <PageTransition />
         {/* {!loading && <MainPageChapter posts={posts} loading={loading} />} */}
         <Helmet>
-          <title>Spring Studio</title>
+          <title>
+            Studios prepped for all creative needs in Stockholm - Spring Studio
+          </title>
           <meta
             name="description"
             content="Spring Studio - provides rental studios for commercials, television, music rehearsals, film and photography productions located in Stockholm."
           />
-          <meta property="og:title" content="Spring Studio" />
+          <meta
+            property="og:title"
+            content="Studios prepped for all creative needs in Stockholm - Spring Studio"
+          />
           <meta
             property="og:description"
             content="Spring Studio - provides rental studios for commercials, television, music rehearsals, film and photography productions located in Stockholm."
