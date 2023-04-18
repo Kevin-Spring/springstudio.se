@@ -41,7 +41,7 @@ export const Studio2 = ({ transition }) => {
         </title>
         <meta
           name="description"
-          content=" Studio 2 offers a 250 square meter wide creative area and allows a smooth workflow for productions with a large amount of gear or large sets."
+          content="Studio 2 offers a 250 square meter wide creative area and allows a smooth workflow for productions with a large amount of gear or large sets."
         />
         <meta
           property="og:title"
@@ -49,7 +49,7 @@ export const Studio2 = ({ transition }) => {
         />
         <meta
           property="og:description"
-          content=" Studio 2 offers a 250 square meter wide creative area and allows a smooth workflow for productions with a large amount of gear or large sets."
+          content="Studio 2 offers a 250 square meter wide creative area and allows a smooth workflow for productions with a large amount of gear or large sets."
         />
         <link rel="canonical" href="https://springstudio.se/studio/2" />
       </Helmet>
