@@ -46,12 +46,15 @@ export const Found404 = ({ transition }) => {
     <motion.main exit={{ opacity: 0 }}>
       <PageTransition />
       <Helmet>
-        <title>Spring Studio</title>
+        <title>Studios prepped for all creative needs in Stockholm - 404</title>
         <meta
           name="description"
           content="Spring Studio provides rental studios for commercials, television, music rehearsals, film and photography productions."
         />
-        <meta property="og:title" content="Spring Studio" />
+        <meta
+          property="og:title"
+          content="Studios prepped for all creative needs in Stockholm - 404"
+        />
         <meta
           property="og:description"
           content="Spring Studio provides rental studios for commercials, television, music rehearsals, film and photography productions."

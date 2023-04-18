@@ -37,12 +37,17 @@ export const Studio1 = ({ transition }) => {
   return (
     <>
       <Helmet>
-        <title>Spring Studio | Studio 1</title>
+        <title>
+          Studios prepped for all creative needs in Stockholm - Studio 1
+        </title>
         <meta
           name="description"
           content="With a floor size of 250 square meters and it's large fullwidth windows located to the southwest, Studio 1 offers a great daylight solution."
         />
-        <meta property="og:title" content="Spring Studio | Studio 1" />
+        <meta
+          property="og:title"
+          content="Studios prepped for all creative needs in Stockholm - Studio 1"
+        />
         <meta
           property="og:description"
           content="With a floor size of 250 square meters and it's large fullwidth windows located to the southwest, Studio 1 offers a great daylight solution."
