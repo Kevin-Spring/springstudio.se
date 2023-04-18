@@ -3,7 +3,7 @@
 }
 
 .studio-sigle-main .studio-single-hero-sec {
-  min-height: 100vh;
+  min-height: 100lvh;
   display: flex;
   align-items: center;
   padding-top: var(--size-50);
@@ -425,8 +425,8 @@
 
 @media only screen and (max-width: 767px) {
   .studio-sigle-main .studio-single-hero-sec .studio-single-hero-header {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 68%;
+    max-width: 68%;
   }
 
   .studio-sigle-main .studio-single-image-grid-sec p {

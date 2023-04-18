@@ -13,11 +13,10 @@ import "../styles/css/_pageTransition.css";
 //Setting up animation options for each element beforehand
 const blackBox = {
   initial: {
-    height: "100vh",
-    width: "100vw",
+    x: "0%",
   },
   animate: {
-    width: 0,
+    x: "100%",
     transition: {
       when: "afterChildren",
       duration: 0.55,

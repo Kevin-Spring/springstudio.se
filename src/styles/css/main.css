@@ -222,6 +222,7 @@ p {
   line-height: 1.4;
   letter-spacing: 1.3px;
   padding-bottom: var(--size-20);
+  font-size: var(--article);
 }
 
 p:last-child {
