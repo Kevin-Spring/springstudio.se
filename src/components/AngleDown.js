@@ -19,9 +19,7 @@ export const AngleDown = ({ fullpage_api, reverse }) => {
             : "angle angle-down"
         }
         onClick={() => {
-          reverse
-            ? fullpage_api.moveSectionUp()
-            : fullpage_api.moveSectionDown();
+          reverse ? fullpage_api.moveTo(1) : fullpage_api.moveSectionDown();
         }}
       >
         <IoTriangleOutline />
