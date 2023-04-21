@@ -20,7 +20,7 @@ export const PhotoGridImage = ({
           />
           <img
             src={gallery_item}
-            alt="slide image"
+            alt="gallery of different parts of the studio"
             decoding="async"
             loading="lazy"
           />

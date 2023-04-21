@@ -67,7 +67,7 @@ export const MainPageContent = ({
           />
           <img
             src={background[6]}
-            alt="background"
+            alt="studio environment"
             decoding="async"
             loading="lazy"
           />

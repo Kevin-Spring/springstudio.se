@@ -36,7 +36,6 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.15);
-  z-index: -1;
 }
 
 .main-page-section header {
@@ -71,6 +70,7 @@
   width: 100%;
   position: relative;
   text-align: center;
+  z-index: 2;
 }
 
 .main-page-text-container-inner {
@@ -141,6 +141,7 @@
 
 .main-page-section .main-page-content-container .main-page-google-maps {
   position: relative;
+  z-index: -2;
 }
 
 .main-page-section
@@ -228,7 +229,6 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: -1;
   }
 
   .main-page-section:last-of-type

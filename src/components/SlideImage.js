@@ -20,7 +20,7 @@ export const SlideImage = ({
           />
           <img
             src={display_slide}
-            alt="slide image"
+            alt="slides of different studio assets"
             decoding="async"
             loading="lazy"
           />
