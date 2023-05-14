@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 //Writing out the html content and adding animations to the content
 export const StudioPageContent = ({
+  pageTitle,
   title,
   content,
   content2,
@@ -88,10 +89,15 @@ export const StudioPageContent = ({
             loading="lazy"
           />
         </picture>
+        {pageTitle && (
+          <header class="page-title" ref={addToRefTexts}>
+            <h1 className="title"> Studios </h1>
+          </header>
+        )}
         <div className="studio-page-text-container">
           {title && (
             <header ref={addToRefTexts}>
-              <h3>{title}</h3>
+              <h2 class="h3">{title}</h2>
             </header>
           )}
           {content && (

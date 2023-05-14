@@ -186,12 +186,14 @@ h6 {
   hyphens: auto;
 }
 
-h2 {
+h2,
+.h2 {
   padding-bottom: var(--size-10);
   font-size: var(--h2);
 }
 
-h3 {
+h3,
+.h3 {
   font-size: var(--h3);
 }
 
@@ -296,15 +298,17 @@ p:last-child {
   }
 }
 
-.main-page-section header,
-.main-page-section article,
-.main-page-section .main-page-cta-btn-link,
-.studio-page header,
-.studio-page article,
-.studio-page .btn-container,
-.studio-sigle-main .text-wrapper,
-.studio-sigle-main .studio-single-socials-container {
-  overflow: hidden;
+@media only screen and (min-width: 980px) {
+  .main-page-section header,
+  .main-page-section article,
+  .main-page-section .main-page-cta-btn-link,
+  .studio-page header,
+  .studio-page article,
+  .studio-page .btn-container,
+  .studio-sigle-main .text-wrapper,
+  .studio-sigle-main .studio-single-socials-container {
+    overflow: hidden;
+  }
 }
 
 .main-page-section header :is(h1, h2, h3, h4, h5, h6),
@@ -318,6 +322,7 @@ p:last-child {
 .studio-sigle-main .text-wrapper .booking-link,
 .studio-sigle-main .studio-single-socials-container .studio-single-socials {
   transform: translateY(150%);
+  opacity: 0;
   transition: opacity var(--std-trans), transform var(--std-trans);
 }
 
@@ -330,12 +335,6 @@ p:last-child {
 .main-page-section .studio-single-socials {
   opacity: 0;
   transition: opacity var(--std-trans);
-}
-
-.main-page-section .main-page-cta-btn-link .main-page-cta-btn,
-.studio-page .btn-container .studio-btn,
-.studio-sigle-main .text-wrapper .booking-link {
-  opacity: 0;
 }
 
 .main-page-section header.fadeIn :is(h1, h2, h3, h4, h5, h6),
@@ -353,12 +352,10 @@ p:last-child {
   .studio-single-socials-container.fadeIn
   .studio-single-socials {
   transform: translateY(0px);
+  opacity: 1;
 }
 
-.main-page-section .main-page-cta-btn-link.fadeIn .main-page-cta-btn,
-.main-page-section .studio-single-socials.fadeIn,
-.studio-page .btn-container.fadeIn .studio-btn,
-.studio-sigle-main .text-wrapper.fadeIn .booking-link {
+.main-page-section .studio-single-socials.fadeIn {
   opacity: 1;
 }
 
@@ -375,4 +372,13 @@ p:last-child {
 .studio-sigle-main .text-wrapper.button-wrapper.fadeIn,
 .main-page-section .main-page-cta-btn-link.fadeIn {
   overflow: visible;
+}
+
+@media only screen and (max-width: 980px) {
+  .main-page-section header :is(h1),
+  .studio-page header :is(h1),
+  .main-page-section:first-of-type .main-page-cta-btn-link .main-page-cta-btn {
+    opacity: 1;
+    transform: none;
+  }
 }

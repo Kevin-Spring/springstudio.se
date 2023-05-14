@@ -87,6 +87,7 @@ export const StudioPageChapter = () =>
                     images_chapter_1["chapter_1,w_2048.jpg"],
                     images_chapter_1["chapter_1,w_2048.webp"],
                   ]}
+                  pageTitle={"Studios"}
                   title={"studio 3"}
                   content={"THE TINIER ONE WITH A HUGE CYCLORAMA WALL."}
                   content2={"FLOOR AREA: 110M²"}

@@ -49,7 +49,7 @@ export const useNavbar = (/* posts , loading,*/ location) => {
 
       setNavbarItems({
         leftItem: "",
-        rightItem: "Home",
+        rightItem: "Main",
       });
 
       setNavbarPaths({
@@ -70,7 +70,7 @@ export const useNavbar = (/* posts , loading,*/ location) => {
       } */
 
       setNavbarItems({
-        leftItem: "Home",
+        leftItem: "Main",
         rightItem: "",
       });
 

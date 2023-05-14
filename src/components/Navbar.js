@@ -149,7 +149,7 @@ export const Navbar = () => {
                 }
                 to="/"
               >
-                Start
+                Main
               </Link>
             </div>
             <div className="link-wrapper">
