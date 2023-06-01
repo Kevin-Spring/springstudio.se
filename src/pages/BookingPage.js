@@ -18,13 +18,13 @@ export const BookingPage = ({ transition }) => {
         />
         <meta
           property="og:title"
-          content="Studios prepped for all creative needs in Stockholm - Booking"
+          content="Studios prepped for all creative needs in Stockholm - Contact & Booking"
         />
         <meta
           property="og:description"
           content="Contact us or book your studio here - whether it would be for green screen productions, music rehearsals or fashion shoots. Let us know!"
         />
-        <link rel="canonical" href="https://springstudio.se/booking" />
+        <link rel="canonical" href="https://springstudio.se/contact" />
       </Helmet>
       <main className="booking-page">
         <motion.section exit={{ opacity: 0 }} transition={transition}>

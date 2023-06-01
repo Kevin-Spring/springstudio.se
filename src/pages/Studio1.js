@@ -52,7 +52,7 @@ export const Studio1 = ({ transition }) => {
           property="og:description"
           content="With a floor size of 250 square meters and it's large fullwidth windows located to the southwest, Studio 1 offers a great daylight solution."
         />
-        <link rel="canonical" href="https://springstudio.se/studio/1" />
+        <link rel="canonical" href="https://springstudio.se/studios/studio-1" />
       </Helmet>
       <StudioSingle
         /* content={url}  */ transition={transition}

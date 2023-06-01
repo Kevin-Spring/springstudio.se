@@ -52,7 +52,7 @@ export const Studio3 = ({ transition }) => {
           property="og:description"
           content="Studio 3 is accompanied by a large cyclorama wall, making it the largest studio through the lens of a camera."
         />
-        <link rel="canonical" href="https://springstudio.se/studio/3" />
+        <link rel="canonical" href="https://springstudio.se/studios/studio-3" />
       </Helmet>
       <StudioSingle
         /* content={url} */ transition={transition}
