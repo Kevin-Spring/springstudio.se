@@ -10,7 +10,8 @@ export const BookingPage = ({ transition }) => {
     <>
       <Helmet>
         <title>
-          Studios prepped for all creative needs in Stockholm - Booking
+          Studios prepped for all creative needs in Stockholm - Contact &
+          Booking
         </title>
         <meta
           name="description"
