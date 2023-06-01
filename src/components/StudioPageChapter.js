@@ -89,12 +89,14 @@ export const StudioPageChapter = () =>
                   ]}
                   pageTitle={"Studios"}
                   title={"studio 3"}
-                  content={"THE TINIER ONE WITH A HUGE CYCLORAMA WALL."}
+                  content={
+                    "THE TINIER ONE WITH A HUGE CYCLORAMA WALL. Thanks to the cyclorama wall Studio 3 is encouraging work that focuses on detail and photography."
+                  }
                   content2={"FLOOR AREA: 110M²"}
                   content3={"CEILING HEIGHT: 7M"}
                   content4={"ELECTRICAL SUPPLY: 1X16A, 1X32A, 1X63A"}
                   btn={"To studio 3"}
-                  btnUrl={"/studio/3"}
+                  btnUrl={"/studios/studio-3"}
                 />
                 <AngleDown fullpage_api={fullpageApi} />
               </section>
@@ -113,12 +115,14 @@ export const StudioPageChapter = () =>
                     images_chapter_2["chapter_2,w_2048.webp"],
                   ]}
                   title={"studio 2"}
-                  content={"THE ONE WITH THE FLOOR AND BOXING OPPORTUNITY."}
+                  content={
+                    "THE ONE WITH THE FLOOR AND BOXING OPPORTUNITY. With its' size and being located near the tall garage doors - film, music and green screen productions is the perfect fit for Studio 2"
+                  }
                   content2={"FLOOR AREA: 250M²"}
                   content3={"CEILING HEIGHT: 7M"}
                   content4={"ELECTRICAL SUPPLY: 1X16A, 1X32A, 1X63A"}
                   btn={"To studio 2"}
-                  btnUrl={"/studio/2"}
+                  btnUrl={"/studios/studio-2"}
                 />
                 <AngleDown fullpage_api={fullpageApi} />
               </section>
@@ -137,13 +141,15 @@ export const StudioPageChapter = () =>
                     images_chapter_3["chapter_3,w_2048.webp"],
                   ]}
                   title={"studio 1"}
-                  content={"THE ONE WITH THE WINDOWS AND DAYLIGHT."}
+                  content={
+                    "THE ONE WITH THE WINDOWS AND DAYLIGHT. Surrounded by comfy lounges and daylight windows - studio 1 comes with that extra inspiration."
+                  }
                   content2={"FLOOR AREA: 250M²"}
                   content3={"CEILING HEIGHT: 7M"}
                   content4={"ELECTRICAL SUPPLY: 1X16A, 1X32A, 1X63A"}
                   content5={"LARGE WINDOWS TO THE WEST"}
                   btn={"To studio 1"}
-                  btnUrl={"/studio/1"}
+                  btnUrl={"/studios/studio-1"}
                 />
                 <AngleDown fullpage_api={fullpageApi} reverse={true} />
               </section>

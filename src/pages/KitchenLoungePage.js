@@ -84,7 +84,7 @@ export const KitchenLoungePage = ({ transition }) => {
         contact_text={
           "Let us know if you're curious about setting up catering in the kitchen or anything else, we're here to help!"
         }
-        contact_cta_url={"/booking"}
+        contact_cta_url={"/contact"}
         contact_cta_title={"Get in touch"}
       />
     </>

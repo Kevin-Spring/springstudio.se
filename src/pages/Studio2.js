@@ -117,7 +117,7 @@ export const Studio2 = ({ transition }) => {
         }
         contact_title={"SOUNDS LIKE A MATCH?"}
         contact_text={"Send us a hello or book the studio!"}
-        contact_cta_url={"/booking"}
+        contact_cta_url={"/contact"}
         contact_cta_title={"Book studio 2"}
       />
     </>

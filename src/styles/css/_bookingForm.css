@@ -177,6 +177,7 @@
 
 input[type="checkbox"].error.form__field + label {
   color: red !important;
+  font-weight: 500;
 }
 
 .form
@@ -194,6 +195,7 @@ input[type="checkbox"].error.form__field + label {
   transition: all var(--std-trans);
   text-transform: uppercase;
   padding-bottom: calc(10px + (15 - 10) * (100vw - 320px) / 1120);
+  font-weight: 500;
 }
 
 .form .form-inner .form__field-select .form__label-select:hover:after {
@@ -267,6 +269,7 @@ input[type="checkbox"].error.form__field + label {
   color: var(--faded-black);
   letter-spacing: var(--medium-spacing);
   text-transform: capitalize;
+  font-weight: 500;
 }
 
 .form .form-inner .form__field:focus {
@@ -328,24 +331,25 @@ input[type="checkbox"].error.form__field + label {
   color: var(--faded-black);
   border: none;
   position: relative;
-  padding: calc(15px + (20 - 15) * (100vw - 320px) / 1120)
-    calc(35px + (40 - 35) * (100vw - 320px) / 1120);
-  padding-right: var(--size-60);
   margin: 0 auto 5vw auto;
   left: 50%;
   transform: translateX(-50%);
-  font-size: calc(14px + (16 - 14) * (100vw - 320px) / 1120);
+  transition: all var(--std-trans);
+  margin-top: var(--size-30);
+  display: inline-block;
+  font-size: var(--article);
+  padding: var(--size-12) calc(15px + (30 - 15) * (100vw - 320px) / 1120);
+  padding-right: var(--size-60);
   letter-spacing: var(--medium-spacing);
   text-transform: uppercase;
-  transition: all var(--std-trans);
+  font-family: var(--main-font);
+  background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-  background: rgba(255, 255, 255, 0.2);
-  margin-top: var(--size-30);
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .form .form-btn .booking-arrow {

@@ -36,26 +36,26 @@ export const Header = () => {
           />
           <Route
             exact
-            path="/booking"
+            path="/contact"
             component={BookingPage}
             transition={transition}
           />
           <Route exact path="/" component={MainPage} transition={transition} />
           <Route
             exact
-            path="/studio/1"
+            path="/studios/studio-1"
             component={Studio1}
             transition={transition}
           />
           <Route
             exact
-            path="/studio/2"
+            path="/studios/studio-2"
             component={Studio2}
             transition={transition}
           />
           <Route
             exact
-            path="/studio/3"
+            path="/studios/studio-3"
             component={Studio3}
             transition={transition}
           />
@@ -67,13 +67,13 @@ export const Header = () => {
           />
           <Route
             exact
-            path="/studio/cookies"
+            path="/cookies"
             component={CookiePolicy}
             transition={transition}
           />
           <Route
             exact
-            path="/studio/privacy"
+            path="/privacy"
             component={PrivacyPolicy}
             transition={transition}
           />

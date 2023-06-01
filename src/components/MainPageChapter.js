@@ -91,7 +91,8 @@ export const MainPageChapter = (
                 images_chapter_1["chapter_1,w_2048.webp"],
               ]}
               cta={"Contact"}
-              ctaLink={"/booking"}
+              ctaLink={"/contact"}
+              ctaLinkTarget={""}
             />
             <AngleDown fullpage_api={fullpageApi} />
           </section>
@@ -113,8 +114,9 @@ export const MainPageChapter = (
                 images_chapter_2["chapter_2,w_2048.jpg"],
                 images_chapter_2["chapter_2,w_2048.webp"],
               ]}
-              cta={"Say hi"}
-              ctaLink={"/booking"}
+              cta={"Find us"}
+              ctaLink={"https://goo.gl/maps/e77nZdvQSQJ3bQfZ6"}
+              ctaLinkTarget={"_blank"}
             />
             <AngleDown fullpage_api={fullpageApi} />
           </section>
@@ -138,6 +140,7 @@ export const MainPageChapter = (
               ]}
               cta={"Have a Look"}
               ctaLink={"/studios"}
+              ctaLinkTarget={""}
             />
             <AngleDown fullpage_api={fullpageApi} />
           </section>
@@ -161,6 +164,7 @@ export const MainPageChapter = (
               ]}
               cta={"To the lounge"}
               ctaLink={"/lounge"}
+              ctaLinkTarget={""}
             />
             <AngleDown fullpage_api={fullpageApi} />
           </section>
@@ -189,7 +193,8 @@ export const MainPageChapter = (
                 images_chapter_5["chapter_5,w_2048.webp"],
               ]}
               cta={"Contact"}
-              ctaLink={"/booking"}
+              ctaLink={"/contact"}
+              ctaLinkTarget={""}
               facebook={"https://sv-se.facebook.com/SpringStudioSwe/"}
               instagram={"https://www.instagram.com/springstudiostockholm_/"}
               mapsLong={17.9286279}

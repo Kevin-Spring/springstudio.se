@@ -18,6 +18,7 @@ export const MainPageContent = ({
   facebook,
   instagram,
   ctaLink,
+  ctaLinkTarget,
   titleH1,
   mapsLat,
   mapsLong,
@@ -108,13 +109,14 @@ export const MainPageContent = ({
             )}
 
             {cta && (
-              <Link
+              <a
                 ref={addToRefTexts}
-                to={ctaLink}
+                href={ctaLink}
                 className="main-page-cta-btn-link"
+                target={ctaLinkTarget}
               >
                 <div className="main-page-cta-btn">{cta}</div>
-              </Link>
+              </a>
             )}
 
             {facebook || instagram ? (
