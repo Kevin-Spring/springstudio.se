@@ -26,6 +26,10 @@
   transition-delay: 1.8s;
 }
 
+.studio-page .studio-page-section .studio-info {
+  font-weight: 500;
+}
+
 .studio-page .studio-page-section:first-of-type .studio-info {
   transition-delay: 2s;
 }
@@ -78,23 +82,20 @@
 }
 
 .studio-page .btn-container .studio-btn {
-  font-size: var(--fs-xs);
-  padding: calc(10px + (15 - 10) * (100vw - 320px) / 1120)
-    calc(15px + (30 - 15) * (100vw - 320px) / 1120);
-  cursor: pointer;
   transition: background-color var(--std-trans);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
-    0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
-    0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+  display: inline-block;
+  font-size: var(--article);
+  padding: var(--size-12) calc(15px + (30 - 15) * (100vw - 320px) / 1120);
   letter-spacing: var(--medium-spacing);
+  text-transform: uppercase;
   font-family: var(--main-font);
   background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .studio-page .btn-container .studio-btn:hover {
@@ -110,6 +111,12 @@
 .studio-page .studio-page-section:last-of-type .angle-down:hover {
   opacity: 0.6;
   animation-play-state: paused;
+}
+
+@media only screen and (min-width: 980px) {
+  .studio-page .studio-info {
+    max-width: 40vw;
+  }
 }
 
 @media only screen and (max-width: 980px) and (orientation: landscape) {

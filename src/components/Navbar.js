@@ -155,11 +155,11 @@ export const Navbar = () => {
             <div className="link-wrapper">
               <Link
                 className={
-                  location.pathname === "/booking"
+                  location.pathname === "/contact"
                     ? "menu-item active"
                     : "menu-item"
                 }
-                to="/booking"
+                to="/contact"
               >
                 Contact
               </Link>
@@ -192,11 +192,11 @@ export const Navbar = () => {
               <div className="link-wrapper">
                 <Link
                   className={
-                    location.pathname === "/studio/1"
+                    location.pathname === "/studios/studio-1"
                       ? "submenu-item active"
                       : "submenu-item"
                   }
-                  to="/studio/1"
+                  to="/studios/studio-1"
                 >
                   Studio 1
                 </Link>
@@ -204,11 +204,11 @@ export const Navbar = () => {
               <div className="link-wrapper">
                 <Link
                   className={
-                    location.pathname === "/studio/2"
+                    location.pathname === "/studios/studio-2"
                       ? "submenu-item active"
                       : "submenu-item"
                   }
-                  to="/studio/2"
+                  to="/studios/studio-2"
                 >
                   Studio 2
                 </Link>
@@ -216,11 +216,11 @@ export const Navbar = () => {
               <div className="link-wrapper">
                 <Link
                   className={
-                    location.pathname === "/studio/3"
+                    location.pathname === "/studios/studio-3"
                       ? "submenu-item active"
                       : "submenu-item"
                   }
-                  to="/studio/3"
+                  to="/studios/studio-3"
                 >
                   Studio 3
                 </Link>

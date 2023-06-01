@@ -91,6 +91,7 @@
 .main-page-section article .main-page-text-container-paragraph {
   font-size: var(--article);
   max-width: 60%;
+  font-weight: 500;
   margin: 0 auto;
 }
 
