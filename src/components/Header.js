@@ -6,10 +6,13 @@ import { AnimatePresence } from "framer-motion";
 import { Navbar } from "./Navbar";
 import { Found404 } from "../pages/Found404";
 import { Studio1 } from "../pages/Studio1";
+import { Studio1_old } from "../pages/Studio1_old";
 import { CookiePolicy } from "../pages/CookiePolicy";
 import { PrivacyPolicy } from "../pages/PrivacyPolicy";
 import { Studio2 } from "../pages/Studio2";
+import { Studio2_old } from "../pages/Studio2_old";
 import { Studio3 } from "../pages/Studio3";
+import { Studio3_old } from "../pages/Studio3_old";
 import { KitchenLoungePage } from "../pages/KitchenLoungePage";
 
 //Transition settings for the pages on page transition and load
@@ -59,6 +62,26 @@ export const Header = () => {
             component={Studio3}
             transition={transition}
           />
+          {/* Silly SEO Reasons */}
+          <Route
+            exact
+            path="/studio/1"
+            component={Studio1_old}
+            transition={transition}
+          />
+          <Route
+            exact
+            path="/studio/2"
+            component={Studio2_old}
+            transition={transition}
+          />
+          <Route
+            exact
+            path="/studio/3"
+            component={Studio3_old}
+            transition={transition}
+          />
+          {/* End of silly SEO reasons */}
           <Route
             exact
             path="/lounge"
