@@ -59,7 +59,6 @@ export const Found404 = ({ transition }) => {
           property="og:description"
           content="Spring Studio provides rental studios for commercials, television, music rehearsals, film and photography productions."
         />
-        <meta name="robots" content="noindex" />
         <link rel="canonical" href="https://springstudio.se/404" />
       </Helmet>
       <motion.section
