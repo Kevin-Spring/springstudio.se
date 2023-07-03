@@ -109,14 +109,14 @@ export const MainPageContent = ({
             )}
 
             {cta && (
-              <a
+              <Link
                 ref={addToRefTexts}
-                href={ctaLink}
+                to={ctaLink}
                 className="main-page-cta-btn-link"
                 target={ctaLinkTarget}
               >
                 <div className="main-page-cta-btn">{cta}</div>
-              </a>
+              </Link>
             )}
 
             {facebook || instagram ? (

@@ -111,17 +111,15 @@ export const StudioPageContent = ({
             </article>
           )}
           {btn && (
-            <div ref={addToRefTexts} className="btn-container">
-              <Link to={btnUrl}>
-                <div className="studio-btn">{btn}</div>
-              </Link>
+            <Link to={btnUrl} ref={addToRefTexts} className="btn-container">
+              <div className="studio-btn">{btn}</div>
 
               {/* <Link to={acf.link_studio.url && acf.link_studio.url}>
               <div ref={addToRefTexts} className="studio-btn">
                 {acf.link_studio.title && acf.link_studio.title}
               </div>
             </Link> */}
-            </div>
+            </Link>
           )}
           {/* <header ref={addToRefTexts}>
             <h3>{acf.title && acf.title}</h3>
