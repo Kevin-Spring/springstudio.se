@@ -69,6 +69,7 @@
   text-transform: uppercase;
   max-width: 95%;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .studio-page header:not(.page-title) {
@@ -80,6 +81,10 @@
 .studio-page .btn-container {
   padding-top: calc(50px + (70 - 50) * (100vw - 320px) / 1120);
   max-width: calc(200px + (230 - 200) * (100vw - 320px) / 1120);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  max-width: fit-content;
 }
 
 .studio-page .btn-container .studio-btn {
