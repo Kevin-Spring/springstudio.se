@@ -20,6 +20,7 @@
     rgba(255, 255, 255, 0.462062324929972) 100%
   );
   z-index: -1;
+  pointer-events: none;
 }
 
 .studio-page .studio-page-section:first-of-type :is(h1, h2, h3, h4, h5, h6) {
