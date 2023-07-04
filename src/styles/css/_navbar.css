@@ -67,7 +67,6 @@
 .primary-nav-container.light a {
   color: var(--off-white);
   letter-spacing: var(--medium-spacing);
-  text-transform: uppercase;
   font-family: var(--main-font);
   transition: var(--std-trans);
   font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);
@@ -86,7 +85,6 @@
 .primary-nav-container.dark a {
   color: var(--faded-black);
   letter-spacing: var(--medium-spacing);
-  text-transform: uppercase;
   font-family: var(--main-font);
   transition: var(--std-trans);
   font-size: calc(10px + (12 - 10) * (100vw - 320px) / 1120);

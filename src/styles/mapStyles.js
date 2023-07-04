@@ -1,13 +1,13 @@
 export const mapStyles = [
   {
-    featureType: 'all',
-    elementType: 'labels.text.fill',
+    featureType: "all",
+    elementType: "labels.text.fill",
     stylers: [
       {
         saturation: 36,
       },
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 40,
@@ -15,14 +15,14 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'all',
-    elementType: 'labels.text.stroke',
+    featureType: "all",
+    elementType: "labels.text.stroke",
     stylers: [
       {
-        visibility: 'on',
+        visibility: "on",
       },
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 16,
@@ -30,20 +30,20 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'all',
-    elementType: 'labels.icon',
+    featureType: "all",
+    elementType: "labels.icon",
     stylers: [
       {
-        visibility: 'off',
+        visibility: "off",
       },
     ],
   },
   {
-    featureType: 'administrative',
-    elementType: 'geometry.fill',
+    featureType: "administrative",
+    elementType: "geometry.fill",
     stylers: [
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 20,
@@ -51,11 +51,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'administrative',
-    elementType: 'geometry.stroke',
+    featureType: "administrative",
+    elementType: "geometry.stroke",
     stylers: [
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 17,
@@ -66,104 +66,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'administrative',
-    elementType: 'labels',
+    featureType: "landscape",
+    elementType: "geometry",
     stylers: [
       {
-        visibility: 'off',
-      },
-    ],
-  },
-  {
-    featureType: 'administrative.country',
-    elementType: 'all',
-    stylers: [
-      {
-        visibility: 'simplified',
-      },
-    ],
-  },
-  {
-    featureType: 'administrative.country',
-    elementType: 'geometry',
-    stylers: [
-      {
-        visibility: 'simplified',
-      },
-    ],
-  },
-  {
-    featureType: 'administrative.country',
-    elementType: 'labels.text',
-    stylers: [
-      {
-        visibility: 'simplified',
-      },
-    ],
-  },
-  {
-    featureType: 'administrative.province',
-    elementType: 'all',
-    stylers: [
-      {
-        visibility: 'off',
-      },
-    ],
-  },
-  {
-    featureType: 'administrative.locality',
-    elementType: 'all',
-    stylers: [
-      {
-        visibility: 'simplified',
-      },
-      {
-        saturation: '-100',
-      },
-      {
-        lightness: '30',
-      },
-    ],
-  },
-  {
-    featureType: 'administrative.neighborhood',
-    elementType: 'all',
-    stylers: [
-      {
-        visibility: 'off',
-      },
-    ],
-  },
-  {
-    featureType: 'administrative.land_parcel',
-    elementType: 'all',
-    stylers: [
-      {
-        visibility: 'off',
-      },
-    ],
-  },
-  {
-    featureType: 'landscape',
-    elementType: 'all',
-    stylers: [
-      {
-        visibility: 'simplified',
-      },
-      {
-        gamma: '0.00',
-      },
-      {
-        lightness: '74',
-      },
-    ],
-  },
-  {
-    featureType: 'landscape',
-    elementType: 'geometry',
-    stylers: [
-      {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 20,
@@ -171,29 +78,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'landscape.man_made',
-    elementType: 'all',
+    featureType: "poi",
+    elementType: "geometry",
     stylers: [
       {
-        lightness: '3',
-      },
-    ],
-  },
-  {
-    featureType: 'poi',
-    elementType: 'all',
-    stylers: [
-      {
-        visibility: 'off',
-      },
-    ],
-  },
-  {
-    featureType: 'poi',
-    elementType: 'geometry',
-    stylers: [
-      {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 21,
@@ -201,20 +90,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'road',
-    elementType: 'geometry',
+    featureType: "road.highway",
+    elementType: "geometry.fill",
     stylers: [
       {
-        visibility: 'simplified',
-      },
-    ],
-  },
-  {
-    featureType: 'road.highway',
-    elementType: 'geometry.fill',
-    stylers: [
-      {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 17,
@@ -222,11 +102,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'road.highway',
-    elementType: 'geometry.stroke',
+    featureType: "road.highway",
+    elementType: "geometry.stroke",
     stylers: [
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 29,
@@ -237,11 +117,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'road.arterial',
-    elementType: 'geometry',
+    featureType: "road.arterial",
+    elementType: "geometry",
     stylers: [
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 18,
@@ -249,11 +129,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'road.local',
-    elementType: 'geometry',
+    featureType: "road.local",
+    elementType: "geometry",
     stylers: [
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 16,
@@ -261,11 +141,11 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'transit',
-    elementType: 'geometry',
+    featureType: "transit",
+    elementType: "geometry",
     stylers: [
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 19,
@@ -273,15 +153,15 @@ export const mapStyles = [
     ],
   },
   {
-    featureType: 'water',
-    elementType: 'geometry',
+    featureType: "water",
+    elementType: "geometry",
     stylers: [
       {
-        color: '#000000',
+        color: "#000000",
       },
       {
         lightness: 17,
       },
     ],
   },
-]
+];

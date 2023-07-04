@@ -16,8 +16,8 @@
   right: 0;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.7) 0%,
-    rgba(255, 255, 255, 0.462062324929972) 100%
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.65) 100%
   );
   z-index: -1;
   pointer-events: none;
@@ -25,10 +25,6 @@
 
 .studio-page .studio-page-section:first-of-type :is(h1, h2, h3, h4, h5, h6) {
   transition-delay: 1.8s;
-}
-
-.studio-page .studio-page-section .studio-info {
-  font-weight: 500;
 }
 
 .studio-page .studio-page-section:first-of-type .studio-info {
@@ -94,7 +90,6 @@
   font-size: var(--article);
   padding: var(--size-12) calc(15px + (30 - 15) * (100vw - 320px) / 1120);
   letter-spacing: var(--medium-spacing);
-  text-transform: uppercase;
   font-family: var(--main-font);
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -103,6 +98,7 @@
     0 100px 80px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   font-weight: 600;
+  text-transform: none;
 }
 
 .studio-page .btn-container .studio-btn:hover {
@@ -161,6 +157,6 @@
 
 @media only screen and (max-width: 767px) {
   .studio-page-text-container .studio-info {
-    max-width: 60%;
+    max-width: 80vw;
   }
 }

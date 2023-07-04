@@ -284,12 +284,9 @@
 .studio-single-contact-section .booking-link {
   position: relative;
   padding: calc(10px + (15 - 10) * (100vw - 320px) / 1120)
-    calc(30px + (40 - 30) * (100vw - 320px) / 1120)
-    calc(10px + (15 - 10) * (100vw - 320px) / 1120)
     calc(10px + (15 - 10) * (100vw - 320px) / 1120);
   display: flex;
   align-items: center;
-  text-transform: uppercase;
   font-family: var(--ff-base);
   margin: calc(20px + (30 - 20) * (100vw - 320px) / 1120) auto;
   background: rgba(255, 255, 255, 0.2);

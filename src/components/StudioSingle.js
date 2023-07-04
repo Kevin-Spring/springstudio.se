@@ -362,7 +362,7 @@ export const StudioSingle = ({
               >
                 <Link to={contact_cta_url} className="booking-link">
                   {contact_cta_title}{" "}
-                  <VscArrowRight className="booking-arrow" />
+                  {/* <VscArrowRight className="booking-arrow" /> */}
                 </Link>
               </div>
             )}
